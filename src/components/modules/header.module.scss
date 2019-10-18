@@ -1,0 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+.list {
+  list-style-type: none;
+  display: flex;
+  margin: 0px;
+  li a {
+    color: #999999;
+    padding: 8px 12px;
+    text-decoration: none;
+    border-bottom: none;
+  }
+  li a:hover {
+    color: #5183f5;
+    background-color: transparent;
+  }
+}
+li:first-child {
+  flex: 1 0;
+}
+.container {
+  padding-bottom: 50px;
+}
+.title {
+  text-decoration: none;
+  cursor: pointer;
+  color: #000;
+  font-size: 1.2rem;
+  // font-family: 'Pacifico', cursive;
+  font-family: 'Dancing Script', cursive;
+}
+.active_nav_list {
+  color: #0000ee !important;
+  border-bottom: 2px solid #0000ee !important;
+}

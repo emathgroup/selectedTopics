@@ -1,0 +1,10 @@
+a {
+  text-decoration: none;
+  color: #5183f5;
+  border-bottom: 2px solid #e2eafd;
+  font-weight: bold;
+  &:hover {
+    border-bottom-color: #5183f5;
+    background-color: #e2eafd;
+  }
+}

@@ -1,0 +1,517 @@
+/* Code
+  =============== */
+/* Mixins
+  =============== */
+
+// Media query for mobile first layout
+@mixin small-breakpoint {
+    @media (min-width: #{$mobile}) {
+      @content;
+    }
+  }
+  
+  @mixin medium-breakpoint {
+    @media (min-width: #{$tablet}) {
+      @content;
+    }
+  }
+  
+  // Break on desktop
+  @mixin large-breakpoint {
+    @media (min-width: #{$desktop}) {
+      @content;
+    }
+  }
+  
+  /* Variables
+ * ===============
+ *
+ * All variables and most of the configuration is defined on this page. */
+
+/* Containers */
+
+
+$x-small: 720px;
+$small: 800px;
+$medium: 1200px;
+$large: 1300px;
+
+/* Breakpoints */
+
+$mobile: 850px;
+$tablet: $small;
+$desktop: $medium;
+
+$width: 800px;
+
+/* Colors */
+
+$background: #f0f0f0;
+$primary-color: #5183F5;
+$secondary-color: rgb(255, 90, 95);
+$green: #12C47C;
+$yellow: #FED356;
+$accent-color: #cdcdcd;
+$light: #f2f2f2;
+$alternate-background: #f0f0f0;
+$alternate-color: #404040;
+$link-color: $primary-color;
+$link-hover-color: darken($link-color, 10%);
+$highlight: #ffeea8;
+$error: #d33c40;
+$bq-border: 16px solid #f0f0f0;
+$code: Menlo;
+
+/* Typography */
+
+// Body font
+$font-size: 1rem;
+$body-font-size: 1.2rem;
+$font-style: normal;
+$font-variant: normal;
+$font-weight: normal;
+$font-color: #404040;
+$light-font-color: rgba(0, 0, 0, 0.6);
+$font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+$line-height: 1.6;
+
+// Headings
+$heading-font-color: #111;
+$heading-font-weight: 600;
+$heading-font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+$heading-line-height: 1.3;
+
+// Mobile heading font size
+$h1-mobile: 1.75rem;
+$h2-mobile: 1.5rem;
+$h3-mobile: 1.25rem;
+$h4-mobile: 1.1rem;
+$h5-mobile: 1rem;
+
+// Heading font size
+$h1: 2.25rem;
+$h2: 2.2rem;
+$h3: 1.75rem;
+$h4: 1.6rem;
+$h5: 1.3rem;
+
+/* Padding */
+
+$padding: 60px;
+$margins: 2rem;
+$content-padding: 60px 0;
+$content-padding-mobile: 30px 0;
+
+/* Borders */
+
+$border-width: 2px;
+$border-style: solid;
+$border-color: #ccc;
+$border-radius: 10px;
+$borders: $border-width $border-style $border-color;
+$box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
+
+/* Buttons */
+
+$primary-hover: lighten($primary-color, 33%);
+$button-background: $primary-color;
+$button-background-hover: darken($primary-color, 15%);
+$button-color: white;
+$button-font-weight: 600;
+$button-font-family: -apple-system, BlinkMacSystemFont, 'Roboto', Helvetica Neue, Helvetica, Arial, sans-serif;
+$button-font-size: 1.1rem;
+$button-border-width: 2px;
+$button-border-style: solid;
+$button-border-color: $primary-color;
+$button-border-radius: $border-radius;
+$button-text-transform: none;
+
+// Accent buttons
+$accent-button-background: $secondary-color;
+$accent-button-color: #ffffff;
+$accent-button-color-hover: #ffffff;
+
+/* Forms */
+
+$forms: (
+  '[type=color], [type=date], [type=email], [type=number], [type=search], [type=text], [type=url], select, textarea'
+);
+$buttons: ('.button, a.button, button, [type=submit], [type=button]');
+$input-background: #ffffff;
+$placeholder: darken($accent-color, 20%);
+$form-border: 2px solid $border-color;
+$form-border-hover: 2px solid darken($border-color, 10%);
+$form-border-focus: 2px solid $link-color;
+
+/* Tables */
+
+$stripes: #f8f8f8;
+$caption: #ababab;
+
+/* Code */
+
+$code-color: $font-color;
+$code-size: 14px;
+$code-family: Menlo, monospace;
+$code-background: transparent;
+$code-borders: $borders;
+
+/* Nav */
+
+$nav-height: 90px;
+
+$code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+$code-font-color: #b3b9c5;
+$string: #92d192;
+$variable: #f2777a;
+$property: #abb2bf;
+$number: #fca369;
+$operator: #ac8d58;
+$punctuation: #d5d8df;
+$comment: #777c85;
+$function: #62cfcf;
+$keyword: #ffeead;
+$attribute: #ffd479;
+$class: #e1a6f2;
+$tag: #6ab0f3;
+$error: #f2777a;
+
+// variables
+$code-font-family: Menlo, 'Roboto Mono', Courier New, monospace;
+$code-font-color: #b3b9c5;
+$string: #92d192;
+$variable: #f2777a;
+$property: #abb2bf;
+$number: #fca369;
+$operator: #ac8d58;
+$punctuation: #d5d8df;
+$comment: #777c85;
+$function: #62cfcf;
+$keyword: #ffeead;
+$attribute: #ffd479;
+$class: #e1a6f2;
+$tag: #6ab0f3;
+$error: #f2777a;
+/* Code
+  =============== */
+  code {
+    font-size: 13px;
+  }
+  
+  pre.language-terminal code.language-terminal {
+    position: relative;
+    padding: 1rem;
+    font-family: $code-font-family;
+    border: 1px solid #d8d9da;
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.16);
+    border-radius: 6px;
+    padding-top: 45px;
+    margin: 2rem 0;
+    font-size: 13px;
+    background: white;
+    color: #333;
+  
+    &::before {
+      content: '\2022 \2022 \2022';
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 25px;
+      background: #e1e1e1;
+      color: #c2c3c4;
+      width: 100%;
+      font-size: 2.5rem;
+      margin: 0;
+      line-height: 0;
+      padding: 14px 0;
+      text-indent: 4px;
+      letter-spacing: -15px;
+    }
+  }
+  
+  code[class*='language-'],
+  pre[class*='language-'],
+  pre code {
+    font-family: $code-font-family;
+    font-size: 13px;
+    color: $code-font-color;
+    direction: ltr;
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    line-height: 1.7;
+    font-weight: 400;
+    margin: .5rem 0;
+    tab-size: 2;
+    hyphens: none;
+    border-radius: $border-radius;
+    -webkit-font-smoothing: antialiased;
+    background-color: rgb(40,44,52) !important;
+  }
+  
+  /* Code blocks */
+  
+  pre code {
+    display: block;
+    padding: 1.5rem;
+    overflow: auto;
+    background-color: #333;
+    border: 0;
+    // box-shadow: 2px 4px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  // Keyboard input
+  kbd {
+    background-color: #f7f7f7;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px white inset;
+    color: #333;
+    display: inline-block;
+    font-family: Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    margin: 0 0.1em;
+    padding: 0.1em 0.6em;
+    text-shadow: 0 1px 0 white;
+    font-size: 14px;
+  }
+  
+  /* Inline code */
+  
+  :not(pre) > code[class*='language-'] {
+    padding: 5px 3px;
+    color: #111111;
+    background: rgba(0, 0, 0, 0.06) !important;
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+  }
+  
+  :not(pre) > code {
+    padding: 3px 5px;
+    border: none;
+    font-family: $code-font-family;
+    font-weight: 400;
+    color: #111111;
+    border-radius: 4px;
+    background: rgba(0, 0, 0, 0.06) ;
+   
+}
+  
+  code[class*='language-css'],
+  code[class*='language-scss'],
+  code[class*='language-less'],
+  code[class*='language-sass'] {
+    color: #cc99cc;
+  }
+  
+  .filename {
+    background: #111;
+    padding: 0.5rem 1rem 0.75rem;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-bottom: -2.2rem;
+  }
+  
+  @include small-breakpoint {
+    code,
+    pre.language-terminal code.language-terminal,
+    code[class*='language-'],
+    pre[class*='language-'],
+    pre code {
+      font-size: 14px;
+    }
+  }
+  
+  /* Syntax Highlighting */
+  
+  .token.doctype {
+    background: #000000;
+    color: #fff;
+  }
+  
+  .token.comment,
+  .token.prolog,
+  .token.cdata {
+    color: $comment;
+  }
+  
+  .token.namespace {
+    opacity: 0.7;
+  }
+  
+  .token.string,
+  .token.attr-value {
+    color: $string;
+  }
+  
+  .token.punctuation {
+    color: $punctuation;
+  }
+  
+  .token.operator {
+    color: $operator;
+  }
+  
+  .token.variable {
+    color: $variable;
+  }
+  
+  .token.property {
+    color: $property;
+  }
+  
+  .token.entity,
+  .token.url,
+  .token.symbol,
+  .token.number,
+  .token.boolean,
+  .token.constant,
+  .token.regex,
+  .token.inserted {
+    color: $number;
+  }
+  
+  .token.delimiter {
+    background: black;
+    color: white;
+    padding: 1px 2px;
+  }
+  
+  .token.atrule {
+    color: $function;
+  }
+  
+  .token.keyword {
+    color: $keyword;
+  }
+  
+  .language-autohotkey .token.selector {
+    color: $number;
+  }
+  
+  .token.attr-name {
+    color: $attribute;
+  }
+  
+  .token.function {
+    color: $function;
+  }
+  
+  .language-php .token.function {
+    color: white;
+  }
+  
+  .token.class-name {
+    color: $class;
+  }
+  
+  .token.deleted,
+  .language-autohotkey .token.tag {
+    color: $error;
+  }
+  
+  .token.tag {
+    color: $tag;
+  }
+  
+  .language-autohotkey .token.keyword {
+    color: $keyword;
+  }
+  
+  .token.selector {
+    color: $attribute;
+  }
+  
+  .token.italic {
+    font-style: italic;
+  }
+  
+  pre[data-line] {
+    position: relative;
+    padding: 1rem 0;
+  }
+  
+  .line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: 1rem;
+    /* Same as .prism’s padding-top */
+    background: rgba(150, 150, 150, 0.1);
+    pointer-events: none;
+    line-height: inherit;
+    white-space: pre;
+  }
+  
+  .line-highlight:before,
+  .line-highlight[data-end]:after {
+    content: attr(data-start);
+    position: absolute;
+    top: 0.4em;
+    left: 0.6em;
+    min-width: 1em;
+    padding: 0 0.5em;
+    background-color: transparent;
+    color: transparent;
+    font: bold 65%/1.5 sans-serif;
+    text-align: center;
+    vertical-align: 0.3em;
+    border-radius: 999px;
+    text-shadow: none;
+  }
+  
+  .line-highlight[data-end]:after {
+    content: attr(data-end);
+    top: auto;
+    bottom: 0.4em;
+  }
+  
+  .line-numbers .line-highlight:before,
+  .line-numbers .line-highlight:after {
+    content: none;
+  }
+  
+  pre::-moz-selection,
+  pre::-moz-selection,
+  code::-moz-selection,
+  code::-moz-selection {
+    text-shadow: none;
+    color: inherit;
+    background: rgba(150, 150, 150, 0.3) !important;
+  }
+  
+  pre::selection,
+  pre::selection,
+  code::selection,
+  code::selection {
+    text-shadow: none;
+    color: inherit;
+    background: rgba(150, 150, 150, 0.3) !important;
+  }
+  
+  pre[class*='language-']::-moz-selection,
+  pre[class*='language-']::-moz-selection,
+  code[class*='language-'] ::-moz-selection,
+  code[class*='language-'] ::-moz-selection {
+    text-shadow: none;
+    color: inherit;
+    background: rgba(150, 150, 150, 0.3) !important;
+  }
+  
+  pre[class*='language-']::selection,
+  pre[class*='language-']::selection,
+  code[class*='language-'] ::selection,
+  code[class*='language-'] ::selection {
+    text-shadow: none;
+    color: inherit;
+    background: rgba(150, 150, 150, 0.3) !important;
+  }
+  

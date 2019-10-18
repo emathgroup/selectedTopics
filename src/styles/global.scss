@@ -1,0 +1,17 @@
+@media (min-width: 850px){
+    .head_container {
+        .gatsby-image-container{
+            margin-top: 0;
+            height: 150px !important;
+            width: 150px!important;
+            }
+    }
+    
+    .content_wrapper {
+        .gatsby-image-wrapper {
+            margin-top: 0;
+            height: 50px !important;
+            width: 50px!important;
+        }
+        }
+}

@@ -1,0 +1,52 @@
+
+.head_container {
+  display: flex;
+  margin-bottom: 80px;
+  .head_wrapper {
+    flex: 1 0;
+    padding: 1rem 1rem 1rem 2rem;
+    .head_title {
+      margin-bottom: 6.72px !important;
+    }
+  }
+  .link {
+    text-decoration: none;
+    border-bottom: none;
+    &:hover{
+      border-bottom: none;
+      background-color: transparent;
+    }
+  }
+
+  .tag {
+    color: #0366d6;
+    font-size: 0.65rem;
+    //font-weight: bold;
+    background-color: #f1f8ff;
+    padding: 6px 8px;
+    border-radius: p3x;
+    -webkit-border-radius: p3x;
+    -moz-border-radius: p3x;
+    -ms-border-radius: p3x;
+    -o-border-radius: p3x;
+    margin-right: 5px;
+    &:hover{
+        background-color: #def;
+      }
+  }
+  .date {
+    display: block;
+    font-size: 12px;
+  }
+  .gitlink{
+      color:#000 !important;
+      font-size: 12px;
+      padding: 0.5rem 0.5rem .2rem;
+      padding-inline-start: 0px;
+      font-weight:bold;
+      a:hover{
+      border-bottom: 2px solid #5183f5;
+      background-color: #e2eafd;
+      }
+  }
+}

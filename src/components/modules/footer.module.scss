@@ -1,0 +1,17 @@
+.link{
+    text-decoration: none;
+    color: #4f4f4f;
+    padding: 8px ;
+    //padding-inline-start: 0px;
+    border-bottom: none;
+    border-radius:4px;
+    -webkit-border-radius:4px;
+    -moz-border-radius:4px;
+    -ms-border-radius:4px;
+    -o-border-radius:4px;
+    &:hover{
+        color:#5183f5;
+        border-bottom: none;
+        
+    }
+}

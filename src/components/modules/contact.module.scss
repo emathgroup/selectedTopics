@@ -1,0 +1,23 @@
+.link{
+    text-decoration: none;
+    font-weight: bold;
+    color: #0000EE;
+    // text-decoration:underline;
+    // text-decoration-color: #5183f5;
+    // -moz-text-decoration-color: #5183f5;
+   // line-height: 1.4;
+   padding-bottom: 2px;
+   border-bottom: 2px solid rgba(81, 131, 245,0.4);
+   transition: border-bottom 300ms linear;
+   -webkit-transition: border-bottom 300ms linear;
+   -moz-transition: border-bottom 300ms linear;
+   -ms-transition: border-bottom 300ms linear;
+   -o-transition: border-bottom 300ms linear;
+
+}
+.link:hover{
+    //text-decoration-color: #0000EE;
+    //-moz-text-decoration-color: #0000EE;
+    border-bottom: 2px solid #0000EE;
+    background-color:transparent;
+}
