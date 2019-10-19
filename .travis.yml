@@ -1,0 +1,26 @@
+language: node_js
+node_js: --lts
+cache: npm
+sudo: required
+cache:
+  directories:
+  - node_modules
+  - .cache
+
+branches:
+  only:
+    - master
+
+before_install:
+  - npm install -g gatsby-cli gh-pages yarn
+
+install:
+  - yarn
+
+before_script:
+  - git config user.name "emathgroup"
+  - git config user.email "emath.ac.cn@gmail.com"
+  - sed -i'' "s~git@github.com:emathgroup/emathgroup.github.io.git~https://${GITHUB_TOKEN}@github.com/emathgroup/emathgroup.github.io.git~" package.json
+
+script:
+  - npm run deploy
