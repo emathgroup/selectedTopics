@@ -11,8 +11,6 @@ import config from '../../data/siteConfig'
              siteMetadata{
                  Email
                  githubUsername
-                 twitterUsername
-                 linkedInUsername
              }
          }
      }
