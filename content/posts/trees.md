@@ -113,6 +113,8 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 
 另外链接中给出了部分[关键C++代码]。
 
+相关结果还被收集到OEIS: [A006065] [A172992] [A172992]
+
 
 [Orchard Planting Problem]: http://mathworld.wolfram.com/Orchard-PlantingProblem.html
 [果树问题]: https://en.wikipedia.org/wiki/Orchard-planting_problem
@@ -138,3 +140,6 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 [解2]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=41141&fromuid=20
 [解3]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=81167&fromuid=20
 [关键C++代码]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=9077&fromuid=20
+[A006065]: https://oeis.org/A006065
+[A172992]: https://oeis.org/A172992
+[A172993]: https://oeis.org/A172993
