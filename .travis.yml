@@ -8,6 +8,7 @@ cache:
 deploy:
   provider: pages
   skip-cleanup: true
+  repo: emathgroup/emathgroup.github.io
   github-token: $GITHUB_TOKEN
   local_dir: public
   keep-history: true
@@ -20,4 +21,4 @@ before_script:
 script:
   - "npm run test"
 after_success:
-  - "npm run deploy"
+  - "echo %%%%%%%%%%%%%%%%..done..%%%%%%%%%%%%%%%%%%%%%%%%%%%%"

@@ -10,7 +10,7 @@
     "format": "prettier --write src/**/*.{js,jsx}",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\"",
-    "deploy": "npm run build && gh-pages -r git@github.com:emathgroup/emathgroup.github.io.git -b master -d public"
+    "deploy": "npm run build"
   },
   "dependencies": {
     "bulma": "^0.7.5",
