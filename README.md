@@ -1,13 +1,18 @@
 # gatsby-react-blog
 My Simple blog site with gatsby with react
 ## Installation
+
+
 Run local Server:
 ```bash
+npm install -g gatsby-cli gh-pages yarn
 git clone https://github.com/emathgroup/selectedTopics
-yarn
-gatsby develop
 cd selectedTopics
-yarn run develop
+yarn
+# gatsby develop
+gatsby build
+gh-pages -r git@github.com:emathgroup/emathgroup.github.io.git -b master -d public
+
 ```
 Go to `localhost:8000`
 ## Customization
