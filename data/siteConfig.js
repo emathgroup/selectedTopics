@@ -1,15 +1,15 @@
 const config = {
     siteTitle: "数学研发论坛博客", // Site title.
-    siteShortDesc: "Euler Wang Web developer",
+    siteShortDesc: "数学研发论坛的开放博客",
     siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
-    siteUrl: "https://www.example.com", // Domain of your website without pathPrefix.
+    siteUrl: "https://emathgroup.github.io", // Domain of your website without pathPrefix.
     siteDescription: "A GatsbyJS stater with Advanced design in mind.", // Website description used for RSS feeds/meta description tag.
     siteRss: "/rss.xml", // Path to the RSS file.
     googleAnalyticsID: "UA-47311644-5", // GA tracking ID.
     postDefaultCategoryID: "Tech", // Default category for posts.
     dateFromFormat: "YYYY-MM-DD", // Date format used in the frontmatter.
     dateFormat: "DD/MM/YYYY", // Date format for display.
-    userName: "Euler Wang", // Username to display in the author segment.
+    userName: "数学研发论坛", // Username to display in the author segment.
     userEmail: "emath.ac.cn@gmail.com", // Email used for RSS feed's author segment
     userLocation: "India", // User location to display in the author segment.
     userAvatar: "", // User avatar to display in the author segment.

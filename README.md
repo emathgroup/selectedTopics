@@ -12,7 +12,7 @@ yarn
 # gatsby develop
 gatsby build
 gh-pages -r git@github.com:emathgroup/emathgroup.github.io.git -b master -d public
-
+# 这条命令的意思就是将public目录的内容push到emathgroup/emathgroup.github.io.git的master分支
 ```
 Go to `localhost:8000`
 ## Customization
