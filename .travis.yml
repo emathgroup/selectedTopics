@@ -20,7 +20,7 @@ install:
 before_script:
   - git config user.name "emathgroup"
   - git config user.email "emath.ac.cn@gmail.com"
-  - sed -i'' "s~git@github.com:emathgroup/emathgroup.github.io.git~https://${GITHUB_TOKEN}@github.com/emathgroup/emathgroup.github.io.git~" package.json
+  - sed -i "s~git@github.com:emathgroup/emathgroup.github.io.git~https://${GITHUB_TOKEN}@github.com/emathgroup/emathgroup.github.io.git~" package.json
 
 script:
   - npm run deploy
