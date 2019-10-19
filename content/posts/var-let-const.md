@@ -25,6 +25,9 @@ $$
 \end{array}
 $$
 
+test change from copy of local machine.
+
 mathe 来测试一下: $e^{i\pi} +1 =0$
+
 
 A brief introduction about various uses of var, let, const .
