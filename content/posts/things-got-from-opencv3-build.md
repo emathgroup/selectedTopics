@@ -11,10 +11,7 @@ tags:
 abbrlink: 20051
 date: 2019-10-16 23:51:34
 ---
-哦
-======================   
-This is robot, CI workflow.
-======================  
+哦哦，冷冽的风，谁在唱着离歌，黑夜沉沉。
 This line is added by KeyTo9_Fans.
 
 之前主要是懒，一直都在用[OpenCV] 2.4.9，是安装Kurento media server的时候被动的安装上的。今天尝试源码编译安装了[OpenCV]3.3,想体验一把新功能。
