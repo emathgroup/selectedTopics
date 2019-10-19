@@ -1,7 +1,7 @@
 ---
 title: 二十棵树最优解求解问题
 date: 2019-10-19 11:06:57
-thumbnail: "../thumbnails/bash.png"
+thumbnail: "../thumbnails/p20.png"
 tags:
     - "bash"
     - "二十棵树"
