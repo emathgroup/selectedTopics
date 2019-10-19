@@ -22,7 +22,7 @@ tags:
 ![xianzu](../images/trees/xianzu.jpg)
 
 2006年，辽宁锦州开发区笔架山小学的[王兴君]成功地绘制出了欧氏平面中23行图，这个结果在国内网络上流传比较广泛
-![xwang](../images/trees/yhuang.jpg)
+![xwang](../images/trees/xwang.jpg)
 
 2009年，河北省邢台学院学生[黄阳阳]（昵称eyond）成功地绘制出了另一个漂亮的23行植树图，结果如下：
 ![xwang](../images/trees/yhuang.jpg)
