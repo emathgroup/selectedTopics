@@ -21,4 +21,4 @@ before_script:
 script:
   - "npm run test"
 after_success:
-  - "echo %%%%%%%%%%%%%%%%..done..%%%%%%%%%%%%%%%%%%%%%%%%%%%%"
+  - "npm run deploy"
