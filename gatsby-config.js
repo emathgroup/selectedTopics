@@ -29,23 +29,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-mongodb`,
-      options: {
-        connectionString:
-          `mongodb+srv://aman:${process.env.PASSWORD}@cluster0-pe0lk.mongodb.net/test?retryWrites=true&w=majority`,
-        extraParams: {
-          replicaSet: "cluster0-shard-0",
-          ssl: true,
-          authSource: "admin",
-        },
-        dbName: "ace",
-        collection: ["People","team_2018-19"],
-        clientOptions: {
-          useNewUrlParser: true,
-        },
-      },
-    },
-    {
       resolve: `gatsby-plugin-typography`,
       options: {
         pathToConfigModule: `src/utils/typography`,
