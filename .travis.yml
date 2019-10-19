@@ -1,5 +1,6 @@
 dist: bionic
 language: node_js
+
 node_js:
   - "stable"
 cache:
@@ -9,6 +10,7 @@ deploy:
   provider: pages
   skip-cleanup: true
   repo: emathgroup/emathgroup.github.io
+  target_branch: master
   github-token: $GITHUB_TOKEN
   local_dir: public
   keep-history: true
