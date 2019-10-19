@@ -1,3 +1,11 @@
+---
+title: 二十棵树最优解求解问题
+date: 2019-10-19 11:06:57
+thumbnail: "../thumbnails/bash.png"
+tags:
+    - "bash"
+    - "二十棵树"
+---
 
 
 ## 二十棵树最优解求解问题
