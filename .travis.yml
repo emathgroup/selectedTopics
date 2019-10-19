@@ -1,27 +1,23 @@
 dist: bionic
 language: node_js
-node_js: --lts
-cache: npm
-sudo: required
+node_js:
+  - "stable"
 cache:
   directories:
   - node_modules
-  - .cache
-
-branches:
-  only:
-    - master
-
-before_install:
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local_dir: public
+  keep-history: true
+  on:
+    branch: master
+before_script:
   - npm install -g gatsby-cli gh-pages yarn
-
-install:
   - yarn
 
-before_script:
-  - git config user.name "emathgroup"
-  - git config user.email "emath.ac.cn@gmail.com"
-  - sed -i "s~git@github.com:emathgroup/emathgroup.github.io.git~https://${GITHUB_TOKEN}@github.com/emathgroup/emathgroup.github.io.git~" package.json
-
 script:
-  - npm run deploy
+  - "npm run test"
+after_success:
+  - "npm run deploy"
