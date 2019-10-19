@@ -1,7 +1,7 @@
 const config = {
     siteTitle: "数学研发论坛博客", // Site title.
     siteShortDesc: "数学研发论坛的开放博客",
-    //siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
+    siteLogo: "/logos/logo-1024.png", // Logo used for SEO and manifest.
     siteUrl: "https://emathgroup.github.io", // Domain of your website without pathPrefix.
     siteDescription: "A GatsbyJS stater with Advanced design in mind.", // Website description used for RSS feeds/meta description tag.
     siteRss: "/rss.xml", // Path to the RSS file.
