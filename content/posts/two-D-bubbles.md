@@ -228,7 +228,7 @@ e条田埂编号为E_1,E_2,…,E_m, 而对于这m条田埂并且任意确定一�
 [n=3,4,5]: https://bbs.emath.ac.cn/thread-2745-2-1.html
 [法语论坛相关讨论]: https://www.maths-forum.com/enigmes/tiers-carre-t121803.html
 [意大利语相关讨论]: http://web.tiscalinet.it/paololicheri/figure/f006x.htm
-[Martin Gardner]: "http://plouffe.fr/simon/Phys et Math/Martin Gardner - Mathemagics & Math Puzzles.pdf"
+[Martin Gardner]: http://plouffe.fr/simon/Phys%20et%20Math/Martin%20Gardner%20%2d%20Mathemagics%20%26%20Math%20Puzzles.pdf
 [总长为3.945702967267的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=78875
 [总长为4.833846643527的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16105&pid=78923
 [总长为5.406796929952的对称方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80370
