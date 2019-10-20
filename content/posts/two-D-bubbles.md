@@ -20,7 +20,7 @@ n=3, 田埂总长度可以为$\frac23+\frac{\pi}6+\sqrt{3}=1.623278144157$ （�
 n=4,田埂总长度可以为$\sqrt{2}+\sqrt{1-\sqrt{3}+\frac{\pi}3}=1.975592884782$ (我们还可以搜索到[意大利语相关讨论])
 ![s4c](../images/twodbubble/s4c.jpg)
 
-n=5, 田埂总长度可以为$2+((1+\sqrt{3})\pi-6) \sqrt{2/15((2+\sqrt{3})\pi-3(1+\sqrt{3})) }=2.502112930427$ (还可以网络找到[Martin Gardner])
+n=5, 田埂总长度可以为$2+((1+\sqrt{3})\pi-6) \sqrt{\frac{2}{15((2+\sqrt{3})\pi-3(1+\sqrt{3}))}}=2.502112930427$ (还可以网络找到[Martin Gardner])
 ![s5c](../images/twodbubble/s5c.jpg)
 
 对于单位圆形田地，在n=3时，从圆心发出三条两两夹角为120°的半径就可以等分面积，总长度为3。
@@ -228,7 +228,7 @@ e条田埂编号为E_1,E_2,…,E_m, 而对于这m条田埂并且任意确定一�
 [n=3,4,5]: https://bbs.emath.ac.cn/thread-2745-2-1.html
 [法语论坛相关讨论]: https://www.maths-forum.com/enigmes/tiers-carre-t121803.html
 [意大利语相关讨论]: http://web.tiscalinet.it/paololicheri/figure/f006x.htm
-[Martin Gardner]: http://plouffe.fr/simon/Phys et Math/Martin Gardner - Mathemagics & Math Puzzles.pdf
+[Martin Gardner]: "http://plouffe.fr/simon/Phys et Math/Martin Gardner - Mathemagics & Math Puzzles.pdf"
 [总长为3.945702967267的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=78875
 [总长为4.833846643527的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16105&pid=78923
 [总长为5.406796929952的对称方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80370
