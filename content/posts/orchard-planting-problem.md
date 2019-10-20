@@ -11,7 +11,7 @@ tags:
 
 # 简介
 
-20棵树植树问题是一个关于将20棵树(每棵树看出一个点)种在一个平面果园中，要求每行正好四棵树的行数尽量多的数学问题。
+20棵树植树问题是一个关于将20棵树(每棵树看成一个点)种在一个平面果园中，要求每行正好四棵树的行数尽量多的数学问题。
 这个问题来源于[Orchard Planting Problem], 或者英文维基百科[果树问题]上也有介绍。原始问题是要求将n棵树种在一个平面果园中，要求每行k棵树的行数尽量多。而其中20棵树每行四棵的问题不知道为何，在国内互联网广为流传。
 这个问题中[每行3棵树]的情况已经有非常好的结果: B. Grunbaum和Sloane在1974年通过复杂的数学理论（椭圆曲线）给出了很好的下界，不少于$⌊n^2/6-n/2⌋$行; 而G. Ben和陶哲轩在2013年证明了对于充分大的n,上面方法给出的已经是最优解。
 但是对于每行4棵或更多树的情况，现在我们还没有得出很好的结果。
@@ -78,21 +78,21 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 后来，我们进一步提供了一种可以[只搜索包含线的数目比较多的方案]，再次加速了搜索过程，使得我们能够解决到[17棵树]的问题。
 
 ![t15](../images/trees/t15.jpg)  
-15棵树问题的最优解
+[15棵树]问题的最优解
 
 ![t16](../images/trees/t16.jpg) 
-16棵树问题的最优解
+[16棵树]问题的最优解
 
 ![t17](../images/trees/t17.jpg)
-17棵树问题的最优解
+[17棵树]问题的最优解
 
 通过进一步找到了[一种更快速的部分判断识别一个点线关系是否存在合法的果树问题解的算法]，再次解决了[18棵树]和[19棵树]问题。
 
 ![t18](../images/trees/t18.jpg)
-18棵树问题的最优解
+[18棵树]问题的最优解
 
 ![t19](../images/trees/t19.jpg) 
-19棵树问题最优解
+[19棵树]问题最优解
 
 然后[数学研发论坛上的网友一起合作]，利用十余人拥有的计算机资源共同计算，证明了20棵树不存在24行解，从而证明23行已经是最优结果。但是，由于拥有的计算资源还不够，我们还不能找出所有的23行解。
 2019年9月，我们重新运行了以前的代码，利用计算机又找出一种和上面两种方案都不等价的[新的23行解]。
@@ -127,6 +127,15 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 
 相关结果被收集到OEIS: [A006065] [A172992] [A172993]
 
+# 理论上下界分析
+对于每一棵果树，如果经过这棵果树存在k行，每行4棵，那么这k行除了这棵公共果树，其余果树都互不相同，所以我们得出$3k\le n-1$,n是树的总数。
+累加所有果树的结果，这种计数方法将每行都重复统计四次，所以总行数最终不会超过$\lfloor\frac{(n-1)n}{12}\rfloor$。shengjianguo进一步指出，根据[单壿著的《组合几何》的结果]，可以得出总行数不超过$\lfloor\frac{(n+2)(n-3)}{14}\rfloor$。
+
+射影平面上一条直线方程可以表示为$ax+by+cz=0$,表示其中点[x : y : z] 满足直线[a: b: c]对应的方程。但是反过来，我们也可以把$ax+by+cz=0$看成经过点[a : b: c]的所有直线满足的方程。于是在这种意义下，[x : y : z]需要被看成直线的坐标（或者说对应直线方程的系数），而[a : b: c]被看成一个点。射影几何里面把上述两种看法称为互为对偶。
+于是在对偶意义下，一个点被看成直线，直线被看成点；经过一个点的直线被看成一条直线上一点；两条直线的交点被看成过两点的一条直线。
+于是果树种植问题的对偶问题就是如何找出n条直线，使得其中正好有k条直线经过的点尽量多。而对于k=4时，如果我们使用$m\times m$的标准网格以及它们构成小正方形中对角线的连线共6m-2条直线，那么除了大正方形四个顶点意外，所有其它交点都正好有四条直线经过。于是我们可以使用6m-2条直线构造出了$m^2-4$个正好4条直线经过的点。由于我们给出了k=4的果树问题的一种下界，不少于$\frac{n^2}{36}+O(n)$。考虑到这种方案中，靠近大正方形四个角的一些斜线经过的点比较少，利用率不高，去除这些斜线可以得出一个八边形模型，可以使用$14m+O(1)$条直线得出$7m^2+O(m)$个四条直线经过的交点，由此我们得出了对于k=4的果树问题的下界不小于$\frac{n^2}{24}+O(n)$.
+![g60](../images/trees/g60.png)
+
 
 [射影几何简介]: https://bbs.emath.ac.cn//thread-2117-1-1.html
 [Orchard Planting Problem]: http://mathworld.wolfram.com/Orchard-PlantingProblem.html
@@ -144,6 +153,8 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 [13棵树]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=8917&fromuid=20
 [14棵树]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=9023&fromuid=20
 [只搜索包含线的数目比较多的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=11859&fromuid=20
+[15棵树]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=11143&fromuid=20
+[16棵树]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=11188&fromuid=20
 [17棵树]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=11837&fromuid=20
 [一种更快速的部分判断识别一个点线关系是否存在合法的果树问题解的算法]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=23066&fromuid=20
 [18棵树]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=16447&fromuid=20
@@ -156,3 +167,4 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 [A006065]: https://oeis.org/A006065
 [A172992]: https://oeis.org/A172992
 [A172993]: https://oeis.org/A172993
+[单壿著的《组合几何》的结果]: https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=703&pid=20028&fromuid=20
