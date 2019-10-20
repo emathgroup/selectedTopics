@@ -70,16 +70,18 @@ F_1=\frac{\sin⁡(\theta_a)}{L_a} +\frac{\sin⁡(\theta_b)}{L_b} +\frac{\sin⁡(
  F_2=D_{a,x}+D_{b,x}+D_{c,x}=0\\
  F_3=D_{a,y}+D_{b,y}+D_{c,y}=0
 \end{cases}
-$$  (I)
+$$
+  (I)
 其中
 $$
 \begin{cases}
 D_{s,x}=\frac{x_s-x_p}{L_s}\cos⁡(\theta_s)+\frac{y_s-y_p}{L_s}\sin⁡(\theta_s )\\
 D_{s,y}=\frac{y_s-y_p}{L_s}\cos⁡(\theta_s)-\frac{x_s-x_p}{L_s}\sin⁡(\theta_s )\\
 L_s=\sqrt{(x_p-x_s )^2+(y_p-y_s )^2 }\\
-s\in \text{{a,b,c}}
+s\in {a,b,c}
 \end{cases}
 $$
+
 ![basic](../images/twodbubble/basic.jpg)
 
 上面约束条件(I)中第一条方程代表三段圆弧（或直线段）有向曲率之和为0。而后面两条方程代表了三段圆弧在P点单位切线向量之和为零向量，所以它们两两夹角都相等，均为120°（P点同时为三个单位切线向量末端构成三角形的外心和重心，所以这是一个正三角形）。
@@ -148,8 +150,8 @@ $\frac{du(\psi)}{d\psi}=\frac14\csc^2(\psi)\sec^3⁡(\psi+\frac{\pi}6)(4(1-\frac
 更进一步，我们也可以选择在限制某些内部交点位置的情况下的极小值（但是不限制交于这个点的三条分割线的曲率），于是要求三条分割线在这点两两夹角相等的约束条件可以去除，但是需要保留这三条分割线的曲率和为零这个约束条件，即sin⁡(θ_a )/L_a +sin⁡(θ_b )/L_b +sin⁡(θ_c )/L_c =0。
 而三条分割线两两夹角相等的公式形式即方程组
 $$
-\begin{cases}\sum_{s\in \text{{a,b,c}}}\frac{x_s-x_p}{L_s}\cos⁡(\theta_s)+\frac{y_s-y_p}{L_s}\sin⁡(\theta_s )=0\\
-\sum_{s\in\text{{a,b,c}}}\frac{y_s-y_p}{L_s}\cos⁡(\theta_s)-\frac{x_s-x_p}{L_s}\sin⁡(\theta_s)=0
+\begin{cases}\sum_{s\in {a,b,c}}\frac{x_s-x_p}{L_s}\cos⁡(\theta_s)+\frac{y_s-y_p}{L_s}\sin⁡(\theta_s )=0\\
+\sum_{s\in{a,b,c}}\frac{y_s-y_p}{L_s}\cos⁡(\theta_s)-\frac{x_s-x_p}{L_s}\sin⁡(\theta_s)=0
 \end{cases}
 $$
 
@@ -198,15 +200,20 @@ $\frac{∂D_{s,x}}{∂x_p}=-\frac{∂D_{s,x}}{∂x_s},\frac{∂D_{s,x}}{∂y_p}=
 $\frac{∂D_{s,y}}{∂x_s}=-\frac{\sin⁡(θ_s}{L_s} -\frac{D_{s,y} (x_s-x_p )}{L_s^2},、\frac{∂D_{s,y}}{∂y_s}=\frac{\cos⁡(θ_s)}{L_s} -\frac{D_{s,y} (y_s-y_p)}{L_s^2}$,
 $\frac{∂D_{s,y}}{∂x_p}=-\frac{∂D_{s,y}}{∂x_s},\frac{∂D_{s,y}}{∂y_p}=-\frac{∂D_{s,y}}{∂y_s }$
 $\frac{∂D_{s,x}}{∂θ_s}=D_{s,y},\frac{∂D_{s,y}}{∂θ_s}=-D_{s,x}$
-$\begin{cases}\frac{∂F_1}{∂θ_s}=\frac{cos⁡(θ_s)}{L_s}\\\frac{∂F_1}{∂x_s}=-\frac{sin⁡(θ_s ) (x_s-x_p )}{L_s^3},\frac{∂F_1}{∂y_s}=-\frac{\sin⁡(θ_s ) (y_s-y_p )}{L_s^3}\\
-\frac{∂F_1}{∂x_p}=-\sum_{s\in\text{{a,b,c}}}\frac{∂F_1}{∂x_s},\frac{∂F_1}{∂y_p}=-\sum_{s\in\text{{a,b,c}}}\frac{∂F_1}{∂y_s}\end{cases}$
+
+
+$\begin{cases}\frac{∂F_1}{∂θ_s}=\frac{cos⁡(θ_s)}{L_s}\\
+\frac{∂F_1}{∂x_s}=-\frac{sin⁡(θ_s ) (x_s-x_p )}{L_s^3},\frac{∂F_1}{∂y_s}=-\frac{\sin⁡(θ_s ) (y_s-y_p )}{L_s^3}\\
+\frac{∂F_1}{∂x_p}=-\sum_{s\in{a,b,c}}\frac{∂F_1}{∂x_s},\frac{∂F_1}{∂y_p}=-\sum_{s\in{a,b,c}}\frac{∂F_1}{∂y_s}\end{cases}$
+
+
 $\frac{∂F_2}{∂θ_s}=\frac{∂D_{s,x}}{∂θ_s}=D_{s,y},\frac{∂F_3}{∂θ_s}=\frac{∂D_{s,y}}{∂θ_s}=-D_{s,x}$
 $\frac{∂F_2}{∂x_s}=\frac{∂D_{s,x}}{∂x_s}=\frac{\cos⁡(θ_s )}{L_s} -\frac{D_{s,x} (x_s-x_p )}{L_s^2}$,$\frac{∂F_2}{∂y_s}=\frac{∂D_{s,x}}{∂y_s}=\frac{\sin⁡(θ_s )}{L_s} -\frac{D_{s,x} (y_s-y_p )}{L_s^2}$
 $\frac{∂F_3}{∂x_s}=\frac{∂D_{s,y}}{∂x_s}=-\frac{\sin⁡(θ_s )}{L_s} -\frac{D_{s,y} (x_s-x_p )}{L_s^2}$,$\frac{∂F_3}{∂y_s}=\frac{∂D_{s,y}}{∂y_s}=\frac{\cos⁡(θ_s )}{L_s} -\frac{D_{s,y} (y_s-y_p )}{L_s^2}$
-$\frac{∂F_2}{∂x_p}=\sum_{s\in\text{{a,b,c}}}\frac{∂D_{s,x}}{∂x_p}=-\sum_{s∈{a,b,c}}\frac{∂F_2}{∂x_s}$,
-$\frac{∂F_2}{∂y_p}=\sum_{s\in\text{{a,b,c}}}\frac{∂D_{s,x}}{∂y_p}=-\sum_{s∈{a,b,c}}\frac{∂F_2}{∂y_s}$,
-$\frac{∂F_3}{∂x_p}=\sum_{s\in\text{{a,b,c}}}\frac{∂D_{s,y}}{∂x_p}=-\sum_{s∈{a,b,c}}\frac{∂F_3}{∂x_s}$,
-$\frac{∂F_3}{∂y_p}=\sum_{s\in\text{{a,b,c}}}\frac{∂D_{s,y}}{∂y_p}=-\sum_{s∈{a,b,c}}\frac{∂F_3}{∂y_s}$,
+$\frac{∂F_2}{∂x_p}=\sum_{s\in{a,b,c}}\frac{∂D_{s,x}}{∂x_p}=-\sum_{s∈{a,b,c}}\frac{∂F_2}{∂x_s}$,
+$\frac{∂F_2}{∂y_p}=\sum_{s\in{a,b,c}}\frac{∂D_{s,x}}{∂y_p}=-\sum_{s∈{a,b,c}}\frac{∂F_2}{∂y_s}$,
+$\frac{∂F_3}{∂x_p}=\sum_{s\in{a,b,c}}\frac{∂D_{s,y}}{∂x_p}=-\sum_{s∈{a,b,c}}\frac{∂F_3}{∂x_s}$,
+$\frac{∂F_3}{∂y_p}=\sum_{s\in{a,b,c}}\frac{∂D_{s,y}}{∂y_p}=-\sum_{s∈{a,b,c}}\frac{∂F_3}{∂y_s}$,
 
 另外我们还要处理各种边界条件和面积约束的一阶偏导数。
 
@@ -251,9 +258,9 @@ e条田埂编号为$E_1,E_2,\dots,E_m$, 而对于这m条田埂并且任意确定
 
 另外还需要n个区域编号为$C_1,C_2,\dots,C_n$。
 
-对于每个内点$N_i$函数$a_i=\text{get_a}(N_i), b_i=\text{get_b}(N_i), c_i=\text{get_c}(N_i)$, 返回三条以内点$N_i$为起点的有向田埂，对于每个边界点$N_i$，函数$\text{get_a}(N_i)$返回以$N_i$为起点的田埂，函数$\text{get_b}$和$\text{get_c}$报错。对于每条田埂$E_i$,有函数$\text{get_start}(E_i)$和$\text{get_end}(E_i)$返回田埂的两个端点。对于每个区域$C_i$,函数$\text{get_degree}(C_i)$返回区域的顶点数目，v[i,h]=get_vertex($C_i$,h)返回区域$C_i$的第h个顶点，其中所有顶点按逆时针顺序依次排列。另外如果从$N_i$到$N_j$存在田埂，那么$\text{get_edge}(N_i,N_j)$返回这条田埂，不然报错。
+对于每个内点$N_i$函数$a_i$=get_a$(N_i)$, b_i=get_b$(N_i)$, c_i=get_c$(N_i)$, 返回三条以内点$N_i$为起点的有向田埂，对于每个边界点$N_i$，函数get_a$(N_i)$返回以$N_i$为起点的田埂，函数get_b和get_c报错。对于每条田埂$E_i$,有函数get_start$(E_i)$和get_end$(E_i)$返回田埂的两个端点。对于每个区域$C_i$,函数get_degree$(C_i)$返回区域的顶点数目，v[i,h]=get_vertex($C_i$,h)返回区域$C_i$的第h个顶点，其中所有顶点按逆时针顺序依次排列。另外如果从$N_i$到$N_j$存在田埂，那么get_edge$(N_i,N_j)$返回这条田埂，不然报错。
 
-另外函数$\text{get_x}(N_i), \text{get_y}(N_i)$ 依次返回$N_i$的横坐标和纵坐标, $\text{get_theta}(E_i)$返回$E_i$的角度$θ_i$。而显然有$\text{get_theta}(E_{-i})=- \text{get_theta}(E_i)=- θ_i$。另外我们可以使用符号$θ_{i,a}$代表$\text{get_theta}(\text{get_edge}(N_i, \text{get_a}(N_i)))$。
+另外函数get_x$(N_i)$, get_y$(N_i)$ 依次返回$N_i$的横坐标和纵坐标, get_theta$(E_i)$返回$E_i$的角度$θ_i$。而显然有get_theta$(E_{-i})=- get_theta$(E_i)$=- $θ_i$。另外我们可以使用符号$θ_{i,a}$代表get_theta(get_edge$(N_i$, get_a$(N_i)))$。
 
 于是在上面约定下，我们有2m+k+e个变量$x_1,y_1,x_2,y_2,\dots,x_m,y_m,u_1,u_2,\dots,u_k,θ_1,θ_2,\dots,θ_e$。
 
