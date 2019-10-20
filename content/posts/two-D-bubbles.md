@@ -2,7 +2,7 @@
 title: 均分田地问题
 categories: 数学
 keywords: 'bubbles'
-thumbnail: "../thumbnails/writing.png"
+thumbnail: "../thumbnails/c44.png"
 
 tags:
   - bubbles
@@ -93,6 +93,10 @@ $$
 $\tan⁡(\theta)-(r_0\sin⁡(u-\theta_0 ))/(1-r_0\cos⁡(u-\theta_0 ) )=0$  
 即$E_1=\sin(\theta)(1-\cos⁡(u) x_0-\sin⁡(u) y_0 )-\cos⁡(θ)(\sin⁡(u) x_0-\cos⁡(u) y_0)=0$ (II)
 这个条件正好就是要求田埂(UP) ̂垂直单位圆田地边界于U点。
+
+利用上面分析结论我们使用计算机将[正方形田地均分到最多14个区域]并且将[圆形田地均分到最多19个区域]但是很快我们发现英国数学家[Simon Cox]已经计算到42个区域。
+
+后来利用pari/gp我们计算出了圆形不超过43个区域情况下[50位精度的高精度结果]
 
 # 第一部分 理论分析
 现在我们可以把这个问题重新描绘为：
@@ -339,3 +343,8 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 [拉格朗日乘数法]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33469
 [极值约束条件化简]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33493
 [田地边界是圆弧构成的情况]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33478
+[正方形田地均分到最多14个区域]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80764&fromuid=20
+[圆形田地均分到最多19个区域]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80763&fromuid=20
+[Simon Cox]: http://users.aber.ac.uk/sxc/two_d_clusters.html
+[50位精度的高精度结果]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80871&fromuid=20
+
