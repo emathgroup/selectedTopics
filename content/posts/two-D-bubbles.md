@@ -45,15 +45,15 @@ zgg__最早指出，本问题[等价于二维肥皂泡稳态问题]，由此得�
 	在内部，最多三个不同的田埂共点，这时田埂之间必然两两夹角相等
 	田埂和边界接触的地方必然同边界垂直
 其中性质i)可以直接用初等方法证明。有一个大家所熟知的结论：面积一定的简单平面图形中，圆的周长最短。利用这个结论可以得出一侧为固定线段，另一侧为任意简单曲线围成的面积一定的图形中，在另一侧任意简单曲线为圆弧时，这条简单曲线长度达到最短。
-如左图所示，对于围住的面积固定的曲线BAC和固定直线段BC,我们先以线段BC为弦作出和这个图形等面积的弓形BA’C并且补充弓形BA”C形成一个完整的圆BA’CA”。于是图形BACA”和图形BA’CA”等面积，于是我们根据等面积图形中圆的周长最小可以得出(BA"C) ̂+(BA'C) ̂≤(BA"C) ̂+(BAC) ̃,所以我们可以得出(BA'C) ̂≤(BAC) ̃，得出结论i)， 于是我们得出极值条件所有田埂都是圆弧或直线段（直线段是圆弧的退化情况）。
+如左图所示，对于围住的面积固定的曲线BAC和固定直线段BC,我们先以线段BC为弦作出和这个图形等面积的弓形BA’C并且补充弓形BA”C形成一个完整的圆BA’CA”。于是图形BACA”和图形BA’CA”等面积，于是我们根据等面积图形中圆的周长最小可以得出(BA"C)+(BA'C) ̂≤(BA"C) ̂+(BAC)，所以我们可以得出(BA'C) ̂≤(BAC)，得出结论i)， 于是我们得出极值条件所有田埂都是圆弧或直线段（直线段是圆弧的退化情况）。
 于是后面我们均只需要查看所有田埂都是直线段或圆弧的情况。
 ![arc](../images/twodbubble/arc.jpg)
 
-对于其中任意一个三条田埂汇聚于一点的$P(x_p,y_p )$，设这三段田埂另一个端点分别为$A(x_a,y_a ),B(x_b,y_b ),C(x_c,y_c)$, 而三段圆弧和对应端点连线的有向夹角分别为$\theta_a,\theta_b,\theta_c$ （对应三段圆弧的弧度分别为$2\theta_a,2\theta_b,2\theta_c$）。 其中圆弧关于P点向顺时针方向凸出（也就是对应圆心落在对应直线段的逆时针位置时）对应的θ_s看成是正角度；而圆弧逆顺时针凸出时，对应的θ_s看成是负角度，比如图中所示θ_a,θ_b为负角度，θ_c为正角度。另外需要注意的是，一段田埂在一个端点处的角度为θ，那么在另外一个端点处的角度必然是-θ。
+对于其中任意一个三条田埂汇聚于一点的$P(x_p,y_p )$，设这三段田埂另一个端点分别为$A(x_a,y_a ),B(x_b,y_b ),C(x_c,y_c)$, 而三段圆弧和对应端点连线的有向夹角分别为$\theta_a,\theta_b,\theta_c$ （对应三段圆弧的弧度分别为$2\theta_a,2\theta_b,2\theta_c$）。 其中圆弧关于P点向顺时针方向凸出（也就是对应圆心落在对应直线段的逆时针位置时）对应的$\theta_s$看成是正角度；而圆弧逆顺时针凸出时，对应的$\theta_s$看成是负角度，比如图中所示$\theta_a,\theta_b$为负角度，$\theta_c$为正角度。另外需要注意的是，一段田埂在一个端点处的角度为$\theta$，那么在另外一个端点处的角度必然是$-\theta$。
 通过使用了[拉格朗日乘数法]，在固定A、B、C三点不动时，仅让P点保持运动并且让P点周围三个区域面积保持不变的情况下使三条田埂长度之和最小情况下的约束条件。
 在后面进一步把[极值约束条件化简]为
 $$
-\begin{cases}{F_1=\frac{\sin⁡(\theta_a }{L_a} +\frac{\sin⁡(theta_b )}{L_b} +\frac{\sin⁡(theta_c }{L_c} =0\\
+\begin{cases}{F_1=\frac{\sin⁡(\theta_a)}{L_a} +\frac{\sin⁡(\theta_b)}{L_b} +\frac{\sin⁡(\theta_c)}{L_c} =0\\
  F_2=D_{a,x}+D_{b,x}+D_{c,x}=0\\
  F_3=D_{a,y}+D_{b,y}+D_{c,y}=0
 \end{cases}
@@ -61,10 +61,10 @@ $$  (I)
 其中
 $$
 \begin{cases}
-D_{s,x}=\frac{x_s-x_p}{L_s}\cos⁡(theta_s)+\frac{y_s-y_p}{L_s}\sin⁡(theta_s )\\
-D_{s,y}=\frac{y_s-y_p}{L_s}\cos⁡(theta_s)-\frac{x_s-x_p}{L_s}\sin⁡(theta_s )\\
-L_s=\sqrt{(x_p-x_s )^2+(y_p-y_s )^2 )}\\
-s\in \text"{a,b,c}"
+D_{s,x}=\frac{x_s-x_p}{L_s}\cos⁡(\theta_s)+\frac{y_s-y_p}{L_s}\sin⁡(\theta_s )\\
+D_{s,y}=\frac{y_s-y_p}{L_s}\cos⁡(\theta_s)-\frac{x_s-x_p}{L_s}\sin⁡(\theta_s )\\
+L_s=\sqrt{(x_p-x_s )^2+(y_p-y_s )^2 }\\
+s\in \text{{a,b,c}}
 \end{cases}
 $$
 ![basic](../images/twodbubble/basic.jpg)
@@ -92,11 +92,11 @@ $\tan⁡(\theta)-(r_0\sin⁡(u-\theta_0 ))/(1-r_0\cos⁡(u-\theta_0 ) )=0$
 ![fermat2](../images/twodbubble/fermat2.jpg)
 对于性质iii), 同样可以采用反证法（下面的结果暂时还需要依赖数值计算结果）。如图假设这时有两条分割线AB,AC相遇于一点A而且AB,AC是同一个小区域的两条相邻的边。这个小区域分别还隔着AB和BC和另外两个小区域相邻。选择分割线上的点B、C使得AB=AC而且点B、C充分接近A点，在局部这时可以近似把AB、AC看成直线段，这时我们看看能否找到两条夹角为120°的圆弧(BD) ̂和(DC) ̂使得添加点D并且用(BD) ̂、(DC) ̂、(AD) ̅替换AB、AC后保持三个周边小区域的面积不变。如果这时有(BD) ̂+(AD) ̅+(DC) ̂<(AB) ̅+(AC) ̅,那么我们就可以通过这种替换保持各个小区域面积不变的同时减少了分割线总长度，从而得出原先的方案不是极小值方案。在∠BAC<120°时,我们让D在BC中垂线上从Fermat点移动到A点，保持圆弧BD和AD夹角为120°。当D移动到Fermat点时，显然BDC围成的小区域面积会偏小（另外两个区域的面积都增加了），而当D移动到A点时，(BD) ̂和(DC) ̂分别移动到直线段AB和AC的外侧，所以BDC围成的小区域面积会偏大（另外两个区域面积都减少了），根据中值定理，这中间必然正好存在一个D点，使得三个区域面积都和原先相等。
 ![anglecurve](../images/twodbubble/anglecurve.jpg)
-如图设∠BAD=θ,∠AEB=2ψ,其中E为圆弧(BD) ̂的圆心，经计算可以得到关系式$\ctg⁡(\theta)=\frac{2\psi-sin⁡(2\psi)+2\sin⁡(\frac{2\pi}3-2\psi)\sin^2⁡(\psi)}{4\sin^2⁡(\psi)sin^3⁡(\frac{\pi}3-\psi)}=\frac{2\psi-\sin⁡(2\psi)}{4\sin^2⁡(\psi)\sin^3⁡(\frac{\pi}3-\psi)}+\frac{\cos⁡(\frac{\pi}3-\psi)}{\sin^2⁡(\frac{\pi}3-\psi)} =u(\psi)+v(\psi)$,图上红色曲线给出了0<θ<π/3,0<ψ<π/3时θ,ψ的关系图，其中横坐标为θ，纵坐标为ψ，另外绿色曲线给出（(AB) ̅+(AC) ̅)-((BD) ̂+(AD) ̅+(DC) ̂)和(AB) ̅的比例2-(2ψ sin⁡(θ))/(sin⁡(ψ)  sin⁡(2π/3+ψ) )-sin⁡(π/3-θ-ψ)/sin⁡(2π/3+ψ) 的图像，可以看出这种情况进行替换总是可以缩短分割线总长度的。
-为了证明上图中的性质，我们计算dv(ψ)/dψ=sec⁡(ψ+π/6) (tan^2⁡〖(ψ+π/6)+sec^2⁡(ψ+π/6) 〗 )≥0, 
-du(ψ)/dψ=1/4  csc^2⁡〖(ψ)  sec^3⁡(ψ+π/6)(4(1-ψ/tan⁡(ψ) )+3(2ψ-sin⁡(2ψ) )  tan⁡(ψ+π/6) ) 〗≥0
-所以我们确认了θ,ψ是递减关系。
-另外我们还需要证明2-(2ψ sin⁡(θ))/(sin⁡(ψ)  sin⁡(2π/3+ψ) )-sin⁡(π/3-θ-ψ)/sin⁡(2π/3+ψ) ≥0即(2ψ-cos⁡(π/3-ψ)  sin⁡(ψ))/(sin⁡(ψ)  sin⁡(π/3-ψ) )≤(2-cos⁡(θ))/sin⁡(θ) 。待解决！
+如图设$\angle BAD=\theta, \angle AEB=2\psi$,其中E为圆弧(BD) ̂的圆心，经计算可以得到关系式$\tan^{-1}⁡(\theta)=\frac{2\psi-\sin⁡(2\psi)+2\sin⁡(\frac{2\pi}3-2\psi)\sin^2⁡(\psi)}{4\sin^2⁡(\psi)\sin^3⁡(\frac{\pi}3-\psi)}=\frac{2\psi-\sin⁡(2\psi)}{4\sin^2⁡(\psi)\sin^3⁡(\frac{\pi}3-\psi)}+\frac{\cos⁡(\frac{\pi}3-\psi)}{\sin^2⁡(\frac{\pi}3-\psi)} =u(\psi)+v(\psi)$,图上红色曲线给出了$0\lt \theta\lt\frac{\pi}3,0\lt\psi\lt\frac{\pi}3$时$\theta,\psi$的关系图，其中横坐标为$\theta$，纵坐标为$\psi$，另外绿色曲线给出（(AB) ̅+(AC) ̅)-((BD) ̂+(AD) ̅+(DC) ̂)和(AB) ̅的比例$2-\frac{2\psi\sin⁡(\theta)}{\sin⁡(\psi)\sin⁡(\frac{2\pi}3+\psi)}-\frac{\sin⁡(\frac{\pi}3-\theta-\psi)}{\sin⁡(\frac{2\pi}3+ψ)}$的图像，可以看出这种情况进行替换总是可以缩短分割线总长度的。
+为了证明上图中的性质，我们计算$\frac{dv(\psi)}{d\psi}=\sec⁡(\psi+\frac{\pi}6)(\tan^2⁡(\psi+\frac{\pi}6)+\sec^2⁡(\psi+\frac{\pi}6))\ge0$, 
+$\frac{du(\psi)}{d\psi}=\frac14\csc^2(\psi)\sec^3⁡(\psi+\frac{\pi}6)(4(1-\frac{\psi}{\tan⁡(\psi)})+3(2\psi-\sin⁡(2\psi))\tan⁡(\psi+\frac{\pi}6))\ge 0$,
+所以我们确认了$\theta,\psi$是递减关系。
+另外我们还需要证明$2-\frac{2\psi\sin⁡(\theta)}{\sin⁡(\psi)\sin⁡(2\pi/3+\psi)}-\frac{\sin⁡(\frac{\pi}3-\theta-\psi}{\sin⁡(\frac{2\pi}3+\psi)} \ge 0$即$\frac{2\psi-\cos⁡(\frac{\pi}3-\psi)\sin⁡(\psi)}{\sin⁡(\psi)\sin⁡(\frac{\pi}3-\psi)}\le \frac{2-\cos⁡(\theta)}{\sin⁡(\theta)}$。待解决！
 ![boundarymin](../images/twodbubble/boundarymin.jpg)
 对于性质iv)，同样假设现在有一条分割线AP和区域边界PC相遇于P点而且θ=∠CPA<90°，其中P点局部放大以后我们可以近似认为PC和PA都接近直线段。我们现在试着用垂直PC的一段圆弧(AD) ̂替换AP使得替换后保持两边小区域的面积不变。设∠ACP=ψ,我们得到条件sin⁡(ψ)/ψ=sin⁡(θ)/sin⁡(θ+ψ) ，而(AD) ̂/(AP) ̅ =(ψ sin⁡(θ))/sin⁡(ψ) =sin⁡(θ+ψ)≤1。其中去等号时要求sin⁡(ψ)/ψ=sin⁡(θ)=cos⁡(ψ)即tan⁡(ψ)=ψ只有角度为0时才可能。所以我们同样得出这时不是极小值情况。
 ![basic](../images/twodbubble/basic.jpg)
