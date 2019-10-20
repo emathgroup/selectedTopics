@@ -3,6 +3,7 @@
 title: "二十棵树最优解求解问题"
 date: "2019-10-18 05:06:57"
 thumbnail: "../thumbnails/p20.png"
+author: "mathe"
 tags: 
     - "bash"
     - "果树问题" 
