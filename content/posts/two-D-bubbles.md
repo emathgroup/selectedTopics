@@ -99,7 +99,7 @@ du(ψ)/dψ=1/4  csc^2⁡〖(ψ)  sec^3⁡(ψ+π/6)(4(1-ψ/tan⁡(ψ) )+3(2ψ-sin
 另外我们还需要证明2-(2ψ sin⁡(θ))/(sin⁡(ψ)  sin⁡(2π/3+ψ) )-sin⁡(π/3-θ-ψ)/sin⁡(2π/3+ψ) ≥0即(2ψ-cos⁡(π/3-ψ)  sin⁡(ψ))/(sin⁡(ψ)  sin⁡(π/3-ψ) )≤(2-cos⁡(θ))/sin⁡(θ) 。待解决！
 ![boundarymin](../images/bubble/boundarymin.jpg)
 对于性质iv)，同样假设现在有一条分割线AP和区域边界PC相遇于P点而且θ=∠CPA<90°，其中P点局部放大以后我们可以近似认为PC和PA都接近直线段。我们现在试着用垂直PC的一段圆弧(AD) ̂替换AP使得替换后保持两边小区域的面积不变。设∠ACP=ψ,我们得到条件sin⁡(ψ)/ψ=sin⁡(θ)/sin⁡(θ+ψ) ，而(AD) ̂/(AP) ̅ =(ψ sin⁡(θ))/sin⁡(ψ) =sin⁡(θ+ψ)≤1。其中去等号时要求sin⁡(ψ)/ψ=sin⁡(θ)=cos⁡(ψ)即tan⁡(ψ)=ψ只有角度为0时才可能。所以我们同样得出这时不是极小值情况。
-![basic](../images/bubble/basic.jpg)
+![basic](../images/twodbubble/basic.jpg)
 对于性质v)，对于三条分割线交于区域内部一点P(x_p,y_p ), 假设我们选择不调整点P和三条分割线另外一个端点A(x_a,y_a ),B(x_b,y_b ),C(x_c,y_c )的位置，但是允许调整三条分割线的曲率但是要求保持周边三个小区域的面积不变。直接采用链接[拉格朗日乘数法]中的方法，记L_a=(AP) ̅,L_b=(BP) ̅,L_c=(CP) ̅,最后可以得出取极小值时的必要条件是sin⁡(θ_a )/L_a +sin⁡(θ_b )/L_b +sin⁡(θ_c )/L_c =0,即三条分割线的有向曲率之和为0。
 
 对于边界是圆的情况，由于整个图形旋转对称，一个最优结果绕图形中心任意旋转还是最优结果。为了这种情况能够让结果唯一，我们可以选择固定一个和边界相交的分割线在便加上交点的位置，不允许移动，于是在方程中，关于这个分割线在这个点必须垂直边界的约束条件也可以删除了。
@@ -111,7 +111,7 @@ du(ψ)/dψ=1/4  csc^2⁡〖(ψ)  sec^3⁡(ψ+π/6)(4(1-ψ/tan⁡(ψ) )+3(2ψ-sin
 对于边界为单位圆的情况，绪论里面给出了边界上点的约束方程为
 E_1=sin(θ)(1-cos⁡(u) x_0-sin⁡(u) y_0 )-cos⁡(θ)(sin⁡(u) x_0-cos⁡(u) y_0)=0。
 同样对于边界为一般的圆的情况，假设边界上点为P 〖(a+r cos(u),b+r sin〗⁡〖(u))〗, 这条分界线另外一个端点为A(x_0,y_0 ), 于是PA方向向量为(x_0-a-r cos⁡(u),y_0-b-r sin⁡(u) ),这个向量顺时针旋转θ度后变为((x_0-a-r cos⁡(u) )  cos⁡(θ)+( y_0-b-r sin⁡(u) )  sin⁡(θ),(y_0-b-r sin⁡(u) )  cos⁡(θ)-(x_0-a-r cos⁡(u) )  sin⁡(θ) )和切线方向(-sin⁡(u),cos(u))垂直，所以有(x_0-a-r cos⁡(u) )  sin⁡(u)  cos⁡(θ)+( y_0-b-r sin⁡(u) )  sin⁡(u)  sin⁡(θ)-(y_0-b-r sin⁡(u) )  cos⁡(u)  cos⁡(θ)+(x_0-a-r cos⁡(u) )  cos⁡(u)  sin⁡(θ)=0, 即E_c=cos⁡(θ) ((x_0-a)  sin⁡(u)-(y_0-b)  cos⁡(u) )-sin⁡(θ) ((y_0-b)  sin⁡(u)+(x_0-a)  cos⁡(u)-r)=0。
-![straightmin](../images/bubble/straightmin.jpg)
+![straightmin](../images/twodbubble/straightmin.jpg)
 而对于边界是直线的情况，结果会更简单一些,比如对于下图边界为x=1的情况
 
 tan⁡(θ)+(y_p-y_0)/(1-x_0 )=0  , 即 E_2=sin⁡(θ) (1-x_0 )+cos⁡(θ) (y_p-y_0 )=0
@@ -120,7 +120,7 @@ tan⁡(θ)+(y_p-y_0)/(1-x_0 )=0  , 即 E_2=sin⁡(θ) (1-x_0 )+cos⁡(θ) (y_p-y
 对于一般情况，设直线边界上点为P(au+b,cu+d),于是PA方向向量为(x_0-au-b,y_0-cu-d),PA顺时针旋转θ度后变为((x_0-au-b)  cos⁡(θ)+( y_0-cu-d)  sin⁡(θ),(y_0-cu-d)  cos⁡(θ)-(x_0-au-b)  sin⁡(θ) )直线切线方向为(a,c),所以(a(x_0-au-b)  cos⁡(θ)+a(y_0-cu-d)  sin⁡(θ)+c(y_0-cu-d)  cos⁡(θ)-c(x_0-au-b)  sin⁡(θ) )=0,即E_l=cos⁡(θ) (ax_0+cy_0-ab-cd-〖(a〗^2+c^2)u)+sin⁡(θ) (ay_0-cx_0+bc-ad)=0
 第三部分 面积约束条件
 另外我们还需要提供每个区域的面积计算公式，如下图部分面积公式可以写成
-![areamin](../images/bubble/areamin.jpg) 
+![areamin](../images/twodbubble/areamin.jpg) 
 S_({a,b,c,d})=1/2 ∑_(a,b)▒〖(x_a y_b-x_b y_a-(SD_(a,b) (2θ_a-sin⁡(2θ_a )))/(4 sin^2⁡〖θ_a 〗 ))=S_ave 〗 (IV),
 其中〖SD〗_(a,b)=(x_a-x_b )^2+(y_a-y_b )^2代表两点间距离平方。
 
@@ -186,17 +186,17 @@ e条田埂编号为E_1,E_2,…,E_m, 而对于这m条田埂并且任意确定一�
 初始一种想法是对于一个可选配图，我们可以每次只调整一个内部点或一个边界点，保持这个点周围区域面积相等并且以这个点为端点的内部边界长度和达到最小。反复应用这个过程，就可以逐步逼近一个全局局部最优解。
 设f(x)=x/sin(x) ,g(x)=(2x-sin(2x))/(4sin^2 (x) )  ，于是对于只能移动一个点P和改变它和周围三点A,B,C连线的弧度时，我们得出三段弧线长度和为T=L_a f(θ_a )+L_b f(θ_b )+L_c f(θ_c ), 而这时面积约束条件为{■(S_1=1/2 (x_a y_p-y_a x_p+x_b y_a-x_a y_b+x_p y_b-x_b y_p )+(L_a^2)/2 g(θ_a )-(L_b^2)/2 g(θ_b )@S_2=1/2 (x_b y_p-y_b x_p+x_c y_b-x_b y_c+x_p y_c-x_c y_p )+(L_b^2)/2 g(θ_b )-(L_c^2)/2 g(θ_c ) )┤
 作图可以知道函数g(x)=(2x-sin(2x))/(4sin^2 (x) )在(-π,π)上是单调增函数，比如下面两图分别给出了g(x)在(-π/4,π/4)和(-3<x<3)范围内的图:
-![gfun](../images/bubble/gfun.jpg) 
-![gfun2](../images/bubble/gfun2.jpg) 
+![gfun](../images/twodbubble/gfun.jpg) 
+![gfun2](../images/twodbubble/gfun2.jpg) 
  
 所以我们可以做变量替换t_a=g(θ_a ),t_b=g(θ_b ),t_c=g(θ_c ),h(x)=f(g^(-1) (x)),于是h(x)的图像如下
-![hfun](../images/bubble/hfun.jpg) 
+![hfun](../images/twodbubble/hfun.jpg) 
 或更大范围:
-![hfun2](../images/bubble/hfun2.jpg)  
+![hfun2](../images/twodbubble/hfun2.jpg)  
 而其导函数图像如下
-![dhfun](../images/bubble/dhfun.jpg)  
+![dhfun](../images/twodbubble/dhfun.jpg)  
 或更大范围
-![dhfun2](../images/bubble/dhfun2.jpg)  
+![dhfun2](../images/twodbubble/dhfun2.jpg)  
 由于h(g(θ))=f(θ),所以h^' (g(θ))=(f^' (θ))/(g^' (θ) )=sin⁡(θ), h^" (g(θ))=(cos⁡(θ))/(g^' (θ) )，所以在区间(-π/4,π/4)中（对应-π/2≤θ≤π/2）h(x)是下凸函数。但是离开这个范围，函数就不是下凸的了。
 
 于是我们的目标是最小化T=L_a h(t_a )+L_b h(t_b )+L_c h(t_c ),而约束条件为
