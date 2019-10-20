@@ -179,51 +179,63 @@ $\frac{∂F_3}{∂y_p}=\sum_{s\in\text{{a,b,c}}}\frac{∂D_{s,y}}{∂y_p}=-\sum_
 
 另外我们还要处理各种边界条件和面积约束的一阶偏导数。
 
-(∂E_1)/∂θ= cos(θ)(1-cos⁡(u) x_0-sin⁡(u) y_0 )+sin(θ)(sin⁡(u) x_0-cos⁡(u) y_0)
-(∂E_1)/∂u= sin(θ)(sin⁡(u) x_0-cos⁡(u) y_0 )-cos⁡(θ)(cos⁡(u) x_0+sin⁡(u) y_0)
-(∂E_1)/(∂x_0 )= -sin(θ)  cos⁡(u)-cos⁡(θ)  sin⁡(u)=-sin⁡(θ+u),
-(∂E_1)/(∂y_0 )=-sin(θ)  sin⁡(u)+cos⁡(θ)  cos⁡(u)=cos⁡(θ+u)
-(∂E_2)/∂θ=cos⁡(θ) (1-x_0 )-sin⁡(θ) (y_p-y_0 )
-(∂E_2)/(∂y_p )=cos⁡(θ),(∂E_2)/(∂x_0 )=-sin⁡(θ),(∂E_2)/(∂y_0 )=-cos⁡(θ)
-(∂E_3)/∂θ=cos⁡(θ) x_0+sin⁡(θ) (y_p-y_0 )
-(∂E_3)/(∂y_p )=-cos⁡(θ),(∂E_3)/(∂x_0 )=sin⁡(θ),(∂E_3)/(∂y_0 )=cos⁡(θ)
-(∂E_4)/∂θ=cos⁡(θ) (1-y_0)+sin⁡(θ) (x_p-x_0 )
-(∂E_4)/(∂x_p )=-cos⁡(θ),(∂E_4)/(∂x_0 )=cos⁡(θ),(∂E_4)/(∂y_0 )=-sin(θ)
-(∂E_5)/∂θ=cos⁡(θ) y_0-sin⁡(θ) (x_p-x_0 )
-(∂E_5)/(∂x_p )=cos⁡(θ),(∂E_5)/(∂x_0 )=-cos⁡(θ),(∂E_5)/(∂y_0 )=sin(θ)
+$\begin{cases}
+\frac{∂E_1}{∂θ}= \cos(θ)(1-\cos⁡(u) x_0-\sin⁡(u) y_0 )+\sin(θ)(\sin⁡(u) x_0-\cos⁡(u) y_0)\\
+\frac{∂E_1}{∂u}= \sin(θ)(\sin⁡(u) x_0-\cos⁡(u) y_0 )-\cos⁡(θ)(\cos⁡(u) x_0+\sin⁡(u) y_0)\\
+\frac{∂E_1}{∂x_0}= -\sin(θ)\cos⁡(u)-\cos⁡(θ)\sin⁡(u)=-\sin⁡(θ+u)\\
+\frac{∂E_1}{∂y_0}=-\sin(θ)\sin⁡(u)+\cos⁡(θ)\cos⁡(u)=\cos⁡(θ+u)\\
+\frac{∂E_2}{∂θ}=\cos⁡(θ)(1-x_0 )-\sin⁡(θ) (y_p-y_0 )\\
+\frac{∂E_2}{∂y_p}=\cos⁡(θ)\\
+\frac{∂E_2}{∂x_0}=-\sin⁡(θ)\\
+\frac{∂E_2}{∂y_0}=-\cos⁡(θ)\\
+\frac{∂E_3}{∂θ}=\cos⁡(θ)x_0+\sin⁡(θ) (y_p-y_0 )\\
+\frac{∂E_3}{∂y_p}=-\cos⁡(θ)\\
+\frac{∂E_3}{∂x_0}=\sin⁡(θ)\\
+\frac{∂E_3}{∂y_0}=\cos⁡(θ)\\
+\frac{∂E_4}{∂θ}=\cos⁡(θ)(1-y_0)+\sin⁡(θ)(x_p-x_0 )\\
+\frac{∂E_4}{∂x_p}=-\cos⁡(θ)\\
+\frac{∂E_4}{∂x_0}=\cos⁡(θ)\\
+\frac{∂E_4}{∂y_0}=-\sin(θ)\\
+\frac{∂E_5}{∂θ}=\cos⁡(θ)y_0-\sin⁡(θ) (x_p-x_0 )\\
+\frac{∂E_5}{∂x_p}=\cos⁡(θ)\\
+\frac{∂E_5}{∂x_0}=-\cos⁡(θ)\\
+\frac{∂E_5}{∂y_0}=\sin(θ)\end{cases}$
 
 关于区域面积的偏导数，有
 
-(∂SD_(a,b))/∂x_a =2(x_a-x_b ),(∂SD_(a,b))/∂x_b =2(x_b-x_a )
-(∂SD_(a,b))/∂y_a =2(y_a-y_b ),(∂SD_(a,b))/∂y_b =2(y_b-y_a )
+$\begin{cases}\frac{∂SD_{a,b}}{∂x_a} =2(x_a-x_b )\\
+\frac{∂SD_{a,b}}{∂x_b} =2(x_b-x_a )\\
+\frac{∂SD_{a,b}}{∂y_a} =2(y_a-y_b )\\
+\frac{∂SD_(a,b)}{∂y_b} =2(y_b-y_a )\end{cases}$
 
 得出面积偏导数（区域顶点按顺序排列，d代表a前面一个点，b代表a后面一个点）
 
-∂S/∂θ_a =-(SD_(a,b) (1-θ_a ctg(θ_a )))/(2 sin^2⁡(θ_a ) )
-∂S/∂x_a =1/2 (y_b-y_d-(2θ_a-sin⁡(2θ_a ) )(x_a-x_b )/(2 sin^2⁡(θ_a) )-(2θ_d-sin⁡(2θ_d ) )(x_a-x_d )/(2 sin^2⁡(θ_d ) ))
-∂S/∂y_a =1/2 (x_d-x_b-(2θ_a-sin⁡(2θ_a ) )(y_a-y_b )/(2 sin^2⁡(θ_a ) )-(2θ_d-sin⁡(2θ_d ) )(y_a-y_d )/(2 sin^2⁡(θ_d) ))
+$\begin{cases}\frac{∂S}{∂θ_a} =-\frac{SD_{a,b} (1-θ_a ctg(θ_a ))}{2 \sin^2⁡(θ_a )}\\
+\frac{∂S}{∂x_a} =\frac12 (y_b-y_d-(2θ_a-\sin⁡(2θ_a ) )\frac{x_a-x_b }{2 sin^2⁡(θ_a)}-(2θ_d-sin⁡(2θ_d ) )\frac{x_a-x_d }{2 sin^2⁡(θ_d )})\\
+\frac{∂S}{∂y_a} =\frac12 (x_d-x_b-(2θ_a-\sin⁡(2θ_a ))\frac{y_a-y_b}{2 sin^2⁡(θ_a )}-(2θ_d-\sin⁡(2θ_d ))\frac{y_a-y_d}{2\sin^2⁡(θ_d)})\end{cases}$
 
-下面我们对m个内点进行编号为N_1,N_2,…,N_m；对k个边界点标号为N_(m+1),N_(m+2),…,N_(m+k)。
+下面我们对m个内点进行编号为$N_1,N_2,\dots,N_m$；对k个边界点标号为$N_(m+1),N_(m+2),\dots,N_(m+k)$。
 
-e条田埂编号为E_1,E_2,…,E_m, 而对于这m条田埂并且任意确定一个方向，然后使用E_(-1),E_(-2),…,E_(-m)分别代表交换这些田埂的起点和终点后得到的有向田埂。
+e条田埂编号为$E_1,E_2,\dots,E_m$, 而对于这m条田埂并且任意确定一个方向，然后使用$E_{-1},E_{-2},\dots,E_{-m}$分别代表交换这些田埂的起点和终点后得到的有向田埂。
 
-另外还需要n个区域编号为C_1,C_2,…,C_n。
+另外还需要n个区域编号为$C_1,C_2,\dots,C_n$。
 
-对于每个内点N_i函数a_i=get_a(N_i), b_i=get_b(N_i), c_i=get_c(N_i), 返回三条以内点N_i为起点的有向田埂，对于每个边界点N_i，函数get_a(N_i)返回以N_i为起点的田埂，函数get_b会get_c报错。对于每条田埂E_i,有函数get_start(E_i)和get_end(E_i)返回田埂的两个端点。对于每个区域C_i,函数get_degree(C_i)返回区域的顶点数目，v[i,h]=get_vertex(C_i,h)返回区域C_i的第h个顶点，其中所有顶点按逆时针顺序依次排列。另外如果从N_i到N_j存在田埂，那么get_edge(N_i,N_j)返回这条田埂，不然报错。
+对于每个内点$N_i$函数$a_i=\text{get_a}(N_i), b_i=\text{get_b}(N_i), c_i=\text{get_c}(N_i)$, 返回三条以内点$N_i$为起点的有向田埂，对于每个边界点$N_i$，函数$\text{get_a}(N_i)$返回以$N_i$为起点的田埂，函数$\text{get_b}$和$\text{get_c}$报错。对于每条田埂$E_i$,有函数$\text{get_start}(E_i)$和$\text{get_end}(E_i)$返回田埂的两个端点。对于每个区域$C_i$,函数$\text{get_degree}(C_i)$返回区域的顶点数目，v[i,h]=get_vertex($C_i$,h)返回区域$C_i$的第h个顶点，其中所有顶点按逆时针顺序依次排列。另外如果从$N_i$到$N_j$存在田埂，那么$\text{get_edge}(N_i,N_j)$返回这条田埂，不然报错。
 
-另外函数get_x(N_i), get_y(N_i) 依次返回N_i的横坐标和纵坐标, get_theta(E_i) 返回E_i的角度θ_i。而显然有get_theta(E_(-i))=- get_theta(E_i)=- θ_i。另外我们可以使用符号θ_(i,a)代表get_theta(get_edge(N_i, get_a(N_i)))。
-于是在上面约定下，我们有2m+k+e个变量x_1,y_1,x_2,y_2,…,x_m,y_m,u_1,u_2,…,u_k,θ_1,θ_2,…,θ_e。
+另外函数$\text{get_x}(N_i), \text{get_y}(N_i)$ 依次返回$N_i$的横坐标和纵坐标, $\text{get_theta}(E_i)$返回$E_i$的角度$θ_i$。而显然有$\text{get_theta}(E_{-i})=- \text{get_theta}(E_i)=- θ_i$。另外我们可以使用符号$θ_{i,a}$代表$\text{get_theta}(\text{get_edge}(N_i, \text{get_a}(N_i)))$。
+
+于是在上面约定下，我们有2m+k+e个变量$x_1,y_1,x_2,y_2,\dots,x_m,y_m,u_1,u_2,\dots,u_k,θ_1,θ_2,\dots,θ_e$。
 
 另外对于每个内点N_i,我们有方程
 
-{(F_1 (N_i,a_i,b_i,c_i,θ_(i,a),θ_(i,b),θ_(i,c) )=0
-F_2 (N_i,a_i,b_i,c_i,θ_(i,a),θ_(i,b),θ_(i,c) )=0
-F_3 (N_i,a_i,b_i,c_i,θ_(i,a),θ_(i,b),θ_(i,c))=0)┤,
-简记为{(F_1^((i))=0@F_2^((i))=0@F_3^((i))=0)┤
+$\begin{cases}(F_1 (N_i,a_i,b_i,c_i,θ_(i,a),θ_(i,b),θ_(i,c) )=0\\
+F_2 (N_i,a_i,b_i,c_i,θ_(i,a),θ_(i,b),θ_(i,c) )=0\\
+F_3 (N_i,a_i,b_i,c_i,θ_(i,a),θ_(i,b),θ_(i,c))=0\end{cases}$,
+简记为$\begin{cases{(F_1^{(i)}=0\\F_2^{(i)}=0\\F_3^{(i)}=0\end{cases}$
 
-对于每个边界点N_i，我们有方程E^((i)) (θ,u,x_0,y_0 )=0
+对于每个边界点$N_i$，我们有方程$E^{(i)} (θ,u,x_0,y_0 )=0$
 
-对于每个区域（淘汰最后一个区域），我们有方程1/2 ∑_(a,b)(x_a y_b-x_b y_a-(SD_(a,b) (2θ_a-sin⁡(2θ_a )))/(4 sin^2⁡(θ_a) ))=S_ave 
+对于每个区域（淘汰最后一个区域），我们有方程$\frac12 \sum_{a,b}(x_a y_b-x_b y_a-\frac{SD_{a,b} (2θ_a-\sin⁡(2θ_a ))}{4\sin^2⁡(θ_a) })=S_ave$ 
 实际计算发现，使用上面牛顿迭代法进行计算，需要初始值选择的比较接近最总精确值，不然结果会很快发散。但是对于选择比较好的初始值，会快速接近准确值并且达到很高的精度。
 
 为此，我们需要寻找另外一种方法先找到一些较好的近似值，然后再次使用上面的牛顿迭代法获得精确值。
@@ -231,14 +243,15 @@ F_3 (N_i,a_i,b_i,c_i,θ_(i,a),θ_(i,b),θ_(i,c))=0)┤,
 # 迭代法设计方案
 初始一种想法是对于一个可选配图，我们可以每次只调整一个内部点或一个边界点，保持这个点周围区域面积相等并且以这个点为端点的内部边界长度和达到最小。反复应用这个过程，就可以逐步逼近一个全局局部最优解。
 
-设f(x)=x/sin(x) ,g(x)=(2x-sin(2x))/(4sin^2 (x) )  ，于是对于只能移动一个点P和改变它和周围三点A,B,C连线的弧度时，我们得出三段弧线长度和为T=L_a f(θ_a )+L_b f(θ_b )+L_c f(θ_c ), 而这时面积约束条件为{■(S_1=1/2 (x_a y_p-y_a x_p+x_b y_a-x_a y_b+x_p y_b-x_b y_p )+(L_a^2)/2 g(θ_a )-(L_b^2)/2 g(θ_b )@S_2=1/2 (x_b y_p-y_b x_p+x_c y_b-x_b y_c+x_p y_c-x_c y_p )+(L_b^2)/2 g(θ_b )-(L_c^2)/2 g(θ_c ) )┤
-作图可以知道函数g(x)=(2x-sin(2x))/(4sin^2 (x) )在(-π,π)上是单调增函数，比如下面两图分别给出了g(x)在(-π/4,π/4)和(-3<x<3)范围内的图:
+设$f(x)=\frac{x}{\sin(x)} ,g(x)=\frac{2x-\sin(2x)}{4\sin^2 (x)}$，于是对于只能移动一个点P和改变它和周围三点A,B,C连线的弧度时，我们得出三段弧线长度和为$T=L_a f(θ_a )+L_b f(θ_b )+L_c f(θ_c )$, 而这时面积约束条件为$\begin{cases}(S_1=\frac12 (x_a y_p-y_a x_p+x_b y_a-x_a y_b+x_p y_b-x_b y_p )+\frac{L_a^2}2 g(θ_a )-\frac{L_b^2}2 g(θ_b )\\S_2=\frac12 (x_b y_p-y_b x_p+x_c y_b-x_b y_c+x_p y_c-x_c y_p )+\frac{L_b^2}2 g(θ_b )-\frac{L_c^2}2 g(θ_c )\end{cases}$
+
+作图可以知道函数$g(x)=\frac{2x-\sin(2x)}{4\sin^2 (x)}$在(-π,π)上是单调增函数，比如下面两图分别给出了g(x)在$(-\frac{\pi}4,\fracπ4)$和(-3<x<3)范围内的图:
 
 ![gfun](../images/twodbubble/gfun.jpg) 
 
 ![gfun2](../images/twodbubble/gfun2.jpg) 
  
-所以我们可以做变量替换t_a=g(θ_a ),t_b=g(θ_b ),t_c=g(θ_c ),h(x)=f(g^(-1) (x)),于是h(x)的图像如下
+所以我们可以做变量替换$t_a=g(θ_a ),t_b=g(θ_b ),t_c=g(θ_c ),h(x)=f(g^{-1} (x))$,于是h(x)的图像如下
 
 ![hfun](../images/twodbubble/hfun.jpg) 
 
@@ -254,7 +267,7 @@ F_3 (N_i,a_i,b_i,c_i,θ_(i,a),θ_(i,b),θ_(i,c))=0)┤,
 
 ![dhfun2](../images/twodbubble/dhfun2.jpg)  
 
-由于h(g(θ))=f(θ),所以h^' (g(θ))=(f^' (θ))/(g^' (θ) )=sin⁡(θ), h^" (g(θ))=(cos⁡(θ))/(g^' (θ) )，所以在区间(-π/4,π/4)中（对应-π/2≤θ≤π/2）h(x)是下凸函数。但是离开这个范围，函数就不是下凸的了。
+由于$h(g(θ))=f(θ)$,所以$h^{\prime}(g(θ))=\frac{f^{\prime}(θ)}{g^{\prime} (θ)}=\sin⁡(θ), h^{\prime\prime}(g(θ))=\frac{\cos⁡(θ)}{g^{\prime}(θ)}$，所以在区间$(-\frac π4,\frac π4)$中（对应$-\frac π2\le θ\le \frac π2$）h(x)是下凸函数。但是离开这个范围，函数就不是下凸的了。
 
 于是我们的目标是最小化$T=L_a h(t_a )+L_b h(t_b )+L_c h(t_c )$,而约束条件为
 $\begin{cases}(S_a=\frac12(x_a y_p-y_a x_p+x_p y_b-x_b y_p-L_a^2 t_a+L_b^2 t_b )\\S_b=\frac12 (x_c y_p-y_c x_p+x_p y_b-x_b y_p-L_c^2 t_c+L_b^2 t_b ) \end{cases}$
