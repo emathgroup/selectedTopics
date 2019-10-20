@@ -140,7 +140,7 @@ $\frac{du(\psi)}{d\psi}=\frac14\csc^2(\psi)\sec^3⁡(\psi+\frac{\pi}6)(4(1-\frac
 对于性质iv)，同样假设现在有一条分割线AP和区域边界PC相遇于P点而且θ=∠CPA<90°，其中P点局部放大以后我们可以近似认为PC和PA都接近直线段。我们现在试着用垂直PC的一段圆弧(AD) ̂替换AP使得替换后保持两边小区域的面积不变。设∠ACP=ψ,我们得到条件$\frac{\sin⁡(\psi)}{\psi}=\frac{\sin⁡(\theta)}{\sin⁡(\theta+\psi)}$ ，而(AD) ̂/(AP) ̅ =(ψ sin⁡(θ))/sin⁡(ψ) =sin⁡(θ+ψ)≤1。其中去等号时要求sin⁡(ψ)/ψ=sin⁡(θ)=cos⁡(ψ)即tan⁡(ψ)=ψ只有角度为0时才可能。所以我们同样得出这时不是极小值情况。
 ![basic](../images/twodbubble/basic.jpg)
 
-对于性质v)，对于三条分割线交于区域内部一点P(x_p,y_p ), 假设我们选择不调整点P和三条分割线另外一个端点A(x_a,y_a ),B(x_b,y_b ),C(x_c,y_c )的位置，但是允许调整三条分割线的曲率但是要求保持周边三个小区域的面积不变。直接采用链接[拉格朗日乘数法]中的方法，记L_a=(AP) ̅,L_b=(BP) ̅,L_c=(CP) ̅,最后可以得出取极小值时的必要条件是sin⁡(θ_a )/L_a +sin⁡(θ_b )/L_b +sin⁡(θ_c )/L_c =0,即三条分割线的有向曲率之和为0。
+对于性质v)，对于三条分割线交于区域内部一点$P(x_p,y_p )$, 假设我们选择不调整点P和三条分割线另外一个端点$A(x_a,y_a ),B(x_b,y_b ),C(x_c,y_c )$的位置，但是允许调整三条分割线的曲率但是要求保持周边三个小区域的面积不变。直接采用链接[拉格朗日乘数法]中的方法，记L_a=(AP) ̅,L_b=(BP) ̅,L_c=(CP) ̅,最后可以得出取极小值时的必要条件是$\frac{\sin⁡(θ_a)}{L_a} +\frac{\sin⁡(θ_b)}{L_b} +\frac{\sin⁡(θ_c)}{L_c} =0$,即三条分割线的有向曲率之和为0。
 
 对于边界是圆的情况，由于整个图形旋转对称，一个最优结果绕图形中心任意旋转还是最优结果。为了这种情况能够让结果唯一，我们可以选择固定一个和边界相交的分割线在便加上交点的位置，不允许移动，于是在方程中，关于这个分割线在这个点必须垂直边界的约束条件也可以删除了。
 
@@ -328,6 +328,9 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 
 另外，理论上划分过程允许出现一个只有一条内部边界的子区域（和另外一条外部边界围成）。但是直觉上这种区域很难成为最优解，所以我们的搜索代码直接放弃了这种情况。
 
+这种搜索方法在搜索的次数足够充足时已经可以有[极大的概率找到最优结果]，而对于n很小的几个数据我们提交到了OEIS
+[A307234] [A307235] [A307237] [A307238]
+
 [均分田地问题]: https://bbs.emath.ac.cn/thread-2745-1-1.html
 [Plateau's laws]: https://en.wikipedia.org/wiki/Plateau%27s_laws
 [n=3,4,5]: https://bbs.emath.ac.cn/thread-2745-2-1.html
@@ -348,4 +351,8 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 [圆形田地均分到最多19个区域]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80763&fromuid=20
 [Simon Cox]: http://users.aber.ac.uk/sxc/two_d_clusters.html
 [50位精度的高精度结果]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80871&fromuid=20
-
+[极大的概率找到最优结果]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80811&fromuid=20
+[A307234]: https://oeis.org/A307234
+[A307235]: https://oeis.org/A307235
+[A307237]: https://oeis.org/A307237
+[A307238]: https://oeis.org/A307238
