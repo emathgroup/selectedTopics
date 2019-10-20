@@ -204,18 +204,21 @@ e条田埂编号为E_1,E_2,…,E_m, 而对于这m条田埂并且任意确定一�
 ![dhfun2](../images/twodbubble/dhfun2.jpg)  
 由于h(g(θ))=f(θ),所以h^' (g(θ))=(f^' (θ))/(g^' (θ) )=sin⁡(θ), h^" (g(θ))=(cos⁡(θ))/(g^' (θ) )，所以在区间(-π/4,π/4)中（对应-π/2≤θ≤π/2）h(x)是下凸函数。但是离开这个范围，函数就不是下凸的了。
 
-于是我们的目标是最小化T=L_a h(t_a )+L_b h(t_b )+L_c h(t_c ),而约束条件为
-{■(S_a=1/2 (x_a y_p-y_a x_p+x_p y_b-x_b y_p-L_a^2 t_a+L_b^2 t_b )@S_b=1/2 (x_c y_p-y_c x_p+x_p y_b-x_b y_p-L_c^2 t_c+L_b^2 t_b ) )┤
-于是我们可以从后面两个约束条件中先分别解出t_a,t_c代入目标函数T,变成一个只含有三个变参x_p,y_p,t_b的最小化问题。
+于是我们的目标是最小化$T=L_a h(t_a )+L_b h(t_b )+L_c h(t_c )$,而约束条件为
+$\begin{cases}(S_a=\frac12(x_a y_p-y_a x_p+x_p y_b-x_b y_p-L_a^2 t_a+L_b^2 t_b )\\S_b=\frac12 (x_c y_p-y_c x_p+x_p y_b-x_b y_p-L_c^2 t_c+L_b^2 t_b ) \end{cases}$
+于是我们可以从后面两个约束条件中先分别解出$t_a,t_c$代入目标函数T,变成一个只含有三个变参$x_p,y_p,t_b$的最小化问题。
 于是
-{█(∂T/(∂x_p )=(∂L_a)/(∂x_p ) h(t_a )+(∂L_b)/(∂x_p ) h(t_b )+(∂L_c)/(∂x_p ) h(t_c )+L_a h^' (t_a )  (∂t_a)/(∂x_p )+L_c h^' (t_c )  (∂t_c)/(∂x_p )@∂T/(∂y_p )=(∂L_a)/(∂y_p ) h(t_a )+(∂L_b)/(∂y_p ) h(t_b )+(∂L_c)/(∂y_p ) h(t_c )+L_a h^' (t_a )  (∂t_a)/(∂y_p )+L_c h^' (t_c )  (∂t_c)/(∂y_p )@∂T/(∂t_b )=L_a h^' (t_a )  (∂t_a)/(∂t_b )+L_b h^' (t_b )+L_c h^' (t_c )  (∂t_c)/(∂t_b ))┤
+$\begin{cases}\frac{\partial T}{\partial x_p}=\frac{\partial L_a}{\partial x_p} h(t_a )+\frac{\partial L_b}{\partial x_p} h(t_b )+\frac{\partial L_c}{\partial x_p}h(t_c )+L_a h^{\prime} (t_a ) \frac{\partial t_a}{\partial x_p}+L_c h^{\prime} (t_c)\frac{\partial t_c}{\partial x_p}\\
+\frac{\partial T}{\partial y_p}=\frac{\partial L_a}{\partial y_p}h(t_a )+\frac{\partial L_b}{\partial y_p} h(t_b )+\frac{\partial L_c}{\partial y_p} h(t_c )+L_a h^{\prime} (t_a ) \frac{\partial t_a}{\partial y_p}+L_c h^{\prime} (t_c ) \frac{\partial t_c}{\partial y_p}\\\frac{\partial T}{\partial t_b}=L_a h^{\prime} (t_a )  \frac{\partial t_a}{\partial t_b}+L_b h^{\prime} (t_b )+L_c h^{\prime} (t_c )  \frac{\partial t_c}{\partial t_b}
+\end{cases}$
 
+其中$\begin{cases}\frac{\partial t_a}{\partial x_p}=\frac{(-y_a+y_b )+2(x_a-x_p ) t_a-2(x_b-x_p ) t_b}{L_a^2}\\\frac{\partial t_a}{\partial y_p}=\frac{(x_a-x_b )+2(y_a-y_p ) t_a-2(y_b-y_p)t_b}{L_a^2}\\ \frac{\partial t_a}{\partial t_b}=\frac{L_b^2}{L_a^2}\end{cases}$, 
+$\begin{cases}\frac{\partial t_c}{\partial x_p}=\frac{(-y_c+y_b )+2(x_c-x_p ) t_c-2(x_b-x_p ) t_b}{L_c^2}\\\frac{\partial t_c}{\partial y_p}=\frac{(x_c-x_b )+2(y_c-y_p ) t_c-2(y_b-y_p)t_b}{L_c^2}\\\frac{\partial t_c}{\partial t_b}=\frac{L_b^2}{L_c^2}\end{cases}$
+$\frac{\partial L_s}{\partial x_p}=\frac{x_p-x_s}{L_s} ,\frac{\partial L_s}{\partial y_p}=\frac{y_p-y_s}{L_s}$ 
+由于牛顿迭代法无法收敛，我们尝试使用梯度递降法。对于设定的参数λ,我们使用迭代法
+$\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\frac{\partial L_c}{\partial y_p}\\t_b=t_b-\lambda\frac{\partial L_c}{\partial t_b}\end{cases}$
+然后根据面积公式计算出新的$t_a,t_c$。
 
-其中{█((∂t_a)/(∂x_p )=((-y_a+y_b )+2(x_a-x_p ) t_a-2(x_b-x_p ) t_b)/(L_a^2 )@(∂t_a)/(∂y_p )=((x_a-x_b )+2(y_a-y_p ) t_a-2(y_b-y_p)t_b)/(L_a^2 )@(∂t_a)/(∂t_b )=(L_b^2)/(L_a^2 ))┤, {█((∂t_c)/(∂x_p )=((-y_c+y_b )+2(x_c-x_p ) t_c-2(x_b-x_p ) t_b)/(L_c^2 )@(∂t_c)/(∂y_p )=((x_c-x_b )+2(y_c-y_p ) t_c-2(y_b-y_p)t_b)/(L_c^2 )@(∂t_c)/(∂t_b )=(L_b^2)/(L_c^2 ))┤
-(∂L_s)/(∂x_p )=(x_p-x_s)/L_s ,(∂L_s)/(∂y_p )=(y_p-y_s)/L_s 
-由于牛顿迭代法无法收敛，我们尝试le使用梯度递降法。对于设定的参数λ,我们使用迭代法
-{█(x_p=x_p-λ (∂L_c)/(∂x_p )@y_p=y_p-λ (∂L_c)/(∂y_p )@t_b=t_b-λ (∂L_c)/(∂t_b ))┤
-然后根据面积公式计算出新的t_a,t_c。
 再计算中发现存在大量马鞍点。在这些马鞍点附近，由于各一阶导数接近0，会导致计算结果停留在不是局部最优的马鞍点。
 为此，我们在一阶导数均非常接近0时，继续计算其Hessian矩阵。如果这个点是局部最优点，那么其Hessian矩阵应该是非负定的，不然其必然存在负特征值，沿着对应特征向量方向就可以找到更优的点。
 
