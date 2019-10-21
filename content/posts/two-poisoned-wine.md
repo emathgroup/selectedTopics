@@ -322,6 +322,7 @@ G HI EF AB DEI CFI ADH BCH ACE BDF CDG AFHI BEHI CEGH DFGH AEGI BFGI
 
 ![wine](../images/poisoned/wine.png)
 
+点击下载[进化版本代码]和[最终数据]
 
 [其中1桶是毒酒]: http://www.naokr.com/ask/29
 [两桶毒酒问题]: https://bbs.emath.ac.cn/thread-1511-1-1.html
@@ -348,3 +349,5 @@ G HI EF AB DEI CFI ADH BCH ACE BDF CDG AFHI BEHI CEGH DFGH AEGI BFGI
 [9人最多只能识别17瓶]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1511&pid=74188&fromuid=20
 [10人22瓶]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1511&pid=74396&fromuid=20
 [基本搜索源码]: ../attached/code1.cpp
+[进化版本代码]: ../attached/code2.cpp
+[最终数据]: ../attached/poisonall.txt
