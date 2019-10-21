@@ -417,5 +417,5 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 [A307235]: https://oeis.org/A307235
 [A307237]: https://oeis.org/A307237
 [A307238]: https://oeis.org/A307238
-[关键点的坐标和圆弧角度的高精度结果]:../thumbnails/allbest.tgz
-[已知最优结果的高精度表示]: 
+[已知最优结果的高精度表示]: ../thumbnails/allbest.tgz
+ 
