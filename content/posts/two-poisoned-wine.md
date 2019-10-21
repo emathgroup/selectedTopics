@@ -2,7 +2,7 @@
 title: 两瓶毒酒问题
 categories: 数学
 keywords: 'combination,poisoned-wine'
-thumbnail: "../thumbnails/writing.png"
+thumbnail: "../thumbnails/bottle.png"
 
 tags:
   - combination
