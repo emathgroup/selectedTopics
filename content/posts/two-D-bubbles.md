@@ -381,7 +381,7 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 41:18.5938646562158577835524288084597187124762706151280
 42:18.8489703098223545147309884016725110683781594277071
 43:19.0920949918223182048671666134662299991492610140510
-并且进一步经过长时间计算得出44~52个区域的划分图，可以看出对于这些结果蜂窝现象已经很明显了。
+并且进一步经过长时间计算得出[44~52个区域的划分图]，可以看出对于这些结果蜂窝现象已经很明显了。
 ![c44](../thumbnails/c44.png)
 ![c45](../images/c45.png)
 ![c46](../images/c46.png)
@@ -418,4 +418,4 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 [A307237]: https://oeis.org/A307237
 [A307238]: https://oeis.org/A307238
 [已知最优结果的高精度表示]: ../thumbnails/allbest.tgz
- 
+[44~52个区域的划分图]: ../thumbnails/best44to52.tgz
