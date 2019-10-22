@@ -120,4 +120,4 @@ Factor(n)/n=11
 [shshsh_0510]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=361&pid=3455&fromuid=20
 [无心人]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=361&pid=3470&fromuid=20
 [J.K. Andersen]: https://www.primepuzzles.net/puzzles/puzz_472.htm
-[更多的结果]: ../attached/andersen.txt
+[更多的结果]: ../attached/anderson.txt
