@@ -12,7 +12,7 @@ tags:
 #简介
 medie2005[在csdn论坛提出一个问题]:
 
-设一个合数n的素因子分解式为$S(n)=p_1^{c_1}*p_2^{c_2}*...*p_i^{c_i}$. ( $p_1\lt p_2\lt\dots\lt p_i$ ) 
+设一个合数n的素因子分解式为$S(n)=p_1^{c_1}p_2^{c_2}\dots p_i^{c_i}$. ( $p_1\lt p_2\lt\dots\lt p_i$ ) 
 将S(n)全部展开,形成如下形式: 
 
 $(p_1\times\dots\times p_1) \times (p_2\times\dots\times p_2) \times (p_3\times\dots\times p_3) \times\dots\times (p_i\times\dots\times p_i)$. 
@@ -20,13 +20,14 @@ $(p_1\times\dots\times p_1) \times (p_2\times\dots\times p_2) \times (p_3\times\
 再提取上面形式的各个素因子,得到如下形式: 
 
 $p_1\dots p_1p_2\dots p_2p_3\dots p_3\dots p_i\dots p_i$ 
+
 ($c_1$个$p_1$)($c_2$个$p_2$)($c_3$个$p_3$)($c_i$个$p_i$) 
 
 顺次连接上面的素因子,得到了一个10进制数: 
 
-$\bar{p_1\dots p_1p_2\dots p_2p_3\dots p_3\dots p_i\dots p_i}$ 
+$\overline{p_1\dots p_1p_2\dots p_2p_3\dots p_3\dots p_i\dots p_i}$ 
 
-记为$Factor(n)=\bar{p_1\dots p_1p_2\dots p_2p_3\dots p_3\dots p_i\dots p_i}$. 
+记为$Factor(n)=\overline{p_1\dots p_1p_2\dots p_2p_3\dots p_3\dots p_i\dots p_i}$. 
 
 比如:$n=20=2\times 2\times 5, S(20)=2\times 2\times 5$. 
 于是Factor(20)=225. 
@@ -55,10 +56,10 @@ $21757820799 = 3\times 11\times 13\times 683\times 74257$其中$Factor(n)=311136
 
 关于CSDN Number是不是只有有限个， mathe给出的估计恰恰相反，[应该有无穷个]
 
-假设n是一个候选数，那么通过n的所有素因子排列，我们可以得到另外一个大于n的数m,如果我们看成m是否n的倍数完全随机，那么m是n的倍数的概率应该是$1/n$.通过这个想法，
+假设n是一个候选数，那么通过n的所有素因子排列，我们可以得到另外一个大于n的数m,如果我们看成m是否n的倍数完全随机，那么m是n的倍数的概率应该是$\frac 1 n$.通过这个想法，
 我们可以估计$N$以内csdn数目的期望值应该为
-$\sum_{n<=N, n=p_1^{a_1} p_2^{a_2} ...p_t^{a_t}, t>=3} 1/n$, 其中求和式种n至少有三个素因子，而且n不是2和5的倍数。
-可以看出，这个数据在$N$比较小时不会很大(显然远远小于$\sum_{n=1}^N 1/n ~= log(N)$)
+$\sum_{n\le N, n=p_1^{a_1} p_2^{a_2} ...p_t^{a_t}, t>=3} \frac 1n$, 其中求和式种n至少有三个素因子，而且n不是2和5的倍数。
+可以看出，这个数据在$N$比较小时不会很大(显然远远小于$\sum_{n=1}^N \frac 1n ~= \ln(N)$)
 但是可以证明上面的和在N趋向无穷时也趋向无穷。所以有理由相信csdn数应该是很多的，只是通常会比较大。
 
 而[一个突破口]是他认为
@@ -71,6 +72,7 @@ $\sum_{n<=N, n=p_1^{a_1} p_2^{a_2} ...p_t^{a_t}, t>=3} 1/n$, 其中求和式种n
 gxqcn从网络上找到了$10^n\pm 1$[因子分解的现成结果]
 
 无心人在2008年4月19日首先利用$10^105+1$的因子分解摘选了部分因子
+```bash
 	211
 	241
 	2161
@@ -83,6 +85,7 @@ gxqcn从网络上找到了$10^n\pm 1$[因子分解的现成结果]
 	1661378260814161
 	265212793249617641
 	18276168846821336356291
+```
 给出了[第一个巨大的CSDN Number] 211241216126899091459691909091414757129970369241166137826081416126521279324961764118276168846821336356291
 
 再后来[shshsh_0510]和[无心人]在2008年4月有陆续利用上面方法找到了一些CSDN Number。
@@ -91,11 +94,12 @@ gxqcn从网络上找到了$10^n\pm 1$[因子分解的现成结果]
 
 medie2005另外非常期望能够找到$\frac{Factor(n)}n$尽量小的结果。到现在我们还只能找到$\frac{Factor(n)}n=11$的结果
 
+```bash
 n=859 × 1058313049 × 8591058313049 
 Factor(n)=85910583130498591058313049 
          =8591058313049 × (10^13+1)
 Factor(n)/n=11 
-
+```
 而对于是否存在n使得$\frac{Factor(n)}n=3$或$\frac{Factor(n)}n=7$还是未知的问题。
 
 [在csdn论坛提出一个问题]: https://bbs.csdn.net/topics/220021599
