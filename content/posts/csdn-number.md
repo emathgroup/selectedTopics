@@ -2,7 +2,7 @@
 
 title: "寻觅CSDN Number"
 date: "2019-10-22 04:06:57"
-thumbnail: "../thumbnails/p20.png"
+thumbnail: "../thumbnails/cn.png"
 author: "mathe"
 tags: 
     - "bash"
