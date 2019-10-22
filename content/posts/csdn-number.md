@@ -21,7 +21,7 @@ $(p_1\times\dots\times p_1) \times (p_2\times\dots\times p_2) \times (p_3\times\
 
 $p_1\dots p_1p_2\dots p_2p_3\dots p_3\dots p_i\dots p_i$ 
 
-($c_1$个$p_1$)($c_2$个$p_2$)($c_3$个$p_3$)($c_i$个$p_i$) 
+($c_1$个$p_1$)($c_2$个$p_2$)($c_3$个$p_3$)$\dots$($c_i$个$p_i$) 
 
 顺次连接上面的素因子,得到了一个10进制数: 
 
@@ -66,12 +66,21 @@ $\sum_{n\le N, n=p_1^{a_1} p_2^{a_2} ...p_t^{a_t}, t>=3} \frac 1n$, 其中求和
 
 不过另外一方面，我觉得我们可以通过构造法得出一些特殊的解。
 我们首先可以寻找一些形式如$a*10^b+1$的合数，其中a很小，而合数的因子数目尽量多。
-找到这样的合数以后，我们将这个合数的部分素因子按顺序排序，如果得到结果能够形成一个$a*p$形式的数，其中p为b位素数，我们就可以得到一个解。
+找到这样的合数以后，我们将这个合数的部分素因子按顺序排序，如果得到结果能够形成一个$a\times p$形式的数，其中p为b位素数，我们就可以得到一个解。
 特别的对于a=1，我们选择b为适当的合数应该会比较好，比如a=1,b=15就很可能有解.
+
+gxqcn对上面苦涩难懂的内容[做了进一步解读]
+
+将 $10^b + 1$ 分解因数，假设素数 $p_1 \le p_2 \le \dots \le p_r$ 均在其中，
+如果将这$r$个素数依次排列成的十进制数恰好为一个b位素数 $P = \overline{p_1p_2\dots p_r}$ ，
+那么$n = p_1\times p_2\times\dots\times p_r\times P$ 即为解之一。
+
+因为：$Factor(n) = \overline{p_1p_2\dots p_rP} = \overline{PP} = P\times(10^b+1)$，
+所以：$\frac{Factor(n)}/{n} = \frac{P\times(10^b+1)}{p_1\timesp_2\times\dots\times p_r\times P} = \frac{10^b+1}{p_1\times p_2\times\dots\times p_r}$，
 
 gxqcn从网络上找到了$10^n\pm 1$[因子分解的现成结果]
 
-无心人在2008年4月19日首先利用$10^105+1$的因子分解摘选了部分因子
+无心人在2008年4月19日首先利用$10^{105}+1$的因子分解摘选了部分因子
 ```bash
 	211
 	241
@@ -105,6 +114,7 @@ Factor(n)/n=11
 [在csdn论坛提出一个问题]: https://bbs.csdn.net/topics/220021599
 [应该有无穷个]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=361&pid=3400&fromuid=20
 [一个突破口]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=361&pid=3393&fromuid=20
+[做了进一步解读]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=361&pid=3416&fromuid=20
 [因子分解的现成结果]: http://swox.com/~tege/repunit.html
 [第一个巨大的CSDN Number]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=361&pid=3423&fromuid=20
 [shshsh_0510]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=361&pid=3455&fromuid=20
