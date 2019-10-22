@@ -76,7 +76,7 @@ gxqcn对上面苦涩难懂的内容[做了进一步解读]
 那么$n = p_1\times p_2\times\dots\times p_r\times P$ 即为解之一。
 
 因为：$Factor(n) = \overline{p_1p_2\dots p_rP} = \overline{PP} = P\times(10^b+1)$，
-所以：$\frac{Factor(n)}/{n} = \frac{P\times(10^b+1)}{p_1\timesp_2\times\dots\times p_r\times P} = \frac{10^b+1}{p_1\times p_2\times\dots\times p_r}$，
+所以：$\frac{Factor(n)}{n} = \frac{P\times(10^b+1)}{p_1\times p_2\times\dots\times p_r\times P} = \frac{10^b+1}{p_1\times p_2\times\dots\times p_r}$，
 
 gxqcn从网络上找到了$10^n\pm 1$[因子分解的现成结果]
 
