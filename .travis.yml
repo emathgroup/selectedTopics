@@ -1,11 +1,13 @@
 dist: bionic
 language: node_js
-
+git:
+  depth: 1
 node_js:
   - "stable"
 cache:
   directories:
   - node_modules
+  - .cache
 deploy:
   provider: pages
   skip-cleanup: true
@@ -18,7 +20,7 @@ deploy:
   keep-history: true
   on:
     branch: master
-before_script:
+before_install:
   - npm install -g gatsby-cli yarn
   - yarn
 
