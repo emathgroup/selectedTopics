@@ -20,7 +20,7 @@ date: 2019-10-21 00:59:30
 现在你手上有一批用来试毒的死囚，每位死囚都按规定能收取安家费一万元(不论最后是否中毒)。
 你必须于七天后找出哪一瓶是毒酒。问如何设计方案使用最少成本？
 
-通过使用二进制表示可以轻松使用10个囚犯解决上面这个问题。但是如果把上面的问题中的一桶毒酒改为两桶，会出现什么情况呢？这个问题曾经在百度多个贴吧中出现，
+通过使用二进制表示可以轻松仅用10个囚犯解决上面这个问题，并且用信息论可以证明这已经是最优结果了。但是如果把上面的问题中的一桶毒酒改为两桶，会出现什么情况呢？同样使用信息论可以得出这时[理论下界]是19,但是实际上我们能达到的数目却远远大于19。这个问题曾经在百度多个贴吧中出现，
 后来这个[两桶毒酒问题]在数学研发论坛被深入讨论, 通过各种不同的方案，从最初构造出[使用127个囚犯的方案]到最终通过计算机搜索出一种[使用27个囚犯解决1090瓶酒的方案]
 
 ![wine](../images/poisoned/wine.png)
@@ -373,6 +373,7 @@ G HI EF AB DEI CFI ADH BCH ACE BDF CDG AFHI BEHI CEGH DFGH AEGI BFGI
 
 [一瓶有剧毒]: https://blog.csdn.net/github_38885296/article/details/78003388
 [两桶毒酒问题]: https://bbs.emath.ac.cn/thread-1511-1-1.html
+[理论下界]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1511&pid=19404&fromuid=20
 [使用127个囚犯的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1511&pid=19415&fromuid=20
 [使用27个囚犯解决1090瓶酒的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1511&pid=74510&fromuid=20
 [正方形模型]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1511&pid=19415&fromuid=20
