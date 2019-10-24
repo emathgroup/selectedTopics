@@ -72,7 +72,7 @@ B = \left(
 \end{array}
 \right)
 $$
-n轮碰撞后,
+n轮碰撞[方块之间的碰撞+墙壁反弹]之后,
 $$
 B^n = \left(
 \begin{array}{cc}
@@ -81,7 +81,7 @@ B^n = \left(
 \end{array}
 \right)
 $$
-经过n次方块之间的碰撞+墙壁反弹之后,
+也就是
 $$
 (
 \begin{array}{c}
@@ -101,4 +101,4 @@ $$
 )
 $$
 化简得到$v_2^{Final}-v_1^{Final} = -\csc(\theta)\sin(\theta +2n\theta) >0$,
-继而得到碰撞次数$N = 2n+1,  \frac{\pi}{\theta}<N<\frac{2\pi}{\theta}$[取首次速度反转的结果], 又由于$\theta\approx \tan(\theta)$ ,所以 $N \theta \approx \pi$ , 得证.
+继而得到碰撞次数$N = 2n+1,  \frac{\pi}{\theta}<N<\frac{2\pi}{\theta}$[取首次速度反转的结果], 当$\theta$接近于0时,$\theta\approx \tan(\theta)$ ,所以 $N \theta \approx \pi$ , 得证.
