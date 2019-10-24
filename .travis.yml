@@ -20,9 +20,3 @@ deploy:
   keep-history: true
   on:
     branch: master
-before_script:
-  - npm install -g gatsby-cli yarn
-script:
-  - "npm run test"
-after_success:
-  - "npm run deploy"
