@@ -12,32 +12,12 @@ tags:
 #简介
 medie2005[在csdn论坛提出一个问题]:
 
-设一个合数n的素因子分解式为$S(n)=p_1^{c_1}p_2^{c_2}\dots p_i^{c_i}$. ( $p_1\lt p_2\lt\dots\lt p_i$ ) 
-将S(n)全部展开,形成如下形式: 
-
-$(p_1\times\dots\times p_1) \times (p_2\times\dots\times p_2) \times (p_3\times\dots\times p_3) \times\dots\times (p_i\times\dots\times p_i)$. 
-
-再提取上面形式的各个素因子,得到如下形式: 
-
-$p_1\dots p_1p_2\dots p_2p_3\dots p_3\dots p_i\dots p_i$ 
-
-($c_1$个$p_1$)($c_2$个$p_2$)($c_3$个$p_3$)$\dots$($c_i$个$p_i$) 
-
-顺次连接上面的素因子,得到了一个10进制数: 
-
-$\overline{p_1\dots p_1p_2\dots p_2p_3\dots p_3\dots p_i\dots p_i}$ 
-
-记为$Factor(n)=\overline{p_1\dots p_1p_2\dots p_2p_3\dots p_3\dots p_i\dots p_i}$. 
-
-比如:$n=20=2\times 2\times 5, S(20)=2\times 2\times 5$. 
-于是Factor(20)=225. 
-
-如果对某个n,有Factor(n)%n==0成立,我们称n为一个CSDN number.(^_^,恶搞一下). 
-
+将一个合数的所有素因子从小到大排列连接成一个新的数，如果这个新的数是原数的倍数，我们称这个原数为CSDN Number.
 比如:$n=28749=3\times 7\times 37\times 37$. 
 于是Factor(28749)=373737. 
 而$\frac{373737}{28749}=13$. 
-于是28749是一个CSDN Number. 
+于是28749是一个CSDN Number.
+ 
 
 你能求出多大范围内的CSDN Number?
 
