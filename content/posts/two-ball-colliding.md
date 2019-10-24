@@ -1,8 +1,8 @@
 ---
-title: 弹性碰撞与圆周率的计算
+title: 激情碰撞中的圆周率
 categories: 数学
 keywords: 'bubbles'
-thumbnail: "../thumbnails/c44.png"
+thumbnail: "../thumbnails/pi.jpg"
 
 tags:
   - bubbles
