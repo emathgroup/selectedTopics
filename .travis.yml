@@ -16,14 +16,12 @@ deploy:
   github-token: $GITHUB_TOKEN
   local_dir: public
   email: "emath.ac.cn@gmail.com"
-  name: "emath.Robot"
+  name: "emathRobot"
   keep-history: true
   on:
     branch: master
-before_install:
+before_script:
   - npm install -g gatsby-cli yarn
-  - yarn
-
 script:
   - "npm run test"
 after_success:
