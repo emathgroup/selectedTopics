@@ -182,7 +182,7 @@ print(ABCDAEFGBEHICFHJDGIJ);
 solve([+1*D_Y-1*D_Y*I_X-1*J_Y-1*D_Y*J_Y,+1*G_Y+1*D_Y*I_X,-1+1*J_X+1*J_Y,+1+1*C_Y],[D_Y,G_Y,I_X,J_Y,J_X,C_Y]);
 print("A=(0,1,0) B=(1,0,0) C=(1,C_y,0) D=(1,D_y,0) E_x=0 E_y=0 F_x=0 F_y=1 G_x=0 H_x=1 H_y=0 I_y=0 ");
 ```
-从上面方程组我们可以手工解得C_Y=-1, J_X=1-J_Y, G_Y=-D_Y*I_X, D_Y=J_Y/(1-I_X)
+从上面方程组我们可以手工解得$\text{C_Y=-1, J_X=1-J_Y, G_Y=-D_Y*I_X, D_Y=J_Y/(1-I_X)}$
 
 11棵树6行也只有一类，含两个自由参数：
 ```bash
