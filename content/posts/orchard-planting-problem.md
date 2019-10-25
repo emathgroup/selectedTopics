@@ -164,6 +164,79 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 |24 |      $\ge 30$    |      $\ge 30$    |      $\ge 30$    |        34        |
 |25 |      $\ge 32$    |      $\ge 32$    |      $\ge 32$    |        37        |
 
+#每行四棵最优解完整列表
+8棵树一下由于太简单了，这里就不列出了。  
+下面列表或附件中每三行代表一组解，其中第一行是点线关系，每四个字母代表一行。第二行是一个需要求解的方程组，里面各个用','相隔的表达式都要求等于0。而第三行包含一些已知坐标。比如A=(1,A_y,0) 代表A是一个无穷远点，方向A_y需要从方程组求解。由于我们的代码还不能完全求解所有方程组，所以列表中可能会包含一些非法情况，比如方程组无解，或解得结果存在五点以上共线的情况等等，需要我们事后再次淘汰。
+
+比如9棵树3行的所有解只有一类，由于含有两个参数，在射影变换等价的意义下有无穷组解
+```bash
+print(ABGHCDGIEFHI);
+solve([],[]);
+print("A=(1,A_y,0) B=(1,B_y,0) C_x=0 C_y=1 D_x=0 E_x=1 E_y=0 F_y=0 G=(0,1,0) H=(1,0,0) I_x=0 I_y=0 ");
+```
+其中第二行全空代表已经没有额外约束条件，所以包含两个自由参数A_y和B_y。
+
+10棵树5行也只有一类，含两个自由参数
+```bash
+print(ABCDAEFGBEHICFHJDGIJ);
+solve([+1*D_Y-1*D_Y*I_X-1*J_Y-1*D_Y*J_Y,+1*G_Y+1*D_Y*I_X,-1+1*J_X+1*J_Y,+1+1*C_Y],[D_Y,G_Y,I_X,J_Y,J_X,C_Y]);
+print("A=(0,1,0) B=(1,0,0) C=(1,C_y,0) D=(1,D_y,0) E_x=0 E_y=0 F_x=0 F_y=1 G_x=0 H_x=1 H_y=0 I_y=0 ");
+```
+从上面方程组我们可以手工解得C_Y=-1, J_X=1-J_Y, G_Y=-D_Y*I_X, D_Y=J_Y/(1-I_X)
+
+11棵树6行也只有一类，含两个自由参数：
+```bash
+print(ABCJADEKBFGKCHIKDFHJEGIJ);
+solve([+1-1*K_X+1*I_Y*K_X,+1*D_Y-1*E_Y-1*D_Y*K_X,+1*A_Y+1*D_Y-1*E_Y,+1+1*H_Y-1*I_Y,-1+1*I_X,-1+1*E_X],[D_Y,E_Y,I_Y,K_X,A_Y,H_Y,I_X,E_X]);
+print("A_x=0 B_x=0 B_y=0 C_x=0 C_y=1 D=(1,D_y,0) F=(1,0,0) G_x=1 G_y=0 H=(1,H_y,0) J=(0,1,0) K_y=0 ");
+```
+
+12棵树时，开始出现复杂的情况了，
+首先，我们可以在复数范围得出两种点线关系不同的8行的情况，不含自由参数
+```bash
+print(ABCDAEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL);
+solve([+1-1*L_X+1*L_X*L_X,-1+1*K_X+1*L_X,-1+1*J_Y+1*L_X,+1*G_Y-1*L_X,-1+1*C_Y+1*L_X,-1+1*J_X,-1+1*I_X,-1+1*L_Y,+1*D_Y+1*L_X,-1+1*I_Y],[L_X,K_X,J_Y,G_Y,C_Y,J_X,I_X,L_Y,D_Y,I_Y]);
+print("A=(0,1,0) B=(1,0,0) C=(1,C_y,0) D=(1,D_y,0) E_x=0 E_y=0 F_x=0 F_y=1 G_x=0 H_x=1 H_y=0 K_y=0 ");
+
+print(AEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL);
+solve([+1-1*L_Y+1*L_Y*L_Y,-1+1*C_Y,+1*C_X+1*L_Y,-1+1*K_Y+1*L_Y,-1+1*L_X+1*L_Y,-1+1*D_Y,+1+1*J_Y-1*L_Y,+1+1*I_Y,-1+1*G_X+1*L_Y,-1+1*D_X+1*L_Y],[L_Y,C_Y,C_X,K_Y,L_X,D_Y,J_Y,I_Y,G_X,D_X]);
+print("A=(1,0,0) B_x=0 B_y=1 E_x=0 E_y=0 F_x=1 F_y=0 G_y=0 H=(0,1,0) I=(1,I_y,0) J=(1,J_y,0) K_x=0 ");
+```
+齐次在实数或整数范围可以有两种不同点线关系达到7行，分别含有一个和两个自由参数:
+```bash
+print(AHIJBCHKBDILCEJLDGJKEFIKFGHL);
+solve([+1*D_X-1*K_Y,-1+1*E_X+1*K_Y,+1+1*G_Y-1*K_Y,+1+1*J_Y,+1*F_Y-1*K_Y,+1*E_Y-1*K_Y,-1+1*F_X,-1+1*G_X],[D_X,E_X,G_Y,J_Y,F_Y,E_Y,F_X,G_X]);
+print("A=(1,A_y,0) B_x=0 B_y=0 C_x=0 C_y=1 D_y=0 H=(0,1,0) I=(1,0,0) J=(1,J_y,0) K_x=0 L_x=1 L_y=0 ");
+print(ABIJACDKBEFLCGILDHJLEHIKFGJK);
+solve([+1*F_Y-1*K_Y+1*E_X*K_Y,-1+1*B_X+1*F_Y,+1*F_X+1*F_Y-1*K_Y,+1*G_X-1*K_Y,+1*H_Y+1*K_Y,+1+1*J_Y,+1*E_Y-1*F_Y,+1*B_Y-1*F_Y],[E_X,F_Y,K_Y,B_X,F_X,G_X,H_Y,J_Y,E_Y,B_Y]);
+print("A_x=0 A_y=1 C_x=0 C_y=0 D=(0,1,0) G_y=0 H=(1,H_y,0) I_x=1 I_y=0 J=(1,J_y,0) K_x=0 L=(1,0,0) ");
+```
+
+13棵树9行还留下不超过6种模式（还需要再验算一下是否每种都是合法的），其中第二种有整数解:
+```bash
+print(ADEFAGHIBDGJBHKLCDKMCEILEHJMFGLMFIJK);
+solve([+1+1*M_Y+1/2*M_Y*M_Y,+2+1*L_Y+2*M_Y,+1+1*K_X,-1+1*L_X-1*M_Y,+1+1*B_X+1*M_Y,+2+1*C_Y+1*M_Y,-1+1*C_X-1*M_Y,-1+1*I_X-1*M_Y,+1*K_Y+1*M_Y,+1+1*H_Y,+1*I_Y+1*M_Y,+1*F_Y+1*M_Y],[M_Y,L_Y,K_X,L_X,B_X,C_Y,C_X,I_X,K_Y,H_Y,I_Y,F_Y]);
+print("A_x=0 A_y=1 B_y=0 D_x=0 D_y=0 E=(0,1,0) F_x=0 G_x=1 G_y=0 H=(1,H_y,0) J=(1,0,0) M=(1,M_y,0) ");
+print(ABEFAGHMBIJMCEKMCGILDFLMDGJKEHJLFHIK);
+solve([+2+1*L_Y,+1+1*L_X,-4+1*C_Y,-3+1*G_Y,-2+1*K_Y,+4+1*D_Y,+1+1*J_Y,-1+1*K_X,-1+1*H_Y,-1+1*C_X,+1+1*D_X,+1+1*F_X],[L_Y,L_X,C_Y,G_Y,K_Y,D_Y,J_Y,K_X,H_Y,C_X,D_X,F_X]);
+print("A=(1,0,0) B_x=0 B_y=0 E_x=1 E_y=0 F_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 I_y=1 J_x=0 M=(0,1,0) ");
+print(BCDEBFGHBIJKCFILCGJMDFKMDHJLEGKLEHIM);
+solve([+1-1*M_X+1*M_X*M_X,-1+1*L_X+1*M_X,-1+1*K_Y+1*M_X,+1*H_Y-1*M_X,-1+1*D_Y+1*M_X,-1+1*K_X,-1+1*J_X,-1+1*M_Y,+1*E_Y+1*M_X,-1+1*J_Y],[M_X,L_X,K_Y,H_Y,D_Y,K_X,J_X,M_Y,E_Y,J_Y]);
+print("B=(0,1,0) C=(1,0,0) D=(1,D_y,0) E=(1,E_y,0) F_x=0 F_y=0 G_x=0 G_y=1 H_x=0 I_x=1 I_y=0 L_y=0 ");
+print(AEFGAHIMBEHJBFKMCELMCGIKDGJMDHKLFIJL);
+solve([+1+1*L_Y-1*L_Y*L_Y,+1+1*D_Y-1*L_Y,-1+1*C_Y-1*L_Y,+2+1*H_Y-1*L_Y,+1+1*J_Y,-1+1*B_Y+1*L_Y,+1*L_X+1*L_Y,-1+1*J_X,+1*E_X+1*L_Y,+1*C_X+1*L_Y,-1+1*D_X,+1+1*I_Y],[L_Y,D_Y,C_Y,H_Y,J_Y,B_Y,L_X,J_X,E_X,C_X,D_X,I_Y]);
+print("A=(1,0,0) B_x=0 E_y=0 F_x=0 F_y=0 G_x=1 G_y=0 H=(1,H_y,0) I=(1,I_y,0) K_x=0 K_y=1 M=(0,1,0) ");
+print(ABLMAFGHBIJKCFILCGJMDFKMDHJLEGKLEHIM);
+solve([+1+1*M_Y+1*M_Y*M_Y,+1+1*K_X+1*M_Y,+1/3+1*B_Y-1/3*M_Y,+1+1*D_X,+1*E_X+1*M_Y,+1*J_X-1*M_Y,-1+1*C_X-1*M_Y,+1*D_Y+1*M_Y,-1+1*E_Y,-1+1*K_Y,+1*J_Y+1*M_Y,+1*H_Y+1*M_Y],[M_Y,K_X,B_Y,D_X,E_X,J_X,C_X,D_Y,E_Y,K_Y,J_Y,H_Y]);
+print("A=(0,1,0) B=(1,B_y,0) C_y=0 F_x=0 F_y=0 G_x=0 G_y=1 H_x=0 I_x=1 I_y=0 L=(1,0,0) M=(1,M_y,0) ");
+print(ABKLAGHMBIJMCDKMCGILDHJLEFLMEHIKFGJK);
+solve([+1-1*K_X*K_X,-1+1*F_Y+1*K_X,-1+1*D_Y+1*K_X,+1+1*E_Y-1*K_X,+1+1*C_Y-1*K_X,+1*I_Y-1*K_X,-1+1*E_X,-1+1*F_X,+1*G_Y+1*K_X,+1*C_X-1*K_X,+1+1*H_Y,+1*D_X-1*K_X],[K_X,F_Y,D_Y,E_Y,C_Y,I_Y,E_X,F_X,G_Y,C_X,H_Y,D_X]);
+print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x=1 L_y=0 M=(0,1,0) ");
+```
+14棵以上候选解太多了，如有需要请下载：
+[14棵数据](../attached/all14.10.out) [15棵数据](../attached/all15.12.out) [16棵数据] (../attached/all16.14.out) [17棵数据] (../attached/all17.out)
+18棵以后待续
+
 [射影几何简介]: https://bbs.emath.ac.cn//thread-2117-1-1.html
 [Orchard Planting Problem]: http://mathworld.wolfram.com/Orchard-PlantingProblem.html
 [果树问题]: https://en.wikipedia.org/wiki/Orchard-planting_problem
