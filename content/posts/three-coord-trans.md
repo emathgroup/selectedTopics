@@ -54,7 +54,7 @@ mathe两次插队指出，将三角形两个顶点通过射影变换变换为虚
 由于面积坐标形式比较复杂，众人纷纷上场，最后[wayne给出了正确的图]  
 ![ucm1](../images/tct/ucm1.png) ![ucm](../images/tct/ucm.png)  
 数学星空通过复杂的数学计算软件计算不同参数C[演化出的系列图]  
-![ucms](../images/tct/ucms.gif)  
+![umcs](../images/tct/umcs.gif)  
 后面他们又[向三次不变曲线进军]  
 ![tri](../images/tct/tri.png)  
 [复杂的轮子发现]的差不错了，mathe发现三坐标反演其实就是[等角共轭]或更精确的说是[等分共轭]。
