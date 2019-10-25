@@ -234,7 +234,7 @@ solve([+1-1*K_X*K_X,-1+1*F_Y+1*K_X,-1+1*D_Y+1*K_X,+1+1*E_Y-1*K_X,+1+1*C_Y-1*K_X,
 print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x=1 L_y=0 M=(0,1,0) ");
 ```
 14棵以上候选解太多了，如有需要请下载：
-[14棵数据](../attached/all14.10.out) [15棵数据](../attached/all15.12.out) [16棵数据] (../attached/all16.14.out) [17棵数据] (../attached/all17.out)
+[14棵数据](../attached/all14.10.out) [15棵数据](../attached/all15.12.out) [16棵数据](../attached/all16.14.out) [17棵数据](../attached/all17.out)
 18棵以后待续
 
 [射影几何简介]: https://bbs.emath.ac.cn//thread-2117-1-1.html
