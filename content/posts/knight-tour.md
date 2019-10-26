@@ -400,7 +400,7 @@ int main()
 |$9\times 8$| 7112881119092574|
 |$9\times 10$| 19381952998732022416892|
 
-不过这个数据好像忘了提交OEIS了
+可能因为数据数目太少，好像没有提交OEIS。
 
 [枚举代码]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3231&pid=37314&fromuid=20  
 [使用动态规划计数]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3231&pid=37327&fromuid=20  
