@@ -14,7 +14,7 @@ mathe于2011年5月提问
 中国象棋（9×10）棋盘上一只马从任何一个位置出发，没有重复经过所有格子最后返回起始点的不同方案有多少种？
 如果不需要返回起始点，那么又有多少种方案？
 
-KeyTo9_Fans出手，经过计算机艰难的计算，得出最终最后返回起点情况的数目为19381952998732022416892种。
+KeyTo9_Fans出手，使用计算机经过艰难的计算，得出最终最后返回起点情况的数目为19381952998732022416892种。
 但是不需要返回起点的情况复杂度太大，还没有人能够求出方案数。
 
 # 详细信息
@@ -398,8 +398,8 @@ int main()
 
 不过这个数据好像忘了提交OEIS了
 
-[枚举代码]：https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3231&pid=37314&fromuid=20
-[使用动态规划计数]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3231&pid=37327&fromuid=20
+[枚举代码]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3231&pid=37314&fromuid=20  
+[使用动态规划计数]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3231&pid=37327&fromuid=20  
 [走格子线路统计问题]: https://bbs.emath.ac.cn/thread-517-1-1.html
 [xbtianlang]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3231&pid=37375&fromuid=20
 [有1067638条回路]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3231&pid=37401&fromuid=20
