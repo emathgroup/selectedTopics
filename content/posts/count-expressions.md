@@ -34,7 +34,7 @@ $(b\times c, a, d, e)$
 所以上面分组用加减号连接最多有15种不同的可能$2^4-1$  
   
 同样，如果表达式最外层运算是乘除运算，我们考虑表达式  
-$\frac{\frac{a}{b+c}}{d\times e}}  $
+$\frac{\frac{a}{b+c}}{d\times e}$
 同样，我们可以把它改写成
 $\frac{a}{(b+c)\times d\times e}$
 类似前面，我们把这个表达式看成分组  
