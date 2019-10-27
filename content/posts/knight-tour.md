@@ -2,7 +2,7 @@
 title: 马踏棋盘计数
 categories: 算法
 keywords: 'knights'
-thumbnail: "../thumbnails/writing.png"
+thumbnail: "../images/chess.jpg"
 
 tags:
   - bubbles
