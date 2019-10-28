@@ -102,7 +102,17 @@ $T=\begin{pmatrix}t_{11}&t_{12}&...&t_{1n}\\t_{21}&t_{22}&...&t_{2n}\\...&...&..
 由于最大值必然在所有变量的边界条件取到，所以如果矩阵中一个数字不是0，那么所在列所有非零数字绝对值之和必须为1，由此得出最优解任意一列数字绝对值之和为一。  
 由此可以得到矩阵中非零数字数目最多是$\frac{(m+2)(m-1)}2+n$个。  
 
-最后经过一系列及其复杂的人机结合的运算，[得出d(3,n)的结论]
+比如用[这种方法计算d(3,4)]  
+首先我们需要列出所有列绝对值和为1，行之间正交，而且所有行向量长度相同的潜在的不等价$3\times 4$矩阵（交换两行或两列得出的矩阵认为是等价）本质上只有四种:  
+$\begin{pmatrix}-a & d& 1-g& 1\\b& -e&g & 0\\1-a-b&1-d-e&0&0\end{pmatrix}$  
+$\begin{pmatrix} -a&d&g&0\\ b&-e&1-g&0\\1-a-b&1-d-e&0&1\end{pmatrix}$  
+$\begin{pmatrix}-a&d&1-f&0\\b&1-d&0&h\\c&0&f&h-1\end{pmatrix}$  
+$\begin{pmatrix}0&f&f&0\\1-f&1-f&f-1&1-f\\ -f&0&0&f\end{pmatrix}$  
+再分别根据任意两行之间正交和行向量长度都相等可以得出约束方程求解，最后可以得出只有第一种可以使得行向量长度最大
+这时b满足方程$16b^4+8b^3-23b^2+14b-2=0$, 数字结果为$e=b=0.20490155350665129314330190383234265145$，$a=d=0.082734498297453867827044842101191253555,g=0.96486035057909231410839945902474434917$
+对应边长的平方为1.0149247893784870917727027004682468871，于是d(3,4)为这个数的1.5次方。
+
+类似经过一系列及其复杂的人机结合的运算，穷举分类d(3,n)可能出现的矩阵类型，[得出d(3,n)的结论]
 
 $n\equiv 0(mod 3)$， 最大棱长平方 $\frac n3$  
 $n\equiv 2(mod 3)$,  已知最大棱长平方$\frac{n-2}3+0.20204102886728760721086370117643443213$  
@@ -251,5 +261,6 @@ int main(int argc, char *argv[])
 [2.892895457]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15517&pid=76073&fromuid=20
 [验证了zhouguang的d(2,n)的结论]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15517&pid=76074&fromuid=20
 [尝试把方法推广到d(3,n)]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15517&pid=76077&fromuid=20
+[这种方法计算d(3,4)]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15517&pid=76144&fromuid=20
 [得出d(3,n)的结论]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15517&pid=76207&fromuid=20
 [数值验算]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15517&pid=76212&fromuid=20
