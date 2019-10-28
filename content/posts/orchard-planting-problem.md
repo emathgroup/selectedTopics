@@ -13,7 +13,7 @@ tags:
 
 20棵树植树问题是一个关于将20棵树(每棵树看成一个点)种在一个平面果园中，要求每行正好四棵树的行数尽量多的数学问题。
 这个问题来源于[Orchard Planting Problem], 或者英文维基百科[果树问题]上也有介绍。原始问题是要求将n棵树种在一个平面果园中，要求每行k棵树的行数尽量多。而其中20棵树每行四棵的问题不知道为何，在国内互联网广为流传。
-这个问题中[每行3棵树]的情况已经有非常好的结果: B. Grunbaum和Sloane在1974年通过复杂的数学理论（椭圆曲线）给出了很好的下界，不少于$⌊\frac{n^2}6-\frac{n}2⌋$行; 而G. Ben和陶哲轩在2013年证明了对于充分大的n,上面方法给出的已经是最优解。
+这个问题中[每行3棵树]的情况已经有非常好的结果: [B. Grunbaum和Sloane]在1974年通过复杂的数学理论（椭圆曲线）给出了很好的下界，不少于$1+⌊\frac{n^2}6-\frac{n}2⌋$行; 而[G. Ben和陶哲轩]在2013年证明了对于充分大的n,上面方法给出的已经是最优解。
 但是对于每行4棵或更多树的情况，现在我们还没有得出很好的结果。
 
 对于20棵树每行四颗的问题，网络上流传着一个非常漂亮多层正五角星嵌套的20行结果（计算机搜索结果），不过这个远远不是最优解
@@ -237,6 +237,8 @@ print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x
 [14棵数据](../attached/all14.10.out) [15棵数据](../attached/all15.12.out) [16棵数据](../attached/all16.14.out) [17棵数据](../attached/all17.out)
 18棵以后待续
 
+[B. Grunbaum和Sloane]: http://neilsloane.com/doc/ORCHARD/orchard.html
+[G. Ben和陶哲轩]: https://arxiv.org/abs/1208.4714
 [射影几何简介]: https://bbs.emath.ac.cn//thread-2117-1-1.html
 [Orchard Planting Problem]: http://mathworld.wolfram.com/Orchard-PlantingProblem.html
 [果树问题]: https://en.wikipedia.org/wiki/Orchard-planting_problem
