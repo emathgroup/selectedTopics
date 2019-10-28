@@ -6,7 +6,7 @@ thumbnail: "../images/supcube/tesseract3.jpg"
 
 tags:
   - bubbles
-date: 2019-10-28 03:51:34
+date: 2019-10-28 00:51:34
 ---
 
 zhouguang 提出了一个关于[超立方体的最大嵌套问题]:  
