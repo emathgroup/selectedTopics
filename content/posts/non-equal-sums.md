@@ -6,7 +6,7 @@ thumbnail: "../thumbnails/ruler.png"
 
 tags:
   - sum
-date: 2019-10-20 03:51:34
+date: 2019-10-29 03:51:34
 ---
 
 [northwolves在2010年1月提问]，如何从$1 - 10^8$范围内选出尽量多的数字，使得它们两两之和互不相等。
