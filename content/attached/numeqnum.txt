@@ -1,0 +1,67 @@
+#include <stdio.h>
+#include <algorithm>
+using namespace std;
+#include <stdlib.h>
+#define P 37
+#define M (P*(P-1))
+#define b 1
+#define R 5 //R must be primitive root of prime P
+#define D 3 //look for total P-D elements
+
+int max_diff;
+int gc,gb, ga;
+//the function assume a<=c
+int gcd(int a, int c)
+{
+    if(a==0)return c;
+    return gcd(c%a, a);
+}
+
+void dump()
+{
+    printf("a=%d, b=%d, c=%d, diff = %d\n",ga,gb,gc,max_diff);
+}
+
+int main()
+{
+    int c,i;
+    int buf[P-1];
+    int r;
+    int u,v;
+    for(c=1;c<P/2;c+=2){
+      if(gcd(c,P-1)>1)continue;
+       u=b*(P-1); v=0;
+       buf[0]=u;
+       for(i=1;i<P-1;i++){
+            u*=R;u%=M;
+            v+=c*P;v%=M;
+            buf[i]=(u+v)%M;
+       }
+       sort(buf,buf+P-1);
+       for(i=D;i<P-1;i++){
+           if(buf[i]-buf[i-D]>=max_diff){
+               max_diff=buf[i]-buf[i-D];ga=M-buf[i]+1;gb=b;gc=c;dump();
+           }
+       }
+       for(i=0;i<D;i++){
+           if(buf[i]+M-buf[P-1-D+i]>=max_diff){
+              max_diff=buf[i]+M-buf[P-1-D+i];ga=M+1-buf[i];gb=b;gc=c;dump();
+           }
+       }
+    }
+    printf("a=%d, b= %d, c=%d, min_range %d\n",ga, gb,gc, M+1-max_diff);
+    
+    u=b*(P-1);v=ga%M;
+    buf[0]=(u+v)%M;
+    for(i=1;i<P-1;i++){
+       u*=R;u%=M;
+       v+=gc*P;v%=M;
+       buf[i]=(u+v)%M;
+    }
+    sort(buf,buf+P-1);
+    for(i=0;i<P-D;i++){
+       printf("%d ",buf[i]);
+    }
+    printf("\n");
+    return 0;
+}
