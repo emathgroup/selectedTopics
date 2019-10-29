@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/emathgroup/selectedTopics.svg?branch=master)](https://travis-ci.org/emathgroup/selectedTopics)
+
 # gatsby-react-blog
 My Simple blog site with gatsby with react
 ## Installation
