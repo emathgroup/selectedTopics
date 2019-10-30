@@ -233,8 +233,11 @@ print(ABKLAGHMBIJMCDKMCGILDHJLEFLMEHIKFGJK);
 solve([+1-1*K_X*K_X,-1+1*F_Y+1*K_X,-1+1*D_Y+1*K_X,+1+1*E_Y-1*K_X,+1+1*C_Y-1*K_X,+1*I_Y-1*K_X,-1+1*E_X,-1+1*F_X,+1*G_Y+1*K_X,+1*C_X-1*K_X,+1+1*H_Y,+1*D_X-1*K_X],[K_X,F_Y,D_Y,E_Y,C_Y,I_Y,E_X,F_X,G_Y,C_X,H_Y,D_X]);
 print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x=1 L_y=0 M=(0,1,0) ");
 ```
+
 14棵以上候选解太多了，如有需要请下载：
-[14棵数据](../attached/all14.10.out) [15棵数据](../attached/all15.12.out) [16棵数据](../attached/all16.14.out) [17棵数据](../attached/all17.out)  [18棵树](../attached/all18.17.out) [所有数据openf4有限域处理结果](../attached/ocdrst.tgz) 
+<a name=fulllist></a>
+click for all best result candidate download: [所有数据openf4有限域处理结果](../attached/ocdrst.tgz) 
+
 
 [B. Grunbaum和Sloane]: http://neilsloane.com/doc/ORCHARD/orchard.html
 [G. Ben和陶哲轩]: https://arxiv.org/abs/1208.4714
