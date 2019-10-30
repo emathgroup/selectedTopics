@@ -192,7 +192,7 @@ print("A_x=0 B_x=0 B_y=0 C_x=0 C_y=1 D=(1,D_y,0) F=(1,0,0) G_x=1 G_y=0 H=(1,H_y,
 ```
 
 12棵树时，开始出现复杂的情况了，
-首先，我们可以在复数范围得出两种点线关系不同的8行的情况，不含自由参数
+首先，我们原先球的在复数范围中得出两种点线关系不同的8行的情况，不含自由参数
 ```bash
 print(ABCDAEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL);
 solve([+1-1*L_X+1*L_X*L_X,-1+1*K_X+1*L_X,-1+1*J_Y+1*L_X,+1*G_Y-1*L_X,-1+1*C_Y+1*L_X,-1+1*J_X,-1+1*I_X,-1+1*L_Y,+1*D_Y+1*L_X,-1+1*I_Y],[L_X,K_X,J_Y,G_Y,C_Y,J_X,I_X,L_Y,D_Y,I_Y]);
@@ -202,6 +202,24 @@ print(AEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL);
 solve([+1-1*L_Y+1*L_Y*L_Y,-1+1*C_Y,+1*C_X+1*L_Y,-1+1*K_Y+1*L_Y,-1+1*L_X+1*L_Y,-1+1*D_Y,+1+1*J_Y-1*L_Y,+1+1*I_Y,-1+1*G_X+1*L_Y,-1+1*D_X+1*L_Y],[L_Y,C_Y,C_X,K_Y,L_X,D_Y,J_Y,I_Y,G_X,D_X]);
 print("A=(1,0,0) B_x=0 B_y=1 E_x=0 E_y=0 F_x=1 F_y=0 G_y=0 H=(0,1,0) I=(1,I_y,0) J=(1,J_y,0) K_x=0 ");
 ```
+但是在2019年10月发现在[复数范围12棵树可以达到9行]，而这个解[以前被maxima错误过滤]了
+```bash
+        Parameter [+1+1*t+1*t^2=0]
+        A[0 ,+1 , 0]
+        B[+1 ,0 , 0]
+        C[+1 ,+1+1*t , 0]
+        D[+1 ,+1*t , 0]
+        E[0 ,0 , +1]
+        F[0 ,+1 , +1]
+        G[0 ,-1*t , +1]
+        H[+1 ,0 , +1]
+        I[+1 ,+1 , +1]
+        J[+1 ,+1+1*t , +1]
+        K[+1+1*t ,0 , +1]
+        L[-1*t ,+1 , +1]
+ABCDAEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL
+```
+
 齐次在实数或整数范围可以有两种不同点线关系达到7行，分别含有一个和两个自由参数:
 ```bash
 print(AHIJBCHKBDILCEJLDGJKEFIKFGHL);
@@ -236,7 +254,7 @@ print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x
 
 14棵以上候选解太多了，如有需要请下载：
 <a name=fulllist></a>
-click for all best result candidate download: [所有数据openf4有限域处理结果](../attached/ocdrst.tgz) 
+所有数据openf4有限域处理结果[click to download all best result candidates from 12 to 18 trees](../attached/ocdrst.tgz) 
 
 
 [B. Grunbaum和Sloane]: http://neilsloane.com/doc/ORCHARD/orchard.html
@@ -272,3 +290,5 @@ click for all best result candidate download: [所有数据openf4有限域处理
 [A172992]: https://oeis.org/A172992
 [A172993]: https://oeis.org/A172993
 [单壿著的《组合几何》的结果]: https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=703&pid=20028&fromuid=20
+[复数范围12棵树可以达到9行]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=81616&fromuid=20
+[以前被maxima错误过滤]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=8904&fromuid=20
