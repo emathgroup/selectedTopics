@@ -219,6 +219,7 @@ End Function
 然后他发现[加拿大滑铁卢大学有人给出了类似的结果]  
 其中[n=19比mathe找到了更好的结果]，但是n=16、24出了错误并且遗漏了n=17的最优结果。  
 最后mathe把结果提交到了[A302648](https://oeis.org/A302648)  
+
 [使用天平称重问题]: https://bbs.emath.ac.cn/thread-9330-1-1.html
 [可以称出100个连续整数重量]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9330&pid=64686&fromuid=20
 [Rohrbach's problem]: https://oeis.org/A123509
