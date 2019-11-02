@@ -213,12 +213,12 @@ End Function
 0,1,3,4,5,8,11,15,16   然后连续加9，对应首尾差9(N-1)-112 (27<=N<=31)
 ```
 然后利用上面的特性他[给出了C代码](../attached/scale/scale_pattern_search.txt)构造了[更大范围的解](../attached/scale/scale_results.txt)  
-并且给出了统计图
+并且给出了统计图(由于构造方法的结果种，连续整数数目总是最大数字的两倍加1，图中纵坐标代表了最大数字，而最小数字总是0)
 ![balance_stat](../thumbnails/balance_stat.png) 
 和[验证数据正确性的代码](../attached/scale/scale_verify.txt)  
 然后他发现[加拿大滑铁卢大学有人给出了类似的结果]  
 其中[n=19比mathe找到了更好的结果]，但是n=16、24出了错误并且遗漏了n=17的最优结果。  
-最后mathe把结果提交到了[A302648](https://oeis.org/A302648)  
+最后使用图表中结果创建了[A302648](https://oeis.org/A302648)  
 
 [使用天平称重问题]: https://bbs.emath.ac.cn/thread-9330-1-1.html
 [可以称出100个连续整数重量]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9330&pid=64686&fromuid=20
