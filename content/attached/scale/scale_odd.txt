@@ -1,0 +1,160 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <vector>
+#include <algorithm>
+
+#ifndef K
+#define K 8
+#endif
+#define UPBOUND 4096
+unsigned short data[K];
+unsigned char sumbuf[UPBOUND];
+int level;
+int next_sum;
+
+struct Data{
+    unsigned short data[K];
+    bool operator<(const Data& d)const{
+        int i;
+        for(i=K-1;i>=0;i--){
+            if(data[i]<d.data[i])return true;
+            if(data[i]>d.data[i])return false;
+        }
+        return false;
+    }
+    bool operator==(const Data& d)const{
+        int i;
+        for(i=K-1;i>=0;i--){
+            if(data[i]!=d.data[i])return false;
+        }
+        return true;
+    }
+};
+
+std::vector<Data> dataset;
+void output()
+{
+    Data d;
+    int i;
+    for(i=0;i<K;i++)d.data[i]=data[i];
+    dataset.push_back(d);
+}
+
+void push(int x)
+{
+    int i;
+    for(i=0;i<level;i++){
+       sumbuf[data[i]+x]++;
+    }
+    sumbuf[x+x]++;
+    data[level++]=x;
+    for(i=next_sum;i<UPBOUND;i++){
+       if(sumbuf[i]==0)break;
+    }
+    next_sum=i;
+    if(next_sum==UPBOUND){
+       fprintf(stderr,"UPBOUND overflow\n");
+       exit(-1);
+    }
+}
+
+void pop()
+{
+    int x=data[--level];
+    int i;
+    sumbuf[x+x]--;
+    for(i=0;i<level;i++){
+       sumbuf[data[i]+x]--;
+    }
+    for(i=0;i<next_sum;i++){
+       if(sumbuf[i]==0)break;
+    }
+    next_sum=i;
+}
+
+void search(int startv)
+{
+    int i;
+    if(level==K){
+        output();
+        return;
+    }
+    for(i=next_sum;i>=startv;--i){
+        push(i);
+        search(i+1);
+        pop();
+    }
+}
+
+int cur_best_size;
+
+int check(int s, int t)
+{
+    int N=dataset[s].data[K-1]+dataset[t].data[K-1];
+    memset(sumbuf,0,sizeof(sumbuf));
+    int i,j;
+    for(i=0;i<K;i++)for(j=i;j<K;j++){
+        sumbuf[dataset[s].data[i]+dataset[s].data[j]]++;
+        sumbuf[2*N-dataset[t].data[i]-dataset[t].data[j]]++;
+    }
+    for(i=0;i<K;i++)for(j=0;j<K;j++){
+        sumbuf[dataset[s].data[i]+N-dataset[t].data[j]]++;
+    }
+    for(i=0;i<=2*N;i++){
+        if(sumbuf[i]==0)return 0;
+    }
+    printf("[%d]",2*N+1);
+    for(i=0;i<K;i++)printf(" %d",dataset[s].data[i]);
+    for(i=1;i<K;i++)printf(" %d",N-dataset[t].data[K-1-i]);
+    printf("\n");fflush(stdout);
+    cur_best_size = N;
+    return N;
+}
+
+int main()
+{
+    data[0]=0;data[1]=1;
+    sumbuf[0]=sumbuf[1]=sumbuf[2]=1;
+    next_sum = 3;
+    level=2;
+    search(2);
+    sort(dataset.begin(),dataset.end());
+    int min_value = dataset[0].data[K-1];
+    int max_value = dataset[dataset.size()-1].data[K-1];
+    int *index_list = (int *)malloc((max_value-min_value+2)*sizeof(int)) - min_value;
+    index_list[min_value]=0;
+    int i,h;
+    for(i=0,h=min_value;i<dataset.size();i++){
+       if(dataset[i].data[K-1]>h){
+         int j; 
+         for(j=h+1;j<=dataset[i].data[K-1];j++)index_list[j]=i;
+         h=dataset[i].data[K-1];
+       }
+    }
+    index_list[h+1]=i;
+    int s;
+    for(s=2*max_value;s>=2*min_value&&s>cur_best_size;s--){
+        int u,v;//enum for u+v=s
+        u=min_value,v=s-u;
+        if(v>max_value){
+           v=max_value;u=s-v;
+        }
+        for(;u<=max_value&&v>=u;u++,v--){
+            if(u==v){
+                int t1,t2;
+                for(t1=index_list[u];t1<index_list[u+1];t1++)for(t2=t1;t2<index_list[u+1];t2++){
+                    int r=check(t1,t2);
+//                    if(r==s)return 0;
+                }
+            }else{
+                int t1,t2;
+                for(t1=index_list[u];t1<index_list[u+1];t1++)for(t2=index_list[v];t2<index_list[v+1];t2++){
+                    int r=check(t1,t2);
+ //                   if(r==s)return 0;
+                }
+            }
+        }
+    }
+    return 0;
+}

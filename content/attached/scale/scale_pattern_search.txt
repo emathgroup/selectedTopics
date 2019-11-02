@@ -1,0 +1,138 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+#ifndef K
+#define K 8
+#endif
+#ifndef R
+#define R 1
+#endif
+#define UPBOUND 40960
+unsigned short data[K+R];
+unsigned short sumbuf[UPBOUND];
+unsigned short diffbuf[UPBOUND];
+unsigned short modbuf[K];
+int rcount;
+int level;
+int next_sum,next_diff;
+
+int cur_best=10000000;
+void output()
+{
+    int i,j;
+    int b=data[level-1]+K;
+    int tindex=1;
+    for(i=b;i<data[level-1]+b;i++)
+    {
+       if(sumbuf[i]==0){
+           int h=(i-data[level-1]);
+           int min_index=-1;
+           for(j=0;j<level;j++){
+              if(h>=data[j]&&(h-data[j])%K==0){
+                  min_index=(h-data[j])/K;
+              }
+           }
+           if(min_index<0)return;
+           if(min_index>tindex)tindex=min_index;
+       }
+    }
+    for(i=0;i<data[level-1];i++){
+       if(diffbuf[i]==0){
+           int h = data[level-1]-i;
+           int min_index=-1;
+           for(j=0;j<level;j++){
+                if(h<=data[j]&&(data[j]-h)%K==0){
+                    min_index=(data[j]-h)/K;
+                    break;
+                }
+           }
+           if(min_index<0)return;
+           if(min_index>tindex)tindex=min_index;
+       }
+    }
+    if(K*(level-1)-data[level-1]<=cur_best){
+       cur_best=K*(level-1)-data[level-1];
+       printf("%d,>=%d | ",K*(level-1)-data[level-1],tindex);
+       for(i=0;i<level;i++)printf(" %u",(unsigned int)data[i]);
+       printf("\n");
+       fflush(stdout);
+    }
+}
+
+int push(int x)
+{
+    int i;
+    int r=x%K;
+    if(modbuf[r]>0){
+        if(rcount>=R)return 0;
+        rcount++;
+    }
+    modbuf[r]++;
+    for(i=0;i<level;i++){
+       sumbuf[data[i]+x]++;
+       diffbuf[x-data[i]]++;
+    }
+    sumbuf[x+x]++;diffbuf[0]++;
+    data[level++]=x;
+    for(i=next_sum;i<UPBOUND;i++){
+       if(sumbuf[i]==0)break;
+    }
+    next_sum=i;
+    for(i=next_diff;i<UPBOUND;i++){
+       if(diffbuf[i]==0)break;
+    }
+    next_diff=i;
+    if(next_sum==UPBOUND||next_diff==UPBOUND){
+       fprintf(stderr,"UPBOUND overflow\n");
+       exit(-1);
+    }
+}
+
+void pop()
+{
+    int x=data[--level];
+    int i;
+    int r=x%K;
+    --modbuf[r];
+    if(modbuf[r]>0){
+       rcount--;
+    }
+    sumbuf[x+x]--;diffbuf[0]--;
+    for(i=0;i<level;i++){
+       sumbuf[data[i]+x]--;
+       diffbuf[x-data[i]]--;
+    }
+    for(i=0;i<next_sum;i++){
+       if(sumbuf[i]==0)break;
+    }
+    next_sum=i;
+    for(i=0;i<next_diff;i++){
+       if(diffbuf[i]==0)break;
+    }
+    next_diff=i;
+}
+
+void search(int startv)
+{
+    int i;
+    if(level-rcount>=K&&data[level-1]+K<=next_sum){
+        output();
+    }
+    for(i=startv;i<=next_sum&&i<=K-1+data[level-1];++i){
+        if(push(i)){
+            search(i+1);
+            pop();
+        }
+    }
+}
+
+int main()
+{
+    data[0]=0;data[1]=1;modbuf[0]=modbuf[1]=1;
+    sumbuf[0]=sumbuf[1]=sumbuf[2]=1;rcount=0;
+    diffbuf[0]=2;diffbuf[1]=1;next_diff=2;
+    next_sum = 3;
+    level=2;
+    search( 2);
+}
