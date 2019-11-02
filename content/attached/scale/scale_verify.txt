@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <vector>
+#include <ctype.h>
+
+char line[10240];
+int main()
+{
+    int M,N;
+    int s, e,i,j;
+    int *sumbuf;
+    char *endp, *startp;
+    printf("Please input M:");
+    scanf("%d",&M);
+    if(M<1){
+         fprintf(stderr,"M should be no less than 1\n");
+         return -1;
+    }
+    printf("Please input lowerbound of N:");
+    scanf("%d",&s);
+    printf("Please input upperbound of N:");
+    scanf("%d",&e);
+    if(s>e||s<1){
+         fprintf(stderr,"s=%d, e=%d is out of range\n",s,e);
+         return -1;
+    }
+    printf("Please input prefix pattern:");
+start:
+    gets(line);
+    std::vector<int> d;
+    startp=line;
+    while(startp!=NULL){
+        while(*startp!='\0'&&(isspace(*startp)||*startp==','))startp++;
+        if(*startp=='\0')break;
+        int x=(int)strtol(startp,&endp, 10);
+        startp=endp;
+        d.push_back(x);
+    }
+    if(d.size()==0){
+       goto start;
+    }
+    if(d.size()*2>s){
+        fprintf(stderr,"s=%d is too small for prefix size %d\n",s,(int)d.size());
+        return -1;
+    }
+    if(d[0]!=0){
+        fprintf(stderr,"The first number must b 0\n");
+        return -1;
+    }
+    for(i=1;i<d.size();i++)if(d[i-1]>=d[i]){fprintf(stderr,"input pattern must be monotonic increasing\n");return -1;}
+    int maxsize = (e-2*d.size()+1)*M+d[d.size()-1]*2+1;
+    sumbuf=(int *)malloc(sizeof(int)*(2*maxsize+1));
+    for(N=s;N<=e;N++){
+        int cm = N-2*d.size()+1;
+        int h = d[d.size()-1];
+        int csize = cm*M+d[d.size()-1]*2;
+        memset(sumbuf,0,sizeof(int)*(2*csize)+1);
+        for(i=0;i<d.size();++i){
+             for(j=0;j<=i;j++){
+                 int v=d[i]+d[j];
+                 sumbuf[v]++;sumbuf[2*csize-v]++;
+                 v=d[j]-d[i];
+                 sumbuf[csize+v]++;sumbuf[csize-v]++;
+             }
+        }
+        for(i=0;i<d.size();++i){
+             for(j=1;j<=cm;j++){
+                 sumbuf[d[i]+h+M*j]++;
+                 sumbuf[csize-d[i]+h+M*j]++;
+             }
+        }
+        for(i=2;i<=2*cm;i++){
+             sumbuf[2*h+M*i]++;
+        }
+        for(i=0;i<2*csize+1;i++){
+             if(sumbuf[i]==0){
+                 break;
+             }
+        }
+        if(i<2*csize+1){
+              printf("check failed for N=%d\n",N);
+        }else{
+              printf("check passed for N=%d\n",N);
+              for(i=0;i<d.size();i++)printf("%d ",d[i]);
+              for(i=0;i<cm;i++)printf("%d ",h+(i+1)*M);
+              for(i=d.size()-2;i>=0;i--)printf("%d ",h+cm*M+h-d[i]);
+              printf("\n");fflush(stdout);
+        }
+    }
+}
