@@ -32,7 +32,7 @@ KeyTo9_Fans为了使得问题更有趣，放松了条件，我们可以称之为
 # 具体内容
 chyanog于2013年4月提出了[完美差三角问题]，我们可以搜索到[一个英文网站]也讨论了相同的问题，只是其三角形的方向和我们时颠倒的
 他们给出了
-[3d](../thumbnails/diftriangle.png)  
+![3d](../thumbnails/diftriangle.png)  
 hujunhua很快给出了[两个三阶的完美差三角]和[一个四阶完美差三角]
 ```bash
     2
