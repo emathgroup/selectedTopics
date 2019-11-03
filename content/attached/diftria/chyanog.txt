@@ -1,0 +1,26 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(int argc, char *argv[])
+{
+        int a,b,c,d,e;
+        int n=5;
+        int k=n*(n+1)/2;
+        
+        for(a=1;a<=k;a++)
+        for(b=1;b<=k;b++)
+        for(c=1;c<=k;c++)
+        for(d=1;d<=k;d++)
+        for(e=1;e<=k;e++)
+        {
+                int x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15;
+                x1 = a; x2 = b; x3 = c; x4 = d; x5 = e; x6 = abs(-a + b); x7 = abs(-b + c); x8 = abs(-c + d); x9 = abs(-d + e); x10 = abs(-abs(-a + b) + abs(-b + c)); x11 = abs(-abs(-b + c) + abs(-c + d)); x12 = abs(-abs(-c + d) + abs(-d + e)); x13 = abs(-abs(-abs(-a + b) + abs(-b + c)) + abs(-abs(-b + c) + abs(-c + d))); x14 = abs(-abs(-abs(-b + c) + abs(-c + d)) + abs(-abs(-c + d) + abs(-d + e))); x15 = abs(-abs(-abs(-abs(-a + b) + abs(-b + c)) + abs(-abs(-b + c) + abs(-c + d))) + abs(-abs(-abs(-b + c) + abs(-c + d)) + abs(-abs(-c + d) + abs(-d + e))));
+                
+                if(x10!=x1&&x11!=x1&&x11!=x10&&x12!=x1&&x12!=x10&&x12!=x11&&x13!=x1&&x13!=x10&&x13!=x11&&x13!=x12&&x14!=x1&&x14!=x10&&x14!=x11&&x14!=x12&&x14!=x13&&x15!=x1&&x15!=x10&&x15!=x11&&x15!=x12&&x15!=x13&&x15!=x14&&x2!=x1&&x2!=x10&&x2!=x11&&x2!=x12&&x2!=x13&&x2!=x14&&x2!=x15&&x3!=x1&&x3!=x10&&x3!=x11&&x3!=x12&&x3!=x13&&x3!=x14&&x3!=x15&&x3!=x2&&x4!=x1&&x4!=x10&&x4!=x11&&x4!=x12&&x4!=x13&&x4!=x14&&x4!=x15&&x4!=x2&&x4!=x3&&x5!=x1&&x5!=x10&&x5!=x11&&x5!=x12&&x5!=x13&&x5!=x14&&x5!=x15&&x5!=x2&&x5!=x3&&x5!=x4&&x6!=x1&&x6!=x10&&x6!=x11&&x6!=x12&&x6!=x13&&x6!=x14&&x6!=x15&&x6!=x2&&x6!=x3&&x6!=x4&&x6!=x5&&x7!=x1&&x7!=x10&&x7!=x11&&x7!=x12&&x7!=x13&&x7!=x14&&x7!=x15&&x7!=x2&&x7!=x3&&x7!=x4&&x7!=x5&&x7!=x6&&x8!=x1&&x8!=x10&&x8!=x11&&x8!=x12&&x8!=x13&&x8!=x14&&x8!=x15&&x8!=x2&&x8!=x3&&x8!=x4&&x8!=x5&&x8!=x6&&x8!=x7&&x9!=x1&&x9!=x10&&x9!=x11&&x9!=x12&&x9!=x13&&x9!=x14&&x9!=x15&&x9!=x2&&x9!=x3&&x9!=x4&&x9!=x5&&x9!=x6&&x9!=x7&&x9!=x8)
+                        if(x1>0&&x2>0&&x3>0&&x4>0&&x5>0&&x6>0&&x7>0&&x8>0&&x9>0&&x10>0&&x11>0&&x12>0&&x13>0&&x14>0&&x15>0)
+                                printf("%d %d %d %d %d %d %d %d %d %d %d %d %d %d %d \n",x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15 );
+        }
+        return 0;
+}
+
