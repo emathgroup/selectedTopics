@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <math.h>
+
+#define M   4        /* 差三角的层数 */
+
+#define N   (((M)*(M+1))/2)
+
+int datacmp(int *data,int n)
+{
+    int i,j;   
+    for(i=1;i<n;i++)
+        for(j=1;j<n;j++)
+            if(j<=i)
+                if( data[( ( (i)*(i+1) )/2)-i+j-1] != abs(data[( ( (i+1)*(i+1+1) )/2)-(i+1)+j-1]-data[( ( (i+1)*(i+1+1) )/2)-(i+1)+j+1-1]) ) 
+                    return -1; 
+    return 0;
+}
+    
+void swap(int *data, int i, int offset)
+{
+    int tmp;
+    tmp = data[offset];
+    data[offset] = data[i];
+    data[i] = tmp;
+}
+
+void order(int *data,int offset)
+{
+    int i,tmp;
+    if(offset == N-1)
+    {
+        if(0 == datacmp(data,M))
+        {
+            for(i=0;i<N;i++)
+                printf("%d ",data[i]);
+            printf("\n");
+        }
+        return;
+    }
+    for(i = offset; i < N; i++)
+    {
+        swap(data,i, offset);
+        order(data,offset + 1);
+        swap(data,i, offset);
+    }
+}
+
+void main()
+{
+    int i,data[N];;
+    for(i = 0; i<N; i++)
+        data[i] = i+1;
+    order(data,0);
+}
