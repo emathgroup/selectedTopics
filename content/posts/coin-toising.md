@@ -21,8 +21,8 @@ shshsh_0510[发现这个问题](https://bbs.emath.ac.cn/forum.php?mod=redirect&g
 最后我们得出广义t阶Fibonacci数列$F_n^{(t)}=round(\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n})$, 其中$r_t$是方程 $x^{t+1}-2x^t+1=0$ 的唯一一个大于1的实数根。
 
 # 具体内容
-在mathe[转载了内容](https://bbs.emath.ac.cn/thread-667-1-1.html) 而shshsh_0510发现了wolfram网站上给出了问题和冠以Fibonacci数列的关联以后
-mathe先[通过矩阵方法验证](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=667&pid=8258&fromuid=20) 了这种关联。  
+在mathe[转载了内容](https://bbs.emath.ac.cn/thread-667-1-1.html) 而shshsh_0510发现了wolfram网站上给出了问题和广义t阶Fibonacci数列的关系以后
+mathe先[通过矩阵方法验证](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=667&pid=8258&fromuid=20) 了这种关系。  
 ## 广义Fibonacci数列
 我们需要计算硬币抛n次过程中出现t次连续正面的概率。
 我们对抛硬币过程中出现的状态进行分类：
