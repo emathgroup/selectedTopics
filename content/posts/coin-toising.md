@@ -8,13 +8,13 @@ tags:
   - coin
   - probability
   - Fibonacci
-date: 2019-11-3 16:50:20
+date: 2019-11-4 00:00:01
 ---
 
 # 摘要
 mathe于2008年7月引用[百度知道中一个抛硬币的概率问题]  
 抛硬币100次，出现10次以上连续正面的概率是多少？  
-我们将它推广一下,抛硬币n次,其中出现过t次连续正面的概率是多少?  
+我们将它推广一下,[抛硬币n次,其中出现过t次连续正面]的概率是多少?  
 shshsh_0510[发现这个问题](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=667&pid=8254&fromuid=20)
 和[广义t阶Fibonacci数列](http://mathworld.wolfram.com/CoinTossing.html) 有关系, 其中不出现t次连续正面的概率为$\frac{F_{n+2}^{(t)}}{2^n}$  
 或者说对于本题，就是要计算$1-\frac{F_{102}^{(10)}}{2^{100}}$  
@@ -176,6 +176,7 @@ $p(n)=1-\frac{"round"(\frac{r-1}{(t+1)r-2t}r^{n+1})}{2^n}; r\gt 1 && r^{t+1}-2r^
 
 
 [百度知道中一个抛硬币的概率问题]: https://zhidao.baidu.com/question/60176364.html
+[抛硬币n次,其中出现过t次连续正面]: https://bbs.emath.ac.cn/thread-667-1-1.html
 [如下的理论推导]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=667&pid=8266&fromuid=20
 [儒歇定理]: https://baike.baidu.com/item/%E5%84%92%E6%AD%87%E5%AE%9A%E7%90%86/3899479?fr=aladdin
 [随机游走中的概率问题]: https://bbs.emath.ac.cn/viewthread.php?tid=331&page=2&fromuid=20#pid2938
