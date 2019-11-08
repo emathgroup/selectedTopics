@@ -263,7 +263,7 @@ e条田埂编号为$E_1,E_2,\dots,E_m$, 而对于这m条田埂并且任意确定
 
 另外还需要n个区域编号为$C_1,C_2,\dots,C_n$。
 
-对于每个内点$N_i$函数$a_i$=get\_a$(N_i)$, $b_i$=get\_b$(N_i)$, $c_i$=get\_c$(N_i)$, 返回三条以内点$N_i$为起点的有向田埂，对于每个边界点$N_i$，函数get\_a$(N_i)$返回以$N_i$为起点的田埂，函数get\_b和get\_c报错。对于每条田埂$E_i$,有函数get_\start$(E_i)$和get\_end$(E_i)$返回田埂的两个端点。对于每个区域$C_i$,函数get\_degree$(C_i)$返回区域的顶点数目，v[i,h]=get\_vertex($C_i$,h)返回区域$C_i$的第h个顶点，其中所有顶点按逆时针顺序依次排列。另外如果从$N_i$到$N_j$存在田埂，那么get\_edge$(N_i,N_j)$返回这条田埂，不然报错。
+对于每个内点$N_i$函数$a_i$=get\_a$(N_i)$, $b_i$=get\_b$(N_i)$, $c_i$=get\_c$(N_i)$, 返回三条以内点$N_i$为起点的有向田埂，对于每个边界点$N_i$，函数get\_a$(N_i)$返回以$N_i$为起点的田埂，函数get\_b和get\_c报错。对于每条田埂$E_i$,有函数get\_start$(E_i)$和get\_end$(E_i)$返回田埂的两个端点。对于每个区域$C_i$,函数get\_degree$(C_i)$返回区域的顶点数目，v[i,h]=get\_vertex($C_i$,h)返回区域$C_i$的第h个顶点，其中所有顶点按逆时针顺序依次排列。另外如果从$N_i$到$N_j$存在田埂，那么get\_edge$(N_i,N_j)$返回这条田埂，不然报错。
 
 另外函数get\_x$(N_i)$, get\_y$(N_i)$ 依次返回$N_i$的横坐标和纵坐标, get\_theta$(E_i)$返回$E_i$的角度$θ_i$。而显然有get\_theta$(E_{-i})$=- get\_theta$(E_i)$=- $θ_i$。另外我们可以使用符号$θ_{i,a}$代表get\_theta(get\_edge$(N_i$, get\_a$(N_i)$))。
 
