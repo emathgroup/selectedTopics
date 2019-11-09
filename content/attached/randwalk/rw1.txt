@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <math.h>
+
+#define ERROR 1.0E-6
+
+int gcd(int m,int n){
+    if(m==0)return n;
+    return gcd(n%m,m);
+}
+
+int m,n;
+void gcd_test()
+{
+    int d=gcd(m,n);
+    if(d!=1){
+        fprintf(stderr,"Error: gcd of (%d,%d)!=1\n");
+        exit(-1);
+    }
+}
+void find_root(int k)
+{
+    double t0=k*(2.0*M_PI/m);
+    double r,r0,x0,y0,x,y;
+    r0=pow(2.0,1.0/m);
+    x0=r0*cos(t0),y0=r0*sin(t0);
+    do{
+        double r1=pow(r0,-n);
+        double r2,t2;
+        x=r1*cos(-n*t0),y=-r1*sin(-n*t0);
+        x=2.0-x;
+        r2=sqrt(x*x+y*y);
+        t2=atan2(y,x)/m;
+        r2=pow(r2,1.0/m);
+        t2+=k*(2.0*M_PI)/m;
+        x=r2*cos(t2),y=r2*sin(t2);
+        r=sqrt((x-x0)*(x-x0)+(y-y0)*(y-y0));
+        x0=x;y0=y;r0=r2;t0=t2;
+    }while(r>ERROR);
+    printf("Find root %f+i%f\n",x0,y0);
+    fflush(stdout);
+}
+
+int main()
+{
+    int i;
+    printf("Please input positive integer m and n while m is less than n && (m,n)=1:");
+    scanf("%d %d",&m, &n);
+    if(m>=n||m<=0){
+        fprintf(stderr,"Invalid input\n");
+        return -1;
+    }
+    gcd_test();
+    for(i=0;i<m;i++){
+        find_root(i);
+    }
+}
