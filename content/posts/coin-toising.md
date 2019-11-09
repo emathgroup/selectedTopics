@@ -18,7 +18,7 @@ mathe于2008年7月引用[百度知道中一个抛硬币的概率问题]
 shshsh\_0510[发现这个问题](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=667&pid=8254&fromuid=20)
 和[广义t阶Fibonacci数列](http://mathworld.wolfram.com/CoinTossing.html) 有关系, 其中不出现t次连续正面的概率为 $\frac{F_{n+2}^{(t)}}{2^n}$。    
 或者说对于本题，就是要计算$1-\frac{F_{102}^{(10)}}{2^{100}}$。  
-最后我们得出广义t阶Fibonacci数列$F_n^{(t)}=round(\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n})$, 其中$r_t$是方程 $x^{t+1}-2x^t+1=0$ 的唯一一个大于1的实数根。
+最后我们得出广义t阶Fibonacci数列$F_n^{(t)}=\lfloor\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n}\rceil$, 其中$r_t$是方程 $x^{t+1}-2x^t+1=0$ 的唯一一个大于1的实数根,$\lfloor x\lceil$表示x四舍五入到最接近的整数后的结果。
 
 # 具体内容
 在mathe[转载了内容](https://bbs.emath.ac.cn/thread-667-1-1.html) 而shshsh\_0510发现了wolfram网站上给出了问题和广义t阶Fibonacci数列的关系以后
@@ -104,7 +104,7 @@ $u_s=\frac{z_s-1}{2t-(t+1)z_s^{-1}}$
 
 记$r_t=z_1^{-1}$  
 而递推式中其他各式绝对值都远远小于，所以我们得到，对于n充分大  
-$b(n)=round(\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n})$  
+$b(n)=\lfloor\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n}\rceil$  
 而他怀疑这个表达式对所有的n都成立，不过这是还没有验证，但是如果仅仅数值计算，不需要精确值，由于$|r|$接近2，而其他项都递减，所以用上面公式精度已经非常高了。  
 
 继续对$b(n)=\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n}$做误差分析可以得出  
@@ -115,7 +115,7 @@ $b(n)=round(\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n})$
 
 后面他使用数值计算进行验算发现：  
 
-而对于公式$b(n)=round(u_1 r_t^n)$,计算前面若干项我们可以发现猜想均成立:
+而对于公式$b(n)=\lfloor u_1 r_t^n\rceil$,计算前面若干项我们可以发现猜想均成立:
 
 |  n|  b(n)| $u_1r_t^n$|
 |---|------|-----------|
@@ -139,7 +139,7 @@ $b(n)=round(\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n})$
 而且显然对于固定的n,q(n)关于t是递减的，所以如果我们能够对于t=2的情况计算出$q(1)\le\frac12$,那么对于所有这一类题目，都能够直接使用那个近似计算方法，然后四舍五入，而结果就会是精确的。
 
 以此为基础，他又开始对[上面猜测正确性的分析]：  
-为了证明猜想公式的正确性，即$b(n)=round(\frac{r^{-1}(r-1)}{(t+1)r-2t}r^n)$  
+为了证明猜想公式的正确性，即$b(n)=\lfloor\frac{r^{-1}(r-1)}{(t+1)r-2t}r^n\rceil$  
 我们先证明  
 $\frac{r^{-1}(r-1)}{(t+1)r-2t}\lt\frac12$  
 其中$1\lt r\lt 2$而且$r^{t+1}-2r^t+1=0$,  
@@ -169,9 +169,9 @@ $\frac{r^{-1}(r-1)}{(t+1)r-2t}\lt\frac12$
 
 
 由此我们可以证明了前面猜想的正确性，即  
-$b(n)=round(\frac{r^{-1}(r-1)}{(t+1)r-2t}r^n)$  
+$b(n)=\lfloor\frac{r^{-1}(r-1)}{(t+1)r-2t}r^n\rceil$  
 而抛硬币n次出现连续t次正面的概率为  
-$p(n)=1-\frac{round(\frac{r-1}{(t+1)r-2t}r^{n+1})}{2^n}; r\gt 1;  r^{t+1}-2r^t+1=0$  
+$p(n)=1-\frac{\lfloor\frac{r-1}{(t+1)r-2t}r^{n+1}\rceil}{2^n}; r\gt 1;  r^{t+1}-2r^t+1=0$  
 
 
 [百度知道中一个抛硬币的概率问题]: https://zhidao.baidu.com/question/60176364.html
