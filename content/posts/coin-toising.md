@@ -169,7 +169,7 @@ $\frac{r^{-1}(r-1)}{(t+1)r-2t}\lt\frac12$
 
 
 由此我们可以证明了前面猜想的正确性，即  
-$b(n)="round"(\frac{r^{-1}(r-1)}{(t+1)r-2t}r^n)$  
+$b(n)=round(\frac{r^{-1}(r-1)}{(t+1)r-2t}r^n)$  
 而抛硬币n次出现连续t次正面的概率为  
 $p(n)=1-\frac{round(\frac{r-1}{(t+1)r-2t}r^{n+1})}{2^n}; r\gt 1;  r^{t+1}-2r^t+1=0$  
 
