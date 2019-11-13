@@ -2,7 +2,7 @@
 title: 关于双十一“作假”的数学分析
 categories: 数学
 keywords: 'statistics'
-thumbnail: "../images/d11/d11.1.png"
+thumbnail: "../images/d11/gdp.png"
 
 tags:
   - statistics
@@ -19,8 +19,8 @@ wayne转载了一个关于双十一数据“作假”的新闻，我们搜索网
 
 # 具体信息
 看到这个消息，mathe首先自己在excel里面同样对这些双十一销售数据进行了拟合，并且同时对中国相应年份的GDP数据进行了拟合  
-![d11.1](../images/d11/d11.1.png)  
-![gdb](../images/d11/gdb.png)  
+![d11.1](../images/d11/gdp.png)  
+![gdb](../images/d11/d11.1.png)  
 图中各点分别代表2018~2009年双十一销售额数据和中国GDP数据（横坐标1代表2018年，横坐标10代表2009年），
 虚线代表三次回归曲线（并且给出了对应方程），那条棕色波浪线代表实际数据和模拟数据之间的相对误差。
 
