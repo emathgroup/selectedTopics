@@ -28,10 +28,10 @@ date: 2019-11-16 00:51:34
 然后他又发现一种可以达到$\sqrt{\frac{\sqrt{5}-1}2+1}=1.272...$的方案，这是我们[现在能找到的最优结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1589&pid=20113&fromuid=20)  
 ![sc4](../images/squarecover/sc4.gif)  
 又过了一天，shshssh_0510给出了达到[一个1.25的方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1589&pid=20121&fromuid=20)  
-![sc5](../images/squarecover/sc5.jpg)  
-随后也给出了[另外一个达到1.272...的方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1589&pid=20122&fromuid=20) 
+![sc5](../images/squarecover/sc5.jpg)   
+随后也给出了[另外一个达到1.272...的方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1589&pid=20122&fromuid=20)  
 ![sc6](../images/squarecover/sc6.jpg)  
 后来对于7个正方形覆盖问题，数学星空可以覆盖边长为2.20710678...  
 ![sc7](../images/squarecover/sc7.jpg)  
 然后数学星空发现了一片很不错的相关文章  
-![sc8](../images/squarecover/sc8.jpg)  
+![sc8](../images/squarecover/sc8.gif)  
