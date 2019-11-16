@@ -36,3 +36,5 @@ date: 2019-11-16 00:51:34
 不过猜测应该还有改进空间。  
 数学星空后来发现了一片很不错的相关文章，虽然讨论的不是同一个问题  
 ![sc8](../images/squarecover/sc8.gif)  
+
+wreck在2019年11月发现Friedman关于这问题已经[收集了不少不错的结果](https://www2.stetson.edu/~efriedma/squcosqu/)
