@@ -38,3 +38,4 @@ date: 2019-11-16 00:51:34
 ![sc8](../images/squarecover/sc8.gif)  
 
 wreck在2019年11月发现Friedman关于这问题已经[收集了不少不错的结果](https://www2.stetson.edu/~efriedma/squcosqu/)
+其中n=3,7和我们找到的结果相同，只是他那里用的是面积而不是边长
