@@ -84,7 +84,7 @@ mathe建议采用面积坐标表示各心的坐标，并且将边长作为参数
 
 10.费尔巴哈点（Feuerbach)$a(1-\cos(B-C)):b(1-\cos(C-A)):c(1-\cos(A-B))$
 
-    三角形的九点圆和旁切圆的三个切点
+   三角形的九点圆和旁切圆的三个切点
 
 11.费马点$F(\frac{1}{\cot(A)+\cot(\frac{\pi}{3})}:\frac{1}{\cot(B)+\cot(\frac{\pi}{3})}:\frac{1}{\cot(C)+\cot(\frac{\pi}{3})})$
 
