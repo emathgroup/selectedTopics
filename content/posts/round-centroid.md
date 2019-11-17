@@ -49,7 +49,7 @@ mathe[通过射影变换改变无穷远直线为一条和外圆相交的直线](
 而P关于NO的调和共轭是S(也就是NP*OS=NS*OP),U关于NT的调和共轭是G1, A1关于OT的调和共轭是D1
 所以TS,OG1,ND1交于公共点F1,而红色圆锥曲线就是F1在三角形运动时的轨迹。  
 
-关于[椭圆双心三角形的重心轨迹](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15789&pid=78097&fromuid=20) 可以做出下图，果然重心轨迹还是很圆，但是这时换成其它心的轨迹就不行了。  
+关于[椭圆双心三角形的重心轨迹](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15789&pid=78097&fromuid=20) 再在将内圆换成椭圆后，可以做出下图，果然重心和高的轨迹还是很圆，但是这时换成其它心的轨迹就不行了。  
 ![bcl11](../images/bicentriallocus/bcl11.png)  
 
 mathe在一个图中做出了垂心(H)、重心(G)、旁心(P)、费马尔点(F)和顶点切点连线交点(T)[等的轨迹](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15789&pid=77964&fromuid=20) ，可以看出除了费马尔点其余的都像圆，而费马尔点的轨迹像椭圆
