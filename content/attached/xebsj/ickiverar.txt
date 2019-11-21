@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<stdint.h>
+uint64_t in[64]={0},out[64]={0};
+int maxl=24;
+//fh:=(x+1)^2-(y+1)^2-r^2
+//fl:=(x-1)^2-(y-1)^2-r^2
+void ffull(int l,int64_t x,int64_t y,int64_t fh,int64_t fl){
+        if(++l==maxl){
+                in[l]+=32;
+                out[l]+=32;
+                return;
+        };
+        x*=3;
+        y*=3;
+        fh*=9;
+        fl*=9;
+        int64_t nfh,nfl;
+#define proc(nx,ny,dfh,dfl)          \
+do{                                  \
+        nfh=fh-4*(dfh),nfl=fl+4*(dfl);   \
+        if(nfl>=0)out[l]+=8;             \
+        else if(nfh<=0)in[l]+=8;         \
+        else ffull(l,nx,ny,nfh,nfl);     \
+}while(0)
+
+        proc(x+2,y+2,0,2*x+2*y-4);
+        proc(x+2,y,y+2,2*x+y-4);
+        proc(x+2,y-2,2*y+2,2*x-2);
+        proc(x,y+2,x+2,x+2*y-4);
+        proc(x,y-2,x+2*y+4,x-2);
+        proc(x-2,y+2,2*x+2,2*y-2);
+        proc(x-2,y,2*x+y+4,y-2);
+        proc(x-2,y-2,2*x+2*y+4,0);
+#undef proc
+}
+
+void fhalf(int l,int64_t x,int64_t fh,int64_t fl){
+        if(++l==maxl){
+                in[l]+=32;
+                return;
+        };
+        x*=3;
+        fh*=9;
+        fl=9*fl+4*(2*x-4);
+        in[l]+=20;
+        ffull(l,x+2,2,fh,fl);
+        fhalf(l,x+2,fh-8,fl);
+}
+
+int main(){
+        in[2]=32,out[2]=4;
+        ffull(2,8,6,49,-7);
+        printf("*");
+        ffull(2,8,4,25,-23);
+        printf("*");
+        ffull(2,8,2,9,-31);
+        printf("*");
+        fhalf(2,8,1,-31);
+        double inres=0,outres=0;
+        for(int i=2;i<=maxl;++i){
+                inres=8*inres+in[i];
+                outres=8*outres+out[i];
+                printf("%18.16lf\n",inres/(outres+inres));
+        }
+        return 0;
+}
