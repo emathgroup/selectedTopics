@@ -1,0 +1,106 @@
+#include <iostream>
+#include <queue>
+#include <cln/rational_io.h>
+using namespace std;
+
+typedef cln::cl_RA T;
+//typedef unsigned long long T;
+typedef struct counter{T half;T one;} counter;
+typedef struct Point2d{cln::cl_RA x;cln::cl_RA y;} Point2d;
+typedef struct Context {
+    counter outer;
+    std::queue<Point2d> on;
+    counter inner;
+    cln::cl_RA sideLen;
+} Context;
+
+void walkMengerCircle(Context &c){
+    static int kernel[8][2] = {{-1, -1},{-1, 0},{-1, 1},{0, -1},{0, 1},{1, -1},{1, 0},{1, 1}};
+
+    cln::cl_RA newslength = c.sideLen/3;
+    c.sideLen = newslength;
+    ///////////////////////////
+    counter out;
+    out.half = c.outer.half*2;
+    out.one  = c.outer.one*8 + c.outer.half*3;
+    ///////////////////////////
+    counter in;
+    in.half = out.half*3-1;
+    in.one  = c.inner.one*8 + c.inner.half*3;
+    ///////////////////////////
+    for(size_t j=0,s = c.on.size();j<s;++j){
+        Point2d v = c.on.front();
+        c.on.pop();
+        for(size_t i=0;i<8;++i){
+            Point2d center = {v.x+ kernel[i][0]*newslength,v.y+ kernel[i][1]*newslength};
+            Point2d lower = {center.x - newslength/2,center.y - newslength/2};
+            Point2d upper = {center.x + newslength/2,center.y + newslength/2};
+            cl_signean s1 = cln::compare("1/4",lower.x*lower.x + lower.y*lower.y);
+            cl_signean s2 = cln::compare("1/4",upper.x*upper.x + upper.y*upper.y);
+            //assuming that s2<s1 is always valid.
+            if(s2<0&&s1>0){
+                c.on.push(center);
+            } else if(s1<0){
+                out.one ++;
+            } else {
+                in.one ++;
+            }
+        }
+    }
+    ///////////////////////////
+    c.on.push({"1/2"-newslength/2,newslength});
+    in.one +=2;
+    ///////////////////////////
+    c.inner = in;
+    c.outer = out;
+}
+
+int main()
+{
+    /*
+     {{{0, 8, 0}, 8},
+      {{4, 28, 32}, 64},
+      {{104, 76, 332}, 512},
+      {{984, 204, 2908}, 4096},
+      {{8288, 580, 23900}, 32768},
+      {{67744, 1556, 192844}, 262144},
+      {{545904, 4180, 1547068}, 2097152},
+      {{4377944, 11204, 12388068}, 16777216},
+      {{35052688, 29724, 99135316}, 134217728},
+      {{280499768, 79276, 793162780}, 1073741824},
+      {{2244206376, 212076, 6345516140}, 8589934592},
+      {{17954209288, 565692, 50764701756}, 68719476736},
+      {{143635171632, 1509332, 406119132924}, 549755813888},
+      {{1149085383304, 4026028, 3248957101772}, 4398046511104},
+      {{9192693786392, 10740796, 25991667561644}, 35184372088832},
+      {{73541578891856, 28646804, 207933369171996}, 281474976710656},
+      {{588332707461496, 76396620, 1663467029827132}, 2251799813685248},
+      {{4706661863240488, 203728972, 13307736442512524}, 18014398509481984},
+      {{37653295449008288, 543283204, 106461892083564380}, 144115188075855872},
+      {{301226365040331144, 1448779164, 851695138117736668}, 1152921504606846976}}
+    */
+
+    // {{1,0},{{"4/9", "1/9"}, {"4/9", "2/9"}, {"4/9", "1/3"}},{2,3},"1/9"}
+    // {{2^(n-2),*},******************************************,{3*2^(n-2)-1,*},"1/3^n"}
+
+    Context context;
+    context.outer = {1,0};
+    context.on.push({"4/9", "1/9"});
+    context.on.push({"4/9", "2/9"});
+    context.on.push({"4/9", "3/9"});
+    context.inner = {2,3};
+    context.sideLen = "1/9";
+
+    for(int depth=3;depth<=15;++depth){
+        walkMengerCircle(context);
+        cout <<depth<<":{"<<8*context.outer.one+4*context.outer.half<<","
+             <<8*context.on.size()+4<<","
+             << 8*context.inner.one+ 4*context.inner.half<<"},"<<context.sideLen;
+//        cout <<depth<<":{"<<context.outer.half<<","<<context.outer.one<<"},"
+//             <<context.on.size()<<",{"
+//             <<context.inner.half<<","<<context.inner.one<<"},"<<context.sideLen;
+        cout <<endl;
+    }
+
+    return 0;
+}

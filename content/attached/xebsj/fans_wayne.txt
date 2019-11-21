@@ -1,0 +1,35 @@
+#include<cstdio>
+
+int i,l=32;
+unsigned __int64 ou[96],in[96],s,r,z=1ULL<<63;
+
+void f(unsigned __int64 a,unsigned __int64 b,unsigned __int64 c,unsigned __int64 d,unsigned __int64 r,int h)
+{
+        if(r-b*b-d*d<z)in[h]+=2;
+        else
+                if(a*a+c*c-r<z)ou[h]+=2;
+                else
+                        if(h++<l)
+                                r*=9,
+                                f(a+a+a,a+a+b,c+c+c,c+c+d,r,h),
+                                f(a+a+b,a+b+b,c+c+c,c+c+d,r,h),
+                                f(a+b+b,b+b+b,c+c+c,c+c+d,r,h),
+                                f(a+a+a,a+a+b,c+c+d,c+d+d,r,h),
+                                f(a+b+b,b+b+b,c+c+d,c+d+d,r,h),
+                                f(a+a+a,a+a+b,c+d+d,d+d+d,r,h),
+                                f(a+a+b,a+b+b,c+d+d,d+d+d,r,h),
+                                f(a+b+b,b+b+b,c+d+d,d+d+d,r,h);
+}
+
+int main()
+{
+        ou[2]=1,in[2]=3;
+        f(3,5,7,9,81,2),puts("*"),f(5,7,7,9,81,2),puts("**");
+        for(r=9,s=16,i=2;i<=l;i++,s<<=3,r*=3)
+        {
+                in[i]+=5;
+                f(1,3,r-2,r,r*r,i);
+                printf("%I64u %I64u\n",in[i],ou[i]);
+        }
+        return 0;
+}
