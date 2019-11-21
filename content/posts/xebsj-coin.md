@@ -1,11 +1,14 @@
 ---
-title: 谢尔宾斯基铜板
+title: 谢尔宾斯基铜钱
 categories: 算法
-keywords: 'coin'
+keywords: 'coin, fractal'
 thumbnail: "../images/xebsj/xebsj2.png"
 
 tags:
   - coin
+  - fractal
+  - 铜钱
+  - 分形
 date: 2019-11-21 6:50:20
 ---
 
@@ -16,10 +19,10 @@ KeyTo9\_Fans在[2017年9月提出一个问题](https://bbs.emath.ac.cn/thread-96
 
 我们假设这个地毯的“面积”为1，
 
-然后把该地毯“裁剪”成直径为1的圆，变成“谢尔品斯基铜钱”，如下图红色部分所示：
+然后把该地毯“裁剪”成直径为1的圆，变成“谢尔宾斯基铜钱”，如下图红色部分所示：
 ![xebsj2](../images/xebsj/xebsj2.png)  
 
-问：这个“谢尔品斯基铜钱”的“面积是多少？
+问：这个“谢尔宾斯基铜钱”的“面积是多少？
 
 注：
 
