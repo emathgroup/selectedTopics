@@ -7,7 +7,7 @@ thumbnail: "../thumbnails/coin.jpg"
 tags:
   - factorial
   - 阶乘
-date: 2019-11-22 0:0:20
+date: 2019-11-22 00:00:20
 ---
 
 # 摘要
