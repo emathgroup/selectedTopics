@@ -1,0 +1,421 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <gmp.h>
+
+#define TRIANGLE(x,y)  triangle[(x)*L+(y)]
+#define F(x,y)         fun[(x)*L+(y)]
+void PolyMul(mpz_t *src1, mpz_t *src2, mpz_t *dst, int L, mpz_t mod)
+{
+    int i,j;mpz_t tmp,tmpp;
+    mpz_init(tmp);mpz_init(tmpp);
+    for(i=0;i<L;i++)
+ mpz_set_ui(dst[i],0);
+    for(i=0;i<L;i++){
+ for(j=0;j<L-i;j++){
+     mpz_mul(tmp,src1[i],src2[j]);
+     mpz_add(tmpp,tmp,dst[i+j]);
+     mpz_mod(dst[i+j],tmpp,mod);
+ }
+    }
+    mpz_clear(tmp);mpz_clear(tmpp);
+}
+void Ft4(mpz_t *fun,//Use Polynomial F(s,*)
+  mpz_t t4,  //F(s,*)[t4] (mod five_L)
+  int s,
+  mpz_t five_L,
+  int L,
+  mpz_t result)
+{
+    int i;mpz_t tmp1,tmp2;mpz_init(tmp1);mpz_init(tmp2);
+    mpz_mul(tmp1,F(s,L-1),t4);
+    mpz_mod(result,tmp1,five_L);
+    for(i=L-2;i>=1;i--){
+ mpz_add(tmp1,result,F(s,i));
+ mpz_mul(tmp2,tmp1,t4);
+ mpz_mod(result,tmp2,five_L);
+    }
+    mpz_add(tmp1,result,F(s,0));
+    mpz_mod(result,tmp1,five_L);
+    mpz_clear(tmp1);mpz_clear(tmp2);
+}
+
+void Get_Mult_No_5(mpz_t N,
+  int L,
+  mpz_t *fun,
+  mpz_t five_L,
+  mpz_t *five_i,
+  mpz_t result)
+{
+    mpz_t t1,t2,t3,t4;
+    int i;
+    mpz_init(t1);mpz_init(t2);mpz_init(t3);mpz_init(t4);
+    mpz_fdiv_qr(t1,t2,N,five_L);
+    i=mpz_tstbit(t1,0);//If odd, multiply result by -1, otherwise 1
+    if(i){//odd
+ mpz_sub_ui(result,five_L,1);
+    }else{
+ mpz_set_ui(result,1);
+    }
+    mpz_set_ui(t4,0);
+    for(i=L-1;i>=0;i--){
+ int r,s;
+ mpz_fdiv_qr(t1,t3,t2,five_i[i]);
+ mpz_set(t2,t3);
+ //Assert t1 is from 0 to 4
+ if(mpz_cmp_ui(t1,5)>=0){
+     fprintf(stderr,"Data error i=%d/n",i);
+     exit(-1);
+ }
+ r=mpz_get_ui(t1);
+ mpz_mul_ui(t4,t4,5);
+ if(i>0){
+   for(s=0;s<r;s++){
+      Ft4(fun,t4,i,five_L,L,t1);
+      mpz_mul(t3,result,t1);
+      mpz_mod(result,t3,five_L);
+      mpz_add_ui(t4,t4,1);
+   }
+ }else{
+   for(s=1;s<=r;s++){
+      mpz_add_ui(t4,t4,1);
+      mpz_mul(t3,result,t4);
+      mpz_mod(result,t3,five_L);
+   }
+ }
+    }
+    mpz_clear(t4);
+    mpz_clear(t3);
+    mpz_clear(t2);
+    mpz_clear(t1);
+}
+
+void Get_m5L(mpz_t N, int L, mpz_t m5L, mpz_t fiveL,mpz_t count_5)
+{
+    int i,j;
+    mpz_t *triangle = (mpz_t *)malloc(sizeof(mpz_t)*L*L);
+    mpz_t *fun = (mpz_t *)malloc(sizeof(mpz_t)*L*L);
+    mpz_t *tmp1 = (mpz_t *)malloc(sizeof(mpz_t)*L);
+    mpz_t *tmp2 = (mpz_t *)malloc(sizeof(mpz_t)*L);
+    mpz_t *tmp3 = (mpz_t *)malloc(sizeof(mpz_t)*L);
+    mpz_t *tmp4 = (mpz_t *)malloc(sizeof(mpz_t)*L);
+    mpz_t *tmp5 = (mpz_t *)malloc(sizeof(mpz_t)*L);
+    mpz_t tmp,tmpp,tmppp; mpz_init(tmp);mpz_init(tmpp);mpz_init(tmppp);
+
+    for(i=0;i<L;i++)for(j=0;j<=i;j++)mpz_init(TRIANGLE(i,j));
+    for(i=0;i<L;i++)for(j=0;j<L;j++)mpz_init(F(i,j));
+    for(i=0;i<L;i++){
+ mpz_init(tmp1[i]);
+ mpz_init(tmp2[i]);
+ mpz_init(tmp3[i]);
+ mpz_init(tmp4[i]);
+ mpz_init(tmp5[i]);
+    }
+  
+   //Initialize Pascal Triangle
+    mpz_set_ui(TRIANGLE(0,0),1);
+    mpz_set_ui(TRIANGLE(1,0),1);
+    mpz_set_ui(TRIANGLE(1,1),1);
+    for(i=2;i<L;i++){
+ mpz_set_ui(TRIANGLE(i,0),1);
+ mpz_set_ui(TRIANGLE(i,i),1);
+ for(j=1;j<i;j++){
+     mpz_add(TRIANGLE(i,j),TRIANGLE(i-1,j-1),TRIANGLE(i-1,j));
+ }
+    }
+    /*
+    for(i=1;i<L;i++){
+        int j;
+        for(j=0;j<=i;j++){
+       mpz_out_str(stdout,10,TRIANGLE(i,j));
+     printf(",");
+ }
+ printf("/n/n");
+    }*/
+
+    for(i=0;i<L;i++)mpz_set_si(F(0,i),0);
+    mpz_set_si(F(0,1),1);
+    //Initialize F(1,x)
+    mpz_set_ui(F(1,0),24);
+    if(L>1)
+       mpz_set_ui(F(1,1),50*5);
+    if(L>2)
+       mpz_set_ui(F(1,2),35*5*5);
+    if(L>3)
+       mpz_set_ui(F(1,3),10*5*5*5);
+    if(L>4)
+       mpz_set_ui(F(1,4),1*5*5*5*5);
+    for(i=0;i<=4;i++)mpz_mod(F(1,i),F(1,i),fiveL);
+    for(i=5;i<L;i++)mpz_set_ui(F(1,i),0);
+
+    for(i=2;i<L;i++){//Set F(i,x) now
+ int j,k;
+
+// fprintf(stderr, "i=%d/n",i);
+ 
+ //set tmp1[i] to be 5^i
+ mpz_set_ui(tmp1[0],1);
+ for(j=1;j<L;j++){
+     mpz_mul_ui(tmp1[j],tmp1[j-1],5);
+ }
+ for(j=0;j<L;j++){ //tmp4 is F(i-1,j)*5^j mod 5^L
+     mpz_mul(tmp,F(i-1,j),tmp1[j]);
+     mpz_mod(tmp4[j],tmp,fiveL);
+ }
+/* fprintf(stderr,"F(%d,*)5^*:",i-1);
+ for(j=0;j<L;j++){
+     mpz_out_str(stderr,10,tmp4[j]);fprintf(stderr,",");
+ }
+ fprintf(stderr,"/n");
+*/
+ for(j=0;j<L;j++) mpz_set_ui(tmp3[j],0);
+ for(j=0;j<L;j++){//Adding F(i-1,j)*(5x+1)^j mod 5^L into tmp3
+     for(k=0;k<=j;k++){
+   mpz_mul(tmp,F(i-1,j),TRIANGLE(j,k));//F(i-1,j)*C(j,k)
+/*   if(k==0){
+       fprintf(stderr,"F(%d,%d) is ",i-1,j);
+       mpz_out_str(stderr,10,F(i-1,j));
+       fprintf(stderr,"/nTRIANGLE(%d,%d) is ",j,k);
+       mpz_out_str(stderr,10,TRIANGLE(j,k));
+       fprintf(stderr,"/ntmp is ");
+       mpz_out_str(stderr,10,tmp);
+       fprintf(stderr,"/n5^0 is ");
+       mpz_out_str(stderr,10,tmp1[k]);
+       fprintf(stderr,"/n");
+   }
+*/   mpz_mod(tmpp,tmp,fiveL);
+   mpz_mul(tmp,tmpp,tmp1[k]);//*5^k
+   mpz_add(tmpp,tmp3[k],tmp);
+   mpz_mod(tmp3[k],tmpp,fiveL);
+/*   if(k==0){
+       fprintf(stderr,"tmp is ");
+       mpz_out_str(stderr,10,tmp);
+       fprintf(stderr,"/ntmpp is ");
+       mpz_out_str(stderr,10,tmpp);
+       fprintf(stderr,"/ntmp3[0] is ");
+       mpz_out_str(stderr,10,tmp3[k]);
+       fprintf(stderr,"/n");
+   }
+*/     }
+ }
+
+/* fprintf(stderr,"F(%d,*)(5x+1)^*:",i-1);
+ for(j=0;j<L;j++){
+     mpz_out_str(stderr,10,tmp3[j]);fprintf(stderr,",");
+ }
+ fprintf(stderr,"/n");
+*/ //Next get Multiplication of polynomial tmp4, tmp3 into tmp5
+ PolyMul(tmp3,tmp4,tmp5,L,fiveL); //tmp5=tmp3*tmp4;
+        mpz_set_ui(tmp2[0],1); //set tmp2 to 2^j
+        for(j=1;j<L;j++){
+            mpz_mul_ui(tmp2[j],tmp2[j-1],2);
+        }
+  
+ for(j=0;j<L;j++) mpz_set_ui(tmp3[j],0);
+ for(j=0;j<L;j++){ //Adding F(i-1,j)*(5x+2)^j mod 5^L into tmp3
+     for(k=0;k<=j;k++){
+  mpz_mul(tmp,F(i-1,j),TRIANGLE(j,k));//F(i-1,j)*C(j,k)
+  mpz_mod(tmpp,tmp,fiveL);
+  mpz_mul(tmp,tmpp,tmp1[k]);//*5^k
+  mpz_mod(tmpp,tmp,fiveL);
+  mpz_mul(tmp,tmpp,tmp2[j-k]);//*2^(j-k)
+  mpz_add(tmpp,tmp3[k],tmp);
+  mpz_mod(tmp3[k],tmpp,fiveL);
+     }
+ }
+/* fprintf(stderr,"F(%d,*)(5x+2)^*:",i-1);
+ for(j=0;j<L;j++){
+     mpz_out_str(stderr,10,tmp3[j]);fprintf(stderr,",");
+ }
+ fprintf(stderr,"/n");
+*/
+ PolyMul(tmp3,tmp5,tmp4,L,fiveL);//tmp4=tmp3*tmp5
+
+        mpz_set_ui(tmp2[0],1); //set tmp2 to 3^j
+        for(j=1;j<L;j++){
+            mpz_mul_ui(tmp2[j],tmp2[j-1],3);
+        }
+
+ for(j=0;j<L;j++) mpz_set_ui(tmp3[j],0);
+ for(j=0;j<L;j++){ //Adding F(i-1,j)*(5x+3)^j mod 5^L into tmp3
+     for(k=0;k<=j;k++){
+  mpz_mul(tmp,F(i-1,j),TRIANGLE(j,k));//F(i-1,j)*C(j,k)
+  mpz_mod(tmpp,tmp,fiveL);
+  mpz_mul(tmp,tmpp,tmp1[k]);//*5^k
+  mpz_mod(tmpp,tmp,fiveL);
+  mpz_mul(tmp,tmpp,tmp2[j-k]);//*3^(j-k)
+  mpz_add(tmpp,tmp3[k],tmp);
+  mpz_mod(tmp3[k],tmpp,fiveL);
+     }
+ }
+/* fprintf(stderr,"F(%d,*)(5x+3)^*:",i-1);
+ for(j=0;j<L;j++){
+     mpz_out_str(stderr,10,tmp3[j]);fprintf(stderr,",");
+ }
+ fprintf(stderr,"/n");
+*/ PolyMul(tmp3,tmp4, tmp5, L, fiveL); //tmp5=tmp3*tmp4;
+ 
+        mpz_set_ui(tmp2[0],1); //set tmp2 to 4^j
+        for(j=1;j<L;j++){
+            mpz_mul_ui(tmp2[j],tmp2[j-1],4);
+        }
+
+ for(j=0;j<L;j++) mpz_set_ui(tmp3[j],0);
+ for(j=0;j<L;j++){ //Adding F(i-1,j)*(5x+4)^j mod 5^L into tmp3
+     for(k=0;k<=j;k++){
+  mpz_mul(tmp,F(i-1,j),TRIANGLE(j,k));//F(i-1,j)*C(j,k)
+  mpz_mod(tmpp,tmp,fiveL);
+  mpz_mul(tmp,tmpp,tmp1[k]);//*5^k
+  mpz_mod(tmpp,tmp,fiveL);
+  mpz_mul(tmp,tmpp,tmp2[j-k]);//*4^(j-k)
+  mpz_add(tmpp,tmp3[k],tmp);
+  mpz_mod(tmp3[k],tmpp,fiveL);
+     }
+ }
+/* fprintf(stderr,"F(%d,*)(5x+1)^*:",i-1);
+ for(j=0;j<L;j++){
+     mpz_out_str(stderr,10,tmp3[j]);fprintf(stderr,",");
+ }
+ fprintf(stderr,"/n");
+*/
+ PolyMul(tmp3,tmp5, tmp4, L, fiveL); //tmp4=tmp3*tmp5;
+
+ //Now tmp4 has result F(i,X)
+ for(j=0;j<L;j++)mpz_set(F(i,j),tmp4[j]);
+    }
+
+    //Now we could free PASCAL Triangle
+    for(i=1;i<L;i++)for(j=0;j<=i;j++)mpz_clear(TRIANGLE(i,j));
+    free(triangle);
+    for(i=0;i<L;i++){
+ mpz_clear(tmp2[i]);
+ mpz_clear(tmp3[i]);
+ mpz_clear(tmp4[i]);
+ mpz_clear(tmp5[i]);
+    }
+    free(tmp2);free(tmp3);free(tmp4);free(tmp5);
+    //tmp1 which holds 5^i reserved for later use
+
+    //Check for F(L-1,i), F(L-1,0) should be -1 and F(L-1, i) should be 0 for all i>0
+    mpz_add_ui(tmp,F(L-1,0),1);
+    if(mpz_cmp(tmp,fiveL)!=0){
+ for(i=0;i<L;i++){
+     int j;
+     for(j=0;j<L;j++){
+  mpz_out_str(stdout,10,F(i,j));
+  printf(",");
+     }
+     printf("/n/n");
+ }
+ fprintf(stderr,"Cannot pass verification for F(%d,0)=1/n",L-1);
+ exit(-1);
+    }
+    for(i=1;i<L;i++){
+ if(mpz_sgn(F(L-1,i))!=0){
+     fprintf(stderr,"Cannot pass verification for F(%d,%d)=0/n",L-1,i);
+     exit(-1);
+ }
+    }
+ 
+    mpz_set_ui(m5L,1); //Initialize to 1;
+    mpz_set_ui(count_5,0);
+    while(mpz_sgn(N)>0){
+ Get_Mult_No_5(N,L,fun,fiveL,tmp1,tmp);
+ mpz_mul(tmpp,m5L,tmp);
+ mpz_mod(m5L,tmpp,fiveL);
+ mpz_fdiv_q_ui(N,N,5);
+ mpz_add(count_5,count_5,N);
+    }
+    for(i=0;i<L;i++)mpz_clear(tmp1[i]);
+    free(tmp1);
+    for(i=1;i<L;i++)for(j=0;j<L;j++)mpz_clear(F(i,j));
+    free(fun);
+    mpz_clear(tmp);mpz_clear(tmpp);mpz_clear(tmppp);
+}
+
+void short_calc(int N, int L){
+    mpz_t result;
+    mpz_t tenL;
+    int i,count5;
+    mpz_init(result);
+    mpz_init(tenL);
+    mpz_set_ui(tenL,10);
+    mpz_pow_ui(tenL,tenL,L);
+    mpz_set_ui(result,1);
+    count5=0;
+    i=N;
+    while(i>0){i/=5;count5+=i;}
+    for(i=1;i<=N;i++){
+ int j=i;
+ while(j%5==0)j/=5;
+ while(count5>0&&j%2==0){j/=2;count5--;}
+ mpz_mul_ui(result,result,j);
+ mpz_mod(result,result,tenL);
+    }
+    mpz_out_str(stdout,10,result);
+    printf("/n");
+}
+void calc(mpz_t N, int L){
+     int smallN=L*4;
+     mpz_t m5L;
+     mpz_t two,twomL;
+     mpz_t fiveL;
+     mpz_t result;
+     mpz_t count_5;
+     if(mpz_cmp_ui(N,smallN)<0){
+  short_calc(mpz_get_ui(N),L);
+  return;
+     }
+     mpz_init(count_5);
+     mpz_init(m5L);
+     mpz_init(fiveL);
+     mpz_set_ui(m5L,5);
+     mpz_pow_ui(fiveL, m5L, L);//fiveL=5^L
+     Get_m5L(N,L,m5L,fiveL,count_5);  //m5L = final_result % (5^L)
+     mpz_add_ui(count_5,count_5,L);
+     mpz_init(two);
+     mpz_init(twomL);
+     mpz_set_ui(two,2);
+     mpz_add_ui(twomL,fiveL,1);
+     mpz_fdiv_q_ui(twomL,twomL,2);
+     mpz_powm(twomL,twomL,count_5,fiveL);// (twomL = 2^(-L) mod (5^L))
+     mpz_init(result);
+     mpz_mul(result,twomL,m5L);   
+     mpz_mod(twomL,result, fiveL); //twomL = (m5L*2^(-L)) %(5^L)
+     mpz_pow_ui(m5L,two,L); //m5L= 2^L
+     mpz_mul(result,twomL, m5L); //2^L * (m5L*2^(-L))%(5^L), the final result
+     mpz_out_str(stdout,10,result);
+     printf("/n");
+     mpz_clear(result);
+     mpz_clear(twomL);
+     mpz_clear(two);
+     mpz_clear(fiveL);
+     mpz_clear(m5L);
+}
+
+int
+main(void)
+{
+    mpz_t N;
+    int L;
+    size_t len;
+    mpz_init(N);
+    printf("Please input large number N, so that we could process for N!/n");
+    len=mpz_inp_str(N,stdin,10);
+    if(len>1024){
+     printf("Current only process number whose length no more than 1000/n");
+     return -1;
+    }
+    printf("Please input number of digits to get (no more than 100):");
+    scanf("%d",&L);
+    if(L>100){
+    printf("Input Out of range/n");
+    return -1;
+    }
+    if(L<3)L=3;
+    printf("Calcuate last %d non-zero digits of ",L);
+    mpz_out_str(stdout,10,N);
+    printf("/n");
+    calc(N,L);
+    mpz_clear(N);
+    return 0;
+} 
