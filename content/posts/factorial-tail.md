@@ -2,7 +2,7 @@
 title: 计算阶乘的 18 位非零尾数
 categories: 算法, 数学
 keywords: 'factorial'
-thumbnail: "../thumbnails/coin.jpg"
+thumbnail: "../images/factail.png"
 
 tags:
   - factorial
