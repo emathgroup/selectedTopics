@@ -14,7 +14,8 @@ date: 2019-11-22 0:0:20
 xstring于[2005年在csdn挑战](https://bbs.csdn.net/topics/70362869?list=712578) ，对于一个给定的大整数，如何快速计算这个整数阶乘去掉尾零后的最低18位
 
 最后mathe给出了一种时间复杂度为$O(L^3 log(L)^2 +L^3 log(L)T +T^2)$的有效算法，其中L代表计算的非零尾数位数， T代表输入整数的位数。  
-gxqcn还利用他的[HugeCalc](https://www.emath.ac.cn/hugecalc/) 对算法重新实现并进行性能优化，比mathe用gmp实现的代码更快了一个数量级。  
+gxqcn还利用他的[HugeCalc](https://www.emath.ac.cn/hugecalc/) 对算法重新实现并进行性能优化，比mathe用gmp实现的代码更快了一个数量级。 
+贴子内容是mathe对https://blog.csdn.net/mathe/article/details/1132404 的备份。  
 
 # 详细内容
 xstring首先发问: 阶乘不用解释吧，阶乘的 18 位非零尾数需要简单解释一下。阶乘的十进制结果中末尾都会有很多个数字 0 (5以下的除外)，去掉这些连续的 0 之后最后 18 位数字即是这里所说的 18 位非零尾数。之所以称这为“非零”，是因为通常最后一个数字是 0。举两个例子，10! = 3,628,800，其 18 位非零尾数为 36,288；24! = 620,448,401,733,239,439,360,000，其 18 位非零尾数为 044,840,173,323,943,936
@@ -58,7 +59,7 @@ ii)记$F(k,x)=(x\times 5^k+1)(x\times5^k+2)(x\times5^k+3)(x\times5^k+4)(x\times5
 那么$F(1,x)=24+50\times 5\times x+35\times 5^2\times x^2+10\times 5^3\times x^3+5^4\times x^4 (mod 5^L)$.  
 假设$F(n,x)=a_0+a_1\times 5\times x+a_2\times5^2\times x^2+\dots+a_{L-1}\times 5^{L-1}\times x^{L-1} (mod 5^L)$,  
 那么$F(n+1,x)=F(n,5x)\times F(n,5x+1)\times F(n,5\times x+2)\times F(n,5x+3)\times F(n,5x+4) (mod 5^L)$.  
-首先将每个$F(n,5x+t)$ 展开,重新整理成关于$5x$的多项式,这个需要$L^2$次乘法运算,使用到i)中的杨辉三角形.花费时间复杂度为$O(L^3*log(L))$.  
+首先将每个$F(n,5x+t)$ 展开, 重新整理成关于$5x$的多项式,这个需要$L^2$次乘法运算,使用到i)中的杨辉三角形.花费时间复杂度为$O(L^3*log(L))$.  
 然后将4个多项式俩俩相乘,$5x$次数大于L的都可以抛弃,每次两个多项式相乘最多花费$O(L^2)$次乘法(如果使用快速乘法可以只用$O(L log(L))$次乘法),所以花费的时间复杂度还是$O(L^3\log(L))$
 这样,通过$O(L^3 \log(L)^2)$,我们可以计算出$F(k,x)$,其中$1\le k\le L$.  
 而保存所有的$F(k,x)$,需要花费的空间是$O(L^2 \log(L))$ ($L\log(L)$个长度为L的数).  
