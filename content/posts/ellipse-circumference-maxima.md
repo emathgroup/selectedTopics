@@ -16,7 +16,7 @@ date: 2019-11-25 00:50:20
 给定椭圆可以假设方程为$\frac{x^2}{a^2}+\frac{x^2}{b^2}=1$,求其内接n边形周长的最大值$L(n)$。  
 
 # 具体内容
-[数学星空首先给出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3740&pid=39892&fromuid=20) 了$L(3)=2\sqrt{3}frac{a^2+b^2+D}{\sqrt{a^2+b^2+2D}}$,其中·$D=\sqrt{a^4+b^4-a^2b62}$。  
+[数学星空首先给出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3740&pid=39892&fromuid=20) 了$L(3)=2\sqrt{3}\frac{a^2+b^2+D}{\sqrt{a^2+b^2+2D}}$,其中·$D=\sqrt{a^4+b^4-a^2b^2}$。  
 并且指出，对于椭圆内接n边形有现成结论：  
 P是已知椭圆上的一点，以P为一顶点且内接于椭圆的n边形中，有且仅有一个周长最长的，记为n(P), 它由下面的2个等价的条件之一决定：  
 （1） n(P)的全部顶点都具有光反射特性。  
@@ -168,6 +168,6 @@ $L(4)=\int_0^{2\pi}m\sqrt{1-\frac{(m^2-n^2)\cos(x)^2}{m^2}}dx-4(2\int_0^{arccos(
 关于这个话题，[数学研发论坛](https://bbs.emath.ac.cn/) 内讨论内容非常丰富，这里很难全部予以转述。下面给出几个重要的相关链接:   
 [椭圆内接n边形周长最大值](https://bbs.emath.ac.cn/thread-3740-1-1.html)  
 [双椭圆外切内接N边形问题](https://bbs.emath.ac.cn/thread-5490-1-1.html)  
-[求外接圆的半径](https://bbs.emath.ac.cn/thread-5476-1-1.htm)  
+[求外接圆的半径](https://bbs.emath.ac.cn/thread-5476-1-1.html)  
 [诡异的椭圆定理](https://bbs.emath.ac.cn/thread-4216-1-1.html)  
 
