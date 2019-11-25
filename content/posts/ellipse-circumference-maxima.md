@@ -95,32 +95,6 @@ $\frac{dr}{dt}p\prime(s_2)=\frac{ds_2}{dt}+\frac{dv}{dt}$,
 ![em7](../images/ellmax/em7.jpg)  
 以及
 ![em8](../images/ellmax/em8.jpg)  
-  
-## 周长最长内接n边形计算
-数学星空指出n=3时，陈都很早就有了深入的研究  
-![em9](../images/ellmax/em9.jpg)  
-
-数学星空并且给出总结:
-
-对于$n=3$
-$L(3)=2\sqrt{3}\frac{a^2+b^2+D}{\sqrt{a^2+b^2+2D}},D=\sqrt{a^4+b^4-a^2b^2}$  
-$m=a\times\frac{d^2-b^2}{a^2-b^2}$  
-$n=b\times\frac{a^2-d^2}{a^2-b^2}$  
-$d^2=\sqrt{a^4+b^4-a^2*b^2}$  
-$L(3)=\int_0^{2\pi}m\sqrt{1-(m^2-n^2)\frac{\cos(x)^2}{m^2}}dx-3(2\int_0^{arccos(\frac{m}a)}m\sqrt{1-(m^2-n^2)\frac{\cos(x)^2}{m^2}}dx-\frac{2b\sqrt{a^2-m^2}}a$  
-
-对于$n=4$  
-$L(4)=4\sqrt{a^2+b^2}$  
-$m=\frac{a^2}{\sqrt{a^2+b^2}}$  
-$n=\frac{b^2}{\sqrt{a^2+b^2}}$  
-$L(4)=\int_0^{2\pi}m\sqrt{1-\frac{(m^2-n^2)\cos(x)^2}{m^2}}dx-4(2\int_0^{arccos(\frac ma)}m\sqrt(1-\frac{(m^2-n^2)\cos(x)^2}{m^2}}dx-\frac{2b\sqrt{a^2-m^2}}a$  
-另外他还给出了[L(5)~L(8)](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3740&pid=42785&fromuid=20) 
-![em10](../images/ellmax/em10.jpg)  
-![em11](../images/ellmax/em11.jpg)  
-![em12](../images/ellmax/em12.jpg)  
-![em13](../images/ellmax/em13.jpg)  
-![em14](../images/ellmax/em14.jpg)  
-![em15](../images/ellmax/em15.jpg)  
 
 ##双心多边形计算
 在另外一个贴子中，mathe给出了对应[同时具有外接椭圆和内切椭圆的多边形的计算方案](https://bbs.emath.ac.cn/thread-5476-1-1.html)   
@@ -163,6 +137,37 @@ $\begin{bmatrix}s^2&s&1\end{bmatrix} \begin{bmatrix}a^2b^2&-2ab&1\\-2ab&-2ab+4a+
 
 由此数学星空计算出[n=10以内参数a,b之间的关系](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5490&pid=53149&fromuid=20) 
 
+  
+## 周长最长内接n边形计算
+数学星空指出n=3时，陈都很早就有了深入的研究  
+![em9](../images/ellmax/em9.jpg)  
 
+数学星空并且给出总结:
 
+对于$n=3$
+$L(3)=2\sqrt{3}\frac{a^2+b^2+D}{\sqrt{a^2+b^2+2D}},D=\sqrt{a^4+b^4-a^2b^2}$  
+$m=a\times\frac{d^2-b^2}{a^2-b^2}$  
+$n=b\times\frac{a^2-d^2}{a^2-b^2}$  
+$d^2=\sqrt{a^4+b^4-a^2*b^2}$  
+$L(3)=\int_0^{2\pi}m\sqrt{1-(m^2-n^2)\frac{\cos(x)^2}{m^2}}dx-3(2\int_0^{arccos(\frac{m}a)}m\sqrt{1-(m^2-n^2)\frac{\cos(x)^2}{m^2}}dx-\frac{2b\sqrt{a^2-m^2}}a$  
+
+对于$n=4$  
+$L(4)=4\sqrt{a^2+b^2}$  
+$m=\frac{a^2}{\sqrt{a^2+b^2}}$  
+$n=\frac{b^2}{\sqrt{a^2+b^2}}$  
+$L(4)=\int_0^{2\pi}m\sqrt{1-\frac{(m^2-n^2)\cos(x)^2}{m^2}}dx-4(2\int_0^{arccos(\frac ma)}m\sqrt{1-\frac{(m^2-n^2)\cos(x)^2}{m^2}}dx-\frac{2b\sqrt{a^2-m^2}}a$  
+另外他还给出了[L(5)~L(8)](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3740&pid=42785&fromuid=20) 
+![em10](../images/ellmax/em10.jpg)  
+![em11](../images/ellmax/em11.jpg)  
+![em12](../images/ellmax/em12.jpg)  
+![em13](../images/ellmax/em13.jpg)  
+![em14](../images/ellmax/em14.jpg)  
+![em15](../images/ellmax/em15.jpg)  
+
+## 参考链接
+关于这个话题，[数学研发论坛](https://bbs.emath.ac.cn/) 内讨论内容非常丰富，这里很难全部予以转述。下面给出几个重要的相关链接:   
+[椭圆内接n边形周长最大值](https://bbs.emath.ac.cn/thread-3740-1-1.html)  
+[双椭圆外切内接N边形问题](https://bbs.emath.ac.cn/thread-5490-1-1.html)  
+[求外接圆的半径](https://bbs.emath.ac.cn/thread-5476-1-1.htm)  
+[诡异的椭圆定理](https://bbs.emath.ac.cn/thread-4216-1-1.html)  
 
