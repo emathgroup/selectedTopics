@@ -20,8 +20,6 @@ wayne[把问题进行了推广](https://bbs.emath.ac.cn/thread-16953-1-1.html) �
 另外由于对于等腰三角形，P在其对称轴上时通常会有很多平凡解，我们又通常会淘汰这种情况。  
 
 比较有意思的是mathe最后利用[正n边形对角线交点问题](https://bbs.emath.ac.cn/thread-1112-1-1.html) 的结果给这个问题的推广情况一种公式解。
-![polygon](../images/anglegrid/polygon.png)  
-而那个问题结果可以在[A006600](https://oeis.org/A006600) 找到。  
 
 # 详细内容
 ## 整数度数解
@@ -61,6 +59,8 @@ mathe建议重新描述本题推广情况为：
 而这个正好是存在点P的充分必要条件。  
 比较有意思的是，对于任意一个合法的解，我们任意交换x,y,z的位置或u,v,w的位置还是合法的解。  
 非常有意思的是[正n边形对角线交点问题](https://bbs.emath.ac.cn/thread-1112-1-1.html) 正好求解的是完全相同的等式。  
+而那个问题结果可以在[A006600](https://oeis.org/A006600) 找到。  
+![polygon](../images/anglegrid/polygon.png)  
 其中[论文](http://math.mit.edu/~poonen/papers/ngon.pdf) 中定理4给出了完整的解,如下:  
 i) {u,v,w}={x,y,z} (当然$x+y+z=\frac{\pi}2$)  
 ii)  
