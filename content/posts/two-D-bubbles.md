@@ -339,11 +339,12 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 
 另外，理论上划分过程允许出现一个只有一条内部边界的子区域（和另外一条外部边界围成）。但是直觉上这种区域很难成为最优解，所以我们的搜索代码直接放弃了这种情况。
 
+##结果汇总  
 这种搜索方法在搜索的次数足够充足时已经可以有[极大的概率找到最优结果]，而对于n很小的几个数据我们提交到了OEIS
 [A307234] [A307235] [A307237] [A307238]
 更多结果比如圆形结果  
-![c4](../images/twodbubble/c4.png) ![c5](../images/twodbubble/c5.png)  
-![c6](../images/twodbubble/c6.png) ![c7](../images/twodbubble/c7.png)  
+![c4](../images/twodbubble/c4.jpg) ![c5](../images/twodbubble/c5.jpg)  
+![c6](../images/twodbubble/c6.jpg) ![c7](../images/twodbubble/c7.png)  
 ![c8](../images/twodbubble/c8.png) ![c9](../images/twodbubble/c9.png)  
 ![c10](../images/twodbubble/c10.png) ![c11](../images/twodbubble/c11.png)  
 ![c12](../images/twodbubble/c12.png) ![c13](../images/twodbubble/c13.png)  
