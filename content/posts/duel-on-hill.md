@@ -20,7 +20,7 @@ KeyTo9\_Fans决定给wayne出道难题，
 于是拦住wayne，不让wayne登到山顶，如下图所示：  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;山顶  
 ———————  
-Fans（满血:lol）  　
+Fans（满血:lol）  
 wayne（$1/3$血）　1步之遥  
 ———————  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2步之遥  
