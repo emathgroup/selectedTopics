@@ -1,5 +1,5 @@
 ---
-title: "任意二个之和都是平方数"
+title: "任意二个数之和都是平方数"
 thumbnail: "../thumbnails/exp.png"
 date: "2019-11-26"
 draft: false
