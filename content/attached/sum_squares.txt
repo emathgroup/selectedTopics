@@ -1,0 +1,435 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+
+#define abs(x) ((x)>0?(x):-(x))
+#define HALFLIMIT 6325
+#define LIMIT (HALFLIMIT*HALFLIMIT)
+#define SUMBOUND (LIMIT*25)
+//The limitation is 40000000*25
+#ifdef WIN32
+typedef __int64 longlong;
+#else
+typedef long long longlong;
+#endif
+#define MAXNUMS 73000000
+int not_prime[LIMIT];
+int pcount;
+#define primelist not_prime
+
+int data[MAXNUMS][4];
+int dcount;
+int cmpdata(const void *p, const void *q){
+    const int *pi=(const int *)p;
+    const int *qi=(const int *)q;
+    int i;
+    for(i=0;i<4;i++){
+        if(pi[i]<qi[i])return -1;
+        if(pi[i]>qi[i])return 1;
+    }
+    return 0;
+}
+
+int cmpsd(const void *p, const void *q){
+    const int *pi=(const int *)p;
+    const int *qi=(const int *)q;
+    int i;
+    for(i=0;i<3;i++){
+        if(pi[i]<qi[i])return -1;
+        if(pi[i]>qi[i])return 1;
+    }
+    return 0;
+}
+
+void pushdata(int X,int Y,int Z,int W)
+{
+    int t;
+    data[dcount][0]=X;
+    data[dcount][1]=Y;
+    data[dcount][2]=Z;
+    data[dcount][3]=W;
+    dcount++;
+}
+
+class cn{
+    longlong r,i;
+public:
+    cn(longlong r, longlong i){this->r=r;this->i=i;}
+    cn com()const{cn x(r,-i);return x;}
+    longlong sqrmod()const{return r*r+i*i;}
+    longlong rel()const{return r;}
+    longlong img()const{return i;}
+    cn operator+(const cn& x)const{cn y(r+x.r,i+x.i);return y;}
+    cn operator-(const cn& x)const{cn y(r-x.r,i-x.i);return y;}
+    cn operator*(const cn& x)const{cn y(r*x.r-i*x.i,r*x.i+i*x.r);return y;}
+    cn div(longlong x)const;
+    bool iszero()const{return r==0&&i==0;}
+};
+
+
+cn cn::div(longlong x)const{
+    longlong u,v;
+    u=r%x;
+    v=i%x;
+    if(u<0)u+=x;
+    if(v<0)v+=x;
+    if(u>x/2)u-=x;
+    if(v>x/2)v-=x;
+    u=(r-u)/x;
+    v=(i-v)/x;
+    return cn(u,v);
+}
+
+cn round(const cn& x, const cn& y){
+    cn z=x*y.com();
+    longlong r=y.sqrmod();
+    return z.div(r);
+}
+
+int *A, *B;
+cn factor(const cn& x, const cn& y){
+    if(x.iszero())return y;
+    return factor(y-round(y,x)*x,x);
+}
+
+int powmod(longlong a, longlong n, int p){
+    longlong mul=a%p;
+    longlong base=1;
+    while(n){
+        if(n&1){
+            base*=mul;
+            base%=p;
+        }
+        mul*=mul;
+        mul%=p;
+        n>>=1;
+    }
+    return (int)base;
+}
+
+int rm1(int p){
+    int i;
+    int t=(p-1)/4;
+    for(i=2;i<p;i++){
+        int u=powmod(i,t,p);
+        if(((longlong)u*u+1)%p==0)return u;
+    }
+}
+
+cn defactor(int p){
+    int v=rm1(p);
+    cn x(v,1);
+    cn y(p,0);
+    return factor(x,y);
+}
+
+#define MAX_PRIME_COUNT 20
+int pstack[MAX_PRIME_COUNT];
+int pindex[MAX_PRIME_COUNT];
+int prod[MAX_PRIME_COUNT];
+int max_part;
+longlong total_count;
+struct pair{
+    int S,L,s,l;
+}SL[50];
+int cmpsl(const void *p, const void *q){
+    const struct pair *ps=(const struct pair *)p;
+    const struct pair *qs=(const struct pair *)q;
+    if(ps->S<qs->S)return -1;
+    if(ps->S>qs->S)return 1;
+    return 0;
+}
+
+int sc;
+void insert_num(int lindex[MAX_PRIME_COUNT], int step){
+    cn num(1,0);
+    int i,j;
+    int u,v;
+    for(i=0;i<=step;i++){
+        cn p(A[pstack[i]],B[pstack[i]]);
+        cn q=p.com();
+        for(j=0;j<lindex[i];j++){
+            num=num*p;
+        }
+        for(;j<pindex[i];j++){
+            num=num*q;
+        }
+    }
+    u=abs((int)num.rel());
+    v=abs((int)num.img());
+    if(v<u){
+        i=v;
+        v=u;
+        u=i;
+    }
+    SL[sc].S=u*u;SL[sc].L=v*v;
+    SL[sc].s=u;SL[sc].l=v;
+    sc++;
+}
+
+//product in M=prod[step+1] or M=2*prod[step+1];
+//data in pstack^pindex
+void trynum(int step){
+    int odd_index;
+    int count,i,j,k;
+    int lindex[MAX_PRIME_COUNT];
+    int need2=(longlong)2*prod[step+1]<SUMBOUND;
+    int need4=(longlong)4*prod[step+1]<SUMBOUND;
+    int need8=(longlong)8*prod[step+1]<SUMBOUND;
+    int M=prod[step+1];
+    if(step==0&&pindex[0]<5)return;//One prime number
+    if(step==1&&pindex[0]==1&&pindex[1]==1)return;//Two prime numbers
+    odd_index=0;
+    count=1;
+    for(i=0;i<=step;i++){
+        count*=pindex[i]+1;
+        if(pindex[i]&1)odd_index=i;
+    }
+    sc=0;
+    memset(lindex,0,sizeof(lindex));
+    do{
+        insert_num(lindex,step);
+        for(i=step;i>=0;i--){
+            if((i==odd_index&&lindex[i]==(pindex[i]-1)/2)||
+                    lindex[i]==pindex[i]){
+                lindex[i]=0;
+                continue;
+            }
+            lindex[i]++;
+            break;
+        }
+    }while(i>=0);
+    if(count&1){
+        for(j=1;j<=step;j++){
+            lindex[j-1]=pindex[j]/2;
+            odd_index=j;
+            do{
+                insert_num(lindex,step);
+                for(i=step;i>=j;i--){
+                    if((i==odd_index&&lindex[i]==(pindex[i]-1)/2)||
+                            lindex[i]==pindex[i]){
+                        lindex[i]=0;
+                        continue;
+                    }
+                    lindex[i]++;
+                    break;
+                }
+            }while(i>=j);
+        }
+    }
+    qsort(SL,sc,sizeof(SL[0]),cmpsl);
+    for(i=0;i<sc-2;i++){
+        for(j=i+1;j<sc-1;j++){
+            for(k=j+1;k<sc;k++){
+                int N,X,Y,Z,W;
+                if(SL[i].S+SL[j].S>SL[k].S){
+                    N=SL[i].S+SL[j].S+SL[k].S;
+                    if(need4&&(N&1)){
+                        X=2*N-4*SL[k].S;
+                        Y=2*N-4*SL[j].S;
+                        Z=2*N-4*SL[i].S;
+                        W=prod[step+1]*4-2*N;
+                        pushdata(X,Y,Z,W);
+                    }else if(!(N&1)){
+                        N/=2;
+                        X=N-SL[k].S;
+                        Y=N-SL[j].S;
+                        Z=N-SL[i].S;
+                        W=prod[step+1]-N;
+                        pushdata(X,Y,Z,W);
+                    }
+                }
+                if(SL[i].S+SL[j].S>SL[k].L&&SL[k].L>SL[k].S){
+                    N=SL[i].S+SL[j].S+SL[k].L;
+                    if(need4&&(N&1)){
+                        X=2*N-4*SL[k].L;
+                        Y=2*N-4*SL[j].S;
+                        Z=2*N-4*SL[i].S;
+                        W=prod[step+1]*4-2*N;
+                        if(W>Z)
+                           pushdata(X,Y,Z,W);
+                    }else if(!(N&1)){
+                        N/=2;
+                        X=N-SL[k].L;
+                        Y=N-SL[j].S;
+                        Z=N-SL[i].S;
+                        W=prod[step+1]-N;
+                        if(W>Z)
+                           pushdata(X,Y,Z,W);
+                    }
+                }
+            }
+        }
+    }
+#define SQR(x)  ((x)*(x))
+    if(need2)for(i=0;i<sc-2;i++){
+        for(j=i+1;j<sc-1;j++){
+            for(k=j+1;k<sc;k++){
+                struct pair s1,s2,s3;
+                struct pair tmp;
+                int N,X,Y,Z,W;
+                s1.S=SQR(SL[i].l-SL[i].s),s2.S=SQR(SL[j].l-SL[j].s),s3.S=SQR(SL[k].l-SL[k].s);
+                s1.L=SQR(SL[i].l+SL[i].s),s2.L=SQR(SL[j].l+SL[j].s),s3.L=SQR(SL[k].l+SL[k].s);
+                if(s1.S>s2.S){
+                    tmp=s1;s1=s2;s2=tmp;
+                }
+                if(s1.S>s3.S){
+                    tmp=s1;s1=s3;s3=tmp;
+                }
+                if(s2.S>s3.S){
+                    tmp=s2;s2=s3;s3=tmp;
+                }
+                if(s1.S+s2.S<=s3.S)
+                    continue;
+                N=s1.S+s2.S+s3.S;
+                if(need8&&(N&1)){
+                    X=2*N-4*s3.S;
+                    Y=2*N-4*s2.S;
+                    Z=2*N-4*s1.S;
+                    W=prod[step+1]*8-2*N;
+                    pushdata(X,Y,Z,W);
+                }else if(!(N&1)){
+                    N/=2;
+                    X=N-s3.S;
+                    Y=N-s2.S;
+                    Z=N-s1.S;
+                    W=prod[step+1]*2-N;
+                    pushdata(X,Y,Z,W);
+                }
+                if(s1.S+s2.S<=s3.L||s3.L==s3.S)
+                    continue;
+                N=s1.S+s2.S+s3.L;
+                if(need8&&(N&1)){
+                    X=2*N-4*s3.L;
+                    Y=2*N-4*s2.S;
+                    Z=2*N-4*s1.S;
+                    W=prod[step+1]*8-2*N;
+                    if(W>Z)
+                       pushdata(X,Y,Z,W);
+                }else if(!(N&1)){
+                    N/=2;
+                    X=N-s3.L;
+                    Y=N-s2.S;
+                    Z=N-s1.S;
+                    W=prod[step+1]*2-N;
+                    if(W>Z)
+                        pushdata(X,Y,Z,W);
+                }
+            }
+        }
+    }
+
+}
+
+void enumerate(int step, int start){
+    int i,j;
+    for(i=start;i<pcount;i++){
+        int p=primelist[i];
+        pstack[step]=i;
+        prod[step+1]=prod[step];
+        for(j=1;prod[step+1]*(longlong)p<SUMBOUND;j++){
+            pindex[step]=j;
+            prod[step+1]*=p;
+            trynum(step);
+            enumerate(step+1,i+1);
+        }
+    }
+}
+int issqr(int x){
+    double d=sqrt(x);
+    int n=(int)d;
+    if(n*n==x)return 1;
+    n=n++;
+    if(n*n==x)return 1;
+    return 0;
+}
+
+int comfac2(int a, int b){
+    if(a==0)return b;
+    return comfac2(b%a,a);
+}
+
+int comfac3(int d[3]){
+    int c=comfac2(d[0],d[1]);
+    return comfac2(c,d[2]);
+}
+
+int main(){
+    int i,j;
+    not_prime[0]=not_prime[1]=1;
+    for(i=2;i<HALFLIMIT;i++){
+        if(!not_prime[i]){
+            if(i%4==1){
+                primelist[pcount++]=i;
+            }
+            for(j=i*i;j<LIMIT;j+=i)
+                not_prime[j]=1;
+        }
+    }
+    A = new int[pcount];
+    B = new int[pcount];
+    for(i=0;i<pcount;i++){
+        cn factors=defactor(primelist[i]);
+        A[i]=abs((int)factors.rel());
+        B[i]=abs((int)factors.img());
+    }
+    prod[0]=1;
+    enumerate(0,0);
+    fprintf(stderr,"4 pairs count=%d/n",dcount);
+    qsort(data,dcount,sizeof(data[0]),cmpdata);
+    for(j=0,i=1;i<dcount;i++){
+        int k;
+        int h;
+        for(k=0;k<3;k++){
+            if(data[i][k]!=data[j][k])break;
+        }
+        if(k<3){
+            j=i;
+            continue;
+        }
+        /*
+        if(data[i][3]==data[j][3]){
+            data[i][3]=-1;
+            continue;
+        }*/
+        for(k=j;k<i;k++){
+//            if(data[k][3]==-1)continue;
+            if(issqr(data[k][3]+data[i][3])){
+                int t;
+                for(t=0;t<4;t++){
+                    printf("%d,",data[k][t]);
+                }
+                printf("%d/n",data[i][3]);
+            }
+        }
+        h=comfac3(data[i]);
+        if(h>1){
+            int u;
+            for(u=2;u*u<h/2;u++){
+                if(h%(u*u)==0){
+                    int d[4];
+                    int *r;
+                    int v=u*u;
+                    d[0]=data[i][0]/v;
+                    d[1]=data[i][1]/v;
+                    d[2]=data[i][2]/v;
+                    r=(int *)bsearch(d,data,dcount,sizeof(data[0]),cmpsd);
+                    if(r){
+                        while(cmpsd(d,r-4)==0)r-=4;
+                        while(cmpsd(d,r)==0){
+                            int t;
+                            if(issqr(data[i][3]+r[3]*v)){
+                                for(t=0;t<4;t++){
+                                    printf("%d,",data[i][t]);
+                                }
+                                printf("%d/n",r[3]*v);
+                            }
+                            r+=4;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
