@@ -21,7 +21,7 @@ KeyTo9\_Fans决定给wayne出道难题，
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;山顶  
 ———————  
 Fans（满血:lol）  
-wayne（$1/3$血）　1步之遥  
+wayne（$\frac13$血）　1步之遥  
 ———————  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2步之遥  
 ———————  
@@ -36,7 +36,7 @@ wayne（$1/3$血）　1步之遥
 Fans会一直在路上阻止wayne往上走，  
 wayne想要登到山顶，只能将Fans顶到山顶上去。  
 Fans目前拥有$1$体力值，  
-而wayne只有$1/3$体力值。  
+而wayne只有$\frac13$体力值。  
 Fans和wayne将进行$N$个回合的较量。  
 在每一回合里面：  
 ————————————  
@@ -98,8 +98,8 @@ mathe提示上面表达式中k和n的差必须是偶数。
 #动态规划初步分析
 mathe表示  
 其实就是要计算出所有k步可以到达的状态集合。体力比表示wayne的体力和Fans体力之比。  
-显然其中一步达到的只有$n=1$,体力比$p\ge 1$,, 得到集合$S_1={(n,p)|n=1,p\gt 1}$    
-如果两步达到，wayne必然有办法使得一步后必然到达$S_1$,对于集合$S_2={(n,p)|n=2,p\gt 2}$可以达到。  
+显然其中一步达到的只有$n=1$,体力比$p\ge 1$,, 得到集合$S_1=\{(n,p)|n=1,p\gt 1\}$    
+如果两步达到，wayne必然有办法使得一步后必然到达$S_1$,对于集合$S_2=\{(n,p)|n=2,p\gt 2\}$可以达到。  
 同样，对于$S_3$,只能初始状态为$n=3$或$n=1$.其中$n=1$的，wayne同样要想法达到$S_2$,  
 假设wayne使用策略体力$x=p$,而Fans使用一个略大于p但是非常接近p的策略，于是到达$(2,\frac{p}{1-p}) \in S_2$。  
 
