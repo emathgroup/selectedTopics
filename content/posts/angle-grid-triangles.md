@@ -2,7 +2,7 @@
 title: 角格点三角形
 categories: 数学
 keywords: 'geometry, combination'
-thumbnail: "../images/anglegrid/ta2.png"
+thumbnail: "../images/anglegrid/ta3.png"
 
 tags:
   - geometry
