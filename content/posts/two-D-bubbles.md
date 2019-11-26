@@ -341,6 +341,19 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 
 这种搜索方法在搜索的次数足够充足时已经可以有[极大的概率找到最优结果]，而对于n很小的几个数据我们提交到了OEIS
 [A307234] [A307235] [A307237] [A307238]
+更多结果比如圆形结果  
+![c4](../images/twodbubble/c4.png) ![c5](../images/twodbubble/c5.png)  
+![c6](../images/twodbubble/c6.png) ![c7](../images/twodbubble/c7.png)  
+![c8](../images/twodbubble/c8.png) ![c9](../images/twodbubble/c9.png)  
+![c10](../images/twodbubble/c10.png) ![c11](../images/twodbubble/c11.png)  
+![c12](../images/twodbubble/c12.png) ![c13](../images/twodbubble/c13.png)  
+![c14](../images/twodbubble/c14.png) ![c15](../images/twodbubble/c15.png)  
+![c16](../images/twodbubble/c16.png) ![c17](../images/twodbubble/c17.png)  
+![c18](../images/twodbubble/c18.png) ![c19](../images/twodbubble/c19.png)  
+而正方形结果  
+![s4](../images/twodbubble/s4.png) ![s5](../images/twodbubble/s5.png) ![s6](../images/twodbubble/s6.png) ![s7](../images/twodbubble/s7.png)  
+![s8](../images/twodbubble/s8.png) ![s9](../images/twodbubble/s9.png) ![s10](../images/twodbubble/s10.png) ![s11](../images/twodbubble/s11.png)  
+![s12](../images/twodbubble/s12.png) ![s13](../images/twodbubble/s13.png) ![s14](../images/twodbubble/s14.png)  
 
 此后我们发现关于这个问题[Simon Cox]已经对于42个区域以内都给出了很不错的结果。
 参考他的结果我们进一步得出圆形43个区域以内划分[已知最优结果的高精度表示]
@@ -387,14 +400,14 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 43:19.0920949918223182048671666134662299991492610140510
 并且经过长时间计算得出[44~52个区域的划分图]，可以看出对于这些结果蜂窝现象已经很明显了。
 ![c44](../thumbnails/c44.png)
-![c45](../images/c45.png)
-![c46](../images/c46.png)
-![c47](../images/c47.png)
-![c48](../images/c48.png)
-![c49](../images/c49.png)
-![c50](../images/c50.png)
-![c51](../images/c51.png)
-![c52](../images/c52.png)
+![c45](../images/twodbubble/c45.png)
+![c46](../images/twodbubble/c46.png)
+![c47](../images/twodbubble/c47.png)
+![c48](../images/twodbubble/c48.png)
+![c49](../images/twodbubble/c49.png)
+![c50](../images/twodbubble/c50.png)
+![c51](../images/twodbubble/c51.png)
+![c52](../images/twodbubble/c52.png)
 
 [均分田地问题]: https://bbs.emath.ac.cn/thread-2745-1-1.html
 [Plateau's laws]: https://en.wikipedia.org/wiki/Plateau%27s_laws
