@@ -57,14 +57,14 @@ Fans会采取最佳策略阻止wayne登到山顶，如果阻止不了，则会�
 KeyTo9\_Fans首先表示，  
 【抛砖】满血的Fans看起来坚不可摧，实际上……  
 可以预见地，wayne在第$1$回合就会不惜一切代价，使出所有的体力顶Fans。  
-Fans只能使出$1/3$以上的体力阻止wayne（不然Fans就输啦！），  
-结果wayne一上来就耗掉了Fans$1/3$以上的血，如下图所示……  
+Fans只能使出$\frac13$以上的体力阻止wayne（不然Fans就输啦！），  
+结果wayne一上来就耗掉了Fans共$\frac13$以上的血，如下图所示……  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;山顶  
 ———————  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1步之遥  
 ———————  
-Fans（$\leq 2/3$血）  
-wayne（$1/3$血）　　2步之遥  
+Fans（$\leq\frac23$血）  
+wayne（$\frac13$血）　　2步之遥  
 ———————  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3步之遥  
 ———————  
@@ -132,7 +132,7 @@ KeyTo9\_Fans最后做出总结
 设wayne的初始体力是$x$，  
 当$x\in(1,+\infty)$时，只需要$1$步登顶；  
 当$x\in(\frac23,1)$时，需要$3$步登顶；  
-当$x\in(\frac59,\frac2/3)$时，需要$5$步登顶；  
+当$x\in(\frac59,\frac23)$时，需要$5$步登顶；  
 当$x\in(\frac12,\frac59)$时，需要$7$步登顶；  
 当$x\in(\frac7{15},\frac12)$时，需要$9$步登顶；  
 当$x\in(\frac49,\frac7{15})$时，需要$11$步登顶；  
