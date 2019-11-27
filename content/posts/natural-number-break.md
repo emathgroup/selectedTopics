@@ -46,7 +46,7 @@ $c(n)=n+\lfloor n\sqrt[4]{4}\rfloor+\lfloor n\sqrt[4]{2}\rfloor$
 
 [lsr314分析发现](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16952&pid=81380&fromuid=20) ,
 貌似只要$t\gt 0$且$t^2,t+\frac1t,t+t^2,\frac1t+\frac1{t^2}$都是无理数，那么
-$a_n=n+\lfloor\frac nt\rfloor+\lfloor\frac n{t^2}\rfloor],b_n=n+\lfloor\frac nt\rfloor+\lfloor nt\rfloor,c_n=n+\lfloor\frac n{t^2}\rfloor+\lfloor nt\rfloor,$
+$a_n=n+\lfloor\frac nt\rfloor+\lfloor\frac n{t^2}\rfloor,b_n=n+\lfloor\frac nt\rfloor+\lfloor nt\rfloor,c_n=n+\lfloor\frac n{t^2}\rfloor+\lfloor nt\rfloor,$
 $\lfloor x\rfloor$表示$x$的整数部分，那么每个正整数刚好在$a_n,b_n,c_n$中出现一次。本题中$t=2^{\frac14}$。  
 
 #群雄逐鹿
