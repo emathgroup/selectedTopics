@@ -268,7 +268,7 @@ $\frac{2\cos(\frac{k_1\pi}{n+1})}{1+2\cos(\frac{k_1\pi}{n+1})}=2\cos(\frac{k_2\p
 那个额外的解就是  
 $(2\cos(\frac{\pi}5)+1)(2\cos(\frac{3\pi}5)+1)=1$.  
 
-有一道关于正三十边形的对角线可将其为多少部分的题目，  
+有一道[关于正三十边形的对角线](https://emathgroup.github.io/blog/angle-grid-triangles#polygon) 可将其为多少部分的题目，  
 关于这个题目，berkeley大学的Bjorn Poonen给出了一个公式，在其这篇文章中，他分析了所有形如  
 $u_1+u_2+\dots+u_k=0$（其中$u_1,u_2,\dots,u_k$都是$1$的单位根，也就是有某个整数$h_i$使得$u_i^{h_i}=1$)的解。  
 通过他的文章的结论，得知所有最多8项的这样的表达式中单位根的幂总是7,5,3,2或它们的乘积,  
