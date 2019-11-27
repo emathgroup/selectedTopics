@@ -97,7 +97,7 @@ because we are working in arithmetic module 2! Therefore, all the offdiagonal te
 Our sum now only involves the diagonal terms:
 
 $\sum_{i=1}^N x_i^2 A_{i,i} = 0$  
-Now $A_{i,i} = 1$, because the light-switch relationship is reflexive (assumption 1), and $d_i = 1$ too, so in the sum, we can replace $A_{i,i} by $d_i$. Moreover, we know that $x_i^2=x_i$, because $x_i$ is either 0 or 1. Therefore, we now have
+Now $A_{i,i} = 1$, because the light-switch relationship is reflexive (assumption 1), and $d_i = 1$ too, so in the sum, we can replace $A_{i,i}$ by $d_i$. Moreover, we know that $x_i^2=x_i$, because $x_i$ is either 0 or 1. Therefore, we now have
 $\sum_{i=1}^N x_i d_i = 0$.
 
 Hence x is in the perpendicular space of d. This means d is in the column space of A, so a button strategy exists that turns a set of "off" lights all "on", and the same strategy will turn a set of "on" lights all "off".
@@ -133,8 +133,8 @@ $g(a,b)=f(m,\frac a{2b})b^m$
 所以对于两行或两列的情况解都唯一.  
 对于$m=3, g(a,b)=a^3-2ab^2, g(B,I+B)=B^3-2B(I+B)^2=-2B-4B^2-B^3$  
   这个就比较难分析了.但是我们知道 $B|g(B,I+B)$  
-但是$det(B)=f(n,0)$在n为奇数的时候是0.  
-实际上,对于m和n都是奇数的情况,总是有$B|g(B,I+B)$,而且$det(B)=f(n,0)=0$,所以$\det(g(B,I+B))=0$.  
+但是$\det(B)=f(n,0)$在n为奇数的时候是0.  
+实际上,对于m和n都是奇数的情况,总是有$B|g(B,I+B)$,而且$\det(B)=f(n,0)=0$,所以$\det(g(B,I+B))=0$.  
 也就是说,我们证明了在$m,n$都是奇数的情况,上面方程不可逆,解可能不唯一(但是没有证明解必然不唯一,毕竟挖雷中要求所有数字都是0,1,这个解方程是无法限制的).
 但是对于m,n至少有一个数是偶数时,我们还没有很好的结果.  
 
@@ -186,7 +186,7 @@ ii)不然,对于$x=\cos(\frac{k\pi}{n+1}), (k=1,2,\dots,n)$
 上面问题存在唯一解的充分必要条件是  
 对于任意的整数$k_1,k_2 0\lt k_1\lt k_2\lt n+1$, 有  
 $\cos(\frac{k_1\pi}{n+1})-\cos(\frac{k_2\pi}{n+1})\ne \frac12$.  
-而对于这个题目，由于$k_1=300,k_2=400时会不满足上面条件，也就是
+而对于这个题目，由于$k_1=300,k_2=400$时会不满足上面条件，也就是
 $\cos(\frac35\pi)-\cos(\frac45\pi)=\frac12$, 所以方程不一定有解，而且即使有解的时候解也不会唯一。  
 随后，mathe给出了[改自关灯问题的代码](../attached/minelights/sequence.txt) ,连里面的注释都还是关灯问题的。  
 
@@ -206,7 +206,7 @@ $T_{i,j}=\sqrt(\frac2n)\sin(\frac{ij\pi}{n+1}),  (1\le i\le n,1\le j\le n)$.
 所以得到上面递推式中$u_1=u_2=\dots=u_n=0, u_{n+1}=r_n$,而$V_{n+1}=f(n,-B)$,所以我们得到  
 $f(n,-B)x_1=-r_n$  
 而  
-$TBT=\diag{2\cos(1\times\frac{\pi}{n+1})-1,2\cos(2\times\frac{\pi}{n+1})-1,\dots,2\cos(n\times\frac{\pi}{n+1})-1$  
+$TBT=diag\{2\cos(1\times\frac{\pi}{n+1})-1,2\cos(2\times\frac{\pi}{n+1})-1,\dots,2\cos(n\times\frac{\pi}{n+1})-1\}$  
 所以, 如果假设$Tx_k=y_k, Tr_n=-R_n$,  
 那么我们得到  
 $f(n,(-2\cos(\frac{h\pi}{n+1})+1)y_1(h)=-R_n(h)$,  
