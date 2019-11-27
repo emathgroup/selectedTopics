@@ -58,7 +58,7 @@ mathe建议重新描述本题推广情况为：
 由于$\frac{\sin(x)}{\sin(w)}=\frac{PC}{PA}$等，我们可以得出$\sin(x)\sin(y)\sin(z)=\sin(u)\sin(v)\sin(w)$.  
 而这个正好是存在点P的充分必要条件。  
 比较有意思的是，对于任意一个合法的解，我们任意交换x,y,z的位置或u,v,w的位置还是合法的解。  
-<a name=polygon/>非常有意思的是[正n边形对角线交点问题](https://bbs.emath.ac.cn/thread-1112-1-1.html) 正好求解的是完全相同的等式。  
+<a name=polygon></a>非常有意思的是[正n边形对角线交点问题](https://bbs.emath.ac.cn/thread-1112-1-1.html) 正好求解的是完全相同的等式。  
 而那个问题结果可以在[A006600](https://oeis.org/A006600) 找到。  
 ![polygon](../images/anglegrid/polygon.png)  
 其中[论文](http://math.mit.edu/~poonen/papers/ngon.pdf) 中定理4给出了完整的解,如下:  
