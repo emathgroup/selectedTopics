@@ -1,0 +1,339 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+typedef double ftype;
+typedef ftype ** MATRIX;
+typedef ftype * VECTOR;
+typedef const ftype ** CONST_MATRIX;
+typedef const ftype * CONST_VECTOR;
+#define INIT_a 0.0
+#define INIT_b 100.0
+#define INIT_c 75.0
+#define INIT_d 50.0
+#define ERROR  0.000001
+MATRIX matrix_alloc(int n){
+    MATRIX x = (MATRIX)malloc(sizeof(ftype *)*n+sizeof(ftype)*n*n);
+    int i;
+    x[0]=(ftype *)(x+n);
+    for(i=1;i<n;i++)x[i]=x[i-1]+n;
+    return x;
+}
+ 
+void matrix_free(MATRIX x){
+    free(x);
+}
+ 
+VECTOR vector_alloc(int n){
+    VECTOR x = (VECTOR)malloc(sizeof(ftype)*n);
+    return x;
+}
+ 
+void vector_free(VECTOR x){
+    free(x);
+}
+ 
+void matrix_sum(MATRIX A, CONST_MATRIX B, int n){
+    int i,j;
+    for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+        A[i][j] += B[i][j];
+    }
+    }
+}
+ 
+void matrix_diff(MATRIX A, CONST_MATRIX B, int n){
+    int i,j;
+    for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+        A[i][j] -= B[i][j];
+    }
+    }
+}
+ 
+void vector_sum(VECTOR a, CONST_VECTOR b, int n){
+    int i;
+    for(i=0;i<n;i++)a[i]+=b[i];
+}
+ 
+void vector_diff(VECTOR a, CONST_VECTOR b, int n){
+    int i;
+    for(i=0;i<n;i++)a[i]-=b[i];
+}
+ 
+void vector_rdiff(VECTOR a, CONST_VECTOR b, int n){
+    int i;
+    for(i=0;i<n;i++)a[i]=b[i]-a[i];
+}
+ 
+void matrix_mul(MATRIX out, CONST_MATRIX in1, CONST_MATRIX in2, int n){
+    int i,j,k;
+    for(i=0;i<n;i++)for(j=0;j<n;j++){
+    ftype sum=0.0;
+    for(k=0;k<n;k++){
+            sum+=in1[i][k]*in2[k][j];
+    }
+    out[i][j]=sum;
+    }
+}
+//-H*in
+void vector_mul_mH(VECTOR out, CONST_VECTOR in, int n){
+    int i;
+    for(i=0;i<n;i++){
+        ftype sum = in[i];
+        if(i>0)sum-=in[i-1];
+        if(i<n-1)sum-=in[i+1];
+        out[i]=sum;
+    }
+}
+//-H*in
+void matrix_mul_mH(MATRIX out, CONST_MATRIX in, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++){
+    ftype sum=in[i][j];
+    if(i>0)sum-=in[i-1][j];
+    if(i<n-1)sum-=in[i+1][j];
+    out[i][j]=sum;
+    }
+}
+//H*in
+void matrix_mul_H(MATRIX out, CONST_MATRIX in, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++){
+    ftype sum=-in[i][j];
+    if(i>0)sum+=in[i-1][j];
+    if(i<n-1)sum+=in[i+1][j];
+    out[i][j]=sum;
+    }
+}
+ 
+void matrix_mul_vector(VECTOR out, CONST_MATRIX m, CONST_VECTOR in, int n){
+    int i,j;
+    for(i=0;i<n;i++){
+    ftype sum=0;
+    for(j=0;j<n;j++){
+        sum+=m[i][j]*in[j];
+    }
+    out[i]=sum;
+    }
+}
+ 
+void H_mul_vector(VECTOR out, CONST_VECTOR in, int n){
+    int i;
+    for(i=0;i<n;i++){
+    ftype sum=-in[i];
+    if(i>0)sum+=in[i-1];
+    if(i<n-1)sum+=in[i+1];
+        out[i]=sum;
+    }
+}
+ 
+void vector_init_const(VECTOR v, ftype c, int n){
+    int i;
+    for(i=0;i<n;i++)v[i]=c;
+}
+ 
+void matrix_init_O(MATRIX o, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++)o[i][j]=0.0;
+}
+ 
+void matrix_init_const(MATRIX m, ftype c, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++)m[i][j]=c;
+}
+ 
+void matrix_init_E(MATRIX e, int n){
+   int j;
+   matrix_init_O(e,n);
+   for(j=0;j<n;j++)e[j][j]=1.0;
+}
+ 
+void matrix_init_H(MATRIX h, int n){
+   int i;
+   matrix_init_O(h,n);
+   for(i=0;i<n;i++){
+       if(i>=1)h[i][i-1]=1.0;
+       h[i][i]=-1.0;
+       if(i<n-1)h[i][i+1]=1.0;
+   }
+}
+ 
+void matrix_copy(MATRIX m, CONST_MATRIX k, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++)m[i][j]=k[i][j];
+}
+ 
+void vector_copy(VECTOR v, CONST_VECTOR w, int n){
+    int i;
+    for(i=0;i<n;i++)v[i]=w[i];
+}
+ 
+void matrix_output(CONST_MATRIX m, int n){
+    int i,j;
+    for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+        printf("%g\t",m[i][j]);
+    }
+    printf("\n");
+    }
+}
+void vector_output(VECTOR v, int n){
+    int i;
+    for(i=0;i<n;i++)printf("%g\t",v[i]);
+    printf("\n");
+}
+ 
+int N;
+VECTOR cn, sn;
+MATRIX T,F;
+void fini()
+{
+    vector_free(cn);
+    vector_free(sn);
+    matrix_free(T);
+    matrix_free(F);
+}
+ 
+void init()
+{
+    int i,j;
+    ftype mul=sqrt(2.0/(N+1));
+    cn=vector_alloc(N);
+    sn=vector_alloc(N);
+    T=matrix_alloc(N);
+    F=matrix_alloc(N+1);
+    for(i=0;i<N;i++){
+        cn[i]=cos((i+1)*M_PI/(ftype)(N+1));
+        sn[i]=sin((i+1)*M_PI/(ftype)(N+1));
+    }
+    for(i=0;i<N;i++)for(j=0;j<N;j++){
+        int index=(i+1)*(j+1);
+        int is_minus=1;
+        index%=2*(N+1);
+        if(index>N){
+            is_minus=-1;
+            index-=N+1;
+        }
+        if(index==0){
+            T[i][j]=0;
+        }else{
+            T[i][j]=sn[index-1]*mul*is_minus;
+        }
+    }
+    for(i=0;i<N;i++){///Calculate F[j,i+1]
+        double x=-2.0*cn[i]+1.0;
+        F[0][i]=1.0;
+        F[1][i]=x;
+        for(j=2;j<=N;j++){
+            F[j][i]=x*F[j-1][i]-F[j-2][i];
+        }
+    }
+}
+ 
+void DST(VECTOR out, const VECTOR in){
+    matrix_mul_vector(out, T, in, N);///It could be improved to O(nlogn) by using Fast Fourier Transform
+}
+ 
+void Solve(MATRIX x,const VECTOR init){///Init holding initial value of r(n)
+    int i,j;
+    int failed=0;
+    VECTOR R;
+    MATRIX y;
+    R=vector_alloc(N);
+    y=matrix_alloc(N);
+    DST(R,init);
+    for(i=0;i<N;i++)R[i]=-R[i];
+    for(i=0;i<N;i++){
+        double v=F[N][i];
+        if(fabs(v)<ERROR){
+            if(fabs(R[i])>=ERROR){
+                failed|=1;
+            }
+            failed|=2;
+            y[0][i]=0.0;
+        }else{
+            y[0][i]=-R[i]/v;
+        }
+        for(j=1;j<N;j++){
+            y[j][i]=y[0][i]*F[j][i];
+        }
+    }
+    for(i=0;i<N;i++){
+        DST(x[i],y[i]);
+    }
+    if(failed){
+        if(failed&1){
+            fprintf(stderr,"WARNING: No Valid Solution\n");
+        }else{
+            fprintf(stderr,"WARNING: Solution not unique\n");
+        }
+    }
+    matrix_free(y);
+    vector_free(R);
+}
+ 
+void Usage(char *name){
+    printf("Usage:\n\t%s n\n\t\tWhere n is positive integer\n"
+              "Or\n\t%s d1 d2 ... dn\n\t\tWhere di is a floating pointer number\n",
+              name, name);
+    exit(-1);
+}
+ 
+void dump_diff(const MATRIX x, const VECTOR r)
+{
+    int i;
+    VECTOR d=vector_alloc(N);
+    for(i=0;i<N;i++){
+        ftype sum=0.0;
+        sum=x[N-1][i]-x[N-2][i];
+        if(i>=1)sum-=x[N-1][i-1];
+        if(i<N-1)sum-=x[N-1][i+1];
+        d[i]=sum;
+    }
+    printf("Required Boundary:\n");
+    vector_output(r,N);
+    printf("Result Boundary:\n");
+    vector_output(d,N);
+    vector_diff(d,r,N);
+    printf("Diff:\n");
+    vector_output(d,N);
+    vector_free(d);
+}
+ 
+int main(int argc, char *argv[]){
+    int i;
+    MATRIX x;
+    VECTOR r;
+    if(argc<=1){
+        Usage(argv[0]);
+    }else if(argc==2){
+        N=atoi(argv[1]);
+        if(N<=0){
+            Usage(argv[0]);
+        }
+        if(N==1){
+            printf("1\n");
+            return 0;
+        }
+    }else{
+        N=argc-1;
+    }
+     
+    init();
+    x=matrix_alloc(N);
+    r=vector_alloc(N);
+    if(argc==2){
+            for(i=0;i<N;i++)r[i]=1.0;
+    }else{
+        for(i=0;i<N;i++){
+            r[i]=atof(argv[i+1]);
+        }
+    }
+    Solve(x,r);
+    matrix_output(x,N);
+    dump_diff(x,r);
+    vector_free(r);
+    matrix_free(x);
+    fini();
+    return 0;
+}

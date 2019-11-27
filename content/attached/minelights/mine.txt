@@ -1,0 +1,452 @@
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+typedef double ftype;
+typedef ftype ** MATRIX;
+typedef ftype * VECTOR;
+typedef const ftype *const*const CONST_MATRIX;
+typedef const ftype * CONST_VECTOR;
+#define INIT_a 0.0
+#define INIT_b 100.0
+#define INIT_c 75.0
+#define INIT_d 50.0
+#define ERROR  0.000001
+MATRIX matrix_alloc(int n, int m){
+    MATRIX x = (MATRIX)malloc(sizeof(ftype *)*n+sizeof(ftype)*n*m);
+    int i;
+    x[0]=(ftype *)(x+n);
+    for(i=1;i<n;i++)x[i]=x[i-1]+m;
+    return x;
+}
+ 
+void matrix_free(MATRIX x){
+    free(x);
+}
+ 
+VECTOR vector_alloc(int n){
+    VECTOR x = (VECTOR)malloc(sizeof(ftype)*n);
+    return x;
+}
+ 
+void vector_free(VECTOR x){
+    free(x);
+}
+ 
+//A+=B; n rows m columns
+void matrix_sum(MATRIX A, CONST_MATRIX B, int n, int m){
+    int i,j;
+    for(i=0;i<n;i++){
+    for(j=0;j<m;j++){
+        A[i][j] += B[i][j];
+    }
+    }
+}
+ 
+//A-=B; n rows m columns
+void matrix_diff(MATRIX A, CONST_MATRIX B, int n, int m){
+    int i,j;
+    for(i=0;i<n;i++){
+    for(j=0;j<m;j++){
+        A[i][j] -= B[i][j];
+    }
+    }
+}
+//a+=b;
+void vector_sum(VECTOR a, CONST_VECTOR b, int n){
+    int i;
+    for(i=0;i<n;i++)a[i]+=b[i];
+}
+//a-=b;
+void vector_diff(VECTOR a, CONST_VECTOR b, int n){
+    int i;
+    for(i=0;i<n;i++)a[i]-=b[i];
+}
+ 
+//a = a-b;
+void vector_rdiff(VECTOR a, CONST_VECTOR b, int n){
+    int i;
+    for(i=0;i<n;i++)a[i]=b[i]-a[i];
+}
+ 
+//out = in1*in2; the size of in1 is n*c, the size of in2 is c*m
+void matrix_mul(MATRIX out, CONST_MATRIX in1, CONST_MATRIX in2, int n, int c, int m){
+    int i,j,k;
+    for(i=0;i<n;i++)for(j=0;j<n;j++){
+    ftype sum=0.0;
+    for(k=0;k<n;k++){
+            sum+=in1[i][k]*in2[k][j];
+    }
+    out[i][j]=sum;
+    }
+}
+ 
+//out = M*in, where the size of 'M' is n*m and the size of 'in' is m
+void matrix_mul_vector(VECTOR out, CONST_MATRIX M, CONST_VECTOR in, int n, int m){
+    int i,j;
+    for(i=0;i<n;i++){
+    ftype sum=0;
+    for(j=0;j<m;j++){
+        sum+=M[i][j]*in[j];
+    }
+    out[i]=sum;
+    }
+}
+ 
+//v[i]=c for all i
+void vector_init_const(VECTOR v, ftype c, int n){
+    int i;
+    for(i=0;i<n;i++)v[i]=c;
+}
+ 
+//O[i][j]=0 for all (i,j)
+void matrix_init_O(MATRIX O, int n, int m){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<m;j++)O[i][j]=0.0;
+}
+ 
+//extract the k-th column of matrix M (n rows) to vector out
+void extract_matrix_column(VECTOR out, CONST_MATRIX M, int n, int k)
+{
+    int i;
+    for(i=0;i<n;i++){
+        out[i]=M[i][k];
+    }
+}
+//Change the k-th column of matrix M (n rows) to vector in
+void update_matrix_column(MATRIX M, const VECTOR in, int n, int k)
+{
+    int i;
+    for(i=0;i<n;i++){
+        M[i][k]=in[i];
+    }
+}
+//M[i][j]=c for all (i,j)
+void matrix_init_const(MATRIX M, ftype c, int n,int m){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<m;j++)M[i][j]=c;
+}
+//Square matrix E =diag{1,1,...,1}
+void matrix_init_E(MATRIX E, int n){
+   int j;
+   matrix_init_O(E,n,n);
+   for(j=0;j<n;j++)E[j][j]=1.0;
+}
+//M=K; the size of matrix is n*m
+void matrix_copy(MATRIX M, CONST_MATRIX K, int n,int m){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<m;j++)M[i][j]=K[i][j];
+}
+//c=w; for size of vector is n
+void vector_copy(VECTOR v, CONST_VECTOR w, int n){
+    int i;
+    for(i=0;i<n;i++)v[i]=w[i];
+}
+ 
+void matrix_output(CONST_MATRIX M, int n,int m){
+    int i,j;
+    for(i=0;i<n;i++){
+    for(j=0;j<m;j++){
+        printf("%g\t",M[i][j]);
+    }
+    printf("\n");
+    }
+}
+void vector_output(VECTOR v, int n){
+    int i;
+    for(i=0;i<n;i++)printf("%g\t",v[i]);
+    printf("\n");
+}
+ 
+int N, M;
+VECTOR cn, sn;///Array to hold cos(k*Pi/(N+1)), sin(k*Pi/(N+1)), 1<=k<=N
+VECTOR cm, sm;///Array to hold cos(k*Pi/(M+1)), sin(k*Pi/(M+1)), 1<=k<=M
+MATRIX TN,TM;
+void fini()
+{
+    vector_free(cn);
+    vector_free(sn);
+    vector_free(cm);
+    vector_free(sm);
+    matrix_free(TN);
+    matrix_free(TM);
+}
+ 
+void init()
+{
+    int i,j;
+    ftype mul=sqrt(2.0/(N+1));
+    ftype mul2=sqrt(2.0/(M+1));
+    cn=vector_alloc(N);
+    sn=vector_alloc(N);
+    cm=vector_alloc(M);
+    sm=vector_alloc(M);
+    TN=matrix_alloc(N,N);
+    TM=matrix_alloc(M,M);
+    for(i=0;i<N;i++){
+        cn[i]=cos((i+1)*M_PI/(ftype)(N+1));
+        sn[i]=sin((i+1)*M_PI/(ftype)(N+1));
+    }
+    for(i=0;i<M;i++){
+        cm[i]=cos((i+1)*M_PI/(ftype)(M+1));
+        sm[i]=sin((i+1)*M_PI/(ftype)(M+1));
+    }
+    for(i=0;i<N;i++)for(j=0;j<N;j++){
+        int index=(i+1)*(j+1);
+        int is_minus=1;
+        index%=2*(N+1);
+        if(index>N){
+            is_minus=-1;
+            index-=N+1;
+        }
+        if(index==0){
+            TN[i][j]=0;
+        }else{
+            TN[i][j]=sn[index-1]*mul*is_minus;
+        }
+    }
+    for(i=0;i<M;i++)for(j=0;j<M;j++){
+        int index=(i+1)*(j+1);
+        int is_minus=1;
+        index%=2*(M+1);
+        if(index>M){
+            is_minus=-1;
+            index-=M+1;
+        }
+        if(index==0){
+            TM[i][j]=0;
+        }else{
+            TM[i][j]=sm[index-1]*mul2*is_minus;
+        }
+    }
+}
+ 
+void TWODDST(MATRIX out, const MATRIX in)
+{
+    int i;
+    VECTOR tmp1=vector_alloc(N);
+    VECTOR tmp2=vector_alloc(N);
+    for(i=0;i<N;i++){
+        matrix_mul_vector(out[i], TM, in[i], M, M);
+    }
+    for(i=0;i<M;i++){
+        extract_matrix_column(tmp1, out, N, i);
+        matrix_mul_vector(tmp2, TN, tmp1, N, N);
+        update_matrix_column(out, tmp2, N, i);
+    }
+    vector_free(tmp2);
+    vector_free(tmp1);
+}
+ 
+int zero_candidate(int x, int y){
+    if(x*2==N+1&&y*2==M+1)
+        return 1;
+    if(x*5==N+1&&y*5==3*(M+1))
+        return 1;
+    if(x*5==3*(N+1)&&y*5==M+1)
+        return 1;
+    return 0;
+}
+//Return nonzero when there's solution for equation.
+int Solve(MATRIX x, const MATRIX init)
+{
+    MATRIX tmp = matrix_alloc(N,M);
+    int i,j;
+    int failed=0;
+    int zero_count=0;
+    TWODDST(tmp, init);
+    for(i=0;i<N;i++)for(j=0;j<M;j++){
+        if(zero_candidate(i+1,j+1)){
+            if(fabs(tmp[i][j])>=ERROR){//No solution, this element must be 0.
+                failed=1;
+            }
+            tmp[i][j]=0.0;
+            zero_count++;
+        }else{
+            tmp[i][j]/=(2.0*cn[i]+1.0)*(2.0*cm[j]+1.0)-1.0;
+        }
+    }
+    if(failed)return 0;//No solution available;
+    TWODDST(x, tmp);
+    return 1;
+}
+ 
+int IsValidSolution(MATRIX x)
+{
+    int i,j;
+    for(i=0;i<N;i++)for(j=0;j<M;j++){
+        if(fabs(x[i][j])>ERROR&&fabs(x[i][j]-1)>ERROR){
+            return 0;
+        }
+    }
+    return 1;
+}
+ 
+void GaussSolve(const MATRIX kmatrix, VECTOR r,int order)
+{
+    int i,j,k;
+    MATRIX tmp=matrix_alloc(order,order);
+    for(i=0;i<order;i++)for(j=0;j<order;j++){
+        tmp[j][i]=kmatrix[i][j];
+    }
+    for(i=0;i<order;i++){
+        ftype f=tmp[i][i];
+        for(j=i;j<order;j++)
+            tmp[i][j]/=f;
+        r[i]/=f;
+        for(j=0;j<order;j++){
+            ftype div=tmp[j][i];
+            if(j==i)continue;
+            for(k=i;k<order;k++){
+                tmp[j][k]-=div*tmp[i][k];
+            }
+            r[j]-=div*r[i];
+        }
+    }
+    matrix_free(tmp);
+}
+ 
+void SolutionOutput(MATRIX x)
+{
+    int i,j;
+    for(i=0;i<N;i++){
+        for(j=0;j<M;j++){
+            int v=(int)(x[i][j]+0.5);
+            printf("%d",v);
+        }
+        printf("\n");
+    }
+}
+
+void AllSolutions(MATRIX x,MATRIX kmatrix, const VECTOR b, int zc,int* index_x, int* index_y)
+{
+    int i;
+    int sc=0;
+    VECTOR r=vector_alloc(zc);
+    MATRIX h=matrix_alloc(N,M);
+    for(i=0;i<(1<<zc);i++){
+        int j;
+        for(j=0;j<zc;j++){
+            if(i&(1<<j)){
+                r[j]=1-b[j];
+            }else{
+                r[j]=-b[j];
+            }
+        }
+        GaussSolve(kmatrix, r,zc);
+        matrix_copy(h,x,N,M);
+        for(j=0;j<zc;j++){
+            int s,t;
+            for(s=0;s<N;s++)for(t=0;t<M;t++){
+                h[s][t]+=r[j]*TN[index_x[j]][s]*TM[t][index_y[j]];
+            }
+        }
+        if(IsValidSolution(h)){
+            printf("Solution %d:\n",++sc);
+            SolutionOutput(h);
+        }
+    }
+    if(sc==0){
+        printf("No solution found\n");
+    }
+    matrix_free(h);
+    vector_free(r);
+}
+ 
+void DumpAllSolutions(MATRIX x)
+{
+    int zero_count=0;
+    if((M&1)&&(N&1))zero_count++;
+    if((M+1)%5==0&&(N+1)%5==0)zero_count+=2;
+    if(zero_count==0){
+        if(IsValidSolution(x)){
+            printf("Solution 1:\n");
+            SolutionOutput(x);
+        }else{
+            printf("No valid solution\n");
+        }
+    }else{
+        MATRIX kmatrix=matrix_alloc(zero_count, zero_count);
+        VECTOR b = vector_alloc(zero_count);
+        int *index_x = (int *)malloc(sizeof(int)*zero_count);
+        int *index_y = (int *)malloc(sizeof(int)*zero_count);
+        switch(zero_count){
+        case 1://Using value in element (0,0)
+            index_x[0]=(N+1)/2-1;
+            index_y[0]=(M+1)/2-1;
+            kmatrix[0][0]=TN[index_x[0]][0]*TM[0][index_y[0]];
+            b[0]=x[0][0];
+            break;
+        case 2://Using value in element (0,0), (0,1)
+            index_x[0]=(N+1)/5-1;
+            index_y[0]=3*(M+1)/5-1;
+            index_x[1]=3*(N+1)/5-1;
+            index_y[1]=(M+1)/5-1;
+            kmatrix[0][0]=TN[index_x[0]][0]*TM[0][index_y[0]];
+            kmatrix[0][1]=TN[index_x[0]][0]*TM[1][index_y[0]];
+            kmatrix[1][0]=TN[index_x[1]][0]*TM[0][index_y[1]];
+            kmatrix[1][1]=TN[index_x[1]][0]*TM[1][index_y[1]];
+            b[0]=x[0][0];
+            b[1]=x[0][1];
+            break;
+        case 3://Using value in element (0,0),(0,1),(1,0)
+            index_x[0]=(N+1)/2-1;
+            index_y[0]=(M+1)/2-1;
+            index_x[1]=(N+1)/5-1;
+            index_y[1]=3*(M+1)/5-1;
+            index_x[2]=3*(N+1)/5-1;
+            index_y[2]=(M+1)/5-1;
+            kmatrix[0][0]=TN[index_x[0]][0]*TM[0][index_y[0]];
+            kmatrix[0][1]=TN[index_x[0]][0]*TM[1][index_y[0]];
+            kmatrix[0][2]=TN[index_x[0]][1]*TM[0][index_y[0]];
+            kmatrix[1][0]=TN[index_x[1]][0]*TM[0][index_y[1]];
+            kmatrix[1][1]=TN[index_x[1]][0]*TM[1][index_y[1]];
+            kmatrix[1][2]=TN[index_x[1]][1]*TM[0][index_y[1]];
+            kmatrix[2][0]=TN[index_x[2]][0]*TM[0][index_y[2]];
+            kmatrix[2][1]=TN[index_x[2]][0]*TM[1][index_y[2]];
+            kmatrix[2][2]=TN[index_x[2]][1]*TM[0][index_y[2]];
+            b[0]=x[0][0];
+            b[1]=x[0][1];
+            b[2]=x[1][0];
+            break;
+        }
+        AllSolutions(x,kmatrix,b,zero_count,index_x,index_y);
+        free(index_x);
+        free(index_y);
+        vector_free(b);
+        matrix_free(kmatrix);
+    }
+}
+ 
+int main(){
+    int i,j;
+    MATRIX x;
+    MATRIX r;
+    if(scanf("%d %d",&N,&M)!=2){
+        fprintf(stderr,"Invalid input\n");
+        return -1;
+    }
+    if(N<=0||M<=0){
+        fprintf(stderr,"Invalid input\n");
+        return -1;
+    }
+    init();
+    x=matrix_alloc(N,M);
+    r=matrix_alloc(N,M);
+    for(i=0;i<N;i++)for(j=0;j<M;j++){
+        int d;
+        if(scanf("%d",&d)!=1){
+            fprintf(stderr,"Invalid data\n");
+            return -2;
+        }
+        r[i][j]=(ftype)d;
+    }
+    if(Solve(x,r)){
+        DumpAllSolutions(x);
+    }else{
+        printf("No valid solution\n");
+    }
+    matrix_free(r);
+    matrix_free(x);
+    fini();
+    return 0;
+}

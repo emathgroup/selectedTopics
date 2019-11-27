@@ -1,0 +1,367 @@
+/*The code to turn off all bulbs in a matrix of bulbs
+ */
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
+#define N 499
+typedef double ftype;
+typedef ftype ** MATRIX;
+typedef ftype * VECTOR;
+typedef const ftype ** CONST_MATRIX;
+typedef const ftype * CONST_VECTOR;
+#define INIT_a 0.0
+#define INIT_b 100.0
+#define INIT_c 75.0
+#define INIT_d 50.0
+#define ERROR  0.00001
+MATRIX matrix_alloc(int n){
+    MATRIX x = (MATRIX)malloc(sizeof(ftype *)*n+sizeof(ftype)*n*n);
+    int i;
+    x[0]=(ftype *)(x+n);
+    for(i=1;i<n;i++)x[i]=x[i-1]+n;
+    return x;
+}
+ 
+void matrix_free(MATRIX x){
+    free(x);
+}
+ 
+VECTOR vector_alloc(int n){
+    VECTOR x = (VECTOR)malloc(sizeof(ftype)*n);
+    return x;
+}
+ 
+void vector_free(VECTOR x){
+    free(x);
+}
+ 
+void matrix_sum(MATRIX A, CONST_MATRIX B, int n){
+    int i,j;
+    for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+        A[i][j] += B[i][j];
+    }
+    }
+}
+ 
+void matrix_diff(MATRIX A, CONST_MATRIX B, int n){
+    int i,j;
+    for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+        A[i][j] -= B[i][j];
+    }
+    }
+}
+ 
+void vector_sum(VECTOR a, CONST_VECTOR b, int n){
+    int i;
+    for(i=0;i<n;i++)a[i]+=b[i];
+}
+ 
+void vector_diff(VECTOR a, CONST_VECTOR b, int n){
+    int i;
+    for(i=0;i<n;i++)a[i]-=b[i];
+}
+ 
+void vector_rdiff(VECTOR a, CONST_VECTOR b, int n){
+    int i;
+    for(i=0;i<n;i++)a[i]=b[i]-a[i];
+}
+ 
+void matrix_mul(MATRIX out, CONST_MATRIX in1, CONST_MATRIX in2, int n){
+    int i,j,k;
+    for(i=0;i<n;i++)for(j=0;j<n;j++){
+    ftype sum=0.0;
+    for(k=0;k<n;k++){
+            sum+=in1[i][k]*in2[k][j];
+    }
+    out[i][j]=sum;
+    }
+}
+//-H*in
+void vector_mul_mH(VECTOR out, CONST_VECTOR in, int n){
+    int i;
+    for(i=0;i<n;i++){
+        ftype sum = in[i];
+        if(i>0)sum-=in[i-1];
+        if(i<n-1)sum-=in[i+1];
+        out[i]=sum;
+    }
+}
+//-H*in
+void matrix_mul_mH(MATRIX out, CONST_MATRIX in, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++){
+    ftype sum=in[i][j];
+    if(i>0)sum-=in[i-1][j];
+    if(i<n-1)sum-=in[i+1][j];
+    out[i][j]=sum;
+    }
+}
+//H*in
+void matrix_mul_H(MATRIX out, CONST_MATRIX in, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++){
+    ftype sum=-in[i][j];
+    if(i>0)sum+=in[i-1][j];
+    if(i<n-1)sum+=in[i+1][j];
+    out[i][j]=sum;
+    }
+}
+ 
+void matrix_mul_vector(VECTOR out, CONST_MATRIX m, CONST_VECTOR in, int n){
+    int i,j;
+    for(i=0;i<n;i++){
+    ftype sum=0;
+    for(j=0;j<n;j++){
+        sum+=m[i][j]*in[j];
+    }
+    out[i]=sum;
+    }
+}
+ 
+void H_mul_vector(VECTOR out, CONST_VECTOR in, int n){
+    int i;
+    for(i=0;i<n;i++){
+    ftype sum=-in[i];
+    if(i>0)sum+=in[i-1];
+    if(i<n-1)sum+=in[i+1];
+        out[i]=sum;
+    }
+}
+ 
+void vector_init_const(VECTOR v, ftype c, int n){
+    int i;
+    for(i=0;i<n;i++)v[i]=c;
+}
+ 
+void matrix_init_O(MATRIX o, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++)o[i][j]=0.0;
+}
+ 
+void matrix_init_const(MATRIX m, ftype c, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++)m[i][j]=c;
+}
+ 
+void matrix_init_E(MATRIX e, int n){
+   int j;
+   matrix_init_O(e,n);
+   for(j=0;j<n;j++)e[j][j]=1.0;
+}
+ 
+void matrix_init_H(MATRIX h, int n){
+   int i;
+   matrix_init_O(h,n);
+   for(i=0;i<n;i++){
+       if(i>=1)h[i][i-1]=1.0;
+       h[i][i]=-1.0;
+       if(i<n-1)h[i][i+1]=1.0;
+   }
+}
+ 
+void matrix_copy(MATRIX m, CONST_MATRIX k, int n){
+    int i,j;
+    for(i=0;i<n;i++)for(j=0;j<n;j++)m[i][j]=k[i][j];
+}
+ 
+void vector_copy(VECTOR v, CONST_VECTOR w, int n){
+    int i;
+    for(i=0;i<n;i++)v[i]=w[i];
+}
+ 
+void matrix_output(CONST_MATRIX m, int n){
+    int i,j;
+    for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+        printf("%g\t",m[i][j]);
+    }
+    printf("\n");
+    }
+}
+void vector_output(VECTOR v, int n){
+    int i;
+    for(i=0;i<n;i++)printf("%g\t",v[i]);
+    printf("\n");
+}
+ 
+MATRIX P0,P1,H;
+VECTOR ME,ME1;
+MATRIX init;
+ 
+//First we need to solve equation P*X(1) = ME;
+//There could be multiple solutions or no solution
+//For each solution X(1), try
+//X(2) = INIT(1) - H*X(1);
+//X(K) = INIT(k-1) - H*X(k-1) - X(k-2);//for k<n-1
+void Solve(MATRIX P, VECTOR ME, int n)
+{
+    int *freedom_index;
+    int fc=0;
+    int i,j,k;
+    int failed=0;
+    freedom_index = (int *)malloc(sizeof(int)*n);
+    //First solve equition P*X(1) = ME
+    for(fc=0,i=0;i<n;i++){
+        ftype max_value;
+        int max_index=-1;
+    for(j=fc;j<n;j++){
+            ftype v=fabs(P[j][i]);
+            if(max_index==-1||v>max_value){
+                max_index=j;
+                max_value=v;
+            }
+        }
+    if(max_value>ERROR){
+        freedom_index[fc]=i;
+            j=max_index;
+        if(j!=fc){
+        //Swap line j and fc
+        ftype temp;
+        for(k=i;k<n;k++){
+            temp=P[fc][k];
+            P[fc][k]=P[j][k];
+            P[j][k]=temp;
+        }
+        temp = ME[fc];
+        ME[fc] = ME[j];
+        ME[j] = temp;
+        }
+            max_value=P[fc][i];
+            for(j=i;j<n;j++){
+                P[fc][j]/=max_value;
+            }
+            ME[fc]/=max_value;
+        for(j=0;j<n;j++){
+        if(j!=fc){
+                    ftype mul=P[j][i];
+            for(k=i;k<n;k++){
+            P[j][k]-=P[fc][k]*mul;
+            }
+            ME[j]-=ME[fc]*mul;
+        }
+        }
+            fc++;
+    }
+    }
+    for(i=fc;i<n;i++){
+        if(fabs(ME[i])>ERROR){
+            failed=1;
+            fprintf(stderr,"Error value %f\n",ME[i]);
+        }
+    }
+    fprintf(stderr,"Freedom factor = %d\n", n-fc);
+    if(failed){
+    printf("NO SOLUTION\n");
+    free(freedom_index);
+    return;
+    }
+    k=n-1;
+    for(i=fc-1;i>=0;i--){
+        int index=freedom_index[i];
+        while(k>index){
+            ME[k--]=0.0;
+        }
+        ME[k]=ME[i];
+        k--;
+    }
+    while(k>=0){
+        ME[k--]=0.0;
+    }
+    //Now ME hold's one solution for X[1],
+    //Output one solution
+    {
+    MATRIX x;
+    x=matrix_alloc(n);
+    vector_copy(x[0],ME,n);
+    matrix_mul_vector(x[1],H,x[0],n);
+    vector_rdiff(x[1],init[0],n);
+    for(k=2;k<n;k++){
+        H_mul_vector(x[k],x[k-1],n);
+        vector_rdiff(x[k],init[k-1],n);
+        vector_diff(x[k],x[k-2],n);
+    }
+    matrix_output(x,n);
+        matrix_free(x);
+    }
+    free(freedom_index);
+}
+ 
+int main(){
+    int n;
+    int i;
+    MATRIX temp_matrix;
+    VECTOR temp_vector;
+    n=N;
+    init = matrix_alloc(n);
+    for(i=0;i<n;i++){
+        int j;
+        init[i][0]=-INIT_a;
+        init[i][n-1]=-INIT_c;
+        for(j=1;j<n-1;j++){
+            init[i][j]=0.0;
+        }
+    }
+    for(i=0;i<n;i++){
+        init[0][i]-=INIT_b;
+        init[n-1][i]-=INIT_d;
+    }
+#ifdef DEBUG
+    printf("INIT:\n");
+    matrix_output(init,n);
+#endif
+    ME = vector_alloc(n);
+    ME1 = vector_alloc(n);
+    temp_vector = vector_alloc(n);
+ 
+    P0 = matrix_alloc(n);
+    P1 = matrix_alloc(n);
+    H  = matrix_alloc(n);
+    temp_matrix = matrix_alloc(n);
+    matrix_init_H(H,n);
+    matrix_init_E(P0,n);
+    matrix_init_O(P1,n);
+    matrix_diff(P1,H,n);//-H
+#ifdef DEBUG
+    printf("P(0):\n");matrix_output(P0,n);
+    printf("P(1):\n");matrix_output(P1,n);
+#endif
+ 
+    vector_init_const(ME, 0, n);
+    vector_copy(ME1,init[0],n);
+#ifdef DEBUG
+    printf("M(0):");vector_output(ME,n);
+    printf("M(1):");vector_output(ME1,n);
+#endif
+ 
+    for(i=2;i<=n;i++){
+        matrix_mul_mH(temp_matrix,P1,n);//-H*P(k-1)
+    matrix_diff(temp_matrix,P0,n);//P(k)= - H*P(k-1) - P(k-2)
+    matrix_copy(P0,P1,n);
+    matrix_copy(P1,temp_matrix,n);
+#ifdef DEBUG
+    printf("P(%d):\n",i);matrix_output(P1,n);
+#endif
+    vector_mul_mH(temp_vector, ME1, n);
+        vector_sum(temp_vector, init[i-1],n);
+    vector_diff(temp_vector,ME,n);
+        vector_copy(ME,ME1,n);
+        vector_copy(ME1,temp_vector,n);
+#ifdef DEBUG
+    printf("M(%d):",i);vector_output(ME1,n);
+#endif
+    }
+ 
+    Solve(P1, ME1, n);
+     
+    matrix_free(init);
+    vector_free(ME1);
+    vector_free(ME);
+    vector_free(temp_vector);
+    matrix_free(P0);
+    matrix_free(P1);
+    matrix_free(H);
+    matrix_free(temp_matrix);
+    return 0;
+}
