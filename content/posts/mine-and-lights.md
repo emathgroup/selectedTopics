@@ -2,7 +2,7 @@
 title: 关灯游戏和扫雷问题
 categories: 算法 数学
 keywords: 'mine lights'
-thumbnail: "../images/squarecover/sc1.jpg"
+thumbnail: "../images/lights.jpg"
 
 tags:
   - mine
