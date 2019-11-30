@@ -249,6 +249,7 @@ chyanog建议再把问题推广到三维，并且给出了对应的的门格海�
 hujunhua发现对于门格海绵球，会出现两个对顶小正方形正好分局分界球内外的情况（公共顶点在球面上），也会出现小正方体中心在球面的情况。  
 下面是[chyanog计算的三维结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9655&pid=80906&fromuid=20)  
 ![xebsj8](../images/xebsj/xebsj8.png)  
+<a name=menger></a>
 
 |迭代次数|球外|球上|球内的方块的个数|
 |---------|-----|-----|--------------------|
