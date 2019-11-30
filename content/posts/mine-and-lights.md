@@ -286,3 +286,6 @@ $((2\cos(\frac{i\pi}{n+1})+1)(2\cos(\frac{j\pi}{m+1})+1)-1)$中会有一项为$0
 
 点击[下载对应C代码](../attached/minelights/mine.txt) 。
 
+## OEIS 相关信息
+相关数据结果提交到了oeis, 有  
+正方形关灯问题中唯一解的尺寸 [A076437](https://oeis.org/A076437) 以及正方形关灯问题最优解[A075464](https://oeis.org/A075464) 
