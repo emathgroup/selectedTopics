@@ -48,7 +48,7 @@ mathe说他采用这种方法在将角度和切线都分成1000份左右时，�
 我们同样假设曲线还是类似上面的形式，我们现在先只对$0\le\theta\le2\pi-2d$部分进行分析。
 由$\frac{ds}{d\theta}=\sqrt{(\frac{dx}{d\theta})^2+(\frac{dy}{d\theta})^2}$,  
 以及目标函数$\sum\theta_i L(\theta_i)$的连续表示方式就是  
-$\int_0^{2\pi-2d} \theta \frac{ds}{d\theta} d\theta = \int_0^{2\pi-2d} \theta \sqrt{u^2+(1+u^{\prime}^2) }d\theta$,  
+$\int_0^{2\pi-2d} \theta \frac{ds}{d\theta} d\theta = \int_0^{2\pi-2d} \theta \sqrt{u^2+(1+{u^{\prime}}^2) }d\theta$,  
 也就是我们要求上面积分的最小值。  
 利用[变分法](http://mathworld.wolfram.com/CalculusofVariations.html) 就可以得到微分方程  
 $tu^2u^{\prime\prime}=-(1+u^{\prime})^3+2tu(1+u^{\prime})^2-(u+t)u(1+u^{\prime})-tu^3$.  
