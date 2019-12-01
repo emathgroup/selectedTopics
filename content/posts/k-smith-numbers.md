@@ -45,7 +45,7 @@ n以内整数中，平均每个数的素因子的个数计算方法（重复的�
 
 mathe答复:  
 我们知道对于一个整数x,它为素数的概率大概为$\frac1{\log(x)}$,所以我们可以将
-$sum_{p\le n}\frac1p$近似写成$\int_a^n\frac1{x\log(x)}dx=\int_a^n\frac{d\log(x)}{\log(x)}=\int_{\log(a)}^{\log(n)}\frac{dt}t=O(\log(\log(n))$.  
+$\sum_{p\le n}\frac1p$近似写成$\int_a^n\frac1{x\log(x)}dx=\int_a^n\frac{d\log(x)}{\log(x)}=\int_{\log(a)}^{\log(n)}\frac{dt}t=O(\log(\log(n))$.  
 
 ## 求解
 无心人在2008年11月25日给出如下的Huskell代码
