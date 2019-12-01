@@ -18,7 +18,7 @@ mathe于2008年7月引用[百度知道中一个抛硬币的概率问题]
 shshsh\_0510[发现这个问题](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=667&pid=8254&fromuid=20)
 和[广义t阶Fibonacci数列](http://mathworld.wolfram.com/CoinTossing.html) 有关系, 其中不出现t次连续正面的概率为 $\frac{F_{n+2}^{(t)}}{2^n}$。    
 或者说对于本题，就是要计算$1-\frac{F_{102}^{(10)}}{2^{100}}$。  
-最后我们得出广义t阶Fibonacci数列$F_n^{(t)}=\lfloor\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n}\rceil$, 其中$r_t$是方程 $x^{t+1}-2x^t+1=0$ 的唯一一个大于1的实数根,$\lfloor x\lceil$表示x四舍五入到最接近的整数后的结果。
+最后我们得出广义t阶Fibonacci数列$F_n^{(t)}=\lfloor\frac{r_t^{-1}(1-r_t)}{2t-(t+1)r_t} r_t^{n}\rceil$, 其中$r_t$是方程 $x^{t+1}-2x^t+1=0$ 的唯一一个大于1的实数根,$\lfloor x\rceil$表示x四舍五入到最接近的整数后的结果。
 
 # 具体内容
 在mathe[转载了内容](https://bbs.emath.ac.cn/thread-667-1-1.html) 而shshsh\_0510发现了wolfram网站上给出了问题和广义t阶Fibonacci数列的关系以后
