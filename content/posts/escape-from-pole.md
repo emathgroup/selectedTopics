@@ -89,25 +89,26 @@ $F(\theta,u,u^{\prime})=\theta \sqrt{u^2+(1+u^{\prime})^2}$,
 而已知边界条件为$u(2\pi-2d)=\tan(d)$  
 而求出函数$u(\theta)$后，我们只要画出参数曲线$(\cos(\theta)-u(\theta)\sin(\theta),\sin(\theta)+u(\theta)\cos(\theta))$  
 另外根据方程我们容易看出$u^{\prime}(0)=-1$这个表明在曲线末端曲率半径就是$u(0)$,也就是这个端点到对应圆的切点的距离。这个说明曲线末端是垂直于对应的切线的。  
-然后我们做变量替换$v=\frac{1+u^{\prime}}{u}$,得出微分方程$\frac{dv}{d\theta}=(1-\frac v{\theta})(v^2+1)$, 边界条件$v(0)=0$.  
+然后我们做变量替换$v=\frac{1+u^{\prime}}{u}$,得出微分方程$\frac{dv}{d\theta}=(1-\frac v{\theta})(v^2+1)$（\*）, 边界条件$v(0)=0$.  
 如果再做替换$v=\cot(\phi)$,得到$\frac{d\phi}{d\theta}=\frac{\cot(\phi)}{\theta}-1$,其中几何意义中$\phi$是轨迹上一点的切线和这个点对应的到单位圆（我们的目标圆）的切线的夹角.  
 上面$v$的微分方程和边界条件唯一确定函数$v$.  
 然后由于$u^{\prime}-vu+1=0$,假设方程有两个不同的解$u_1,u_2$,得出$(u^{\prime}_1-u^{\prime}_2)=v(u_1-v_2)$所以$u_1-u_2=C\exp(\int_0^{\theta}v(x)dx)$  
-也就是任意算出一个满足条件的函数$u$以后，只要加上$V(\theta)=\exp(\int_0^{\theta}v(x)dx)$的常数倍，就得出$u$的通式，最后我们需要通过方程$u(2\pi-2d)=\tan(d)$计算出对应的d.  
-而不同的d。每个$u$的不同的通式将有一个不同的d,我们需要从中再挑选出使得总平均距离最小的一条，估计计算量会比较大。但是由于前面已经有个东方角落的数值解，我们可以利用那个解来估算这些参数，应该会比较容易找到一个较好的解。  
+也就是任意算出一个满足条件的函数$u$以后，只要加上$V(\theta)=\exp(\int_0^{\theta}v(x)dx)$的常数倍，就得出$u$的通式，最后我们需要通过方程$u(2\pi-2d)=\tan(d)$计算出对应的d。  
+每个$u$的不同的通式将对应一个不同的d,我们需要从中再挑选出使得总平均距离最小的一条，估计计算量会比较大。但是由于前面已经有个东方角落的数值解，我们可以利用那个解来估算这些参数，应该会比较容易找到一个较好的解。  
 
-数学星空指出:  
+（\*）这步推导过程mathe再次犯了一个错误，多亏了计算高手数学星空的指正:  
 $\theta u^2u^{\prime\prime}=-(1+u^{\prime})^3+2\theta u(1+u^{\prime})^2-(u+\theta)u(1+u^{\prime})+\theta u^3$  
 做变量替换$v=\frac{1+u^{\prime}}{u}$,得出微分方程$\frac{dv}{d\theta}=(\theta-v)(v^2+1)$ 应改成  
 $\frac{dv}{d\theta}=(1-\frac{v}{\theta})(v^2+1)$. 
 
-在v离1比较远时的图像是类似的，就在0附近区别比较大。而这个方程应该有$v(0)=0,v^{\prime}(0)=\frac12$,而且可以看成这个解是一个奇函数.  
+v的不同解在v离1比较远时的图像是类似的，但是在0附近区别比较大。  
+而满足本问题的解应该有$v(0)=0,v^{\prime}(0)=\frac12$,而且可以看出这时$v$是一个奇函数。  
 设其在0的展开式为$v(\theta)=\sum_{n=0}^{+\infty} a_{2n+1}\theta^{2n+1}$,我们得出:  
 $\sum_{n=0}^{+\infty}(2n+1)a_{2n+1}\theta^{2n+1}=(\theta-\sum_{n=0}^{+\infty} a_{2n+1}\theta^{2n+1})(1+(\sum_{n=0}^{+\infty} a_{2n+1}\theta^{2n+1})^2)$.  
 展开比较系数就可以得出$a_1=\frac12,(2n+2)a_{2n+1}=\sum_{k=0}^{n-1}a_{2k+1}a_{2n-2k-1}-\sum_{k=0}^{n-1}a_{2k+1}\sum_{m=0}^{n-k-1}a_{2m+1}a_{2(n-k-m)-1},n\ge 1$.  
-而对应的方程$u^{\prime}-vu+1=0$初始条件$u_0(0)=0$的解也是奇函数。而$V(\theta)=\exp(\int_0^{\theta} v(t)dt)$是偶函数，u的通解为$u(\theta)=u_0(\theta)+C\times V(\theta)$.  
+而对应的方程$u^{\prime}-vu+1=0$初始条件$u_0(0)=0$的解也是奇函数。而$V(\theta)=\exp(\int_0^{\theta} v(t)dt)$是偶函数，u的通解为$u(\theta)=u_0(\theta)+C\times V(\theta)$。  
 
-解决了$v$的展开式以后，我们可以用之先得出$u$任意一个特解$u_0$的展开式以及$V$的展开式等。  
+解决了$v$的展开式以后，我们可以用$u$的一个特解$u_0$的展开式以及$V$的展开式计算其通解。  
 此后我们知道目标函数为  
 $A(d)+\int_0^{2\pi-2d} \theta u(\theta)\sqrt{v^2(\theta)+1}d\theta$其中$A(d)=\ln(\frac{1+\sin(d)}{1-\sin(d)})+\frac{2\pi-2d}{\cos(d)}$  
 $A(d)+\int_0^{2\pi-2d}\theta u_0(\theta)\sqrt{v^2(\theta)+1}d\theta+C\int_0^{2\pi-2d}\theta V(\theta)\sqrt{v^2(\theta)+1}d\theta$  
