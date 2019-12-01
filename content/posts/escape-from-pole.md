@@ -90,7 +90,7 @@ $F(\theta,u,u^{\prime})=\theta \sqrt{u^2+(1+u^{\prime})^2}$,
 而求出函数$u(\theta)$后，我们只要画出参数曲线$(\cos(\theta)-u(\theta)\sin(\theta),\sin(\theta)+u(\theta)\cos(\theta))$  
 另外根据方程我们容易看出$u^{\prime}(0)=-1$这个表明在曲线末端曲率半径就是$u(0)$,也就是这个端点到对应圆的切点的距离。这个说明曲线末端是垂直于对应的切线的。  
 然后我们做变量替换$v=\frac{1+u^{\prime}}{u}$,得出微分方程$\frac{dv}{d\theta}=(1-\frac v{\theta})(v^2+1)$, 边界条件$v(0)=0$.  
-如果再做替换$v=ctg(\phi)$,得到$\frac{d\phi}{d\theta}=\frac{ctg(\phi)}{\theta}-1$,其中几何意义中$\phi$是轨迹上一点的切线和这个点对应的到单位圆（我们的目标圆）的切线的夹角.  
+如果再做替换$v=\cot(\phi)$,得到$\frac{d\phi}{d\theta}=\frac{\cot(\phi)}{\theta}-1$,其中几何意义中$\phi$是轨迹上一点的切线和这个点对应的到单位圆（我们的目标圆）的切线的夹角.  
 上面$v$的微分方程和边界条件唯一确定函数$v$.  
 然后由于$u^{\prime}-vu+1=0$,假设方程有两个不同的解$u_1,u_2$,得出$(u^{\prime}_1-u^{\prime}_2)=v(u_1-v_2)$所以$u_1-u_2=C\exp(\int_0^{\theta}v(x)dx)$  
 也就是任意算出一个满足条件的函数$u$以后，只要加上$V(\theta)=\exp(\int_0^{\theta}v(x)dx)$的常数倍，就得出$u$的通式，最后我们需要通过方程$u(2\pi-2d)=\tan(d)$计算出对应的d.  
