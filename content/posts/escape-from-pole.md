@@ -2,7 +2,7 @@
 title: 极地出逃问题
 categories: 变分法
 keywords: '变分法, 微分方程, 动态规划'
-thumbnail: "../images/pole/ep2.png"
+thumbnail: "../thumbnails/ep1.png"
 
 tags:
   - 变分法
