@@ -125,7 +125,7 @@ $$
 B&I+B&0&0&\dots&0&0&0\\
 I+B&B&I+B&0&\dots&0&0&0\\
 0&I+B&B&I+B&\dots&0&0&0\\
-\vdots&\vdots&\vdots&vdots&\ddots&\vdots&\vdots&\vdots\\
+\vdots&\vdots&\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
 0&0&0&0&\dots&0&I+B&B
 \end{bmatrix}
 $$
