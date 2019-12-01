@@ -14,18 +14,26 @@ date: 2019-11-27
 # 关灯问题
 2005年1月[lkrich7在csdn询问](https://bbs.csdn.net/topics/70048438)  
 有一个$5\times 6$的灯泡构成的矩阵，灯的开关规则是这样：当改变某盏灯的，状态时，这盏灯的上下左右相邻的灯的状态也随之改变。例如：  
-0 1 1 0 1 0  
-1 0 0 1 1 1  
-0 0 1 0 0 1  
-1 0 0 1 0 1  
-0 1 1 1 0 0  
+$$
+\begin{matrix}
+0&1&1&0&1&0\\
+1&0&0&1&1&1\\
+0&0&1&0&0&1\\
+1&0&0&1&0&1\\
+0&1&1&1&0&0
+\end{matrix}
+$$
 
 当按下2行3列的开关时，状态变为：  
-0 1 0 0 1 0  
-1 1 1 0 1 1  
-0 0 0 0 0 1  
-1 0 0 1 0 1  
-0 1 1 1 0 0  
+$$
+\begin{matrix}
+0&1&0&0&1&0\\
+1&1&1&0&1&1\\
+0&0&0&0&0&1\\
+1&0&0&1&0&1\\
+0&1&1&1&0&0  
+\end{matrix}
+$$
 
 游戏的目的是对于任意给定的亮灭初始态，通过一系列动作关闭所有的灯。  
 可以注意到的是：  
@@ -46,8 +54,8 @@ $f(x,y)=f(x-1,y)+f(x+1,y)+f(x,y-1)+f(x,y+1)$，求$f(x,y)$
 其中，
 $f(x,0)=0,f(500,y)=50,f(x,500)=75,f(0,y)=100$.
 然后，
-$0\le x,y\le 500,x,y$是正整数。
-要求是，
+$0\le x,y\le 500,x,y$是正整数。  
+要求，
 输入$x,y$，返回$f(x,y)$。
 
 
@@ -55,17 +63,17 @@ $0\le x,y\le 500,x,y$是正整数。
 上面三个看似完全独立的问题，在数学上却密切相关。  
 ## 关灯问题最初分析
 mathe通过把[关灯问题看成有限域$F_2$上的线性变换](https://blog.csdn.net/mathe/article/details/1143634) 来提出初步有效的解决方案：  
-把上面的矩阵看成有限域$F_2$上一个$m\times n$的向量$X=(x_1,x_2,\dots,x_{m\times n})$  
+把上面的矩阵看成有限域$F_2$上一个$mn$阶的向量$X=(x_1,x_2,\dots,x_{m\times n})$  
 对于位置k上的开关，它将变化最多5个位置的开关，对应一个向量
 $C_k=(0,0,\dots,1,0,\dots,1,\dots,0)$, 其中开关状态改变的位置为1，开关状态不改变的位置为0。  
-对于初始向量$X=(x_1,x_2,\dots,x_{m\times n})$,使用了开关$C_k$后，状态会变成 $X+C_k (\mod 2)$, 也就是在$F_2$上做一次加法运算。  
+对于初始向量$X=(x_1,x_2,\dots,x_{m\times n})$,使用了开关$C_k$后，状态会变成 $X+C_k(\mod 2)$, 也就是在$F_2$上做一次加法运算。  
 所以对初始向量X,我们需要选择一系列的$k_1,k_2,\dots,k_s$使得
-$X+C_{k_1}+C_{k_2}+\dots+C_{k_s} (\mod 2)=O=(0,0,0,\dots,0)$。  
+$X+C_{k_1}+C_{k_2}+\dots+C_{k_s}(\mod 2)=O=(0,0,0,\dots,0)$。  
 我们可以同样构造一个0,1向量Y,使得，如果位置k出现在$k_1,k_2,\dots,k_s$中，那么Y
-在位置k的值是1，不然是0，这样，我们就可以将上面公式写成$F_2$上的矩阵形式$X+YC (\mod 2)=O$，
+在位置k的值是1，不然是0，这样，我们就可以将上面公式写成$F_2$上的矩阵形式$X+YC(\mod 2)=O$，
 其中$C=(C_1^{\prime} C_2^{\prime} \dots C_{m\times n}^{\prime})^{\prime}$。  
-也就是C是由这$m\times n$个行向量构成的矩阵，第k行就是向量$C_k$。  
-在二阶域上，加和减是相同的，也就是上面的方程等价于$YC (\mod 2)=X$，其中C,X已知，求Y。  
+也就是C是由这$mn$个行向量构成的矩阵，第k行就是向量$C_k$。  
+在二阶域上，加和减是相同的，也就是上面的方程等价于$YC(\mod 2)=X$，其中C,X已知，求Y。  
 我们可以直接在二阶域上用高斯消元法求解（注意加减是$\mod 2$的，对应计算机上的异或运算）,  
 其中，如果C可逆，解是唯一的，如果C不可逆，解可能不存在，也可能不唯一。
 如果解不唯一时，这时解的数目同C的秩有关系，比较有意思的是，如果我们记$f(n,2x)$是n次第二类切皮雪夫多项式，
@@ -83,9 +91,9 @@ Puzzle 2: for this problem, we are giving up the detailed information about how 
 Now it's equivalent to show that there is some strategy x of button pushing that can go from all lights OFF to all lights ON. But that's just asking if there is a vector x such that
 
 $A x = d$,  
-where d is the vector of all 1's. That is equivalent to asking if d is in the column space of A. And that is equivalent to asking if the "perpendicular space" of A' is contained in the "perpendicular space" of d. In other words, it is enough to show that $A'x=0$ implies $d'x=0$.
+where d is the vector of all 1's. That is equivalent to asking if d is in the column space of A. And that is equivalent to asking if the "perpendicular space" of $A^{\prime}$ is contained in the "perpendicular space" of d. In other words, it is enough to show that $A^{\prime}x=0$ implies $d^{\prime}x=0$.
 
-So let x be any vector in the perpendicular space of A'. Then
+So let x be any vector in the perpendicular space of $A^{\prime}$. Then
 
 $\sum_{i=1}^N x_i  A_{i,j} = 0 $ for all j. This implies $\sum_{j=1}^N \sum_{i=1}^N x_i A_{i,j} x_j = 0$,
 
@@ -110,12 +118,18 @@ B为一个n阶矩阵,所有同主对角线相邻的位置是1(不包含主对角
 1010  
 0101  
 0010  
-那么,原题目写成矩阵形式,所有方程系数构成如下$m\times n$阶矩阵  
-B   I+B 0  0 ... 0  
-I+B  B I+B 0 ... 0  
-0   I+B B I+B ...0     
-..................  
-...........0 I+B B  
+那么,原题目写成矩阵形式,所有方程系数构成如下$mn$阶矩阵  
+
+$$
+\begin{bmatrix}
+B&I+B&0&0&\dots&0&0&0\\
+I+B&B&I+B&0&\dots&0&0&0\\
+0&I+B&B&I+B&\dots&0&0&0\\
+\vdots&\vdots&\vdots&vdots&\ddots&\vdots&\vdots&\vdots\\
+0&0&0&0&\dots&0&I+B&B
+\end{bmatrix}
+$$
+
 当然如果这个方阵可逆,那么问题的解唯一.  
 记$f(n,x)$为$n$阶[第二类切皮雪夫多项式](http://mathworld.wolfram.com/ChebyshevPolynomialoftheSecondKind.html)  
 $f(0,x)=1$,    
@@ -151,11 +165,15 @@ $g(a,b)=f(m,\frac a{2b})b^m$
 
 上面的分析过程给出了一个这道题目在解唯一时比较有效的解法, 
 就是解方程,方程对应矩阵是  
-B       I+B   0     0   ...   0  
-I+B     B   I+B   0   ...   0  
-0       I+B   B   I+B   ...0  
-.....................  
-.................0   I+B   B  
+$$
+\begin{bmatrix}
+B&I+B&0&0&\dots&0&0&0\\
+I+B&B&I+B&0&\dots&0&0&0\\
+0&I+B&B&I+B&\dots&0&0&0\\
+\vdots&\vdots&\vdots&\vdots&\ddots&\vdots&\vdots&\vdots\\
+0&0&0&0&\dots&0&I+B&B  
+\end{bmatrix}
+$$
 这样的方程可以通过追赶法计算,时间复杂度为$O((n+m)^4)$.
 
 另外还有$n+1$被3整除的情况,我们判断$\det(g(B,I+B))$是否等于0,
