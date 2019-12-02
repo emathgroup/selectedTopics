@@ -244,10 +244,11 @@ KeyTo9\_Fans根据结果给出如下上下界
 KeyTo9\_Fans把结果提交oeis形成了[A293288](https://oeis.org/A293288) 和[A293289](https://oeis.org/A293289) 。
 
 ##三维扩展
-chyanog建议再把问题推广到三维，并且给出了对应的的门格海绵球的快照  
-
+chyanog建议再把问题推广到三维，  
+首先我们需要推广到门格海绵
+![menger](../attached/menger.mp4)  
+然后他给出了对应的的门格海绵球的快照  
 <a name=menger></a>
-
 ![xebsj7](../images/xebsj/xebsj7.png)  
 hujunhua发现对于门格海绵球，会出现两个对顶小正方形正好分局分界球内外的情况（公共顶点在球面上），也会出现小正方体中心在球面的情况。  
 下面是[chyanog计算的三维结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9655&pid=80906&fromuid=20)  
