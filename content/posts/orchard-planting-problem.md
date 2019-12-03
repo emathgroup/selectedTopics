@@ -154,6 +154,32 @@ print("A=(0,1,0) B=(1,0,0) C_x=1 C_y=0 F_x=0 F_y=1 G=(1,G_y,0) H_x=0 H_y=0 I=(1,
         Y[0 ,+1 , 0]
 AEIYBFJYCGKYDHLYMQUYNRVYOSWYPTXYABMOALNXBCNPCDOQDEPREFQSFGRTGHSUHITVIJUWJKVXKLMWAFUVAHPQBGVWBIQRCHWXCJRSDIMXDKSTEJMNELTUFKNOGLOPMPSVNQTWORUX
 ```
+21棵树24行例子:  
+![o21.2](../images/trees/o21.2.png)  
+```bash
+	A(1/4,+1)
+        B(+1,2/3)
+        C(3/2,4)
+        D(+0,+1)
+        E(+1,+0)
+        F[+1,8/3,0];
+        G[+1,-4/3,0];
+        H(-1/2,+0)
+        I(+0,-2)
+        J(-1/2,2/3)
+        K(-1/2,-2)
+        L(3/2,-2)
+        M(1/2,4/3)
+        N(3/4,+1)
+        O(+1,2)
+        P(1/2,2)
+        Q(1/2,2/3)
+        R(3/2,2)
+        S[+0,+1,0];
+        T(+0,+0)
+        U[+1,+0,0];
+HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMOBGMNMPQSOPRUNQRT
+```
 
 # 理论上下界分析
 对于每一棵果树，如果经过这棵果树存在k行，每行4棵，那么这k行除了这棵公共果树，其余果树都互不相同，所以我们得出$3k\le n-1$,n是树的总数。  
