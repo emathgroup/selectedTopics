@@ -357,7 +357,7 @@ O BD AF CE GH ABC DEF AEG BFG CDG ADH BEH CFH
 
 G HI EF AB DEI CFI ADH BCH ACE BDF CDG AFHI BEHI CEGH DFGH AEGI BFGI
 
-并且随后将图的同构代码切换成nauty,找出[10人22瓶]，11人31瓶，12人46瓶等方案。
+并且随后将图的同构代码切换成[nauty](http://pallini.di.uniroma1.it/) ,找出[10人22瓶]，11人31瓶，12人46瓶等方案。
 
 10个人22瓶毒酒的一些本质不同的方案，每个数据表示为16进制数（需要将它们转化为10比特的二进制数)
 
