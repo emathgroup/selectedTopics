@@ -308,7 +308,7 @@ print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x
 
 14棵以上候选解太多了，如有需要请下载：  
 <a name=fulllist></a>  
-所有数据openf4有限域处理结果[click to download all best result candidates from 12 to 18 trees](../attached/ocdrst.tgz) 
+所有数据[openf4](https://github.com/nauotit/openf4) 有限域处理结果[click to download all best result candidates from 12 to 18 trees](../attached/ocdrst.tgz) 
 
 
 [B. Grunbaum和Sloane]: http://neilsloane.com/doc/ORCHARD/orchard.html
