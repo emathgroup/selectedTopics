@@ -20,8 +20,8 @@ import config from '../../data/siteConfig'
          <Layout>
              <Helmet title={`Contact - ${config.userName}`}/>
          <div>
-             <h2 className={contactStyle.title}>Stay in touch</h2>
-             <p>I write about stuff related to Javascript, React, PHP, Flask and Various useful Api.</p>
+             <h2 className={contactStyle.title}>论坛</h2>
+             <p>我们是一群数学,计算机的爱好者.</p>
              <p className={contactStyle.subtitle}>You can contact me via email or find me around the web.</p>
              <ul className={contactStyle.list}>
                  <li>Email: <a target="_blank" rel="noopener noreferrer" className={contactStyle.link} href={`mailto:${data.site.siteMetadata.Email}`}>{Email}</a></li>
