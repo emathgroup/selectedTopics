@@ -248,9 +248,9 @@ chyanog建议再把问题推广到三维，
 首先我们需要推广到门格海绵
 
 <video width="640" height="480" controls>
-  <source src=../attached/menger.mp4 type="video/mp4">
+  <source src="../attached/menger.mp4" type="video/mp4">
 Your browser does not support the video tag.
-</video>  
+</video>   
 
 
 然后他给出了对应的的门格海绵球的快照  
