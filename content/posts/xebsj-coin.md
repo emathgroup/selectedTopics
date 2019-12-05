@@ -246,7 +246,10 @@ KeyTo9\_Fans把结果提交oeis形成了[A293288](https://oeis.org/A293288) 和[
 ##三维扩展
 chyanog建议再把问题推广到三维，  
 首先我们需要推广到门格海绵
-<iframe height=500 width=100% src="../attached/menger.mp41" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<video width="640" height="480" controls>
+  <source src="../attached/menger.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
 
 然后他给出了对应的的门格海绵球的快照  
 <a name=menger></a>
