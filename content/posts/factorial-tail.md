@@ -14,7 +14,7 @@ date: 2019-11-22 00:00:20
 xstring于[2005年在csdn挑战](https://bbs.csdn.net/topics/70362869?list=712578) ，对于一个给定的大整数，如何快速计算这个整数阶乘去掉尾零后的最低18位
 
 最后mathe给出了一种时间复杂度为$O(L^3 \log(L)^2 +L^3 \log(L)T +T^2)$的有效算法，其中L代表计算的非零尾数位数， T代表输入整数的位数。  
-gxqcn还利用他的[HugeCalc](https://www.emath.ac.cn/hugecalc/) 对算法重新实现并进行性能优化，比mathe用gmp实现的代码更快了一个数量级。 
+gxqcn还利用他的[HugeCalc](https://www.emath.ac.cn/hugecalc/) 对算法重新实现并进行性能优化，比mathe用[gmp](https://gmplib.org/) 实现的代码更快了一个数量级。 
 贴子内容是mathe对https://blog.csdn.net/mathe/article/details/1132404 的备份。  
 
 # 详细内容
