@@ -180,6 +180,34 @@ AEIYBFJYCGKYDHLYMQUYNRVYOSWYPTXYABMOALNXBCNPCDOQDEPREFQSFGRTGHSUHITVIJUWJKVXKLMW
         U[+1,+0,0];
 HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMOBGMNMPQSOPRUNQRT
 ```
+2019年12月6日发现22棵28行实数解  
+![o22](../images/trees/o22.png)  
+```bash
+        [+1*t^3+6*t^2+5*t+1]
+        A[+1,+0,0];
+        B[+1,1*t-2*(1*t^2+6*t+3)+2,0];
+        C[+1,+1,0];
+        D(-1*(1*t^2+6*t+3),-1*t+2*(1*t^2+6*t+3))
+        E(+1,-1*(1*t^2+6*t+3))
+        F(1*t-1*(1*t^2+6*t+3)+1,1*t+1)
+        G(-t,-2*t+1*(1*t^2+6*t+3)-1)
+        H(-t,-t)
+        I(1*t-1*(1*t^2+6*t+3)+1,(1*t^2+6*t+3))
+        J(-1*(1*t^2+6*t+3)+1,-1*t+1*(1*t^2+6*t+3)-1)
+        K(+0,+1)
+        L(+1,+0)
+        M(-1*(1*t^2+6*t+3),-1*t+1*(1*t^2+6*t+3))
+        N(-1*(1*t^2+6*t+3)+1,-1*t+1*(1*t^2+6*t+3))
+        O(+0,+0)
+        P(-t,-1*t+1*(1*t^2+6*t+3))
+        Q(1*t-1*(1*t^2+6*t+3)+1,+0)
+        R(+1,+1)
+        S(-1*(1*t^2+6*t+3),-1*t+1*(1*t^2+6*t+3)-1)
+        T(-1*(1*t^2+6*t+3)+1,+1)
+        U(+0,-1*t+1*(1*t^2+6*t+3)-1)
+        V[+0,+1,0];
+ABCVKOUVJNTVDMSVELRVGHPVFIQVALOQAMNPAJSUAKRTJKPQEHKNDIJOFHJLGIKMDETUEFMODGLNFGRSCHORCINSBHMUBILTBEQSBDPRCGQUCFPT
+```
 
 # 理论上下界分析
 对于每一棵果树，如果经过这棵果树存在k行，每行4棵，那么这k行除了这棵公共果树，其余果树都互不相同，所以我们得出$3k\le n-1$,n是树的总数。  
@@ -213,7 +241,7 @@ HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMO
 |19 |        20        |        20        |        20        |        20        |
 |20 |        23        |        23        |        23        |        23        |
 |21 |      $\ge 24$    |      $\ge 24$    |      $\ge 24$    |        25        |
-|22 |      $\ge 26$    |      $\ge 26$    |      $\ge 26$    |        28        |
+|22 |      $\ge 28$    |      $\ge 26$    |      $\ge 28$    |        28        |
 |23 |      $\ge 28$    |      $\ge 28$    |      $\ge 28$    |        31        |
 |24 |      $\ge 30$    |      $\ge 30$    |      $\ge 33$    |        34        |
 |25 |      $\ge 32$    |      $\ge 32$    |      $\ge 33$    |        37        |
