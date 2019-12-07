@@ -100,7 +100,7 @@ $\frac{dr}{dt}p\prime(s_2)=\frac{ds_2}{dt}+\frac{dv}{dt}$,
 在另外一个贴子中，mathe给出了对应[同时具有外接椭圆和内切椭圆的多边形的计算方案](https://bbs.emath.ac.cn/thread-5476-1-1.html)   
 数学星空总结如下：  
 为了便于讨论双椭圆的相关公式，我们先将N边形内接圆并外切于椭圆的相关讨论结果转载如下：
-
+<A name=bicent></a>
 mathe 给出了：
 
 $J=\begin{bmatrix}1&0&0\\0&1&0\\0&0&-r^2\end{bmatrix}$
