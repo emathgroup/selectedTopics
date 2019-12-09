@@ -257,9 +257,11 @@ Your browser does not support the video tag.
 <a name=menger></a>
 ![xebsj7](../images/xebsj/xebsj7.png)  
 hujunhua发现对于门格海绵球，会出现两个对顶小正方形正好分局分界球内外的情况（公共顶点在球面上），也会出现小正方体中心在球面的情况。  
-下面是[chyanog计算的三维结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9655&pid=80906&fromuid=20)  
+[chyanog首先给出三维的计算结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9655&pid=80906&fromuid=20)  
 ![xebsj8](../images/xebsj/xebsj8.png)  
+[代码下载](../attached/menger.txt)
 
+2019年12月9日，Ickiverar给出了一个[性能更高的代码](../attached/xebsj/ickiverar-3d.txt)  
 
 |迭代次数|球外|球上|球内的方块的个数|
 |---------|-----|-----|--------------------|
@@ -271,7 +273,10 @@ hujunhua发现对于门格海绵球，会出现两个对顶小正方形正好分
 |6 | 40353584| 367944| 23278472|
 |7 |809527216| 2444520| 468028264|
 |8 |16206910376| 16284576| 9376805048|
+|9 |324246978160|108525168|187644496672|
+|10|6485663211680|723469800|3753613318520|
+|11|129718088017720|4822582872|75077089399408|
+|12|2594393910475736|32150080560|1501573939443704|
 
-[代码下载](../attached/menger.txt)
 结果被收集到[A329302](https://oeis.org/A329302)
 
