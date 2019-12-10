@@ -311,7 +311,7 @@ HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMO
 ```
 转载自[efriedma](https://www2.stetson.edu/~efriedma/trees) 网站的22棵26行整数解
 ![s22](../images/trees/s22.png)  
-(需要注意下面数据和图中坐标不匹配，下面数据将AKQU映射为无穷远直线）
+(需要注意下面数据和图中坐标不匹配，下面数据将AKOU映射为无穷远直线）
 ```bash
         A[+1,1/3,0];
         B(+0,+0)
