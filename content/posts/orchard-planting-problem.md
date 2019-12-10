@@ -309,6 +309,35 @@ AEIYBFJYCGKYDHLYMQUYNRVYOSWYPTXYABMOALNXBCNPCDOQDEPREFQSFGRTGHSUHITVIJUWJKVXKLMW
         U[+1,+0,0];
 HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMOBGMNMPQSOPRUNQRT
 ```
+转载自[efriedma](https://www2.stetson.edu/~efriedma/trees) 网站的22棵26行整数解
+![s22](../images/trees/s22.png)  
+(需要注意下面数据和图中坐标不匹配，下面数据将AKQU映射为无穷远直线）
+```bash
+        A[+1,1/3,0];
+        B(+0,+0)
+        C(+1,1/3)
+        D(3/2,1/2)
+        E(4/3,1/3)
+        F(4,2)
+        G(+1,+0)
+        H(4/3,2/9)
+        I(8/5,2/5)
+        J(2,+1)
+        K[+0,+1,0];
+        L(2,1/3)
+        M(2,1/2)
+        N(+1,+1)
+        O[+1,-1/3,0];
+        P(4,+0)
+        Q(5/2,1/2)
+        R(+0,+1)
+        S(4/3,2/3)
+        T(+0,2/3)
+        U[+1,+0,0];
+        V(4,2/3)
+ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPVILPTJKLMJNRUMPRSNOPQSTUV
+```
+
 2019年12月6日发现22棵28行实数解  
 ![o22](../images/trees/o22.png)  
 ```bash
