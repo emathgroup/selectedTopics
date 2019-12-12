@@ -1,7 +1,7 @@
 ---
 
 title: "二十棵树最优解求解问题"
-date: "2019-10-18 05:06:57"
+date: "2019-12-12"
 thumbnail: "../thumbnails/p20.png"
 author: "mathe"
 tags: 
@@ -366,6 +366,8 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
         V[+0,+1,0];
 ABCVKOUVJNTVDMSVELRVGHPVFIQVALOQAMNPAJSUAKRTJKPQEHKNDIJOFHJLGIKMDETUEFMODGLNFGRSCHORCINSBHMUBILTBEQSBDPRCGQUCFPT
 ```
+wayne对这个图进行射影变换后我们发现图形很像正七边形，于是我们手工制作了对应的七个方向对称的正七边形图:
+![w22.7](../images/trees/w22.7.png)  
 
 2019年12月10日发现25棵35行复数解  
 ```bash
