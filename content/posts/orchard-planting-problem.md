@@ -32,6 +32,8 @@ tags:
 ![b2](../images/trees/b2.jpg)  
 ![b3](../images/trees/b3.jpg)  
 ![b4](../images/trees/b4.jpg)  
+2019年12月，我们还发现了一个漂亮对称的22棵树28行解:  
+![w22.7](../images/trees/w22.7.png)  
 
 # 射影变换介绍
 
