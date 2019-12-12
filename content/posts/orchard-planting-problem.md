@@ -366,7 +366,7 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
         V[+0,+1,0];
 ABCVKOUVJNTVDMSVELRVGHPVFIQVALOQAMNPAJSUAKRTJKPQEHKNDIJOFHJLGIKMDETUEFMODGLNFGRSCHORCINSBHMUBILTBEQSBDPRCGQUCFPT
 ```
-wayne对这个图进行射影变换后我们发现图形很像正七边形，于是我们手工制作了对应的七个方向对称的正七边形图:
+wayne对这个图[进行射影变换后我们发现图形很像正七边形](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82220&fromuid=20) ，于是我们手工制作了对应的七个方向对称的正七边形图:
 ![w22.7](../images/trees/w22.7.png)  
 
 2019年12月10日发现25棵35行复数解  
