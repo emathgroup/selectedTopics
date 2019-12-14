@@ -22,7 +22,7 @@ zgg\_\_认为，是无理角度吧。因为sin值是$\sqrt{\frac{\sqrt{3}}2}$，
 mathe建议采用[第二类切皮雪夫多项式](http://mathworld.wolfram.com/ChebyshevPolynomialoftheSecondKind.html) 来解决:  
 根据第二类切皮雪夫多项式上面链接中内容，  
 $$
-U_n(x)=$\left|\begin{matrix}2x&1&0&0&\dots&0&0\\
+U_n(x)=\left|\begin{matrix}2x&1&0&0&\dots&0&0\\
 1&2x&1&0&\dots&0&0\\
 0&1&2x&1&\dots&0&0\\
 0&0&1&2x&\dots&0&0\\
@@ -32,7 +32,7 @@ U_n(x)=$\left|\begin{matrix}2x&1&0&0&\dots&0&0\\
 $$  
 所以只要能够证明
 $$
-U_n(\frac{\sqrt{3}-1}2)=$\left|\begin{matrix}\sqrt{3}-1&1&0&0&\dots&0&0\\
+U_n(\frac{\sqrt{3}-1}2)=\left|\begin{matrix}\sqrt{3}-1&1&0&0&\dots&0&0\\
 1&\sqrt{3}-1&1&0&\dots&0&0\\
 0&1&\sqrt{3}-1&1&\dots&0&0\\
 0&0&1&\sqrt{3}-1&\dots&0&0\\
