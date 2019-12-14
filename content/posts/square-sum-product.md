@@ -2,7 +2,7 @@
 title: 关于平方和和乘积的丢番图方程
 categories: 不定方程
 keywords: '韦达定理，平方和'
-thumbnail: "../thumbnails/ep1.png"
+thumbnail: "../thumbnails/exp.png"
 
 tags:
   - 平方和
