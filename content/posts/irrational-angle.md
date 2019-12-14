@@ -2,7 +2,7 @@
 title: 无理角度
 categories: 数学
 keywords: 'irrational, angle'
-thumbnail: "../thumbnail/cyclotomic.jpg"
+thumbnail: "../thumbnails/cyclotomic.jpg"
 
 tags:
   - 无理数
