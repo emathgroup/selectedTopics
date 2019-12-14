@@ -79,3 +79,18 @@ liangbch贴出了6°角倍数的正弦值:
 mathe说明有了上面这些角已经足够了，因为  
 我们只要需要检验满足$\varphi(n)\le 4$的所有n所划分的角度，也就是$\cos(\frac{2k\pi}{10})$和$\cos(\frac{2k\pi}{12})$和$\cos(\frac{2k\pi}{8})$
 也就是72度,30度和45度倍数的余弦值就可以了.  
+
+而关于余弦值和角度都是有理数的特殊情况，[百度数学吧中链接](http://tieba.baidu.com/p/1051245073?pid=11918704479&cid=0#11918704479) 通过使用[第一类切皮雪夫多项式](http://mathworld.wolfram.com/ChebyshevPolynomialoftheFirstKind.html) 来解决:  
+设$T_n(x)$是第一类切皮雪夫多项式,  
+其中$T_0(x)=1,T_1(x)=x,T_{n+1}(x)=2xT_n(x)-T_{n-1}(x)$  
+于是$T_n(\cos(t))=\cos(nt)$.  
+我们选择$S_n(2x)=2T_n(x)$,于是可以得到  
+$S_0(x)=2,S_1(x)=x, S_{n+1}(x)=xS_n(x)-S_{n-1}(x)$.  
+于是马上可以得出$S_n(x)$在$n\ge 1$时是一个次数为n,最高项系数为1的整系数多项式。  
+而且$S_n(2\cos(t))=2\cos(nt)$.  
+于是我们知道对于$t=q\pi$,其中$q=\frac{u}{v}$是有理数，那么  
+$S_{2v}(2\cos(q\pi))=2\cos(2u\pi)=2$.  
+所以$2\cos(q\pi)$是首1整系数多项式$S_{2v}(x)-2=0$的根，所以如果是有理数，必然是整数。  
+由此得出$2\cos(q\pi)$是有理数时只能是$0,\pm1,\pm2$.
+
+
