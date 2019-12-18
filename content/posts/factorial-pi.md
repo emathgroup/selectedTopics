@@ -352,6 +352,7 @@ int main(){
 并且于2019年12月18日得出下一个数据，即  
 
 13位小数的结果有了，119万亿左右。
+```bash
 d =  0, n = 9
 d =  1, n = 62
 d =  2, n = 62
@@ -366,6 +367,7 @@ d = 10, n = 77773146302
 d = 11, n = 1154318938997
 d = 12, n = 1544607046599
 d = 13, n = 119027672349942
+```
 
 [于2008年12月提问]: https://bbs.emath.ac.cn/forum.php?mod=viewthread&tid=969&fromuid=20
 [首先提议用斯特林公式去搜索]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=969&pid=12665&fromuid=20
