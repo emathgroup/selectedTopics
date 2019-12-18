@@ -7,11 +7,13 @@ thumbnail: "../thumbnails/digitalhand.jpg"
 tags:
   - 阶乘
   - 圆周率
-date: 2019-11-1 03:51:34
+date: 2019-12-18
 ---
 
 medie2005[于2008年12月提问]，请找出第一个满足n!=31415926xxxx...xxx的整数n。 (其中xxxx表示任意数字）  
-表示这个问题很困难的无心人勇攀高峰，最后找出了1544607046599!=31415926535899498xxx...xxx。
+表示这个问题很困难的无心人勇攀高峰，最后找出了1544607046599!=31415926535899498xxx...xxx。  
+2019年12月18日，Ickiverar更上一层楼，找出
+119027672349942!=31415926535897xxx...xxx
 
 # 详细内容
 gxqcn[首先提议用斯特林公式去搜索]， medie2005说[减少一位要求还是很容易]的，他自己很快给出3012584!=3141592x...x，但是他表示再增加一位就很困难了
@@ -273,6 +275,81 @@ d = 31415926535, n = 77773146302, 开始 数字314159265353488
 d = 314159265358,  n = 1154318938997开始数字3141592653584138
 d = 3141592653589, n = 1544607046599开始数字31415926535899498
 ```
+[2019年12月Ickiverar](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=969&pid=82215&fromuid=20) 给出了更加高效的代码，
+```bash
+#include<mpreal.h>
+#pragma comment(lib,"mpfr-4.0.1.lib")
+#include<iostream>
+#include<intrin.h>
+
+typedef mpfr::mpreal real;
+
+//10^frac(log10(factorial(n)))*2^64/10
+uint64_t einit(uint64_t n){
+    static const real log10e=1/mpfr::log(10);
+    static const real p264=mpfr::pow(2,64);
+    return (uint64_t)(p264*mpfr::pow(10,mpfr::frac(mpfr::lngamma(n+1)*log10e)-1));
+}
+
+//2^64/10 ~< e*n/10^k < 2^64
+uint64_t emul(uint64_t e,uint64_t n){
+    //10^pos
+    static uint64_t pow10[]={
+        1,10,100,1000,10000,
+        100000,1000000,10000000,100000000,1000000000,
+        10000000000,100000000000,1000000000000,10000000000000,100000000000000,
+        1000000000000000,10000000000000000,100000000000000000,1000000000000000000,10000000000000000000
+    };
+    static int shrn[]={3,6,9,13,16,19,23,26,29,33,36,39,43,46,49,53,56,59,63,66};
+    //round(2^(64+shrn[pos])/10^(pos+1))
+    static uint64_t inv10[]={
+        0xcccccccccccccccd,0xa3d70a3d70a3d70a,0x83126e978d4fdf3b,0xd1b71758e219652c,
+        0xa7c5ac471b478423,0x8637bd05af6c69b5,0xd6bf94d5e57a42bc,0xabcc77118461cefd,
+        0x89705f4136b4a597,0xdbe6fecebdedd5bf,0xafebff0bcb24aaff,0x8cbccc096f5088cc,
+        0xe12e13424bb40e13,0xb424dc35095cd80f,0x901d7cf73ab0acd9,0xe69594bec44de15b,
+        0xb877aa3236a4b449,0x9392ee8e921d5d07,0xec1e4a7db69561a5,0xbce5086492111aeb
+    };
+
+    //res = e*n
+    uint64_t res[2];
+    res[0]=_umul128(e,n,res+1);
+
+    if(res[1]==0)return res[0];
+
+    //shrt = res >> shrn[pos]
+    int pos=0;
+    uint64_t shrt;
+    if(res[1]>=pow10[19]){
+        pos=19;
+        shrt=res[1]>>2;
+        res[0]=0;
+    }
+    else{
+        while(res[1]>=pow10[pos+1])++pos;
+        shrt=res[1]<<64-shrn[pos]|res[0]>>shrn[pos];
+        res[0]=res[1]>>shrn[pos]?inv10[pos]:0;
+    }
+   
+    _umul128(shrt,inv10[pos],res+1);
+    return res[0]+res[1];
+}
+
+int main(){
+    mpfr::mpreal::set_default_prec(192);
+    std::cout.precision(39);
+
+    uint64_t iinit=0xdeadbeefbadcab1e,isize=1000000000;
+    uint64_t eval=einit(iinit);
+    for(uint64_t i=iinit+1;i<=iinit+isize;++i){
+        eval=emul(eval,i);
+    }
+    std::cout<<eval<<std::endl;
+    std::cout<<einit(iinit+isize)<<std::endl;
+    return 0;
+}
+```
+并且于2019年12月18日得出下一个数据，即  
+119027672349942!=314159265358970871...
 
 [于2008年12月提问]: https://bbs.emath.ac.cn/forum.php?mod=viewthread&tid=969&fromuid=20
 [首先提议用斯特林公式去搜索]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=969&pid=12665&fromuid=20
