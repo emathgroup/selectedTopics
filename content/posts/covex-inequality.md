@@ -30,10 +30,10 @@ troy很快给出了[两个数情况的一种初等证明](https://bbs.emath.ac.c
 as $a,b\gt 0$ and $a+b=4$  
 assume $f=(a+\frac 1a)(b+\frac 1b)=ab+\frac{a^2+b^2+1}{ab}$  
 as $a^2+b^2+2ab=(a+b)^2$  
-then $f\ge ab+\frac{(a+b)^2-2ab+1}{ab}=ab+\frac{16-2ab}{ab}+\frac1{ab}=ab+\frac{17}{ab}-2$  
-assume $ab=t$ then $f\ge t+\frac{17}t-2$  
+then $f = ab+\frac{(a+b)^2-2ab+1}{ab}=ab+\frac{16-2ab}{ab}+\frac1{ab}=ab+\frac{17}{ab}-2$  
+assume $ab=t$ then $f = t+\frac{17}t-2$  
 所以$a,b$是$x^2-4x+t=0$的两个根  
-所以$\Delta=4^4-4t\ge 0$  
+所以$\Delta=4^2-4t\ge 0$  
 所以$t\le 4$  
 即$ab\le 4$  
 易证：$y=x+\frac{17}x$在$(0,\sqrt{17})$是递减的,即在$(0,4]$是递减的  
@@ -42,29 +42,32 @@ assume $ab=t$ then $f\ge t+\frac{17}t-2$
 
 2天后，mathe说他给出的附件里面通过使用数学分析给出了3个数情况的证明，并且得出四个数不再在四个数都相等时取到最小值了，可惜附件已经无法访问了。  
 
-[wayne分析出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=164&pid=17729&fromuid=20)  
+[wayne分析得出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=164&pid=17729&fromuid=20)  
 当$a+b=T\ge 2 \sqrt{2 + \sqrt{5}}=4.116342054542985$时，$(\frac1a + a)(b + \frac1b)$的最小值在
-a取方程$ a^4 + a^2 T^2- 2 a^3 T - T^2 -1 = 0$的一根T=$\frac12 (a + \sqrt{a^2 - 4 \sqrt{1 + a^2}}) $时取得，此时最小值为$2\sqrt{T^2 + 1} - 2$
-否则，最小值在$a=\frac T2$处取得。  
+a取方程$ a^4 + a^2 T^2- 2 a^3 T - T^2 -1 = 0$的一根T=$\frac12 (a + \sqrt{a^2 - 4 \sqrt{1 + a^2}}) $时取得，此时最小值为$2\sqrt{T^2 + 1} - 2$; 否则，最小值在$a=\frac T2$处取得。  
 
-mathe试着用pari/gp做出[不超过5给数时的最小值图像](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=164&pid=17791&fromuid=20)  
-其中横坐标是和的值.图上三条曲线,最高红色曲线是极小值的对数.绿色曲线是取极值时一个变量的取值(小的那个),另外一条红色的折线是这个变量的数目.  
+mathe试着用pari/gp做出[不超过5个数时的最小值图像](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=164&pid=17791&fromuid=20)  
+其中横坐标是n个数的和. 图上三条曲线：最高红色曲线是极小值的对数；绿色曲线是取极值时一个变量的取值(小的那个)；另外一条红色的折线是这个变量的数目.  
+两个数:  
 ![t2](../images/cvineq/t2.GIF)  
+三个数:  
 ![t3](../images/cvineq/t3.GIF)  
+四个数:  
 ![t4](../images/cvineq/t4.GIF)  
+五个数:  
 ![t5](../images/cvineq/t5.GIF)  
 
-从上面的图中可以看出,对于n比较大的情况,结论也是挺简单的.也就是n个数相等或n-1个较小的数相等时才取到最小值.  
-现在我们证明这个结论.而这个结论我们已经知道在n=2时成立.  
+从上面的图中可以看出,对于n比较大的情况,结论还是挺简单的：也就是n个数全相等或n-1个较小的数全相等时才取到最小值.  
+现在我们证明这个结论，而这个结论我们已经知道在n=2时成立.  
 假设对于n=k-1时上面结论已经成立,  
-对于$n=k\ge 3$,我们根据我的附件里面的分析,可以知道,只有在k个数$x_1,x_2,...,x_k$的只取最多两种不同的值时达到最小值,也就是  
+对于$n=k\ge 3$,我们根据我的附件里面的分析,可以知道,只有在k个数$x_1,x_2,...,x_k$的值只取最多两种不同的值时才可能达到最小值,也就是  
 $x_1=x_2=...=x_k=\frac Tk$或$x_1=x_2=...=x_h,x_{h+1}=...=x_k,x_1^2x_k^2=(x_1+x_k)^2+1$时取到最小值.  
 现在假设如果在某个$2\le h\le k-2$时可以取到最小值,那么我们得到  
 $x_2,x_3,...,x_h,x_{h+1},...,x_k$是$k-1$个数之和为$T-x_1$时的最小值情况,这个同归纳假设矛盾,所以不成里.  
 而对于h=1的情况,我们知道$x_1\lt x_2=...=x_h=...=x_{k-1}$是$k-1$个数和为$T-x_k$时的最小值情况,也同归纳假设矛盾,不成里.  
 所以我们知道只可能k个数都相同或较小的k-1个数相等这两种情况.
 
-上面证明从$n=2$到$n=3$过程的推理不行,但是对于$k\ge 4$时的推理都可以,所以我们需要补充证明对于$k=3$的情况:  
+但是上面证明从$n=2$到$n=3$过程的推理不行,对于$k\ge 4$时的推理是可以,所以我们需要补充证明对于$k=3$的情况:  
 我们需要排除$x_1\lt x_2=x_3$的取最小值情况.  
 假设如果存在这样的取最小值情况,我们知道  
 $(x_1,x_2)$是两个数之和为$T-x_3$时候的取最小值条件.  
