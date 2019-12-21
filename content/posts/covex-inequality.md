@@ -49,10 +49,10 @@ a取方程$ a^4 + a^2 T^2- 2 a^3 T - T^2 -1 = 0$的一根T=$\frac12 (a + \sqrt{a
 
 mathe试着用pari/gp做出[不超过5给数时的最小值图像](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=164&pid=17791&fromuid=20)  
 其中横坐标是和的值.图上三条曲线,最高红色曲线是极小值的对数.绿色曲线是取极值时一个变量的取值(小的那个),另外一条红色的折线是这个变量的数目.  
-![t2](../images/cvineq/t2.gif)  
-![t3](../images/cvineq/t3.gif)  
-![t4](../images/cvineq/t4.gif)  
-![t5](../images/cvineq/t5.gif)  
+![t2](../images/cvineq/t2.GIF)  
+![t3](../images/cvineq/t3.GIF)  
+![t4](../images/cvineq/t4.GIF)  
+![t5](../images/cvineq/t5.GIF)  
 
 从上面的图中可以看出,对于n比较大的情况,结论也是挺简单的.也就是n个数相等或n-1个较小的数相等时才取到最小值.  
 现在我们证明这个结论.而这个结论我们已经知道在n=2时成立.  
