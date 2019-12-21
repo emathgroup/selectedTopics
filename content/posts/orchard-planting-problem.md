@@ -401,7 +401,7 @@ wayne对这个图[进行射影变换后我们发现图形很像正七边形](htt
         Y[+0,+1,0];
 EFHYCGJYAIKYBDLYMQRYPTUYNVXYOSWYFGMWKLMXHJMVEIMUHKUWCLVWBCSTADUXEJRSFKQTEGQXDIRVILNTFIPSGLOUAEOTBKPVDJPWBJOXDGNSAHPRCFNRCHOQABNQMNOPRTWXQSUV
 ```
-24棵树的[两个对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82274&fromuid=20)  
+24棵树30行的[两个对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82274&fromuid=20)  
 IOPULNOXJQRVKMRTHNQWGMPSKLUVGHTXIJSWAGKOBHLRFILQDGINCHJMEJKPAJTUBIVXFGUWCLTWDKSXEHSVARWXBOSTEQUXDMVWFPTVCNSUABMNEFORCDPQ  
 $\frac{UA}{UT}=0.5048, \frac{UJ}{UT}=0.4378$  
 ![o24.4](../images/trees/o24.4.png)  
