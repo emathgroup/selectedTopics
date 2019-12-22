@@ -1,0 +1,285 @@
+#include<stdio.h>
+#include <string.h>
+
+#ifndef N
+#define N  5
+#endif
+#define TS ((N-1)*N+1)
+#define WORDC   ((TS+sizeof(int)-1)/sizeof(int))
+#define OFFSET(x)  ((x)/32)
+#define INDEX(x)   ((x)&31)
+#define ISSET(x)   ((ts[OFFSET(x)]&(1<<INDEX(x)))!=0)
+#define REVERT(x)  (ts[OFFSET(x)]^=(1<<INDEX(x)))
+
+int db[N][N];
+int cc;
+int du;
+int ts[WORDC];
+int sel;
+
+void set_used(int x)
+{
+    if(!ISSET(x)){
+       REVERT(x); REVERT(TS-x);
+    }
+}
+
+void set_unused(int x)
+{
+    if(ISSET(x)){
+       REVERT(x); REVERT(TS-x);
+    }
+}
+
+void init()
+{
+    db[0][0]=1; cc=1; du=1;sel=1;
+    set_used(1);
+}
+
+int left_test(int row, int rc)
+{
+    int cur_sum=sel;
+    int k;
+    for(k=rc-1;k>=0;k--){
+        cur_sum+=db[row][k];
+        if(cur_sum<TS&&!ISSET(cur_sum)){
+            set_used(cur_sum);
+            continue;
+        }
+        for(;k<rc-1;k++){
+            cur_sum-=db[row][k];
+            set_unused(cur_sum);
+        }
+        return 0;
+    }
+    return 1;
+}
+
+int right_test(int row, int rc)
+{
+    int cur_sum=sel;
+    int k;
+    for(k=0;k<rc;k++){
+        cur_sum+=db[row][k];
+        if(cur_sum<TS&&!ISSET(cur_sum)){
+             set_used(cur_sum);
+             continue;
+        }
+        for(;k>0;k--){
+            cur_sum-=db[row][k];
+            set_unused(cur_sum);
+        }
+        return 0;
+    }
+    return 1;
+}
+
+void reverse(int r, int c)
+{
+    int i;
+    for(i=0;i<c/2;i++){
+       int tmp=db[r][i];
+       db[r][i]=db[r][c-1-i];
+       db[r][c-1-i]=tmp;
+    }
+}
+
+int merge_test(int r1, int c1, int r2, int c2, int d1, int d2)
+{
+    int i,j;
+    int tsb[WORDC];
+    if(d1<0)reverse(r1,c1);
+    if(d2<0)reverse(r2,c2);
+    db[r1][c1]=sel;
+    memcpy(tsb,ts,sizeof(tsb));
+    for(i=0;i<=c2;i++)db[r1][i+c1+1]=db[r2][i];
+    for(i=0;i<=c1;i++){
+       int sum=0;
+       for(j=i;j<=c1;j++)sum+=db[r1][j];
+       if(i<c1){
+           if(sum>=TS||ISSET(sum)){
+                goto restore_state;
+           }
+           set_used(sum);
+       }
+       for(;j<c1+c2+1;j++){
+           sum+=db[r1][j];
+           if(sum>=TS||ISSET(sum)){
+              goto restore_state;
+           }
+           set_used(sum);
+       }
+    }
+    for(i=r2;i<cc-1;i++){//move other row forward
+        for(j=0;;j++){
+            db[i][j]=db[i+1][j];
+            if(db[i][j]==0)break;
+        }
+    }
+    cc--;
+    du++;
+    return 1;
+restore_state:
+    db[r1][c1]=0;
+    if(d1<0)reverse(r1,c1);
+    if(d2<0)reverse(r2,c2);
+    memcpy(ts,tsb,sizeof(tsb));
+    return 0;
+}
+
+void merge_revert(int r1, int c1, int r2, int c2, int d1, int d2)
+{
+    int i,j;
+    for(i=cc-1;i>=r2;i--){
+        for(j=0;;j++){
+            db[i+1][j]=db[i][j];
+            if(db[i][j]==0)break;
+        }
+    }
+    cc++;du--;
+    for(i=0;i<=c1;i++){
+       int sum=0;
+       for(j=i;j<=c1;j++)sum+=db[r1][j];
+       if(i<c1){
+           set_unused(sum);
+       }
+       for(;j<c1+c2+1;j++){
+           sum+=db[r1][j];
+           set_unused(sum);
+       }
+    }
+    db[r1][c1]=0;
+    for(i=0;i<=c2;i++){
+       db[r2][i]=db[r1][c1+1+i];
+    }
+    if(d1<0)reverse(r1,c1);
+    if(d2<0)reverse(r2,c2);
+}
+void left_unset(int row, int rc)
+{
+    int cur_sum=sel;
+    int k;
+    for(k=rc-1;k>=0;k--){
+        cur_sum+=db[row][k];
+        set_unused(cur_sum);
+    }
+}
+
+void right_unset(int row, int rc)
+{
+    int cur_sum=sel;
+    int k;
+    for(k=0;k<rc;k++){
+        cur_sum+=db[row][k];
+        set_unused(cur_sum);
+    }
+}
+
+void go_next_sel()
+{
+    for(;sel<TS&&ISSET(sel);sel++);
+}
+
+int get_row_len(int row)
+{
+    int j;
+    for(j=0;j<N;j++){
+       if(db[row][j]==0)return j;
+    }
+    return j;
+}
+
+void output_result()
+{
+    int sum=TS;
+    int k;
+    for(k=0;k<N-1;k++){
+       printf("%d ",db[0][k]);
+       sum-=db[0][k];
+    }
+    printf("%d\n",sum);
+}
+
+void try_next()
+{
+    int try_sel;
+    int i,j;
+    go_next_sel();
+    try_sel=sel;
+    if(sel==TS){
+        output_result();
+        return;
+    }
+    set_used(sel);
+    if(du+cc<=N-2){
+        //try use sel in new row
+        db[cc][0]=sel;db[cc][1]=0;cc++;du++;
+        try_next();
+        sel = try_sel;//restore
+        du--;cc--;
+    }
+    if(du+cc<=N-1){
+      for(i=0;i<cc;i++){//try append after the right of one row
+        int j=get_row_len(i);
+        if(left_test(i,j)==0)continue;
+        db[i][j]=sel;db[i][j+1]=0;
+        du++;
+        try_next();
+        sel=try_sel;du--;db[i][j]=0;
+        left_unset(i,j);
+      }
+      for(i=0;i<cc;i++){//try insert before first element
+        int j=get_row_len(i);
+        if(j<=1)continue;
+        if(right_test(i,j)==0)continue;
+        int k;
+        for(k=j;k>=0;k--)db[i][k+1]=db[i][k];db[i][0]=sel;
+        du++;
+        try_next();
+        sel=try_sel;du--;
+        for(k=0;k<=j;k++)db[i][k]=db[i][k+1];
+        right_unset(i,j);
+      }
+    }
+    for(i=0;i<cc;i++){
+        int ri=get_row_len(i);
+        for(j=i+1;j<cc;j++){//try connect two rows
+            int rj=get_row_len(j);
+            if(merge_test(i,ri,j,rj,1,1)){
+                try_next();
+                sel=try_sel;
+                merge_revert(i,ri,j,rj,1,1);
+            }
+            if(rj>1){
+                if(merge_test(i,ri,j,rj,1,-1)){
+                    try_next();
+                    sel=try_sel;
+                    merge_revert(i,ri,j,rj,1,-1);
+                }
+            }
+            if(ri>1){
+                if(merge_test(i,ri,j,rj,-1,1)){
+                    try_next();
+                    sel=try_sel;
+                    merge_revert(i,ri,j,rj,-1,1);
+                }
+            }
+            if(ri>1&&rj>1){
+                if(merge_test(i,ri,j,rj,-1,-1)){
+                    try_next();
+                    sel=try_sel;
+                    merge_revert(i,ri,j,rj,-1,-1);
+                }
+            }
+        }
+    }
+    set_unused(sel);
+}
+
+int main()
+{
+    init();
+    try_next();
+    return 0;
+}

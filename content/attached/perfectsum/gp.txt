@@ -1,0 +1,178 @@
+get_num_prim(p)=
+{
+    local(r,pass);
+    r=factor(p-1);
+    for(u=1,p-1,
+        pass=u;
+        for(v=1,length(r[,1]),
+             if(Mod(u,p)^((p-1)/r[v,1])==1, pass=0;break())
+        );
+       if(pass > 0, break())
+    );
+    Mod(pass,p)
+}
+
+get_prim(p,n)=
+{
+    if(n==1,
+        get_num_prim(p),
+        ffgen(ffinit(p,n),a)
+    )
+}
+
+irriducible(f)=
+{
+    local(r);
+    r=factor(f);
+    length(r[,1])==1 && r[1,2]==1
+}
+
+isprimitive(f,q)=
+{
+   local(r,pass);
+   r=factor(q^3-1);pass=1;
+   for(u=1,length(r[,1]),
+        if(Mod(x,f)^((q^3-1)/r[u,1])==1,pass=0;break())
+   );
+   pass
+}
+
+findprimitive(a,p,n)=
+{
+    local(q,c1,c2,c3,f,found,b);
+    q=p^n;c1=c2=0;c3=a/a;f=0;
+    b=if(n==1,a,ffprimroot(a));
+    for(u=1,q,
+        c2=0;
+        for(v=1,q,
+            c3=a/a;
+            for(w=1,q-1,
+                f=x^3+c1*x^2+c2*x+c3;
+                if(irriducible(f)&&isprimitive(f,q),
+                    found=1;break()
+                );
+                c3=c3*b
+            );
+            if(found,break());
+            if(v==1,c2=a/a,c2=c2*b);
+        );
+        if(found,break());
+        if(u==1,c1=a/a,c1=c1*b);
+    );
+    f
+}
+
+findany(p,n)=
+{
+   local(f,q,v);
+   a=get_prim(p,n);q=p^n;
+   f=findprimitive(a,p,n);v=vector(0);
+   if(f==0,print("Fail to find primitive function"),
+       for(u=1, q^2+q,
+             if(polcoeff(component(Mod(x,f)^u,2),2)==0,v=concat(v,u))
+       )
+   );
+  kill(a);
+  v
+}
+
+vecmatch(v1,v2)=
+{
+    local(matched);
+    matched=1;
+    for(u=1,length(v1),
+         if(v1[u]<>v2[u], matched=0;break())
+    );
+    matched
+}
+
+vecrevert(w,m)=
+{
+     local(r);
+     r=vector(length(w));
+     r[1]=1;
+     for(u=2,length(w),
+          r[u]=m+1-w[length(w)+2-u]
+     );
+    r
+}
+
+vecshift(w,m)=
+{
+    local(h,r);h=length(w);
+    if(w[1]==1,
+          w,
+          for(u=1,length(w)-1,
+               if(w[u]+1==w[u+1],
+                    h=u;break()
+               )
+          );
+          r=vector(length(w));
+          for(u=h+1,length(w),
+              r[u-h]=(w[u]-w[h])%m
+          );
+          r[length(w)+1-h]=(-w[h])%m;
+          for(u=1,h-1,
+              r[length(w)+1-h+u]=(w[u]-w[h])%m
+          );
+         r
+     )
+}
+
+findall(p,n)=
+{
+    local(v,q,m,r,w,rw,matched);
+    q=p^n;m=q^2+q+1;
+    r=matrix(0,q); 
+    v=findany(p,n);
+    r=concat(r,v);
+    w=vector(q);
+    for(u=1,m-1,
+         if(gcd(m,u)==1,
+             for(k=1,q,
+                 w[k]=(v[k]*u)%m;
+             );
+             w=vecsort(w);
+             w=vecshift(w,m);
+             rw=vecrevert(w,m);
+             matched=0;
+             for(k=1,length(r[,1]),
+                  if(vecmatch(r[k,],w)||
+                       vecmatch(r[k,],rw),
+                      matched=1;break();
+                  )
+             );
+             if(!matched, r=concat(r,w))
+         )
+    );
+    r
+}
+
+normvec(v,m)=
+{
+    local(r);
+    r=vector(length(v)+1);
+    r[1]=1;
+    for(u=1,length(v)-1,
+         r[u+1]=v[u+1]-v[u]
+    );
+   r[length(v)+1]=m-v[length(v)];
+   r
+}
+
+normresult(N)=
+{
+    local(p,n,q,r,m,rr);
+    q=N-1;m=q^2+q+1;
+    r=factor(q);
+    if(length(r[,1])>1,
+       [],
+       p=r[1,1];n=r[1,2];
+       r=findall(p,n);
+       rr=matrix(length(r[,1]),q+1);
+       for(u=1,length(r[,1]),
+            rr[u,]=normvec(r[u,],m)
+       );
+       rr
+   )
+}

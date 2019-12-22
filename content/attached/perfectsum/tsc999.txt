@@ -1,0 +1,51 @@
+
+     ' 一条手串由六颗珠子穿成。每颗珠子上刻有一个数字。数字总和为31。其中一个珠子上的数字是 1。各颗珠子上的数字集合记为{A1}={1，……}。
+     ' 相邻两颗珠子上的数字和记为集合{A2}，相邻三颗珠子上的数字和记为集合{A3}，相邻四颗珠子上的数字和记为集合{A4}，
+     ' 相邻五颗珠子上的数字和记为集合{A5}，全部六颗珠子上的数字和记为集合{A6}={31}。
+     ' 若{A}={A1}+{A2}+{A3}+{A4}+{A5}+{A6}={1，2，3，4，5，…，30，31}，求每颗珠子上的数字是什么。
+     ' 从刻有 1 的珠子开始逆时针向转一周，设各珠子上的数字是 1，x，y，z，u，v，那么 v=31-1-x-y-z-u。
+     ' {x}、{y}、{z}、{u}、{v}都应小于{2，3，4，…，25}。
+     ' 用穷举法寻求 x、y、z、u、v 的值。
+     
+     Private Sub form_Click()
+     Open "六颗珠子 1.txt" For Output As #1
+     
+     Dim a(31)   '{A}={A1}+{A2}+{A3}+{A4}+{A5}+{A6}={1，2，3，4，5，…，30，31} 集合的元素个数
+     n = 31
+     For x = 2 To 25    ' 25 估计得肯定大了，但为了防止漏掉解，取得大些保险。虽然运行时间多了一点，不影响结果。
+      For y = 2 To 25
+       For z = 2 To 25
+        For u = 2 To 25
+        v = 30 - x - y - z - u
+        a(1) = 1: a(2) = x: a(3) = y: a(4) = z: a(5) = u: a(6) = v
+        a(7) = 1 + x: a(8) = x + y: a(9) = y + z: a(10) = z + u: a(11) = u + v: a(12) = v + 1
+        a(13) = 1 + x + y: a(14) = x + y + z: a(15) = y + z + u: a(16) = z + u + v: a(17) = u + v + 1: a(18) = v + 1 + x
+        a(19) = 1 + x + y + z: a(20) = x + y + z + u: a(21) = y + z + u + v: a(22) = z + u + v + 1: a(23) = u + v + 1 + x: a(24) = v + 1 + x + y
+        a(25) = 31 - 1: a(26) = 31 - x: a(27) = 31 - y: a(28) = 31 - z: a(29) = 31 - u: a(30) = 31 - v
+        a(31) = 31
+     For i = 1 To n - 1   '从小到大排序
+          Min = i
+        For j = i + 1 To n
+         If a(j) < a(Min) Then Min = j
+        Next j
+        t = a(i)
+       a(i) = a(Min)
+       a(Min) = t
+     Next i               '排序结束
+     
+     For i = 1 To n - 1  '从小到大的排序结果中去掉有相同数字的
+       If a(i) <= 0 Then GoTo 111      ' 由于前面循环次数多了，会出现零和负数情况。将其去掉不用。
+       If a(i) = a(i + 1) Then GoTo 111    ' 两数相同，不符合要求，去掉。
+     Next i
+       If a(31) = a(1) Then GoTo 111     ' 首、末数相同的，去掉。
+    ' 以下输出符合要求的解答     
+     Print "k="; Trim(Str(1)); ",x="; Trim(Str(x)); ",y="; Trim(Str(y)); ",z="; Trim(Str(z)); ",u="; Trim(Str(u)); ",v="; Trim(Str(v))
+     Print #1, "k="; Trim(Str(1)); ",x="; Trim(Str(x)); ",y="; Trim(Str(y)); ",z="; Trim(Str(z)); ",u="; Trim(Str(u)); ",v="; Trim(Str(v))
+     
+111: Next u
+     Next z
+     Next y
+     Next x
+    
+      Close
+      End Sub    

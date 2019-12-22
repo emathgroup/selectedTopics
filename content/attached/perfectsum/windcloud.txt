@@ -1,0 +1,43 @@
+import numpy as np;
+print("input n:");
+num = int(input());
+
+arr = np.zeros(num, dtype = int);
+sa = 0;
+
+def fit(idx, n):
+    global sa;
+    arr[idx] = n;
+    sa += n;#求已经填的所有数字之和
+    if(sa <= num * (num - 1) + 1):#所有数字和小于最大值才有意义
+        if(idx == num - 1):#已经填满
+            #print(arr);
+            arr_sum = np.zeros((num * (num - 1) + 2), dtype = int);
+            #以下几个循环用于求出相邻数字之和
+            for x in range(1, num - 1):#统计相邻几个的和，n相邻就是所有数字之和sa，n-1相邻是否必须统计还不清楚，目前看貌似不需要？
+                for i in range(0, num):#从第几个数开始统计
+                    ss = 0;
+                    for j in range(i, i + x):
+                        ss += arr[j % num];
+                    arr_sum[ss] += 1;#统计结果保存
+            arr_sum[sa] = 1;
+            arr_sum[0] = 1;
+            ok = True;
+            for i in arr_sum:#判断是否不重复不遗漏
+                if(i > 1):
+                    ok = False;
+                    break;
+            if(ok):
+                print(arr);
+        else:#没填满，填下一个候选数，候选数不小于2，不大于n * (n - 1) / 2
+            for x in range(2, 1 + num * (num - 1) // 2):
+                dup = False;
+                for i in range(1, idx + 1):#跳过重复
+                    if(arr[i] == x):
+                        dup = True;
+                        break;
+                if(dup == False):
+                    fit(idx + 1, x);
+    sa -= n;#退回一步
+    
+fit(0, 1);
