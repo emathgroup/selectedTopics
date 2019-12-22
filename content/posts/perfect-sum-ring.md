@@ -60,7 +60,7 @@ Monitor[Reap[Timing[Do[tmp=Select[Permutations[Join[{2},data[[i]]]],Length[Tally
 ```
 
 然后TSC999得出不存在七颗珠子的手串。  
-wayne改进代码使用多核得出八颗珠子的手串：  
+wayne改进代码使用多核得出所有的八颗珠子的手串：  
 ```bash
 {{3,4,6,7,12,22},{{4,22,7,3,6,2,12},{12,2,6,3,7,22,4}}},
 {{3,4,6,8,12,21},{{6,12,4,21,3,2,8},{8,2,3,21,4,12,6}}},
@@ -77,7 +77,7 @@ target=Flatten[{Total[arr],Table[Total[RotateLeft[arr,i][[1;;k]]],{i,0,n-1},{k,1
 data=Select[IntegerPartitions[(-1+n) n-2,{n-2}],Length[Union[#]]==n-2&&Min[#]>2&];
 Timing[ParallelTable[{d,Select[Permutations[Join[{2},d]],Length[Tally[Differences[Sort[target/.Thread[arr->Join[{1},#]]]]]]==1&]},{d,data}]]
 ```
-并且给出九颗珠子的手串:  
+并且穷举e了九颗珠子的手串:  
 ```bash
 {{1, 14, 8, 2, 28, 3, 6, 7, 4}, {1, 4, 7, 6, 3, 28, 2, 8, 14}},
 {{1, 8, 12, 2, 3, 13, 24, 4, 6}, {1, 6, 4, 24, 13, 3, 2, 12, 8}},
@@ -284,7 +284,7 @@ N=18
 
 可以看出到现在为止找到的解都是符合文章模式的解。  
 另外mathe找到了[另外一篇关于有限射影平面的文章](https://arxiv.org/ftp/math/papers/0611/0611492.pdf) , 里面说如果$n\equiv 1 (\mod 4)$或者$n \equiv 2(\mod 4)$而且n包含4k+3形式的素因子的奇数次方，那么不存在长度为n+1的手串.  
-由此我们可以在[A058241]后面添加三个零。  
+由此我们可以在[A058241](http://oeis.org/A058241) 后面添加三个零。  
 mathe还给出了一段Pari/gp代码[实现上面的构造方法](../attached/perfectsum/gp.txt), 使用方法如下：  
 
 ```bash
