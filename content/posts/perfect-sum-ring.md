@@ -31,8 +31,7 @@ date: 2019-12-22
 大家踊跃参与，最好搜索到了17棵珠子的结果并且定位到了[OEIS中perfect different set](http://oeis.org/A058241) ,并且和有限射影平面关联起来，得到不错的结果。
 
 #开始搜索
-在问题提出的次日，TSC999[用VB搜索出了所有的六颗珠子手串](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15728&pid=77478&fromuid=20) ，有:  
-只考虑其中一颗珠子上是数字 1，不考虑别的。其余珠子上的数字假定是 x，y，z，u，v。  
+在问题提出的次日，TSC999[用VB搜索出了所有的六颗珠子手串](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15728&pid=77478&fromuid=20) ，其结果如果考虑其中一颗珠子上是数字 1，其余珠子上的数字假定是 x，y，z，u，v。  
 程序运行结果是：  
 k=1,x=2,y=5,z=4,u=6,v=13  
 k=1,x=2,y=7,z=4,u=12,v=5  
@@ -59,8 +58,8 @@ data=Subsets[Range[n (n-1)]+2,{n-2}];
 Monitor[Reap[Timing[Do[tmp=Select[Permutations[Join[{2},data[[i]]]],Length[Tally[Differences[Sort[target/.Thread[arr->Join[{1},#]]]]]]==1&];If[Length[tmp]>0,Sow[tmp]],{i,Length[data]}]]],{i,Length[data]}]
 ```
 
-然后TSC999得出不存在七颗珠子的手串。  
-wayne改进代码使用多核得出所有的八颗珠子的手串：  
+其后TSC999得出不存在七颗珠子的手串。  
+wayne进一步改进其代码并且使用多核得出所有的八颗珠子的手串：  
 ```bash
 {{3,4,6,7,12,22},{{4,22,7,3,6,2,12},{12,2,6,3,7,22,4}}},
 {{3,4,6,8,12,21},{{6,12,4,21,3,2,8},{8,2,3,21,4,12,6}}},
@@ -77,7 +76,7 @@ target=Flatten[{Total[arr],Table[Total[RotateLeft[arr,i][[1;;k]]],{i,0,n-1},{k,1
 data=Select[IntegerPartitions[(-1+n) n-2,{n-2}],Length[Union[#]]==n-2&&Min[#]>2&];
 Timing[ParallelTable[{d,Select[Permutations[Join[{2},d]],Length[Tally[Differences[Sort[target/.Thread[arr->Join[{1},#]]]]]]==1&]},{d,data}]]
 ```
-并且穷举e了九颗珠子的手串:  
+并且穷举了九颗珠子的手串:  
 ```bash
 {{1, 14, 8, 2, 28, 3, 6, 7, 4}, {1, 4, 7, 6, 3, 28, 2, 8, 14}},
 {{1, 8, 12, 2, 3, 13, 24, 4, 6}, {1, 6, 4, 24, 13, 3, 2, 12, 8}},
@@ -86,7 +85,8 @@ Timing[ParallelTable[{d,Select[Permutations[Join[{2},d]],Length[Tally[Difference
 ```
 
 [风云剑也提供了一段python代码](../attached/perfectsum/windcloud.txt) 。  
-mathe提供了一种[手工穷举五颗珠子手串的方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15728&pid=77543&fromuid=20) ,然后用[C代码](../attached/perfectsum/mathe.txt) 编程计算到17颗珠子以内的结果:  
+
+此后mathe提供了一种[手工穷举五颗珠子手串的方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15728&pid=77543&fromuid=20) ,然后采用上面思路使用[C代码](../attached/perfectsum/mathe.txt) 编程计算到17颗珠子以内的结果:  
 ```bash
 N=1
 1
@@ -183,10 +183,10 @@ N=17
 13 10 29 5 17 18 1 2 4 8 16 32 27 26 11 9 45
 ```
 
-然后wayne根据mathe的搜索结果从OEIS网站找到了[A058241](http://oeis.org/A058241) ，
-并由此发现其正式名字为[Perfect Difference Set](http://mathworld.wolfram.com/PerfectDifferenceSet.html)  
+wayne根据上面的搜索结果从OEIS网站找到了[A058241](http://oeis.org/A058241) ，
+并发现问题等价于[Perfect Difference Set](http://mathworld.wolfram.com/PerfectDifferenceSet.html)  
 
-而mathe的代码又接着找出了所有N=18的解:  
+mathe的代码紧接着又找出了所有N=18的解:  
 ```bash
 N=18
 9 26 1 17 2 10 4 7 38 5 8 24 15 42 6 22 3 68
@@ -243,24 +243,23 @@ N=18
 ```
 
 #有限射影平面
-然后mathe找到了[一篇关于Perfect Difference Set的文章](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S2040618500034985) ,里面给出使用有限射影平面构造特殊解的方案:  
-文章，主要思路如下  
-如果我们要找$K$棵珠子的手串，其中$K=p^e+1$,其中$p$是素数，记$r=p^e,q=r^2+r+1$, 我们计算的和将要覆盖1,2,...,q。  
-我们先选择r阶有限域$F_r$,比如取r=3,那么就是模3运算。另外我们需要选择$F_{r^3}$中一个生成元g  
-比如说我们选择$g$使得$g^3=g-1$,于是$F_{3r}$中任意一个元素可以写成$a+bg+cg^2$形式，其中a,b,c都是$F_r$中元素（也就是0,1,2)  
-经计算可以得知这样选择的g的阶是$3^3-1=26$,所以验证了g是生成元，也就是$F_{r^3}$中任意一个非零元还可以写成$g^h$的形式，其中$0\le h\le r^3-2=25$  
+此后mathe找到了[一篇关于Perfect Difference Set的文章](https://www.cambridge.org/core/services/aop-cambridge-core/content/view/S2040618500034985) ,里面给出一种使用有限射影平面构造特殊解的方案:  
+文章主要思路如下：  
+如果我们要找$K$棵珠子的手串，其中$K=p^e+1$,其中$p$是素数，记$r=p^e,q=r^2+r+1$, 我们计算的和将要覆盖1,2,...,q。
+我们先选择r阶有限域$F_r$,比如取r=3,那么就是模3运算。另外我们需要选择$F_{r^3}$中一个生成元g,
+比如说我们选择$g$使得$g^3=g-1$,于是$F_{3r}$中任意一个元素可以写成$a+bg+cg^2$形式，其中a,b,c都是$F_r$中元素（也就是0,1,2)。  
+经计算可以得知这样选择的g的阶是$3^3-1=26$,所以验证了g是生成元，也就是$F_{r^3}$中任意一个非零元还可以写成$g^h$的形式，其中$0\le h\le r^3-2=25$。
 由于，对于任意h满足$0\le h\le r^3-2$,存在唯一的$a_h,b_h,c_h$使得$g^h=a_h+b_hg+c_hg^2$，我们记$h=H(a_h,b_h,c_h)$或$h=H(a_h+b_hg+c_hg^2)$  
-现在我们把$F_{r^3}$中任意一个非零元素$a+bg+cg^2$看成$F_r$中射影平面上一个点$(a,b,c)$,那么需要注意如果有两个点u,v使得$H(u)-H(v)$是q的倍数，  
-那么它们表示的是射影平面上的同一个点，或者说存在$k\in F_r^{*}$使得u的每个分量都是v对应分量的k倍.  
-于是文章证明对于此射影平面任意直线上的点列$P_0,P_1,...,P_r$(每条直线上正好r+1个点), 那么$H(P_0),H(P_1),...,H(P_r)$两两差关于q的余数各不相同。  
+现在我们把$F_{r^3}$中任意一个非零元素$a+bg+cg^2$看成$F_r$中射影平面上一个点$(a,b,c)$,那么需要注意如果有两个点u,v使得$H(u)-H(v)$是q的倍数， 那么它们表示的是射影平面上的同一个点，或者说存在$k\in F_r^{*}$使得u的每个分量都是v对应分量的k倍。
+文章证明对于此射影平面任意直线上的点列$P_0,P_1,...,P_r$(每条直线上正好r+1个点), 那么$H(P_0),H(P_1),...,H(P_r)$两两差关于q的余数各不相同。  
 比如我们选择直线$z=0$,所以上面的点分别为$(1,0,0), (0,1,0), (1,1,0),(1,2,0)$  
 对应$F_{r^3}$中的数$1,g,1+g,1+2g$,对应$g^0,g^1,g^9,g^3$,所以我们选中了数$0,1,3,9$，选中的数中必然有两个数相差1，通过平移将它们变为0和1，这里这一步可以省略  
 所以两两差模$q=13$分别为$1,3,9, 12, 2, 8, 10, 11, 6, 4, 5, 7$互不相同，验证了我们的结论。对应4棵珠子为$1-0=1,3-1=2,9-3=6,13-9=4$  
 选择不同的直线结果会相同。为了获取不同的结果，我们需要选择不同的生成元g，对应的，相当于找到$H(P_0),H(P_1),...,H(P_r)$，我们将每个$H(.)$在乘上一个和q互素的数字在模q就可以得到在不同坐标系下的$H(.)$  
-比如，我们可以将$g^0,g^1,g^9,g^3$全部指数乘以2得到$g^0,g^2,g^5,g^6$,然后平移为$g^8, g^10, g^0,g^1$,对应四颗珠子为$1-0=1,8-1=7,10-1=2,13-10=3$  
-通过这种方法，我们可以在$O(r^6)$的时间内构造出所有的解，但是这种方法不能证明不存在其它解  
+比如，我们可以将$g^0,g^1,g^9,g^3$全部指数乘以2得到$g^0,g^2,g^5,g^6$,然后平移为$g^8, g^10, g^0,g^1$,对应四颗珠子为$1-0=1,8-1=7,10-1=2,13-10=3$.
+通过这种方法，我们可以在$O(r^6)$的时间内构造出所有的解，但是这种方法不能证明不存在其它解.
 
-其中，构造解的数目满足下面表格的最后一列的数目  
+其中，含$k+1$颗珠子的手串的构造的解的数目满足下面表格的最后一列的数目  
 
 |$k=p^n$| p | n |$q=k^2+k+1$|$\frac{\varphi(q)}{6n}$|
 |-------|---|---|-----------|-----------------------|
