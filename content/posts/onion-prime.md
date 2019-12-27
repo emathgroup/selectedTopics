@@ -64,7 +64,7 @@ Total 0 for length 25
 Total 4259 found
 ```
 于是我们确定了最大的外洋葱素数为357686312646216567629137。
-#对应代码
+# 对应代码
 mathe使用gxqcn的[HugeCalc](https://www.emath.ac.cn/hugecalc/) 编写了搜索外洋葱素数的c代码，主要部分如下：
 ```bash
 #include <list>
@@ -108,7 +108,7 @@ THE_LIST *orig_list, *new_list, *tmp_list;
     printf("Total %d found\n",count);
 ```
 
-#内洋葱素数
+# 内洋葱素数
 
 无心人看到有限个外洋葱素数后提问，内洋葱素数是不是更多并且无限个？  
 mathe稍微修改了下他的代码，[给出了如下的内洋葱素数列表](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=290&pid=2466&fromuid=20) : 
@@ -199,7 +199,8 @@ Total 59 found
 8位：23399339 29399999 37337999 59393339 73939133
 ```
 
-#空心洋葱素数
+# 空心洋葱素数
+
 gxqcn提议[可以讨论空心洋葱素数](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=290&pid=2553&fromuid=20) :  
 忽然想到：如果“洋葱素数”允许在剥离过程中产生的数首位为“0”的话，结果会多很多！
 
@@ -210,7 +211,8 @@ gxqcn提议[可以讨论空心洋葱素数](https://bbs.emath.ac.cn/forum.php?mo
 一个在2019年5月23日在网络上传播过的比较有意思的空心洋葱素数是:  
 ![20190523](../images/20190523.jpg)  
 
-#其它讨论
+# 其它讨论
+
 [hujunhua](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=290&pid=31819&fromuid=20) 还发现[百度知道中一题](http://zhidao.baidu.com/question/175853886.html) 和洋葱素数紧密关联:  
 正整数数列$a_1, a_2, \dots, a_n, \dots$的递推构造规则为：$a_{k+1}=a_k$后缀一个不是9的数字.  
 证明：这个数列中必定有无穷多合数.
