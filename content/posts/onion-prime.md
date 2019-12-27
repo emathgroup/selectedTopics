@@ -107,7 +107,9 @@ THE_LIST *orig_list, *new_list, *tmp_list;
     }
     printf("Total %d found\n",count);
 ```
+
 #内洋葱素数
+
 无心人看到有限个外洋葱素数后提问，内洋葱素数是不是更多并且无限个？  
 mathe稍微修改了下他的代码，[给出了如下的内洋葱素数列表](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=290&pid=2466&fromuid=20) : 
 
