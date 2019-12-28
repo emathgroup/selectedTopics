@@ -27,6 +27,9 @@ tags:
 2010年2月，我们在数学研发论坛上通过多人协作，共同使用多台计算机验证了20棵树每行四棵树，[最多只能种植23行]。但是限于计算能力，我们还无法找出所有的23行解。程序只找到了两种不等价的解，其中一个解和Xianzu Lin的结果等价，而另外一组解和王兴君和黄阳阳的都等价。其中王兴君和黄阳阳的结果虽然看似不同，但是从数学中的射影变换的角度来看，是可以相互转化的。  
 2019年9月，我们利用计算机又找出一种和上面两种方案都不等价的[新的23行解]。可以看出，这个解过每棵果树都至少有4行，而Lin的方案有两棵树只有3行经过，王和黄的方案有一棵树只有三行经过，所以这个解必然和它们不同。  
 ![n23](../images/trees/n23.jpg)  
+而这个解还可以画成下面两种不同的形式:  
+![s20f](../images/trees/s20f.png)  
+![302](../images/trees/302.gif)  
 从数学角度，我们可以通过射影变换将上面这些图片进行变换得出一些等价的但是看似不同的结果，比如2012年1月wayne就将前两种23行结果经过射影变换变化出如下[一些漂亮的图片]， 下面只给出四个图片，对应链接中含有更多的等价漂亮图片。  
 ![b1](../images/trees/b1.jpg)  
 ![b2](../images/trees/b2.jpg)  
@@ -340,7 +343,7 @@ HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMO
 ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPVILPTJKLMJNRUMPRSNOPQSTUV
 ```
 
-2019年12月6日发现22棵28行实数解  
+2019年12月6日[发现22棵28行实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82150&fromuid=20)  
 ![o22](../images/trees/o22.png)  
 ```bash
         [+1*t^3+6*t^2+5*t+1]
