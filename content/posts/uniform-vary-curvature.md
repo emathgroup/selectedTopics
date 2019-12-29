@@ -42,8 +42,8 @@ $\rho^{\prime}(\theta )^2+\rho(\theta )^2=\frac{1}{A \theta +B}$
 积分得到$ \lambda\times \theta=\frac12s^2$, 当$s\gt 0$时即为 $s=\sqrt{2\lambda\theta}$
 
 我们知道圆也有简明的弧长与切线偏转角的关系式 $s=r\theta$, 这条曲线的上述关系式也很简明，与圆有得一比。  
-由此性质可以得到数值曲线。我们取一个很小的角度，比如 1 度，切线每转过 1 度，曲线弧的增长步长为$ds_n=(\sqrt{n}-\sqrt{n-1})\sqrt{2\lambda\frac{\pi}{180}$，以弦代弧就可以画出曲线了。  
-![es4](../images/clothoid/es4.png)  
+由此性质可以得到数值曲线。我们取一个很小的角度，比如 1 度，切线每转过 1 度，曲线弧的增长步长为$ds_n=(\sqrt{n}-\sqrt{n-1})\sqrt{2\lambda\frac{\pi}{180}}$，以弦代弧就可以画出曲线了。  
+![es4](../images/clothoid/es4.PNG)  
 然后hujunhua通过搜索发现这个曲线的名称为[羊角螺线](http://zh.wikipedia.org/wiki/%E6%9F%AF%E5%A5%B4%E8%9E%BA%E7%BA%BF) ,又叫柯奴螺线，还叫欧拉双头螺线。  
 而[zgg\_\_](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5130&pid=50502&fromuid=20) 搜索到了[Cornu Spiral](http://mathworld.wolfram.com/CornuSpiral.html) 
 
@@ -75,15 +75,15 @@ hujunhua[进一步做变量替换](https://bbs.emath.ac.cn/forum.php?mod=redirec
 将得到的  $s=\sqrt{2\lambda\theta}$ 代入公式  
 $$
 \begin{cases} 
-\dif x=\cos\theta\cdot\dif s\\
-\dif y=\sin\theta\cdot\dif s
+d x=\cos\theta\cdot d s\\
+d y=\sin\theta\cdot d s
 \end{cases}
 $$
 直接可得超级简洁的参数方程  
 $$
 \begin{cases}
-\D\dif x=\cos\frac{s^2}{2\lambda}\cdot\dif s\\\\
-\D\dif y=\sin\frac{s^2}{2\lambda}\cdot\dif s
+d x=\cos\frac{s^2}{2\lambda}\cdot d s\\\\
+d y=\sin\frac{s^2}{2\lambda}\cdot d s
 \end{cases}
 $$
 我在得到 $s=\sqrt{2\lambda\theta}$ 后因为已经可得到数值曲线，沾沾自喜，错过了。  
