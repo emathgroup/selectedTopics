@@ -89,6 +89,15 @@ R_7&R_8&R_9
 \end{pmatrix}_{3 \times 3 }
 $$
 
+分析思路如下，  
+设变换矩阵$S=\begin{pmatrix}R_1&R_2&R_3\\R_4&R_5&R_6\\R_7&R_8&R_9\end{pmatrix}$将  
+$Q=\begin{pmatrix}Q_1\\Q_2\\Q_3\end{pmatrix},V=\begin{pmatrix}V_1\\V_2\\V_3\end{pmatrix},U=\begin{pmatrix}U_1\\U_2\\U_3\end{pmatrix},N=\begin{pmatrix}N_1\\N_2\\N_3\end{pmatrix}$变换为$Q1=\begin{pmatrix}Q1_1\\Q1_2\\Q1_3\end{pmatrix},V1=\begin{pmatrix}V1_1\\V1_2\\V1_3\end{pmatrix},U1=\begin{pmatrix}U1_1\\U1_2\\U1_3\end{pmatrix},N1=\begin{pmatrix}N1_1\\N1_2\\N1_3\end{pmatrix}$  
+于是存在常数$-R_{10},-R_{11},-R_{12},-R_{13}$使得  
+$SQ=-R_{10} Q1,SV=-R_{11} V1， SU=-R_{12} U1, SN=-R_{13} N1$  
+展开后就出现前面的矩阵$T$了,即  
+$T\begin{pmatrix}R_1\\R_2\\R_3\\R_4\\R_5\\R_6\\R_7\\R_8\\R_9\\R_{10}\\R_{11}\\R_{12}\\R_{13}\end{pmatrix}=0$.  
+所以解这个方程得出任意的非零向量，取前9个分量构成矩阵S即可。  
+
 # 计算机求解算法简介
 由于搜索20棵树问题最优解的计算量非常大，我们使用了很多技巧来解决这个问题。这个算法首先构造了一些使用较少树的方案，然后通过每次逐步添加一棵额外的树，得到包含更多树的方案。计算过程中采用了齐次坐标，由此可以事先任意设定其中四个三点不共线点的坐标（射影变换可以将任意三点不共线的四个点坐标任意投影）。
 
