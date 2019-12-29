@@ -1,5 +1,5 @@
 ---
-title: 完美相邻和手串
+title: 完美相邻和之手串
 categories: 数学
 keywords: '手串'
 thumbnail: "../images/perfectsumring/r5.png"

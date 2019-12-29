@@ -1,5 +1,5 @@
 ---
-title: 圆周率和阶乘的数字握手
+title: 圆周率与阶乘的数字握手
 categories: 数学
 keywords: '阶乘'
 thumbnail: "../thumbnails/digitalhand.jpg"
