@@ -212,9 +212,9 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 |20 |  [23](#t20)      |        23        |        23        |        23        |
 |21 |      $\ge$ [24](#t21.24)  |      $\ge 24$    |      $\ge 24$    |        25        |
 |22 |      $\ge$ [28](#t22.28)  |      $\ge [26](#t22.26)$    |      $\ge 28$    |        28        |
-|23 |      $\ge 28$    |      $\ge 28$    |      $\ge 28$    |        31        |
-|24 |      $\ge 30$    |      $\ge 30$    |      $\ge [33](#t24.33)$    |        34        |
-|25 |      $\ge 32$    |      $\ge 32$    |      $\ge [35](#t25.35)$    |        37        |
+|23 |      $\ge [28](#t23.28)$    |      $\ge 28$    |      $\ge 28$    |        31        |
+|24 |      $\ge [30](#t24.30)$    |      $\ge 30$    |      $\ge [33](#t24.33)$    |        34        |
+|25 |      $\ge [32](#t25.32)$    |      $\ge 32$    |      $\ge [35](#t25.35)$    |        37        |
 
 # 每行四棵最优解完整列表
 8棵树一下由于太简单了，这里就不列出了。  
@@ -377,7 +377,7 @@ HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMO
 ```
 
 <a name=t22.26></a>
-转载自[efriedma](https://www2.stetson.edu/~efriedma/trees) 网站的22棵26行整数解
+转载自[efriedma](https://www2.stetson.edu/~efriedma/trees) 网站的22棵26行,23棵28行，24棵30行，25棵32行整数解
 ![s22](../images/trees/s22.png)  
 (需要注意下面数据和图中坐标不匹配，下面数据将AKOU映射为无穷远直线）
 ```bash
@@ -404,6 +404,65 @@ HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMO
         U[+1,+0,0];
         V(4,2/3)
 ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPVILPTJKLMJNRUMPRSNOPQSTUV
+```
+<a name=t23></a>23棵28行整数解  
+![t23](../images/trees/t23.png) 
+```bash
+       A(+0,+0)
+        B(1/3,+1)
+        C(1/2,3/2)
+        D(5/6,5/2)
+        E(-1/6,1/2)
+        F(+0,+1)
+        G(1/3,2)
+        H(1/2,5/2)
+        I(-1/6,3/2)
+        J(+0,2)
+        K(-1/6,5/2)
+        L(-1,4)
+        M[+1,1,0];
+        N[+1,+0,0];
+        O[+1,-1,0];
+        P[+0,+1,0];
+        Q(+1,+0)
+        R(+1,+1)
+        S(5/6,1/2)
+        T(+1,2)
+        U(5/6,3/2)
+        V(1/2,1/2)
+        W(1/3,+0)
+``` 
+<a name=t24.30></a>24棵30行整数解  
+![t24.30](../images/trees/t24.30.png)  
+坐标同23棵28行整数解  
+<a name=t25></a>25棵32行整数解  
+![t25](../images/trees/t25.png)  
+```bash
+       A(+1,3/2)
+        B[+0,+1,0];
+        C(+1,+0)
+        D(+1,2/3)
+        E(3/2,2)
+        F[+1,2,0];
+        G(3/4,1/2)
+        H(5/6,2/3)
+        I(+0,+0)
+        J(1/2,1/2)
+        K(1/2,2/3)
+        L(5/12,5/6)
+        M(3/2,+1)
+        N[+1,+0,0];
+        O(+0,+1)
+        P(3/4,+1)
+        Q(3/10,6/5)
+        R(5/16,5/4)
+        S(1/4,3/2)
+        T[+1,-1,0];
+        U(+0,2)
+        V(5/4,1/2)
+        W(3/2,+0)
+        X(1/2,2)
+        Y(3/4,3/2)
 ```
 
 <a name=t22.28></a>
