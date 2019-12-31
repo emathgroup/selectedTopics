@@ -210,11 +210,11 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 |18 |  [18](#t18)      |        17        |        18        |        18        |
 |19 |  [20](#t19)      |        20        |        20        |        20        |
 |20 |  [23](#t20)      |        23        |        23        |        23        |
-|21 |      $\ge$ [24](../images/trees/o21.2.png)  |      $\ge 24$    |      $\ge 24$    |        25        |
-|22 |      $\ge$ [28](../images/trees/w22.7.png)  |      $\ge 26$    |      $\ge 28$    |        28        |
+|21 |      $\ge$ [24](#t21.24)  |      $\ge 24$    |      $\ge 24$    |        25        |
+|22 |      $\ge$ [28](#t22.28)  |      $\ge [26](#t22.26)$    |      $\ge 28$    |        28        |
 |23 |      $\ge 28$    |      $\ge 28$    |      $\ge 28$    |        31        |
-|24 |      $\ge 30$    |      $\ge 30$    |      $\ge 33$    |        34        |
-|25 |      $\ge 32$    |      $\ge 32$    |      $\ge 35$    |        37        |
+|24 |      $\ge 30$    |      $\ge 30$    |      $\ge [33](#t24.33)$    |        34        |
+|25 |      $\ge 32$    |      $\ge 32$    |      $\ge [35](#t25.35)$    |        37        |
 
 # 每行四棵最优解完整列表
 8棵树一下由于太简单了，这里就不列出了。  
@@ -310,12 +310,14 @@ print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x
 
 # 其它优秀解
 <a name=others></A>
+<a name=t24.33><a>
 2019年11月29日发现24棵33行的复数解:  
 ```bash
 print(ABGIAFHLBCHJCDIKDEJLEFGKAMOSBNPTCOQUDPRVEMQWFNRXAKRTBLMUCGNVDHOWEIPXFJQSGRSUHMTVINUWJOVXKPSWLQTXGJMPHKNQILORACWXAEUVBDSXBFVWCESTDFTU);
 solve([+1-3*X_Y+3*X_Y*X_Y,+2/7+1*Q_Y-12/7*X_Y,+1*J_X-2*X_Y,-8/7+1*Q_X+6/7*X_Y,-2/3+1*S_X,-1/2+1*R_Y-1/2*X_Y,-1+1*V_X+1*X_Y,+1*T_Y-3/2*X_Y,+1*D_X-1*X_Y,-3/2+1*N_X+3/2*X_Y,-1/2+1*P_X-1/2*X_Y,+1*U_Y-2*X_Y,+3+1*G_Y-3*X_Y,+1/2+1*K_Y-3/2*X_Y,-1+1*I_Y+3*X_Y,-1/2+1*T_X,-2/3+1*O_Y,+1+1*E_Y-3*X_Y,-2/3+1*O_X,+1*M_Y-2*X_Y,+1*P_Y-3/2*X_Y,-2/3+1*M_X,-1+1*W_X,-1+1*X_X,-1+1*U_X+1*X_Y,-1+1*E_X+1*X_Y,+1*D_Y-1*X_Y,+1*S_Y-1*X_Y,-1+1*W_Y,-1+1*V_Y,+1*N_Y-3/2*X_Y,+1*L_Y-2*X_Y,-1/2+1*R_X,-1/2+1*K_X],[X_Y,Q_Y,J_X,Q_X,S_X,R_Y,V_X,T_Y,D_X,N_X,P_X,U_Y,G_Y,K_Y,I_Y,T_X,O_Y,E_Y,O_X,M_Y,P_Y,M_X,W_X,X_X,U_X,E_X,D_Y,S_Y,W_Y,V_Y,N_Y,L_Y,R_X,K_X]);
 print("A=(0,1,0) B=(1,0,0) C_x=1 C_y=0 F_x=0 F_y=1 G=(1,G_y,0) H_x=0 H_y=0 I=(1,I_y,0) J_y=0 L_x=0 ");
 ```
+<a name=t26.35></a>
 26棵树35行的复数解:
 ```bash
         Parameter [+1-1*t+2*t^2-2*t^3+1*t^4=0]                                                                                                   A[+1 ,0 , +1]
@@ -345,6 +347,8 @@ print("A=(0,1,0) B=(1,0,0) C_x=1 C_y=0 F_x=0 F_y=1 G=(1,G_y,0) H_x=0 H_y=0 I=(1,
         Y[0 ,+1 , 0]
 AEIYBFJYCGKYDHLYMQUYNRVYOSWYPTXYABMOALNXBCNPCDOQDEPREFQSFGRTGHSUHITVIJUWJKVXKLMWAFUVAHPQBGVWBIQRCHWXCJRSDIMXDKSTEJMNELTUFKNOGLOPMPSVNQTWORUX
 ```
+
+<a name=t21.24></a>  
 21棵树24行整数解例子:  
 ![o21.2](../images/trees/o21.2.png)  
 ```bash
@@ -371,6 +375,8 @@ AEIYBFJYCGKYDHLYMQUYNRVYOSWYPTXYABMOALNXBCNPCDOQDEPREFQSFGRTGHSUHITVIJUWJKVXKLMW
         U[+1,+0,0];
 HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMOBGMNMPQSOPRUNQRT
 ```
+
+<a name=t22.26></a>
 转载自[efriedma](https://www2.stetson.edu/~efriedma/trees) 网站的22棵26行整数解
 ![s22](../images/trees/s22.png)  
 (需要注意下面数据和图中坐标不匹配，下面数据将AKOU映射为无穷远直线）
@@ -400,6 +406,7 @@ HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMO
 ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPVILPTJKLMJNRUMPRSNOPQSTUV
 ```
 
+<a name=t22.28></a>
 2019年12月6日[发现22棵28行实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82150&fromuid=20)  
 ![o22](../images/trees/o22.png)  
 ```bash
@@ -431,6 +438,7 @@ ABCVKOUVJNTVDMSVELRVGHPVFIQVALOQAMNPAJSUAKRTJKPQEHKNDIJOFHJLGIKMDETUEFMODGLNFGRS
 wayne对这个图[进行射影变换后我们发现图形很像正七边形](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82220&fromuid=20) ，于是我们手工制作了对应的七个方向对称的正七边形图:
 ![w22.7](../images/trees/w22.7.png)  
 
+<a name=t25.35></a>
 2019年12月10日发现25棵35行复数解  
 ```bash
         [+1*t^4+4*t^3+8*t^2+5*t+1]
