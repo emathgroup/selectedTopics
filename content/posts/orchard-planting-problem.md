@@ -207,7 +207,7 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 |14 |  [10](#t14)      |     [10](#t14)   |  [11](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=703&pid=9022&fromuid=20)      |        10        |
 |15 |  [12](#t15)      |     [12](#t15)   |  [13](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=703&pid=9024&fromuid=20)      |        12        |
 |16 |  [15](#t16)      |     [14](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=703&pid=11238&fromuid=20)  |     [15](#t16)   |        13        |
-|17 |  [16](#t17)      |        15        |        17        |        16        |
+|17 |  [16](#t17)      |     [15](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24438)            |        17        |        16        |
 |18 |  [18](#t18)      |        17        |     [18](#t18)   |        18        |
 |19 |  [20](#t19)      |     [20](#t19)   |     [20](#t19)   |        20        |
 |20 |  [23](#t20)      |     [23](#t20i)  |     [23](#t20)   |        23        |
