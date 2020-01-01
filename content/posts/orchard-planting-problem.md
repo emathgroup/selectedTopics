@@ -207,8 +207,8 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 |14 |  [10](#t14)      |     [10](#t14)   |  [11](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=703&pid=9022&fromuid=20)      |        10        |
 |15 |  [12](#t15)      |     [12](#t15)   |  [13](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=703&pid=9024&fromuid=20)      |        12        |
 |16 |  [15](#t16)      |     [14](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=703&pid=11238&fromuid=20)  |     [15](#t16)   |        13        |
-|17 |  [16](#t17)      |     [15](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24438)            |  [17](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2020&pid=24413&fromuid=20)     |        16        |
-|18 |  [18](#t18)      |  [17](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24461&fromuid=20     |     [18](#t18)   |        18        |
+|17 |  [16](#t17)      |     [15](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24438)            |  [17](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2020&pid=24413)     |        16        |
+|18 |  [18](#t18)      |  [17](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24461&fromuid=20)    |     [18](#t18)   |        18        |
 |19 |  [20](#t19)      |     [20](#t19)   |     [20](#t19)   |        20        |
 |20 |  [23](#t20)      |     [23](#t20i)  |     [23](#t20)   |        23        |
 |21 |      $\ge$ [24](#t21.24)  |  $\ge$ [24](#t21.24) |  $\ge$ [24](#t12.24)  |        25        |
@@ -406,7 +406,7 @@ HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMO
         V(4,2/3)
 ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPVILPTJKLMJNRUMPRSNOPQSTUV
 ```
-<a name=t23></a>23棵28行整数解  
+<a name=t23.28></a>23棵28行整数解  
 ![t23](../images/trees/t23.png) 
 ```bash
        A(+0,+0)
@@ -433,10 +433,11 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
         V(1/2,1/2)
         W(1/3,+0)
 ``` 
-<a name=t24.30></a>24棵30行整数解  
+<a name=t24.30></a>
+24棵30行整数解  
 ![t24.30](../images/trees/t24.30.png)  
 坐标同23棵28行整数解  
-<a name=t25></a>25棵32行整数解  
+<a name=t25.32></a>25棵32行整数解  
 ![t25](../images/trees/t25.png)  
 ```bash
        A(+1,3/2)
