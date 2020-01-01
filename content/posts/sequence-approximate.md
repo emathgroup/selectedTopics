@@ -183,8 +183,8 @@ $h(x)=1/{\sum_{k=1}^{\infty}{a_k}/{x^k}}=x+\sum_{k=0}^{\infty}{b_k}/{x^k}$
 Buffalo给出了公式形式:  
 对于方程$a_{n+1}=\alpha a_n+\frac{P_k(n)}{a_n^m}$，$P_k(n)=\sum_{i=0}^k\beta_i n^i$（所有参数都大于零）有以下一般性结论  
 1. 若$\alpha\gt 1$，则$a_n\approx c\alpha^n+...$  
-2. 若$\alpha=1$，则$\a_n\approx (\frac{m+1}{k+1}\beta_k n^{k+1})^{\frac{1}{m+1}}+...$  
-3. 若$\0\lt \alpha\lt 1$，则$\a_n\approx (\frac{\beta_k n^{k}}{1-\alpha})^{\frac{1}{m+1}}+...$  
+2. 若$\alpha=1$，则$a_n\approx (\frac{m+1}{k+1}\beta_k n^{k+1})^{\frac{1}{m+1}}+...$  
+3. 若$0\lt \alpha\lt 1$，则$a_n\approx (\frac{\beta_k n^{k}}{1-\alpha})^{\frac{1}{m+1}}+...$  
 
 $\alpha\ge 1$时上面的结论没问题。  
 $0\lt\alpha\lt1$时用代换$a_n=(\frac{\beta_k n^k}{1-\alpha})^{\frac{1}{m+1}}b_n$重新定标得到方程$b_{n+1}=\alpha b_n+\frac{1-\alpha}{b_n^m}+o(\frac{1}{n})$。  
