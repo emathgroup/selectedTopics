@@ -4,7 +4,7 @@ date: 2020-01-01
 thumbnail: "../thumbnails/sequence-approximate.png"
 tags:
     - "bash"
-	- "sequence"
+    - "sequence"
 ---
 
 数学星空[于2015年底提问](https://bbs.emath.ac.cn/thread-8790-1-1.html) :  
