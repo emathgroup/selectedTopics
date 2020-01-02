@@ -141,7 +141,9 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 
 <a name=t18></a>  
 ![t18](../images/trees/t18.jpg)  
-[18棵树]问题的最优解
+[18棵树]问题的最优解,以及[对称图](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24619&fromuid=20) :
+AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR
+![t18r18.4](../images/trees/t18r18.4.GIF)  
 
 <a name=t19></a>  
 ![t19](../images/trees/t19.jpg)   
