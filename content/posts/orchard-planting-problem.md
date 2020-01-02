@@ -147,7 +147,7 @@ AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR
 
 <a name=t19></a>  
 ![t19](../images/trees/t19.jpg)   
-[19棵树]问题最优解,还可以有
+[19棵树]问题最优解,[还可以有](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82289&fromuid=20)  
 ![t19.5](../images/trees/t19.5.png)  
 
 然后[数学研发论坛上的网友一起合作]，利用十余人拥有的计算机资源共同计算，证明了20棵树不存在24行解，从而证明23行已经是最优结果。但是，由于拥有的计算资源还不够，我们还不能找出所有的23行解。  
