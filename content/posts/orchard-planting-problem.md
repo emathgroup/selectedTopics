@@ -215,7 +215,7 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 |21 |      $\ge$ [24](#t21.24)  |  $\ge$ [24](#t21.24) |  $\ge$ [24](#t21.24)  |        25        |
 |22 |      $\ge$ [28](#t22.28)  |  $\ge$ [26](#t22.26) |  $\ge$ [28](#t22.28)  |        28        |
 |23 |      $\ge$ [28](#t23.28)  |  $\ge$ [28](#t23.28) |  $\ge$ [28](#t23.28)  |        31        |
-|24 |      $\ge$ [30](#t24.30)  |  $\ge$ [30](#t24.30) |  $\ge$ [33](#t24.33)  |        34        |
+|24 |      $\ge$ [30](#t24s)  |  $\ge$ [30](#t24.30) |  $\ge$ [33](#t24.33)  |        34        |
 |25 |      $\ge$ [32](#t25.32)  |  $\ge$ [32](#t25.32) |  $\ge$ [35](#t25.35)  |        37        |
 
 # 每行四棵最优解完整列表
@@ -538,6 +538,7 @@ wayne对这个图[进行射影变换后我们发现图形很像正七边形](htt
         Y[+0,+1,0];
 EFHYCGJYAIKYBDLYMQRYPTUYNVXYOSWYFGMWKLMXHJMVEIMUHKUWCLVWBCSTADUXEJRSFKQTEGQXDIRVILNTFIPSGLOUAEOTBKPVDJPWBJOXDGNSAHPRCFNRCHOQABNQMNOPRTWXQSUV
 ```
+<a name=t24s></a>
 24棵树30行的[两个对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82274&fromuid=20)  
 IOPULNOXJQRVKMRTHNQWGMPSKLUVGHTXIJSWAGKOBHLRFILQDGINCHJMEJKPAJTUBIVXFGUWCLTWDKSXEHSVARWXBOSTEQUXDMVWFPTVCNSUABMNEFORCDPQ  
 $\frac{UA}{UT}=0.5048, \frac{UJ}{UT}=0.4378$  
