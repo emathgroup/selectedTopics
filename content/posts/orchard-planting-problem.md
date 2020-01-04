@@ -47,7 +47,7 @@ tags:
 在平面坐标系中，任何一个点可以通过其横坐标和纵坐标值(x,y)来确定。对于这样的一个点，在对应的齐次坐标系中，我们需要使用[rx : ry : r]来表示，其中参数r可以是任意非零的实数。也就是说，任何一个点在齐次坐标系下其表示形式是不唯一的，可以有无穷种形式。比如平面坐标系上点(-1,1)在对应的齐次坐标系下可以写成[-1 : 1 : 1],也可以表示为[-2 : 2 : 2]等等。  
 齐次坐标系的最大好处是可以描述无穷远点。在平面几何中，两条直线可以有平行和相交两种关系。但是在射影几何中，任何两条直线相交于唯一的一点。其中，平面几何中平行的两条直线在射影几何中相交于一个无穷远点。所有无穷远点的齐次坐标形式中第三个分量总是0。比如所有和横坐标平行的直线相交于无穷远点[1 : 0 : 0],而所有和纵坐标平行的直线相交于无穷远点[0 : 1 : 0]。所有的无穷远点构成一条无穷远直线Z=0。  
 
-对于一个平面图案，如果我们选择一个3×3可逆矩阵$A=\begin{pmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33} \end{pmatrix}$,那么对于射影平面上任意一个点[x:y:z], 变换[x’:y’:z’]= [x:y:z]A就对应一个投影变换; 也就是$\begin{cases}x=a_{11} x+a_{21} y+a_{31} z\\y=a_{12} x+a_{22} y+a_{32} z\\z=a_{13} x+a_{23} y+a_{33} z\end{cases}$, 或者对应平面坐标系下的变换（如果没有无穷远点参与）$\begin{cases}x=\frac{a_{11} x+a_{21} y+a_{31}}{a_{13} x+a_{23} y+a_{33} }\\y=\frac{a_{12} x+a_{22} y+a_{32}}{a_{13} x+a_{23} y+a_{33} }\end{cases}$。  
+对于一个平面图案，如果我们选择一个3×3可逆矩阵$A=\begin{pmatrix}a_{11}&a_{12}&a_{13}\\a_{21}&a_{22}&a_{23}\\a_{31}&a_{32}&a_{33} \end{pmatrix}$,那么对于射影平面上任意一个点$[x:y:z]$, 变换$[x^{\prime}:y^{\prime}:z^{\prime}]= [x:y:z]A$就对应一个投影变换; 也就是$\begin{cases}x^{\prime}=a_{11} x+a_{21} y+a_{31} z\\y^{\prime}=a_{12} x+a_{22} y+a_{32} z\\z^{\prime}=a_{13} x+a_{23} y+a_{33} z\end{cases}$, 或者对应平面坐标系下的变换（如果没有无穷远点参与）$\begin{cases}x^{\prime}=\frac{a_{11} x+a_{21} y+a_{31}}{a_{13} x+a_{23} y+a_{33} }\\y^{\prime}=\frac{a_{12} x+a_{22} y+a_{32}}{a_{13} x+a_{23} y+a_{33} }\end{cases}$。  
 wanye通过一个简单的mathematica代码给出了将二十棵树问题的一个解[随机投影]成另外一些形式。 其中，通过将无穷远直线投影成普通直线可以使得得到的图看上去和原先的图完全不同。
 
 # 四点确定一个射影变换矩阵
@@ -78,7 +78,7 @@ $$
 
 然后求解$TR=0$的非零解$R=[R_1,R_2,R_3,R_4,R_5,R_6,R_7,R_8,R_9,R_{10},R_{11},R_{12}, R_{13}]$  
 
-(maple的求解命令为NullSpace）
+(maple的求解命令为NullSpace, Pari/gp使用matker命令）
 
 则可以得到变换矩阵S为
 
@@ -123,6 +123,7 @@ ABDEAFGHBIJNCDIKCFLNDGMNEGJLEHKNFJKMHILM
 solve([-4/3+1*K_X,-8/3+1*L_X,+3+1*L_Y,+9/4+1*J_Y,+2+1*K_Y,+3/2+1*I_Y,+1+1*H_Y,-3+1*G_Y,+4+1*C_Y,+5+1*F_Y,-4/3+1*H_X,-8/3+1*C_X,-8/3+1*F_X,-4/3+1*E_X],[K_X,L_X,L_Y,J_Y,K_Y,I_Y,H_Y,G_Y,C_Y,F_Y,H_X,C_X,F_X,E_X]);
 print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x=0 M_y=1 N=[0:1:0] ");
 ```
+
 后来，我们进一步提供了一种可以[只搜索包含线的数目比较多的方案]，再次加速了搜索过程，使得我们能够解决到[17棵树]的问题。
 
 <a name=t15></a>  
@@ -141,16 +142,16 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 
 <a name=t18></a>  
 ![t18](../images/trees/t18.jpg)  
-[18棵树]问题的最优解,以及[对称图](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24619&fromuid=20) :  
+[18棵树]问题的最优解,以及[另外一种对称图](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24619&fromuid=20) :  
 AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR  
 ![t18r18.4](../images/trees/t18r18.4.GIF)  
 
 <a name=t19></a>  
 ![t19](../images/trees/t19.jpg)   
-[19棵树]问题最优解,[还可以有](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82289&fromuid=20)  
+[19棵树]问题最优解,[还可以有下面对称的结构](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82289&fromuid=20)  
 ![t19.5](../images/trees/t19.5.png)  
 
-然后[数学研发论坛上的网友一起合作]，利用十余人拥有的计算机资源共同计算，证明了20棵树不存在24行解，从而证明23行已经是最优结果。但是，由于拥有的计算资源还不够，我们还不能找出所有的23行解。  
+然后[数学研发论坛上的网友一起合作]，利用十余人拥有的计算机资源共同计算，验证了20棵树不存在24行解，从而证明23行已经是最优结果。但是，由于拥有的计算资源还不够，我们还不能找出所有的23行解。  
 2019年9月，我们重新运行了以前的代码，利用计算机又找出一种和上面两种方案都不等价的[新的23行解]。  
 
 <a name=t20></a>  
@@ -193,7 +194,7 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 ![g60](../images/trees/g60.png)  
 
 <a name="table"></a>  
-另外根据现在我们已经知道数据，我们可以猜测k=4的果树问题的数目不小于$\lfloor\frac{(n-1)(n-3)}{14}\rfloor$.  
+另外根据现在我们已经知道数据，如下面的表格，我们可以猜测k=4的果树问题的数目不小于$\lfloor\frac{(n-1)(n-3)}{14}\rfloor$.  
 
 | n | 实数范围[A006065] | 整数范围[A172992] | 复数范围[A172993] | $\lfloor\frac{(n-1)(n-3)}{14}\rfloor$|
 |---|------------------|------------------|------------------|------------------|
@@ -221,8 +222,8 @@ print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0
 |25 |      $\ge$ [32](#t25.32)  |  $\ge$ [32](#t25.32) |  $\ge$ [35](#t25.35)  |        37        |
 
 # 每行四棵最优解完整列表
-8棵树一下由于太简单了，这里就不列出了。  
-下面列表或附件中每三行代表一组解，其中第一行是点线关系，每四个字母代表一行。第二行是一个需要求解的方程组，里面各个用','相隔的表达式都要求等于0。而第三行包含一些已知坐标。比如A=(1,A\_y,0) 代表A是一个无穷远点，方向A\_y需要从方程组求解。由于我们的代码还不能完全求解所有方程组，所以列表中可能会包含一些非法情况，比如方程组无解，或解得结果存在五点以上共线的情况等等，需要我们事后再次淘汰。而所有这些解中都把其中某一行果树投影到无穷远直线，如果需要产生果树没有投影到无穷远点的图，需要自己做额外的射影变换。  
+8棵树以下由于太简单了，这里就不列出了。  
+下面列表中每三行代表一组解，其中第一行是点线关系，每四个字母代表一行。第二行是一个需要求解的方程组，里面各个用','相隔的表达式都要求等于0。而第三行包含一些已知坐标。比如A=(1,A\_y,0) 代表A是一个无穷远点，方向A\_y需要从方程组求解。但是如果一个坐标只包含两个数字，那么就认为是普通平面上的一个点，或者说在对应射影平面上z坐标为1. 由于我们的代码还不能完全求解所有方程组，所以列表中可能会包含一些非法情况，比如方程组无解，或解得结果存在五点以上共线的情况等等，需要我们事后再次淘汰。而所有这些解中都把其中某一行果树投影到无穷远直线，如果需要产生果树没有投影到无穷远点的图，需要自己做额外的射影变换。  
 
 <a name=t9></a>
 比如9棵树3行的所有解只有一类，由于含有两个参数，在射影变换等价的意义下有无穷组解  
@@ -250,8 +251,8 @@ solve([+1-1*K_X+1*I_Y*K_X,+1*D_Y-1*E_Y-1*D_Y*K_X,+1*A_Y+1*D_Y-1*E_Y,+1+1*H_Y-1*I
 print("A_x=0 B_x=0 B_y=0 C_x=0 C_y=1 D=(1,D_y,0) F=(1,0,0) G_x=1 G_y=0 H=(1,H_y,0) J=(0,1,0) K_y=0 ");
 ```
 
-12棵树时，开始出现复杂的情况了，
-首先，我们原先球的在复数范围中得出两种点线关系不同的8行的情况，不含自由参数
+12棵树时，开始出现复杂的情况了：  
+首先，我们原先求得在复数范围中得出两种点线关系不同的8行的情况，不含自由参数
 ```bash
 print(ABCDAEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL);
 solve([+1-1*L_X+1*L_X*L_X,-1+1*K_X+1*L_X,-1+1*J_Y+1*L_X,+1*G_Y-1*L_X,-1+1*C_Y+1*L_X,-1+1*J_X,-1+1*I_X,-1+1*L_Y,+1*D_Y+1*L_X,-1+1*I_Y],[L_X,K_X,J_Y,G_Y,C_Y,J_X,I_X,L_Y,D_Y,I_Y]);
@@ -280,7 +281,7 @@ print("A=(1,0,0) B_x=0 B_y=1 E_x=0 E_y=0 F_x=1 F_y=0 G_y=0 H=(0,1,0) I=(1,I_y,0)
 ABCDAEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL
 ```
 <a name=t12.7></a>
-齐次在实数或整数范围可以有两种不同点线关系达到7行，分别含有一个和两个自由参数:
+其次在实数或整数范围可以有两种不同点线关系达到7行，分别含有一个和两个自由参数:
 ```bash
 print(AHIJBCHKBDILCEJLDGJKEFIKFGHL);
 solve([+1*D_X-1*K_Y,-1+1*E_X+1*K_Y,+1+1*G_Y-1*K_Y,+1+1*J_Y,+1*F_Y-1*K_Y,+1*E_Y-1*K_Y,-1+1*F_X,-1+1*G_X],[D_X,E_X,G_Y,J_Y,F_Y,E_Y,F_X,G_X]);
@@ -387,7 +388,7 @@ HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMO
 <a name=t22.26></a>
 转载自[efriedma](https://www2.stetson.edu/~efriedma/trees) 网站的22棵26行,23棵28行，24棵30行，25棵32行整数解
 ![s22](../images/trees/s22.png)  
-(需要注意下面数据和图中坐标不匹配，下面数据将AKOU映射为无穷远直线）
+(需要注意下面数据对上图做了额外的射影变换，和上图中点的坐标不匹配。下面数据将AKOU映射为无穷远直线） 
 ```bash
         A[+1,1/3,0];
         B(+0,+0)
@@ -413,7 +414,7 @@ HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMO
         V(4,2/3)
 ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPVILPTJKLMJNRUMPRSNOPQSTUV
 ```
-上面图片数学星空将它转化为如下漂亮结构：  
+数学星空后来再次将它转化为如下对称结构：  
 ![2226](../images/trees/2226.gif)  
 
 <a name=t23.28></a>23棵28行整数解  
@@ -477,7 +478,7 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
         Y(3/4,3/2)
 ```
 
-随着树的数目增加，我们越来越难以穷举所有的情况。于是我们开始结合群论知识，[仅搜索具有高度自同构的结构](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82288&fromuid=20) ，从而也更容易找出高度对称的结果：  
+随着树的数目增加，我们越来越难以穷举所有的情况。于是我们开始结合群论知识，[仅搜索具有高度自同构结构的结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82288&fromuid=20) ，从而找出几个高度对称的结果：  
 <a name=t22.28></a>
 2019年12月6日[发现22棵28行实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82150&fromuid=20)  
 ![o22](../images/trees/o22.png)  
@@ -542,7 +543,7 @@ wayne对这个图[进行射影变换后我们发现图形很像正七边形](htt
 EFHYCGJYAIKYBDLYMQRYPTUYNVXYOSWYFGMWKLMXHJMVEIMUHKUWCLVWBCSTADUXEJRSFKQTEGQXDIRVILNTFIPSGLOUAEOTBKPVDJPWBJOXDGNSAHPRCFNRCHOQABNQMNOPRTWXQSUV
 ```
 <a name=t24s></a>
-24棵树30行的[两个对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82274&fromuid=20)  
+24棵树30行的[两个高度对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82274&fromuid=20)  
 IOPULNOXJQRVKMRTHNQWGMPSKLUVGHTXIJSWAGKOBHLRFILQDGINCHJMEJKPAJTUBIVXFGUWCLTWDKSXEHSVARWXBOSTEQUXDMVWFPTVCNSUABMNEFORCDPQ  
 $\frac{UA}{UT}=0.5048, \frac{UJ}{UT}=0.4378$  
 ![o24.4](../images/trees/o24.4.png)  
