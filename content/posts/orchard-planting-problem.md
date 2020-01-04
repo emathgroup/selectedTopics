@@ -477,6 +477,7 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
         Y(3/4,3/2)
 ```
 
+随着树的数目增加，我们越来越难以穷举所有的情况。于是我们开始结合群论知识，[仅搜索具有高度自同构的结构](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82288&fromuid=20) ，从而也更容易找出高度对称的结果：  
 <a name=t22.28></a>
 2019年12月6日[发现22棵28行实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82150&fromuid=20)  
 ![o22](../images/trees/o22.png)  
