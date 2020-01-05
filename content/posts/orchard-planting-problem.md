@@ -114,6 +114,8 @@ $T\begin{pmatrix}R_1\\R_2\\R_3\\R_4\\R_5\\R_6\\R_7\\R_8\\R_9\\R_{10}\\R_{11}\\R_
 ABEFAGHMBIJMCEKMCGILDFLMDGJKEHJLFHIK
 A(0,1) B(1,0) C(1/4,-1/4) D(-1/2,-1/2) E[1 : -1 : 0] F(1/2,1/2) G(0,-1/2) H[0 : 1 : 0] I(1/2,0) J[1 : 0 : 0] K(1/2,-1/2) L[1 : 1 : 0] M(0,0)
 ```
+经过射影变换可以[转化为只含一个无穷远点的对称图形](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82702&fromuid=20) :  
+![s13](../images/trees/s13.png)  
 
 <a name=t14></a>  
 ![t14](../images/trees/t14.jpg)  
@@ -123,6 +125,13 @@ ABDEAFGHBIJNCDIKCFLNDGMNEGJLEHKNFJKMHILM
 solve([-4/3+1*K_X,-8/3+1*L_X,+3+1*L_Y,+9/4+1*J_Y,+2+1*K_Y,+3/2+1*I_Y,+1+1*H_Y,-3+1*G_Y,+4+1*C_Y,+5+1*F_Y,-4/3+1*H_X,-8/3+1*C_X,-8/3+1*F_X,-4/3+1*E_X],[K_X,L_X,L_Y,J_Y,K_Y,I_Y,H_Y,G_Y,C_Y,F_Y,H_X,C_X,F_X,E_X]);
 print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x=0 M_y=1 N=[0:1:0] ");
 ```
+[去除无穷远点](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82704&fromuid=20) 可以转化为:  
+![s14](../images/trees/s14.png)  
+上面的图无法转化为对称图，但是14棵树10行有很多解，其中[下面是一个对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82708&fromuid=20) :  
+![s14.1](../images/trees/s14.1.png)  
+还可以[去除无穷远点](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82711&fromuid=20) 转化为:  
+![s14.3](../images/trees/s14.3.png)  
+
 
 后来，我们进一步提供了一种可以[只搜索包含线的数目比较多的方案]，再次加速了搜索过程，使得我们能够解决到[17棵树]的问题。
 
