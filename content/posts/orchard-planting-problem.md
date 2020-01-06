@@ -107,6 +107,7 @@ $T\begin{pmatrix}R_1\\R_2\\R_3\\R_4\\R_5\\R_6\\R_7\\R_8\\R_9\\R_{10}\\R_{11}\\R_
 另外对于给定的一种点线关系图（特别是包含的行很多时），[无法保证一定存在对应的果树问题解]。[算法总体介绍]还描述了一种通过消元来简化方程组，最后可以部分确认/简化或淘汰某些关系是否存在对应的果树问题解。这个算法不仅仅在我们得到一种合法的果树问题解的点线关系后，可以用于求出最终的坐标，也可以在上述搜索过程中，提前淘汰一些没有对应果树问题解的看似合法的点线关系，从而也缩小了搜索空间，节省大量的计算时间。  
 通过使用上述的算法，使用计算机已经可以解决[13棵树]和[14棵树]问题，但是对于20棵树问题还远远不够。
 
+### 13棵树
 <a name=t13></a>   
 ![t13](../images/trees/t13.jpg)   
 13棵树问题的解（9行，包含无穷远直线）  
@@ -117,6 +118,7 @@ A(0,1) B(1,0) C(1/4,-1/4) D(-1/2,-1/2) E[1 : -1 : 0] F(1/2,1/2) G(0,-1/2) H[0 : 
 经过射影变换可以[转化为只含一个无穷远点的对称图形](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82702&fromuid=20) :  
 ![s13](../images/trees/s13.png)  
 
+### 14棵树
 <a name=t14></a>  
 ![t14](../images/trees/t14.jpg)  
 14棵树问题的解（10行，包含无穷远直线）  
@@ -135,10 +137,12 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 
 后来，我们进一步提供了一种可以[只搜索包含线的数目比较多的方案]，再次加速了搜索过程，使得我们能够解决到[17棵树]的问题。
 
+### 15棵树
 <a name=t15></a>  
 ![t15](../images/trees/t15.jpg)   
 [15棵树]问题的最优解  
 
+### 16棵树
 <a name=t16></a>  
 ![t16](../images/trees/t16.jpg)   
 [16棵树]问题的最优解
@@ -147,18 +151,21 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 已经另外一个[对称情况](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82725&fromuid=20)  
 ![s16](../images/trees/s16.png)  
 
+### 17棵树
 <a name=t17></a>  
 ![t17](../images/trees/t17.jpg)  
 [17棵树]问题的最优解
 
 通过进一步找到了[一种更快速的部分判断识别一个点线关系是否存在合法的果树问题解的算法]，再次解决了[18棵树]和[19棵树]问题。
 
+### 18棵树
 <a name=t18></a>  
 ![t18](../images/trees/t18.jpg)  
 [18棵树]问题的最优解,以及[另外一种对称图](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24619&fromuid=20) :  
 AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR  
 ![t18r18.4](../images/trees/t18r18.4.GIF)  
 
+### 19棵树
 <a name=t19></a>  
 ![t19](../images/trees/t19.jpg)   
 [19棵树]问题最优解,[还可以有下面对称的结构](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82289&fromuid=20)  
@@ -174,6 +181,7 @@ AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR
 然后[数学研发论坛上的网友一起合作]，利用十余人拥有的计算机资源共同计算，验证了20棵树不存在24行解，从而证明23行已经是最优结果。但是，由于拥有的计算资源还不够，我们还不能找出所有的23行解。  
 2019年9月，我们重新运行了以前的代码，利用计算机又找出一种和上面两种方案都不等价的[新的23行解]。  
 
+### 20棵树
 <a name=t20></a>  
 ![avatar](../thumbnails/p20.png)
 
