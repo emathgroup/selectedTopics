@@ -159,6 +159,13 @@ AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR
 ![t19](../images/trees/t19.jpg)   
 [19棵树]问题最优解,[还可以有下面对称的结构](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82289&fromuid=20)  
 ![t19.5](../images/trees/t19.5.png)  
+而19棵树20行还有[如下整数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82723&fromuid=20)  
+![33](../images/trees/33.png)  
+还可以[转化为等价的](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82724&fromuid=20)  
+![1920-1](../images/trees/1920-1.gif)  
+![1920-2](../images/trees/1920-2.gif)  
+![1920-3](../images/trees/1920-3.gif)  
+
 
 然后[数学研发论坛上的网友一起合作]，利用十余人拥有的计算机资源共同计算，验证了20棵树不存在24行解，从而证明23行已经是最优结果。但是，由于拥有的计算资源还不够，我们还不能找出所有的23行解。  
 2019年9月，我们重新运行了以前的代码，利用计算机又找出一种和上面两种方案都不等价的[新的23行解]。  
