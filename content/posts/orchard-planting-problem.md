@@ -175,6 +175,7 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 [18棵树]问题的最优解,以及[另外一种对称图](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24619&fromuid=20) :  
 AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR  
 ![t18r18.4](../images/trees/t18r18.4.GIF)  
+![s18](../images/trees/s18.png)  
 而18棵整数解只有[17行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82728&fromuid=20)  
 ![1817-1](../images/trees/1817-1.gif)  
 
