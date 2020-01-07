@@ -164,6 +164,8 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 ![1716-1](../images/trees/1716-1.gif)  
 而上面结果也不是整数解，17棵树最优整数解只有[15行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82744&fromuid=20)  
 ![1715-3](../images/trees/1715-3.gif)  
+![s17.1](../images/trees/s17.1.png)  
+![s17.2](../images/trees/s17.2.png)  
 
 通过进一步找到了[一种更快速的部分判断识别一个点线关系是否存在合法的果树问题解的算法]，再次解决了[18棵树]和[19棵树]问题。
 
