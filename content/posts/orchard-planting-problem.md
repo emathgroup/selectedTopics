@@ -141,20 +141,29 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 <a name=t15></a>  
 ![t15](../images/trees/t15.jpg)   
 [15棵树]问题的最优解  
+还[可以有对称解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82733&fromuid=20)  
+![15.5](../images/trees/15.5.png)  
+![15.6](../images/trees/15.6.png)  
+![15.7](../images/trees/15.7.png)  
 
 ### 16棵树
 <a name=t16></a>  
 ![t16](../images/trees/t16.jpg)   
 [16棵树]问题的最优解
 还有[超级对称解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82225&fromuid=20)  
-![22-51-33-4pt16](../images/trees/22-51-33-4pt16.gif)  
+![22-51-33-4pt16](../images/trees/r16.png)  
 已经另外一个[对称情况](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82725&fromuid=20)  
 ![s16](../images/trees/s16.png)  
+但是上面两个都不是整数解，[16棵树整数解最优只有14行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82743&fromuid=20) ，如下图:
+![1614-3](../images/trees/1614-3.gif)  
 
 ### 17棵树
 <a name=t17></a>  
 ![t17](../images/trees/t17.jpg)  
-[17棵树]问题的最优解
+[17棵树]问题的最优解,这个解无法转化为对称图形，数学星空[将其去除无穷远点转化为下图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82745&fromuid=20)  
+![1716-1](../images/trees/1716-1.gif)  
+而上面结果也不是整数解，17棵树最优整数解只有[15行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82744&fromuid=20)  
+![1715-3](../images/trees/1715-3.gif)  
 
 通过进一步找到了[一种更快速的部分判断识别一个点线关系是否存在合法的果树问题解的算法]，再次解决了[18棵树]和[19棵树]问题。
 
@@ -164,6 +173,8 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 [18棵树]问题的最优解,以及[另外一种对称图](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24619&fromuid=20) :  
 AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR  
 ![t18r18.4](../images/trees/t18r18.4.GIF)  
+而18棵整数解只有[17行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82728&fromuid=20)  
+![1817-1](../images/trees/1817-1.gif)  
 
 ### 19棵树
 <a name=t19></a>  
