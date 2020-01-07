@@ -197,6 +197,10 @@ AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR
 ### 20棵树
 <a name=t20></a>  
 ![avatar](../thumbnails/p20.png)
+![b1](../images/trees/b1.jpg)
+![b2](../images/trees/b2.jpg)
+![b3](../images/trees/b3.jpg)
+![b4](../images/trees/b4.jpg)
 
 ## 已知的20棵树23行解坐标如下:
 ### [解1]
