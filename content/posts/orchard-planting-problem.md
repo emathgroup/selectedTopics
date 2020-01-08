@@ -203,6 +203,8 @@ AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR
 <a name=t20></a>  
 这是最后发现的[23行图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=81177&fromuid=20)  
 ![avatar](../thumbnails/p20.png)  
+也可以转化为  
+![p20-3](../images/trees/p20-3.png)  
 下面是[另外两种的不同投影结果](https://bbs.emath.ac.cn/thread-3953-1-1.html)    
 ![b1](../images/trees/b1.jpg)  
 ![b2](../images/trees/b2.jpg)  
