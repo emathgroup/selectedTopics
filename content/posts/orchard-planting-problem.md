@@ -148,12 +148,12 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 
 ### 16棵树
 <a name=t16></a>  
-![t16](../images/trees/t16.jpg)   
+![t16](../images/trees/t16.jpg)  
 [16棵树]问题的最优解
+[对称形式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82725&fromuid=20)  
+![s16](../images/trees/s16.png)  
 还有[超级对称解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82225&fromuid=20)  
 ![22-51-33-4pt16](../images/trees/r16.png)  
-已经第一个图有[对称形式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82725&fromuid=20)  
-![s16](../images/trees/s16.png)  
 但是上面两个都不是整数解，[16棵树整数解最优只有14行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82743&fromuid=20) ，如下图:
 ![1614-3](../images/trees/1614-3.gif)  
 
