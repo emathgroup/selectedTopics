@@ -131,7 +131,7 @@ $\begin{bmatrix}s^2&s&1\end{bmatrix} \begin{bmatrix}a^2b^2&-2ab&1\\-2ab&-2ab+4a+
 
 那么它们之间有如链接中复合变换关系，利用这个关系是应该可以推算出k边形的情况
 
-并指出：
+并指出, 通过利用[二次对合](https://emathgroup.github.io/blog/quadratic-convolution) 问题中的结论，可以得出：
 
 设$t_1=1,t_2=\frac{4(a-1)(b-1)}{(ab-1)^2}$而且$t_{n+1}=\frac{(t_n-1)^2}{(abt_n-1)^2t_{n-1}}$然后利用$t_n=0$就可以得出n变形情况特征值的约束方程。
 
