@@ -176,7 +176,11 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR  
 ![t18r18.4](../images/trees/t18r18.4.GIF)  
 ![s18](../images/trees/s18.png)  
-而18棵整数解只有[17行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82728&fromuid=20)  
+还可以映射为分别包含两个和三个无穷远点的对称图:  
+![s18.3](../images/trees/s18.3.png)  
+![s18.4](../images/trees/s18.4.png)  
+
+18棵整数解只有[17行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82728&fromuid=20)  
 ![1817-1](../images/trees/1817-1.gif)  
 
 ### 19棵树
@@ -197,11 +201,13 @@ AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR
 
 ### 20棵树
 <a name=t20></a>  
-![avatar](../thumbnails/p20.png)
-![b1](../images/trees/b1.jpg)
-![b2](../images/trees/b2.jpg)
-![b3](../images/trees/b3.jpg)
-![b4](../images/trees/b4.jpg)
+这是最后发现的[23行图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=81177&fromuid=20)  
+![avatar](../thumbnails/p20.png)  
+下面是[另外两种的不同投影结果](https://bbs.emath.ac.cn/thread-3953-1-1.html)    
+![b1](../images/trees/b1.jpg)  
+![b2](../images/trees/b2.jpg)  
+![b3](../images/trees/b3.jpg)  
+![b4](../images/trees/b4.jpg)  
 
 ## 已知的20棵树23行解坐标如下:
 ### [解1]
