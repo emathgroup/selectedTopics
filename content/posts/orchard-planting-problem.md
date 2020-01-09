@@ -148,12 +148,12 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 
 ### 16棵树
 <a name=t16></a>  
-![t16](../images/trees/t16.jpg)   
+![t16](../images/trees/t16.jpg)  
 [16棵树]问题的最优解
+[对称形式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82725&fromuid=20)  
+![s16](../images/trees/s16.png)  
 还有[超级对称解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82225&fromuid=20)  
 ![22-51-33-4pt16](../images/trees/r16.png)  
-已经第一个图有[对称形式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82725&fromuid=20)  
-![s16](../images/trees/s16.png)  
 但是上面两个都不是整数解，[16棵树整数解最优只有14行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82743&fromuid=20) ，如下图:
 ![1614-3](../images/trees/1614-3.gif)  
 
@@ -176,7 +176,11 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR  
 ![t18r18.4](../images/trees/t18r18.4.GIF)  
 ![s18](../images/trees/s18.png)  
-而18棵整数解只有[17行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82728&fromuid=20)  
+还可以映射为分别包含两个和三个无穷远点的对称图:  
+![s18.3](../images/trees/s18.3.png)  
+![s18.4](../images/trees/s18.4.png)  
+
+18棵整数解只有[17行](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82728&fromuid=20)  
 ![1817-1](../images/trees/1817-1.gif)  
 
 ### 19棵树
@@ -192,16 +196,20 @@ AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR
 ![1920-3](../images/trees/1920-3.gif)  
 
 
-然后[数学研发论坛上的网友一起合作]，利用十余人拥有的计算机资源共同计算，验证了20棵树不存在24行解，从而证明23行已经是最优结果。但是，由于拥有的计算资源还不够，我们还不能找出所有的23行解。  
+2009年底，[数学研发论坛上的网友一起合作]，利用十余人拥有的计算机资源共同计算，验证了20棵树不存在24行解，从而证明23行已经是最优结果。但是，由于拥有的计算资源还不够，我们还不能找出所有的23行解。  
 2019年9月，我们重新运行了以前的代码，利用计算机又找出一种和上面两种方案都不等价的[新的23行解]。  
 
 ### 20棵树
 <a name=t20></a>  
-![avatar](../thumbnails/p20.png)
-![b1](../images/trees/b1.jpg)
-![b2](../images/trees/b2.jpg)
-![b3](../images/trees/b3.jpg)
-![b4](../images/trees/b4.jpg)
+这是最后发现的[23行图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=81177&fromuid=20)  
+![avatar](../thumbnails/p20.png)  
+也可以转化为  
+![p20-3](../images/trees/p20-3.png)  
+下面是[另外两种的不同投影结果](https://bbs.emath.ac.cn/thread-3953-1-1.html)    
+![b1](../images/trees/b1.jpg)  
+![b2](../images/trees/b2.jpg)  
+![b3](../images/trees/b3.jpg)  
+![b4](../images/trees/b4.jpg)  
 
 ## 已知的20棵树23行解坐标如下:
 ### [解1]
@@ -524,7 +532,7 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
         Y(3/4,3/2)
 ```
 
-随着树的数目增加，我们越来越难以穷举所有的情况。于是我们开始结合群论知识，[仅搜索具有高度自同构结构的结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82288&fromuid=20) ，从而找出几个高度对称的结果：  
+随着树的数目增加，我们越来越难以穷举所有的情况。于是我们开始结合群论知识，使用开源[nauty代码](http://pallini.di.uniroma1.it/) ，[仅搜索具有高度自同构结构的结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82288&fromuid=20) ，从而找出几个高度对称的结果：  
 <a name=t22.28></a>
 2019年12月6日[发现22棵28行实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82150&fromuid=20)  
 ![o22](../images/trees/o22.png)  
@@ -588,7 +596,8 @@ wayne对这个图[进行射影变换后我们发现图形很像正七边形](htt
         Y[+0,+1,0];
 EFHYCGJYAIKYBDLYMQRYPTUYNVXYOSWYFGMWKLMXHJMVEIMUHKUWCLVWBCSTADUXEJRSFKQTEGQXDIRVILNTFIPSGLOUAEOTBKPVDJPWBJOXDGNSAHPRCFNRCHOQABNQMNOPRTWXQSUV
 ```
-<a name=t24s></a>
+<a name=t24s></a>https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82731&fromuid=20
+ 通过利用自同构群的结构，我们还可以用来判断一个图是否存在对称做法，并且[找出对应的对称方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82731&fromuid=20) :  
 24棵树30行的[两个高度对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82274&fromuid=20)  
 IOPULNOXJQRVKMRTHNQWGMPSKLUVGHTXIJSWAGKOBHLRFILQDGINCHJMEJKPAJTUBIVXFGUWCLTWDKSXEHSVARWXBOSTEQUXDMVWFPTVCNSUABMNEFORCDPQ  
 $\frac{UA}{UT}=0.5048, \frac{UJ}{UT}=0.4378$  

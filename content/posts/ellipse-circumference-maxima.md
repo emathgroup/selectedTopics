@@ -131,12 +131,15 @@ $\begin{bmatrix}s^2&s&1\end{bmatrix} \begin{bmatrix}a^2b^2&-2ab&1\\-2ab&-2ab+4a+
 
 那么它们之间有如链接中复合变换关系，利用这个关系是应该可以推算出k边形的情况
 
-并指出：
+并指出, 通过利用[二次对合](https://emathgroup.github.io/blog/quadratic-convolution) 问题中的结论，可以得出：
 
 设$t_1=1,t_2=\frac{4(a-1)(b-1)}{(ab-1)^2}$而且$t_{n+1}=\frac{(t_n-1)^2}{(abt_n-1)^2t_{n-1}}$然后利用$t_n=0$就可以得出n变形情况特征值的约束方程。
 
 由此数学星空计算出[n=10以内参数a,b之间的关系](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5490&pid=53149&fromuid=20) 
 
+对于同时有内接和外切圆的n边形，数学星空还计算出了[两圆圆心和半径之间的关系式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5490&pid=53156&fromuid=20) ，如三角形有
+$R^2-2Rr-d^2=0$，
+四边形有$R^4-2R^2r^2-2R^2d^2-2r^2d^2+d^4=0$等。
   
 ## 周长最长内接n边形计算
 数学星空指出n=3时，陈都很早就有了深入的研究  
