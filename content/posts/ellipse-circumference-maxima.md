@@ -137,6 +137,9 @@ $\begin{bmatrix}s^2&s&1\end{bmatrix} \begin{bmatrix}a^2b^2&-2ab&1\\-2ab&-2ab+4a+
 
 由此数学星空计算出[n=10以内参数a,b之间的关系](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5490&pid=53149&fromuid=20) 
 
+对于同时有内接和外切圆的n边形，数学星空还计算出了[两圆圆心和半径之间的关系式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5490&pid=53156&fromuid=20) ，如三角形有
+$R^2-2Rr-d^2=0$，
+四边形有$R^4-2R^2r^2-2R^2d^2-2r^2d^2+d^4=0$等。
   
 ## 周长最长内接n边形计算
 数学星空指出n=3时，陈都很早就有了深入的研究  
