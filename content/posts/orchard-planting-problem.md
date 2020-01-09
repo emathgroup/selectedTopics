@@ -532,7 +532,7 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
         Y(3/4,3/2)
 ```
 
-随着树的数目增加，我们越来越难以穷举所有的情况。于是我们开始结合群论知识，[仅搜索具有高度自同构结构的结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82288&fromuid=20) ，从而找出几个高度对称的结果：  
+随着树的数目增加，我们越来越难以穷举所有的情况。于是我们开始结合群论知识，使用开源[nauty代码](http://pallini.di.uniroma1.it/) ，[仅搜索具有高度自同构结构的结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82288&fromuid=20) ，从而找出几个高度对称的结果：  
 <a name=t22.28></a>
 2019年12月6日[发现22棵28行实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82150&fromuid=20)  
 ![o22](../images/trees/o22.png)  
@@ -596,7 +596,8 @@ wayne对这个图[进行射影变换后我们发现图形很像正七边形](htt
         Y[+0,+1,0];
 EFHYCGJYAIKYBDLYMQRYPTUYNVXYOSWYFGMWKLMXHJMVEIMUHKUWCLVWBCSTADUXEJRSFKQTEGQXDIRVILNTFIPSGLOUAEOTBKPVDJPWBJOXDGNSAHPRCFNRCHOQABNQMNOPRTWXQSUV
 ```
-<a name=t24s></a>
+<a name=t24s></a>https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82731&fromuid=20
+ 通过利用自同构群的结构，我们还可以用来判断一个图是否存在对称做法，并且[找出对应的对称方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82731&fromuid=20) :  
 24棵树30行的[两个高度对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82274&fromuid=20)  
 IOPULNOXJQRVKMRTHNQWGMPSKLUVGHTXIJSWAGKOBHLRFILQDGINCHJMEJKPAJTUBIVXFGUWCLTWDKSXEHSVARWXBOSTEQUXDMVWFPTVCNSUABMNEFORCDPQ  
 $\frac{UA}{UT}=0.5048, \frac{UJ}{UT}=0.4378$  
