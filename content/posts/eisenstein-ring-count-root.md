@@ -74,7 +74,7 @@ $(a\otimes b)(c\otimes d)=(ac-bd)\otimes (da+bc+bd)$
 二、几个对本帖有用的引理。  
 【引理1】 $\omega\equiv\omega^{\prime}\equiv1(\mod\rho)$  
                 证：$\omega\equiv\omega^{\prime}(mod\rho)$显然，两边乘以$\omega^2$得  $\omega\equiv\omega^{\prime}\equiv1(\mod\rho)$.  
-        推论1：$a+b\omega\equiva+b\omega^{\prime}\equiv a+b(mod\rho)$  
+        推论1：$a+b\omega\equiv a+b\omega^{\prime}\equiv a+b(mod\rho)$  
         推论2：$a+b\omega\equiv 0(mod \rho)$ 当且仅当$a+b\equiv 0(mod 3)$.（证略）  
         注：事实上， $\rho$ 与$1-\omega，1-\omega^{\prime}$相伴，而且大多数书上选择的是$\rho=1-\omega$.   
 【引理2】 $Gcd(a+b\omega, a+b\omega^{\prime})|\rho Gcd(a, b)$  
