@@ -512,7 +512,10 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
 ![t24.30](../images/trees/t24.30.png)  
 或者[左右对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82806&fromuid=20)  
 ![s24](../images/trees/s24.png)  
+和数学星空的对称结构  
+![J2430-1](../images/trees/J2430-1.gif)  
 坐标同23棵28行整数解  
+
 ### 25棵整数解
 <a name=t25.32></a>[25棵32行整数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82565&fromuid=20)  
 ![t25](../images/trees/t25.png)  
