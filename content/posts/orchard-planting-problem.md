@@ -501,6 +501,8 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
 <a name=t24.30></a>
 24棵30行整数解  
 ![t24.30](../images/trees/t24.30.png)  
+或者左右对称图
+![s24](../images/trees/s24.png)  
 坐标同23棵28行整数解  
 <a name=t25.32></a>25棵32行整数解  
 ![t25](../images/trees/t25.png)  
