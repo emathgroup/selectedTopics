@@ -624,6 +624,8 @@ $\frac{VA}{AQ}=1-t, \frac{VF}{FU}=t$
 ![o24.5](../images/trees/o24.5.png)  
 
 [使用nauty库计算自同构群的代码](../attached/trees/equiv.txt)
+
+
 [B. Grunbaum和Sloane]: http://neilsloane.com/doc/ORCHARD/orchard.html
 [G. Ben和陶哲轩]: https://arxiv.org/abs/1208.4714
 [射影几何简介]: https://bbs.emath.ac.cn//thread-2117-1-1.html
