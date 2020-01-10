@@ -373,6 +373,7 @@ print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x
 
 # 其它优秀解
 <a name=others></A>
+### 24棵复数解
 <a name=t24.33><a>
 2019年11月29日发现24棵33行的复数解:  
 ```bash
@@ -380,6 +381,7 @@ print(ABGIAFHLBCHJCDIKDEJLEFGKAMOSBNPTCOQUDPRVEMQWFNRXAKRTBLMUCGNVDHOWEIPXFJQSGR
 solve([+1-3*X_Y+3*X_Y*X_Y,+2/7+1*Q_Y-12/7*X_Y,+1*J_X-2*X_Y,-8/7+1*Q_X+6/7*X_Y,-2/3+1*S_X,-1/2+1*R_Y-1/2*X_Y,-1+1*V_X+1*X_Y,+1*T_Y-3/2*X_Y,+1*D_X-1*X_Y,-3/2+1*N_X+3/2*X_Y,-1/2+1*P_X-1/2*X_Y,+1*U_Y-2*X_Y,+3+1*G_Y-3*X_Y,+1/2+1*K_Y-3/2*X_Y,-1+1*I_Y+3*X_Y,-1/2+1*T_X,-2/3+1*O_Y,+1+1*E_Y-3*X_Y,-2/3+1*O_X,+1*M_Y-2*X_Y,+1*P_Y-3/2*X_Y,-2/3+1*M_X,-1+1*W_X,-1+1*X_X,-1+1*U_X+1*X_Y,-1+1*E_X+1*X_Y,+1*D_Y-1*X_Y,+1*S_Y-1*X_Y,-1+1*W_Y,-1+1*V_Y,+1*N_Y-3/2*X_Y,+1*L_Y-2*X_Y,-1/2+1*R_X,-1/2+1*K_X],[X_Y,Q_Y,J_X,Q_X,S_X,R_Y,V_X,T_Y,D_X,N_X,P_X,U_Y,G_Y,K_Y,I_Y,T_X,O_Y,E_Y,O_X,M_Y,P_Y,M_X,W_X,X_X,U_X,E_X,D_Y,S_Y,W_Y,V_Y,N_Y,L_Y,R_X,K_X]);
 print("A=(0,1,0) B=(1,0,0) C_x=1 C_y=0 F_x=0 F_y=1 G=(1,G_y,0) H_x=0 H_y=0 I=(1,I_y,0) J_y=0 L_x=0 ");
 ```
+### 26棵复数解
 <a name=t26.35></a>
 26棵树35行的复数解:
 ```bash
@@ -411,6 +413,7 @@ print("A=(0,1,0) B=(1,0,0) C_x=1 C_y=0 F_x=0 F_y=1 G=(1,G_y,0) H_x=0 H_y=0 I=(1,
 AEIYBFJYCGKYDHLYMQUYNRVYOSWYPTXYABMOALNXBCNPCDOQDEPREFQSFGRTGHSUHITVIJUWJKVXKLMWAFUVAHPQBGVWBIQRCHWXCJRSDIMXDKSTEJMNELTUFKNOGLOPMPSVNQTWORUX
 ```
 
+### 21棵整数解
 <a name=t21.24></a>  
 21棵树24行整数解例子:  
 ![o21.2](../images/trees/o21.2.png)  
@@ -439,6 +442,7 @@ AEIYBFJYCGKYDHLYMQUYNRVYOSWYPTXYABMOALNXBCNPCDOQDEPREFQSFGRTGHSUHITVIJUWJKVXKLMW
 HJKSGJLTIKLUFGSUDISTEHTUBFIRAEGQCDHPBEOSADNUCFMTCLRSBJQUAKPTDJMRFKOQELNPCINOAHMOBGMNMPQSOPRUNQRT
 ```
 
+### 22棵整数解
 <a name=t22.26></a>
 转载自[efriedma](https://www2.stetson.edu/~efriedma/trees) 网站的22棵26行,23棵28行，24棵30行，25棵32行整数解
 ![s22](../images/trees/s22.png)  
@@ -471,6 +475,7 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
 数学星空后来再次将它转化为如下对称结构：  
 ![2226](../images/trees/2226.gif)  
 
+### 23棵整数解
 <a name=t23.28></a>23棵28行整数解  
 ![t23](../images/trees/t23.png) 
 ```bash
@@ -498,6 +503,7 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
         V(1/2,1/2)
         W(1/3,+0)
 ``` 
+### 24棵整数解
 <a name=t24.30></a>
 24棵30行整数解  
 ![t24.30](../images/trees/t24.30.png)  
@@ -536,6 +542,7 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
 
 随着树的数目增加，我们越来越难以穷举所有的情况。于是我们开始结合群论知识，使用开源[nauty代码](http://pallini.di.uniroma1.it/) ，[仅搜索具有高度自同构结构的结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82288&fromuid=20) ，从而找出几个高度对称的结果：  
 <a name=t22.28></a>
+### 22棵实数解
 2019年12月6日[发现22棵28行实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82150&fromuid=20)  
 ![o22](../images/trees/o22.png)  
 ```bash
@@ -567,6 +574,7 @@ ABCVKOUVJNTVDMSVELRVGHPVFIQVALOQAMNPAJSUAKRTJKPQEHKNDIJOFHJLGIKMDETUEFMODGLNFGRS
 wayne对这个图[进行射影变换后我们发现图形很像正七边形](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82220&fromuid=20) ，于是我们手工制作了对应的[七个方向对称的正七边形图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82228&fromuid=20) :
 ![w22.7](../images/trees/w22.7.png)  
 
+### 25棵复数解
 <a name=t25.35></a>
 2019年12月10日发现25棵35行复数解  
 ```bash
@@ -600,6 +608,7 @@ EFHYCGJYAIKYBDLYMQRYPTUYNVXYOSWYFGMWKLMXHJMVEIMUHKUWCLVWBCSTADUXEJRSFKQTEGQXDIRV
 ```
 <a name=t24s></a>https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82731&fromuid=20
  通过利用自同构群的结构，我们还可以用来判断一个图是否存在对称做法，并且[找出对应的对称方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82731&fromuid=20) :  
+### 24棵对称解
 24棵树30行的[两个高度对称图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82274&fromuid=20)  
 IOPULNOXJQRVKMRTHNQWGMPSKLUVGHTXIJSWAGKOBHLRFILQDGINCHJMEJKPAJTUBIVXFGUWCLTWDKSXEHSVARWXBOSTEQUXDMVWFPTVCNSUABMNEFORCDPQ  
 $\frac{UA}{UT}=0.5048, \frac{UJ}{UT}=0.4378$  
