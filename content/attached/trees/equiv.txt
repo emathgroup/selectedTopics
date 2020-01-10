@@ -1,0 +1,231 @@
+#include <time.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/stat.h>
+#include <sys/types.h>
+#include <algorithm>
+#include <assert.h>
+#define MAXN 128
+#include "nauty/naugroup.h"
+#include "nauty/nauty.h"
+
+#include <string.h>
+#include <ctype.h>
+#include <vector>
+#include <set>
+
+
+const int MAX_NODE_NUM=24;
+
+const int MAX_EDGE_NUM=(((MAX_NODE_NUM-1)/2)*MAX_NODE_NUM)/3;
+const int NODES_PER_EDGE=4;
+const int NUM_NODES=MAX_NODE_NUM;
+const int MAX_TOTAL_EDGES=MAX_EDGE_NUM;
+
+
+char chessboard[NUM_NODES][NUM_NODES];
+char used[NUM_NODES];
+char line_buf[MAX_TOTAL_EDGES][NODES_PER_EDGE];
+char line_buf2[MAX_TOTAL_EDGES][NODES_PER_EDGE];
+int line_count;
+int eq_count;
+
+
+char line[1024];//keep parent input here
+
+void sort_edge(char buf[NODES_PER_EDGE])
+{
+    int i,j;
+    for(i=0;i<NODES_PER_EDGE;i++)for(j=i+1;j<NODES_PER_EDGE;j++){
+        if(buf[i]>buf[j]&&buf[j]>=0){
+            char tmp=buf[i];buf[i]=buf[j];buf[j]=tmp;
+        }
+    }
+}
+
+struct Perm{
+    int data[NUM_NODES];
+    Perm(){int i;for(i=0;i<NUM_NODES;i++)data[i]=0;}
+};
+
+int cur_nodes;
+std::vector<Perm> allperms;
+
+void anaperm()
+{
+    std::set<int> curindexes;
+    int i,j;
+    int mask[NUM_NODES];
+    printf("Dump perm:\n");
+    memset(mask,-1,sizeof(mask));
+    for(i=0;i<cur_nodes;i++){
+       if(mask[i]>=0)continue;
+       int newindex=0;
+       curindexes.clear();
+       for(j=0;j<allperms.size();j++){
+          int t = allperms[j].data[i];
+          curindexes.insert(t);
+       }
+       std::set<int>::iterator it;
+       for(it=curindexes.begin();it!=curindexes.end();++it){
+          mask[*it]=newindex++;
+       }
+       printf("P<%d>\n",(int)curindexes.size());
+       for(j=0;j<allperms.size();j++){
+          std::set<int>::iterator it;
+          printf("\t");
+          for(it=curindexes.begin();it!=curindexes.end();++it){
+              int ind = allperms[j].data[*it];
+              printf("%c",'A'+ind);
+          }
+          printf("\n");
+       }
+       printf("\n");
+    }
+}
+
+void writeautom(int *p, int n)
+{
+    int i;
+    int node_find=0;
+    Perm perm;
+    int j=0;
+    for(i=0;i<n;++i){
+           if(p[i]<cur_nodes){
+               node_find=1;
+               perm.data[j++]=p[i];
+           }else{
+               node_find=1;
+           }
+    }
+    allperms.push_back(perm);
+}
+
+void output_cur(int nodes)
+{
+        graph g1[MAXN*MAXM], g2[MAXN*MAXM];
+        int orbits[MAXN];
+        EMPTYGRAPH(g1, MAXM, line_count+nodes);
+        grouprec *group;
+        int i,j;
+        int degree[MAXN];
+        memset(degree,0,sizeof(degree));
+        for(i=0;i<line_count;i++){
+            for(j=0;j<NODES_PER_EDGE;j++){
+                 if(line_buf[i][j]>=0)degree[line_buf[i][j]]++;
+            }
+        }
+        for(i=0;i<line_count;i++){
+            for(j=0;j<NODES_PER_EDGE;j++){
+                if(line_buf[i][j]>=0){
+                     ADDONEEDGE(g1, line_buf[i][j], nodes+i,MAXM);
+                }
+            }
+        }
+        cur_nodes=nodes;
+        int lab[MAXN], ptn[MAXN], lab2[MAXN];
+        static DEFAULTOPTIONS_GRAPH(options);
+        statsblk stats;
+        memset(&stats, 0, sizeof(stats));
+        EMPTYGRAPH(g2, MAXM, line_count+nodes);
+        int m = MAXM, n = line_count+nodes;
+        options.getcanon = TRUE;
+        options.defaultptn = FALSE;
+        options.userautomproc = groupautomproc;
+        options.userlevelproc = grouplevelproc;
+        for(i=0;i<n;++i){lab[i]=i;ptn[i]=1;}
+        ptn[nodes-1]=0;ptn[n-1]=0;
+        allperms.clear();
+        densenauty(g1, lab, ptn, orbits, &options, &stats, m, n, g2);
+        group = groupptr(FALSE);
+        makecosetreps(group);
+        allgroup(group, writeautom);
+        anaperm();
+}
+
+void init()
+{
+    int i,j;
+    line_count=0;eq_count=0;
+    for(i=0;i<NUM_NODES;i++)for(j=0;j<NUM_NODES;j++){
+        chessboard[i][j]=-1;
+    }
+    for(i=0;i<NUM_NODES;i++)used[i]=0;
+}
+
+char test(int x,int y,int z, int w)
+{
+    if(chessboard[x][y]>=0||chessboard[x][z]>=0||
+            chessboard[x][w]>=0||chessboard[y][z]>=0||
+            chessboard[y][w]>=0||chessboard[z][w]>=0)
+        return 0;
+    return 1;
+}
+
+void set_to(int x,int y, int z,int w, int value)
+{
+  if(w>=0){
+    chessboard[x][y]=chessboard[x][z]=chessboard[x][w]=
+        chessboard[y][x]=chessboard[y][z]=chessboard[y][w]=
+        chessboard[z][x]=chessboard[z][y]=chessboard[z][w]=
+        chessboard[w][x]=chessboard[w][y]=chessboard[w][z]=value;
+  }else{
+    chessboard[x][y]=chessboard[x][z]=
+        chessboard[y][x]=chessboard[y][z]=
+        chessboard[z][x]=chessboard[z][y]=value;
+  }
+}
+
+void setv(int x,int y,int z,int w)
+{
+    if(w<0)w=-1;
+    set_to(x,y,z,w,line_count);
+    used[x]++;
+    used[y]++;
+    used[z]++;
+    if(w>=0)used[w]++;
+    line_buf[line_count][0]=x;
+    line_buf[line_count][1]=y;
+    line_buf[line_count][2]=z;
+    line_buf[line_count][3]=w;
+    line_count++;
+    if(w>=0)eq_count+=2;else eq_count++;
+}
+
+
+void process_one_line(char *input)
+{
+    int i;
+    init();
+    i=strlen(input);
+    while(i>0&&input[i-1]!=' '&&(input[i-1]<'A'||input[i-1]>'Z'))i--;
+    if(i<=0)return;
+    input[i]='\0';
+    if(i%4!=0){
+        fprintf(stderr,"Invalid input %s\n",input);
+        return;
+    }
+    int bc=i/4;
+    int maxnode=0;
+    for(i=0;i<bc;i++){
+        setv(input[i*4]-'A',input[i*4+1]-'A',input[i*4+2]-'A',input[i*4+3]-'A');
+    }
+    for(i=0;i<bc*4;i++){
+        if(input[i]-'A'>maxnode)maxnode=input[i]-'A';
+    }
+    printf("%s\n",input);
+    output_cur(maxnode+1);
+}
+
+
+int main()
+{
+    int lc=0;
+    int start=time(NULL);
+    while(fgets(line,1024,stdin)){
+        if(line[0]<'A'||line[0]>'Z')
+            continue;
+        process_one_line(line);
+    }
+    return 0;
+}

@@ -133,7 +133,7 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 ![s14.1](../images/trees/s14.1.png)  
 还可以[去除无穷远点](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82711&fromuid=20) 转化为:  
 ![s14.3](../images/trees/s14.3.png)  
-
+数学星空后来给出[更多14棵10行图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82799&fromuid=20) 
 
 后来，我们进一步提供了一种可以[只搜索包含线的数目比较多的方案]，再次加速了搜索过程，使得我们能够解决到[17棵树]的问题。
 
@@ -145,6 +145,7 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 ![15.5](../images/trees/15.5.png)  
 ![15.6](../images/trees/15.6.png)  
 ![15.7](../images/trees/15.7.png)  
+数学星空后来给出了[更多15棵12行的解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82800&fromuid=20) 。  
 
 ### 16棵树
 <a name=t16></a>  
@@ -176,7 +177,7 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR  
 ![t18r18.4](../images/trees/t18r18.4.GIF)  
 ![s18](../images/trees/s18.png)  
-还可以映射为分别包含两个和三个无穷远点的对称图:  
+还可以映射为分别包含[两个](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82757&fromuid=20) 和[三个](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82760&fromuid=20) 无穷远点的对称图:  
 ![s18.3](../images/trees/s18.3.png)  
 ![s18.4](../images/trees/s18.4.png)  
 
@@ -622,6 +623,7 @@ $t^3-t^2-2t+1=0$, $t=0.44504186791262880857780512899358951893$
 $\frac{VA}{AQ}=1-t, \frac{VF}{FU}=t$  
 ![o24.5](../images/trees/o24.5.png)  
 
+[使用nauty库计算自同构群的代码](../attached/trees/equiv.txt)
 [B. Grunbaum和Sloane]: http://neilsloane.com/doc/ORCHARD/orchard.html
 [G. Ben和陶哲轩]: https://arxiv.org/abs/1208.4714
 [射影几何简介]: https://bbs.emath.ac.cn//thread-2117-1-1.html
