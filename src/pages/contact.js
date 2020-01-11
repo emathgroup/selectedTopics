@@ -20,7 +20,8 @@ import config from '../../data/siteConfig'
          <Layout>
              <Helmet title={`Contact - ${config.userName}`}/>
          <div>
-             <h2 className={contactStyle.title}>论坛</h2>
+             {/* <h2 className={contactStyle.title}>论坛</h2> */}
+             <p>本<a href="/blog">网站</a>主要是搜集<a href="https://bbs.emath.ac.cn/forum.php">数学研发论坛</a>上的精华帖子. </p>
              <p>我们是一群数学,计算机的爱好者.</p>
              <p className={contactStyle.subtitle}>You can contact me via email or find me around the web.</p>
              <ul className={contactStyle.list}>
