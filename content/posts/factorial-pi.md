@@ -277,6 +277,7 @@ d = 314159265358,  n = 1154318938997开始数字3141592653584138
 d = 3141592653589, n = 1544607046599开始数字31415926535899498
 ```
 [2019年12月Ickiverar](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=969&pid=82215&fromuid=20) 给出了更加高效的代码，
+<a name=ickiverar></a>
 ```bash
 #include<mpreal.h>
 #pragma comment(lib,"mpfr-4.0.1.lib")
@@ -351,6 +352,7 @@ int main(){
 ```
 并且于2019年12月18日得出下一个数据，即  
 
+<a name=result></a>
 13位小数的结果有了，119万亿左右。
 ```bash
 d =  0, n = 9
