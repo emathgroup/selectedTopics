@@ -265,7 +265,7 @@ hujunhua发现对于门格海绵球，会出现两个对顶小正方形正好分
 [代码下载](../attached/menger.txt)
 
 <a name=menger></a>
-2019年12月9日，Ickiverar给出了一个[性能更高的代码](../attached/xebsj/ickiverar-3d.txt)  
+2019年12月9日，Ickiverar给出了一个性能更高的[C Source Code](../attached/xebsj/ickiverar-3d.txt)  
 并且在2019年12月13日计算到18层
 
 |迭代次数|球外|球上|球内的方块的个数|
