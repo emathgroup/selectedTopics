@@ -353,8 +353,8 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 ![c18](../images/twodbubble/c18.png) ![c19](../images/twodbubble/c19.png)  
 而正方形结果  
 ![s4](../images/twodbubble/s4.png) ![s5](../images/twodbubble/s5.png) ![s6](../images/twodbubble/s6.png) ![s7](../images/twodbubble/s7.png)  
-![s8](../images/twodbubble/s8.png) ![s9](../images/twodbubble/s9.png) ![s10](../images/twodbubble/s10.png) ![s11](../images/twodbubble/s11.png)  
-![s12](../images/twodbubble/s12.png) ![s13](../images/twodbubble/s13.png) ![s14](../images/twodbubble/s14.png)  
+![s8](../images/twodbubble/s8.png) ![s9](../images/twodbubble/s9.png) ![s10](../images/twodbubble/b_s10.png) ![s11](../images/twodbubble/b_s11.png)  
+![s12](../images/twodbubble/b_s12.png) ![s13](../images/twodbubble/b_s13.png) ![s14](../images/twodbubble/b_s14.png)  
 
 此后我们发现关于这个问题[Simon Cox]已经对于42个区域以内都给出了很不错的结果。
 参考他的结果我们进一步得出圆形43个区域以内划分[已知最优结果的高精度表示]
