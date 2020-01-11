@@ -258,13 +258,13 @@ Your browser does not support the video tag.
 
 
 然后他给出了对应的的门格海绵球的快照  
-<a name=menger></a>
 ![xebsj7](../images/xebsj/xebsj7.png)  
 hujunhua发现对于门格海绵球，会出现两个对顶小正方形正好分局分界球内外的情况（公共顶点在球面上），也会出现小正方体中心在球面的情况。  
 [chyanog首先给出三维的计算结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9655&pid=80906&fromuid=20)  
 ![xebsj8](../images/xebsj/xebsj8.png)  
 [代码下载](../attached/menger.txt)
 
+<a name=menger></a>
 2019年12月9日，Ickiverar给出了一个[性能更高的代码](../attached/xebsj/ickiverar-3d.txt)  
 并且在2019年12月13日计算到18层
 
