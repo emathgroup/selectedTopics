@@ -371,6 +371,8 @@ d = 12, n = 1544607046599
 d = 13, n = 119027672349942
 ```
 
+随后liangbch也提供了一份[性能类似的C代码](https://www.bccn.net/paste/3202)
+
 [于2008年12月提问]: https://bbs.emath.ac.cn/forum.php?mod=viewthread&tid=969&fromuid=20
 [首先提议用斯特林公式去搜索]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=969&pid=12665&fromuid=20
 [减少一位要求还是很容易]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=969&pid=12671&fromuid=20
