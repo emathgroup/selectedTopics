@@ -52,7 +52,7 @@ hujunhua接着给出了[更多的规律分析](https://bbs.emath.ac.cn/forum.php
 [attachimg]4355[/attachimg][attachimg]4356[/attachimg]
                          图8   导出律6                                                    图9  导出律7
 
-| ![幻方律5](../images/sixmodular/幻方律5.JPG) | ![幻方律7](../images/sixmodular/幻方律7.jpg) |
+| ![幻方律5](../images/sixmodular/幻方律5.jpg) | ![幻方律7](../images/sixmodular/幻方律7.jpg) |
 |----------------------------------------------|--------------------------------------------|   
 | 图8   导出律6                                |                图9  导出律7              |
 
