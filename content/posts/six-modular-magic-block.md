@@ -137,13 +137,13 @@ hujunhua首先对数据进行了分析处理，[得出](https://bbs.emath.ac.cn/
 ![六阶模幻方-19-13-7](../images/sixmodular/六阶模幻方-19-13-7.png)  
 ![六阶模幻方-19-13-7a](../images/sixmodular/六阶模幻方-19-13-7a.png)  
 
-然后他设计了一个画图的mathematica代码
+然后他设计了一个画图的[mathematica代码](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=4840&pid=82811&fromuid=20) 
 ```bash
 RulesArray =Solve[x + y + z == 15 && 0 <= x <= 10 && 0 <= y <= 10 && 0 <= z <= 10, {x, y, z}, Integers];
 mf[n_] := m13906[[n, Mod[5 - z, 6, 1], Mod[y + 1, 6, 1]]]
 Graphics3D[{Sphere[{x, y, z}], Text[Style[Abs@mf[100], Medium, Bold, If[mf[100] > 0, Black, Red]], {x, y, z}]} /. RulesArray, ViewPoint -> {100, 100, 100}, Boxed -> False]
 ```
-可以给出类似如下的图：
+可以给出[类似如下的图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=4840&pid=82824&fromuid=20) ：
 ![m13906100](../images/sixmodular/m13906100.PNG)  
 程序中的坐标{5-z,y+1}的选择是为了使画出来的图的左上角幻方与 mathe 的解的排列顺序一致。
 坐标使用±{-x, y}, ±{-y, x}, ±{-y, z}, ±{-z, y}, ±{-z, x}或±{-x, z}都是可以的，无非是旋转和镜像的关系。
