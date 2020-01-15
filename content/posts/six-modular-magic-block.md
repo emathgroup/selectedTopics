@@ -199,6 +199,6 @@ Graphics3D[{Sphere[{x, y, z}], Text[Style[Abs@mf[100], Medium, Bold, If[mf[100] 
 ### {{-2, 0, 2}, 180}去重:  
 mathe是固定 a(3, 2)=2，化为对称数组后即红[color=Red]18[/color]不动。下面画图时，a(3, 2)位于中心。
 
-去掉旋转和镜像重复后得15个解，它们的相反数对全都是平移对称的，因此没有取反重复，故此即本原解。
+去掉旋转和镜像重复后得[15个解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=4840&pid=82844&fromuid=20) ，它们的相反数对全都是平移对称的，因此没有取反重复，故此即本原解。
 
 ![m1390201_15](../images/sixmodular/m1390201_15.PNG)  
