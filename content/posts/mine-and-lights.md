@@ -41,6 +41,7 @@ $$
 2.如果某个开关按下了两次，那么就相当于取消了第一次的操作，也就是说没有开关需要按超过1次  
 
 现在问题是：对于给定的初始状态，求出需要按哪些开关来完成游戏.  
+mathe在14年将问题[转载到数学研发论坛](https://bbs.emath.ac.cn/thread-5422-1-1.html) 
 
 # 扫雷算法问题
 2007年10月[pavelalex在csdn提问](https://bbs.csdn.net/topics/190068993)  
@@ -303,6 +304,8 @@ $((2\cos(\frac{i\pi}{n+1})+1)(2\cos(\frac{j\pi}{m+1})+1)-1)$中会有一项为$0
 最多有3个自由参数，也就是最多枚举8种情况就可以了。
 
 点击[下载对应C代码](../attached/minelights/mine.txt) 。
+
+2014年[zhouguang](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5422&pid=52734&fromuid=20) 将关灯问题整理成[一个pdf文件](../attached/lightsout.pdf) ，内容相当不错。
 
 ## OEIS 相关信息
 相关数据结果提交到了oeis, 有  
