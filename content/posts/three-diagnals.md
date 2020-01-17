@@ -38,7 +38,7 @@ $\frac{abc+bcd+cda+dab+xyz}{a+b+c+d+x+y+z}$
 因为三式相乘开平方得到$xyz=\sqrt{(ac+bd)(ad+bc)(ab+cd)}$，然后分别除以三式可以唯一确定x,y,z.
 但是几何模型会有一个额外要求，即三边之和大于第四边。
 
-[wayne提醒](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81568&fromuid=20) a,b,c,d可以拓展到任意实数范围，只要分母非零，等式还是依旧成立。这个也可以从解析函数的解析延拓角度去理解。
+[wayne提醒](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81568&fromuid=20) a,b,c,d可以拓展到任意实数范围，只要分母非零，等式还是依旧成立。这个也可以从解析函数的解析延拓角度去理解, 所以只要分母非零，等式对复数也会成立。
 
 这个方法比较有意思的是非常巧妙的顺便给出了圆的内接四边形的对角线长度公式。
 
