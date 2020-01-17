@@ -18,7 +18,7 @@ wayne的微信群提出了[一个恒等式问题](https://bbs.emath.ac.cn/thread
 
 mathe提议设 $xz=ad+bc, yz=ab+cd$, 并言道“于是考虑边长为$a,b,c,d$的圆内接四边形，边顺序的不同安排得出对角线长度分别为$x,y;y,z;z,x$. 这时右边等式代表什么？和面积有关系吗？”
 ![threediagonals](../images/threediagonals.png)  
-利用托勒密定理：圆内接四边形对边乘积之和等于对角线乘积之和， 我们马上得出了[不等式的几何意义](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81547&fromuid=20) 。  
+利用托勒密定理：圆内接四边形对边乘积之和等于对角线乘积之和， 我们可以将[恒等式中变量几何化](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81547&fromuid=20) 。  
 
 hujunhua按mathe的提议，把原题[改造为对称形式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81544&fromuid=20)  
 
