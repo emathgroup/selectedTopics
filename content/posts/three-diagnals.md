@@ -19,7 +19,7 @@ wayne的微信群提出了[一个恒等式问题](https://bbs.emath.ac.cn/thread
 mathe提议设 $xz=ad+bc, yz=ab+cd$, 并言道“于是考虑边长为$a,b,c,d$的圆内接四边形，边顺序的不同安排得出对角线长度分别为$x,y;y,z;z,x$. 这时右边等式代表什么？和面积有关系吗？”
 利用托勒密定理：圆内接四边形对边乘积之和等于对角线乘积之和， 我们可以将[恒等式中变量几何化](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81547&fromuid=20) 。  
 ![threediagonals](../images/threediagonals.png)  
-另外分析表达式$\frac{abx}{a+b+x}$的几何意义，查看图中a,b,x三边组成三角形，我们知道$abx$代表三角形面积和4R的乘积，所以$\frac{abx}{a+b+x}$代表2Rr,其中R和r分别是三角形外接圆和内切圆半径长度，由此我们得出这个等式的几何意义代表[圆的内接四边形两条对角线各自将四边形分成的两个三角形的内接圆半径之和相等](https://zhidao.baidu.com/question/179520048.html)。
+另外分析表达式$\frac{abx}{a+b+x}$的几何意义，查看图中a,b,x三边组成三角形，我们知道$abx$代表三角形面积和4R的乘积，所以$\frac{abx}{a+b+x}$代表2Rr,其中R和r分别是三角形外接圆和内切圆半径长度，由此我们得出这个等式的几何意义代表[圆的内接四边形两条对角线各自将四边形分成的两个三角形的内接圆半径之和相等](https://zhidao.baidu.com/question/179520048.html)。 利用双心三角形的关系式$R^2-2Rr=d^2$还可以得出两个内心到外心距离平方和也和对角线的选择无关。
 
 hujunhua按mathe的提议，把原题[改造为对称形式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81544&fromuid=20)  
 已知：正实数$a,b,c,d,x,y,z$  满足 $xy=ac+bd,yz=ab+cd, xz=ad+bc$.  
