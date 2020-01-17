@@ -17,29 +17,23 @@ wayne的微信群提出了[一个恒等式问题](https://bbs.emath.ac.cn/thread
 # 详细内容
 
 mathe提议设 $xz=ad+bc, yz=ab+cd$, 并言道“于是考虑边长为$a,b,c,d$的圆内接四边形，边顺序的不同安排得出对角线长度分别为$x,y;y,z;z,x$. 这时右边等式代表什么？和面积有关系吗？”
-![threediagonals](../images/threediagonals.png)  
 利用托勒密定理：圆内接四边形对边乘积之和等于对角线乘积之和， 我们可以将[恒等式中变量几何化](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81547&fromuid=20) 。  
+![threediagonals](../images/threediagonals.png)  
+另外分析表达式$\frac{abx}{a+b+x}$的几何意义，查看图中a,b,x三边组成三角形，我们知道$abx$代表三角形面积和4R的乘积，所以$\frac{abx}{a+b+x}$代表2Rr,其中R和r分别是三角形外接圆和内切圆半径长度，由此我们得出这个等式的几何意义代表[圆的内接四边形两条对角线各自将四边形分成的两个三角形的内接圆半径之和相等](https://zhidao.baidu.com/question/179520048.html)。
 
 hujunhua按mathe的提议，把原题[改造为对称形式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81544&fromuid=20)  
-
-已知：正实数$a,b,c,d,x,y,z$  满足 $xy=ac+bd,yz=ab+cd, xz=ad+bc$. 
-
-求证：$\frac{abx}{a+b+x}+\frac{cdx}{c+d+x}=\frac{ady}{a+d+y}+\frac{bcy}{b+c+y}=\frac{acz}{a+c+z}+\frac{bdz}{b+d+z}$
-
+已知：正实数$a,b,c,d,x,y,z$  满足 $xy=ac+bd,yz=ab+cd, xz=ad+bc$.  
+求证：$\frac{abx}{a+b+x}+\frac{cdx}{c+d+x}=\frac{ady}{a+d+y}+\frac{bcy}{b+c+y}=\frac{acz}{a+c+z}+\frac{bdz}{b+d+z}$ 
 然后给出了简洁的[代数证明](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81545&fromuid=20) :  
-
 由改造后的题设3等式两两相加可得$\begin{cases}x(y+z)&&=(a+b)(c+d),\\y(z+x)&&=(a+d)(b+c),\\z(x+y)&&=(a+c)(b+d).\end{cases}$  
 由此立即可以看出直接通分的美好前景, 比如连等式的左式通分后易化简为  
 $\frac{abc+bcd+cda+dab+xyz}{a+b+c+d+x+y+z}$  
 结果是$a,b,c,d;x,y,z$的全对称式，连等式当然成立!
 
-[mathe另外提醒](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81549&fromuid=20):  
+这个方法比较有意思的是非常巧妙的顺便给出了圆的内接四边形的[对角线长度公式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81549&fromuid=20):  
 需要注意对于任意给定的正数a,b,c,d,我们可以求得唯一的一组正数x,y,z满足条件。
 因为三式相乘开平方得到$xyz=\sqrt{(ac+bd)(ad+bc)(ab+cd)}$，然后分别除以三式可以唯一确定x,y,z.
-但是几何模型会有一个额外要求，即三边之和大于第四边。
 
-[wayne提醒](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81568&fromuid=20) a,b,c,d可以拓展到任意实数范围，只要分母非零，等式还是依旧成立。这个也可以从解析函数的解析延拓角度去理解, 所以只要分母非零，等式对复数也会成立。
+[wayne另外发现](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81568&fromuid=20) a,b,c,d可以拓展到任意实数范围，只要分母非零，等式还是依旧成立，这是就不能用几何模型解释了。这个可以从解析函数的解析延拓角度去理解, 所以只要分母非零，等式对复数也会成立。
 
-这个方法比较有意思的是非常巧妙的顺便给出了圆的内接四边形的对角线长度公式。
 
-另外分析表达式$\frac{abx}{a+b+x}$的几何意义，查看图中a,b,x三边组成三角形，我们知道$abx$代表三角形面积和4R的乘积，所以$\frac{abx}{a+b+x}$代表2Rr,其中R和r分别是三角形外接圆和内切圆半径长度，由此我们得出这个等式的几何意义代表[圆的内接四边形两条对角线各自将四边形分成的两个三角形的内接圆半径之和相等](https://zhidao.baidu.com/question/179520048.html)。
