@@ -22,13 +22,14 @@ mathe提议设 $xz=ad+bc, yz=ab+cd$, 并言道“于是考虑边长为$a,b,c,d$�
 
 hujunhua按mathe的提议，把原题[改造为对称形式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81544&fromuid=20)  
 
-已知：正实数$a,b,c,d,x,y,z￥  满足 $xy=ac+bd,yz=ab+cd, xz=ad+bc$. 
+已知：正实数$a,b,c,d,x,y,z$  满足 $xy=ac+bd,yz=ab+cd, xz=ad+bc$. 
 
 求证：$\frac{abx}{a+b+x}+\frac{cdx}{c+d+x}=\frac{ady}{a+d+y}+\frac{bcy}{b+c+y}=\frac{acz}{a+c+z}+\frac{bdz}{b+d+z}$
 
 然后给出了简洁的[代数证明](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81545&fromuid=20) :  
 
-由改造后的题设3等式两两相加可得$\begin{split}x(y+z)&&=(a+b)(c+d),\\y(z+x)&&=(a+d)(b+c),\\z(x+y)&&=(a+c)(b+d).\end{split}$ 由此立即可以看出直接通分的美好前景, 比如连等式的左式通分后易化简为  
+由改造后的题设3等式两两相加可得$\begin{cases}x(y+z)&&=(a+b)(c+d),\\y(z+x)&&=(a+d)(b+c),\\z(x+y)&&=(a+c)(b+d).\end{cases}$  
+由此立即可以看出直接通分的美好前景, 比如连等式的左式通分后易化简为  
 $\frac{abc+bcd+cda+dab+xyz}{a+b+c+d+x+y+z}$  
 结果是$a,b,c,d;x,y,z$的全对称式，连等式当然成立!
 
@@ -40,3 +41,5 @@ $\frac{abc+bcd+cda+dab+xyz}{a+b+c+d+x+y+z}$
 [wayne提醒](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16974&pid=81568&fromuid=20) a,b,c,d可以拓展到任意实数范围，只要分母非零，等式还是依旧成立。这个也可以从解析函数的解析延拓角度去理解。
 
 这个方法比较有意思的是非常巧妙的顺便给出了圆的内接四边形的对角线长度公式。
+
+另外分析表达式$\frac{abx}{a+b+x}$的几何意义，查看图中a,b,x三边组成三角形，我们知道$abx$代表三角形面积和4R的乘积，所以$\frac{abx}{a+b+x}$代表2Rr,其中R和r分别是三角形外接圆和内切圆半径长度，由此我们得出这个等式的几何意义代表[圆的内接四边形两条对角线各自将四边形分成的两个三角形的半径之和相等](https://zhidao.baidu.com/question/179520048.html)。
