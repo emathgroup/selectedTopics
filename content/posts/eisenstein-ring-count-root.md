@@ -9,18 +9,17 @@ tags:
 2010年4月[wayne提问](https://bbs.emath.ac.cn/thread-2281-1-1.html) :  
 如果,正整数a,b,N，满足，$a^2-ab+b^2=N^2$，  
 试问，$1\le a\lt b\lt 10^{100}$以内的互质的解有多少组？  
-wayne要求计算的范围有点不现实，他表示可以改为一个更加合理的范围。  
 最终hujunhua通过利用Eisenstein整环给出了一个对于给定的N上面方程正整数解数目的公式， 并且给出了原理分析。
 
 # 公式推导
 看到这个信息，hujunhua[快速给出了如下结论](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2281&pid=27576&fromuid=20):  
-要求互质解的话，N有且只能有1(mod3)的质因数。这是数论中关于$Z(\omega)$的一个基本定理。  
-如果我没算错的话，当N有k个1(mod3)的质因子时，$a^2-ab+b^2=N^2$的互质解(a,b)对数为$2^{k-1}$。  
+a、b互质时，N有且只能有1(mod3)的质因数。这是数论中关于$Z(\omega)$的一个基本定理。  
+当N有k个1(mod3)的质因子时，$a^2-ab+b^2=N^2$的互质解(a,b)对数为$2^{k-1}$。  
 并且他认为:   
 在算法上，这个问题与求本原勾股数完全相同。关于本原勾股数的两个公式:  
 1、通解公式：$a=|u^2-v^2|, b=2uv, c=u^2+v^2$, 式中GCD(u, v)=1, u, v一奇一偶。  
 2、计数公式：c只含有1(mod4)的质约数，当c有k个1(mod4)的质约数时，本原(a,b)对有$2^{k-1}$个。  
-wayne的问题中也有对应的通解公式和计数公式，它们对对优化算法的作用应该是完全一样的。一定范围内的勾股数应该有现成的算法吧，可以拿来参考一下。
+wayne的问题中也有对应的通解公式和计数公式，它们对优化算法的作用应该是完全一样的。
 
 wayne选择特殊的N[对hujunhua的结论进行验证](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2281&pid=27608&fromuid=20):  
 ```bash
@@ -54,7 +53,7 @@ $u\gt v\gt 0, Gcd(u,v)=1, u\ne -v(\mod3)$。
 [hujunhua给出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2281&pid=27669&fromuid=20):
        $Z(\omega)$及丢番图方程$a^2-ab+b^2= N^2$简介
 
-一、Eisenstein整数环$Z(\omega)$简介。  
+## 一、Eisenstein整数环$Z(\omega)$简介。  
 【定义1】（Eisenstein整数环）$Z(\omega):=\{a+b\omega|a, b\in Z\}$，$\omega$是3次单位根，满足$\omega^3=1，\omega^2+\omega+1=0$.  
         注1:  $\omega$的共扼根$\omega^{\prime}=\omega^{-1}=\omega^2$, 这对共轭复根具有平等对称的性质，随便取哪个当作$\omega$定义$Z(\omega)$都是一样的，因为有$\omega+\omega^{\prime}=-1$使得$Z(\omega^{\prime})=Z(\omega)$。故$Z(\omega)$中的数也并行采用$a+b\omega^{\prime}$的形式，有互易转换$a+b\omega=(a-b)-b\omega^{\prime}$.  
         在下文中，如用一个字符来表示$Z(\omega)$中的数，不作声明时都用$z$（可带下标）。  
@@ -71,7 +70,7 @@ $(a\otimes b)(c\otimes d)=(ac-bd)\otimes (da+bc+bd)$
         1)  $\omega-\omega^{\prime} =:\rho$, 具有性质$\rho=\omega-\omega^{\prime}=-(\omega^{\prime}-\omega)=-\rho^{\prime}$, 所以$\rho^2=-N(\rho)=-3$。可见$3=-\rho^2$不是$Z(\omega)$中的素数。  
         2)  $a+b\omega,  a\otimes b=1(mod6)$的素数。即6m+1形的自然素数都不是$Z(\omega)$中的素数，都可以唯一地分解为$Z(\omega)$中一对共扼素数$a+b\omega$和$a+b\omega^{\prime}$的积。  
         3)  2(mod3)的自然素数， 即2和6m-1形自然素数在$Z(\omega)$仍然是素数。  
-二、几个对本帖有用的引理。  
+## 二、几个对本帖有用的引理。  
 【引理1】 $\omega\equiv\omega^{\prime}\equiv1(\mod\rho)$  
                 证：$\omega\equiv\omega^{\prime}(mod\rho)$显然，两边乘以$\omega^2$得  $\omega\equiv\omega^{\prime}\equiv1(\mod\rho)$.  
         推论1：$a+b\omega\equiv a+b\omega^{\prime}\equiv a+b(mod\rho)$  
@@ -84,7 +83,7 @@ $(a\otimes b)(c\otimes d)=(ac-bd)\otimes (da+bc+bd)$
         推论2：当 $\rho$ 不整除$a+b\omega$时，$Gcd(a+b\omega, a+b\omega^{\prime})=1↔Gcd(a, b)=1$.即“共扼互质↔分量互质”。  
 【引理3】 $d|(a+b\omega)$, 当且仅当$d|Gcd(a,b)$. 
         证：d总是同时整除$a+b\omega$和$a+b\omega^{\prime}$，即$d|Gcd(a+b\omega, a+b\omega^{\prime})|\rho Gcd(a, b)$. 当$d$不含因子3时，显然$d|Gcd(a,b$). 当$3|d$时，因$d$和$Gcd(a, b)$均含有偶数个$\rho$，仍有$d|Gcd(a,b)$.  
-三、丢番图方程$a^2+ab+b^2= n^2$的通解公式和解数  
+## 三、丢番图方程$a^2+ab+b^2= n^2$的通解公式和解数  
         除了那些基本性质，关于$Z(\omega)$最容易想到的一个问题就是哪些$a+b\omega(ab\ne 0)$的模为自然整数，即范数$N(a+b\omega)$为自然平方数。这就导致方程:  
 $a\otimes b=n^2$.  在$Z(\omega)$中写为$(a+b\omega)(a+b\omega^{\prime})=n^2$.  
         只要求出本原解，比例解乘以倍数可得，所以限定$Gcd(a,b)=1$是有道理的。这个限制使得  
