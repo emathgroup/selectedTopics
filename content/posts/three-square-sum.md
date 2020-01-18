@@ -36,7 +36,7 @@ $4^h(8k+7)$型的有$[\frac{n+4^h}{2^{2h+3}}]$个
 另外由于$A_n$不是3的倍数，不可能等于$6n$,所以得到$A_n\gt 6n$.  
 而又因为上面计数可以反向防缩得到$n\gt \frac{A_n+1}6-\log_2(A_n)$.  
 于是我们得到$\lim_{n\to\infty}\frac{A_n}n\le 6$,结合$A_n\gt 6n$得到$\lim_{n\to\infty}\frac{A_n}n=6$.  
-zgg\_\_给出了数列$4^a(8k+7)$的[分布图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3063&pid=36011&fromuid=20):  
+zgg\_\_给出了数列$\frac{A_n}n$的[图像](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3063&pid=36011&fromuid=20):  
 ![threesquarestat](../images/threesquarestat.jpg)  
 
 KeyTo9\_Fans也指出，证明(8k+7)的正整数不能表示为3个平方数之和[很容易](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3063&pid=36013&fromuid=20)  
