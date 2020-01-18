@@ -98,7 +98,7 @@ $\begin{bmatrix}a_{11}&a_{12}&1\\a_{12}&a_{22}&0\\1&0&n\end{bmatrix}$.
 $x=\begin{pmatrix}0\\0\\1\end{pmatrix}$  
 二次型取值为n,我们只需要构造的矩阵特征值为1即可，其中含3个参数  
 其中$a_{11}\gt 0,b=a_{11}a_{22}-a_{12}^2\gt 0$.  
-行列式为1的条件相当于$-b -= a_{12}^2(\mod a_{22})$  
+行列式为1的条件相当于$-b \equiv a_{12}^2(\mod a_{22})$  
 构造中需要使用Dirichlet定理:对于任意互素整数a,b,数列{an+b}中存在素数。  
 
 具体证明过程有点复杂，有兴趣的可以直接查看原论文，或者到[数学研发论坛](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3063&pid=36030&fromuid=20)查看mathe翻译的证明摘要过程。
