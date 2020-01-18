@@ -20,7 +20,7 @@ $A_5=31$
 
 求证：  
 (1)$A_n>6n$  
-(2)$\lim_{n\to\infty}\frac{A_n}n=6$
+(2)$\lim\limits_{n\to\infty}\frac{A_n}n=6$
 
 # 初步分析
 mathe根据[A004215](http://oeis.org/A004215)中信息发现这个数列就是$4^a(8k+7)$, 但是这个结论比较困以证明。  
@@ -35,7 +35,7 @@ $4^h(8k+7)$型的有$[\frac{n+4^h}{2^{2h+3}}]$个
 所以我们得到$n\lt\frac{A_n+1}6$,或者说$6n\le A_n$.  
 另外由于$A_n$不是3的倍数，不可能等于$6n$,所以得到$A_n\gt 6n$.  
 而又因为上面计数可以反向防缩得到$n\gt \frac{A_n+1}6-\log_2(A_n)$.  
-于是我们得到$\lim\limits_{n\to\infty}\frac{A_n}n\le 6$,结合$A_n\gt 6n$得到$\lim_{n\to\infty}\frac{A_n}n=6$.  
+于是我们得到$\lim\limits_{n\to\infty}\frac{A_n}n\le 6$,结合$A_n\gt 6n$得到$\lim\limits_{n\to\infty}\frac{A_n}n=6$.  
 zgg\_\_给出了数列$\frac{A_n}n$的[图像](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3063&pid=36011&fromuid=20):  
 ![threesquarestat](../images/threesquarestat.jpg)  
 
@@ -98,7 +98,7 @@ $\begin{bmatrix}a_{11}&a_{12}&1\\a_{12}&a_{22}&0\\1&0&n\end{bmatrix}$.
 $x=\begin{pmatrix}0\\0\\1\end{pmatrix}$  
 二次型取值为n,我们只需要构造的矩阵特征值为1即可，其中含3个参数  
 其中$a_{11}\gt 0,b=a_{11}a_{22}-a_{12}^2\gt 0$.  
-行列式为1的条件相当于$-b -= a_{12}^2(mod a_{22})$  
+行列式为1的条件相当于$-b -= a_{12}^2(\mod a_{22})$  
 构造中需要使用Dirichlet定理:对于任意互素整数a,b,数列{an+b}中存在素数。  
 
 具体证明过程有点复杂，有兴趣的可以直接查看原论文，或者到[数学研发论坛](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3063&pid=36030&fromuid=20)查看mathe翻译的证明摘要过程。
@@ -109,13 +109,14 @@ $x=\begin{pmatrix}0\\0\\1\end{pmatrix}$
 $42=(-80538738812075974)^3 + 80435758145817515^3 + 12602123297335631^3$  
 
 现在我们已知的结论有：  
-i) 有无穷种将1表示为三立方和的方案
-    $(1\pm 9m^3)^3 + (9m^4)^3 + (-9m^4 \mp 3m)^3 = 1$
-ii) Ramanujan给出了
-    $(3n^2+5nm-5m^2)^3+(4n^2-4nm+6m^2)^3+(5n^2-5nm-3m^2)^3=(6n^2-4nm+4m^2)^3$
+i) 有无穷种将1表示为三立方和的方案  
+    $(1\pm 9m^3)^3 + (9m^4)^3 + (-9m^4 \mp 3m)^3 = 1$  
+ii) Ramanujan给出了  
+    $(3n^2+5nm-5m^2)^3+(4n^2-4nm+6m^2)^3+(5n^2-5nm-3m^2)^3=(6n^2-4nm+4m^2)^3$  
 
-iii) 当$n\equiv 4(\mod 9)$或$n\equiv 5(\mod 9)$时，$x^3+y^3+z^3=n$无整数解
-iv) 我们可以猜测除了iii)中情况，所有其它n可以表示为三个立方数之和， 但是这个问题还无人能够证明。
+iii) 当$n\equiv 4(\mod 9)$或$n\equiv 5(\mod 9)$时，$x^3+y^3+z^3=n$无整数解  
+iv) 我们可以猜测除了iii)中情况，所有其它n可以表示为三个立方数之和， 但是这个问题还无人能够证明。  
+
 
 将42表示为三个立方数之和的解决使得100以内所有自然数的三立方和问题得到了解决。
 
