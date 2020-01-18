@@ -9,7 +9,7 @@ tags:
 
 2011年3月[KeyTo9\_Fans提问](https://bbs.emath.ac.cn/thread-3063-1-1.html):
 
-设数列$\{A_n\}$是不能表示成$a^2+b^2+c^2$的正整数组成的数列, 即[A004215](http://oeis.org/A004215)：  
+设数列$\{A_n\}$是不能表示成$a^2+b^2+c^2$(或者说三个完全平方数之和)的正整数组成的数列, 即[A004215](http://oeis.org/A004215)：  
 比如  
 $A_1=7$  
 $A_2=15$  
@@ -20,7 +20,7 @@ $A_5=31$
 
 求证：  
 (1)$A_n>6n$  
-(2)$lim_{n\to\infty}\frac{A_n}n=6$
+(2)$\lim_{n\to\infty}\frac{A_n}n=6$
 
 # 初步分析
 mathe根据[A004215](http://oeis.org/A004215)中信息发现这个数列就是$4^a(8k+7)$, 但是这个结论比较困以证明。  
@@ -31,24 +31,24 @@ mathe根据[A004215](http://oeis.org/A004215)中信息发现这个数列就是$4
 ..  
 $4^h(8k+7)$型的有$[\frac{n+4^h}{2^{2h+3}}]$个  
 累加即可。  
-结果严格小于$\frac{n+1/8+\frac{n+4}{32}+\dots=\frac{n+1}6$.  
+结果严格小于$\frac{n+1}8+\frac{n+4}{32}+\dots=\frac{n+1}6$.  
 所以我们得到$n\lt\frac{A_n+1}6$,或者说$6n\le A_n$.  
 另外由于$A_n$不是3的倍数，不可能等于$6n$,所以得到$A_n\gt 6n$.  
 而又因为上面计数可以反向防缩得到$n\gt \frac{A_n+1}6-\log_2(A_n)$.  
-于是我们得到$lim_{n\to\infty}\frac{A_n}n\le 6$,结合$A_n\gt 6n$得到$\lim_{n\to\infty}\frac{A_n}n=6$.  
+于是我们得到$\lim_{n\to\infty}\frac{A_n}n\le 6$,结合$A_n\gt 6n$得到$\lim_{n\to\infty}\frac{A_n}n=6$.  
 zgg\_\_给出了数列$4^a(8k+7)$的[分布图](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3063&pid=36011&fromuid=20):  
 ![threesquarestat](../images/threesquarestat.jpg)  
 
 KeyTo9\_Fans也指出，证明(8k+7)的正整数不能表示为3个平方数之和[很容易](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3063&pid=36013&fromuid=20)  
-首先看$a^2 mod 8$的结果：  
-$0^2 mod 8=0$  
-$1^2 mod 8=1$  
-$2^2 mod 8=4$  
-$3^2 mod 8=1$  
-$4^2 mod 8=0$  
-$5^2 mod 8=1$  
-$6^2 mod 8=4$  
-$7^2 mod 8=1$  
+首先看$a^2 \mod 8$的结果：  
+$0^2 \mod 8=0$  
+$1^2 \mod 8=1$  
+$2^2 \mod 8=4$  
+$3^2 \mod 8=1$  
+$4^2 \mod 8=0$  
+$5^2 \mod 8=1$  
+$6^2 \mod 8=4$  
+$7^2 \mod 8=1$  
 只有$0$、$1$、$4$三种结果。  
 其中：  
 $0=0+0+0$  
@@ -84,8 +84,8 @@ $Ax=b=\begin{bmatrix}0\\0\\ \vdots\\0\\1\\0\\ \vdots\\0\end{bmatrix}$。
 如果定义正定二次型$f(x)=x^{\prime}Ax$是一个n维整向量空间到正整数集的映射,  
 那么如果$g(x)$和$f(x)$等价，那么它们的值域相等。证明很简单:  
 设$g(x)=x^{\prime}T^{\prime}ATx=x^{\prime}Bx$,对于任意$a=b^{\prime}Ab$,取$c=T^{-1}b$,那么$a=c^{\prime}Bc$,反之亦然。所以两个函数值域相等。  
-比如一般二阶二次型就是$ax^2+2bxy+cy^2$,写成矩阵形式就是$\begin{bmatrix}x&y\\a&b\\b&c\end{bmatrix}\begin{pmatrix}x\\y\end{pmatrix}$.  
-而三阶二次型就是$ax^2+2bxy+cy^2+2dxz+2eyz+fz^2$,写成矩阵形式为$\begin{bmatrix}x&y&z\\a&b&d\\b&c&e\\d&e&f\end{bmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}$.  
+比如一般二阶二次型就是$ax^2+2bxy+cy^2$,写成矩阵形式就是$\begin{pmatrix}x&y\end{pmatrix}\begin{bmatrix}a&b\\b&c\end{bmatrix}\begin{pmatrix}x\\y\end{pmatrix}$.  
+而三阶二次型就是$ax^2+2bxy+cy^2+2dxz+2eyz+fz^2$,写成矩阵形式为$\begin{pmatrix}x&y&z\end{pmatrix}\begin{bmatrix}a&b&d\\b&c&e\\d&e&f\end{bmatrix}\begin{pmatrix}x\\y\\z\end{pmatrix}$.  
 比如射影几何里面，圆锥曲线方程的一般形式就是其次坐标的二次型。如果对于一个二次型，对于所有非零向量代入结果大于0我们说是正定的.  
 
 # 证明简介
