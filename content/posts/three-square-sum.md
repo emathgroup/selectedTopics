@@ -4,7 +4,7 @@ date: 2020-01-18
 thumbnail: "../thumbnails/unimodular.png"
 tags:
     - "square"
-	- "unimodular"
+    - "unimodular"
 ---
 
 2011年3月[KeyTo9\_Fans提问](https://bbs.emath.ac.cn/thread-3063-1-1.html):
