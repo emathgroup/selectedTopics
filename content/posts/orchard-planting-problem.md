@@ -145,6 +145,8 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 ![15.5](../images/trees/15.5.png)  
 ![15.6](../images/trees/15.6.png)  
 ![15.7](../images/trees/15.7.png)  
+以及[超对称解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82943&fromuid=20)
+![15.s1](../images/trees/15.s1.png)  
 数学星空后来给出了[更多15棵12行的解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82800&fromuid=20) 。  
 
 ### 16棵树
