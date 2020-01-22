@@ -629,6 +629,8 @@ $\frac{VA}{AQ}=1-t, \frac{VF}{FU}=t$
 ### 21棵24行对称解
 [21棵24行一个整数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82937&fromuid=20)竟然可以转化为3阶旋转对称的图
 ![t21.7](../images/trees/21.7.png)
+以及[另外一组实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82941&fromuid=20)也挺漂亮
+![t21.9](../images/trees/21.9.png)
 
 
 [使用nauty库计算自同构群的代码](../attached/trees/equiv.txt)
