@@ -626,6 +626,11 @@ $t^3-t^2-2t+1=0$, $t=0.44504186791262880857780512899358951893$
 $\frac{VA}{AQ}=1-t, \frac{VF}{FU}=t$  
 ![o24.5](../images/trees/o24.5.png)  
 
+### 21棵24行对称解
+[21棵24行一个整数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82937&fromuid=20)竟然可以转化为3阶旋转对称的图
+![t21.7](../images/trees/t21.7.png)
+
+
 [使用nauty库计算自同构群的代码](../attached/trees/equiv.txt)
 
 
