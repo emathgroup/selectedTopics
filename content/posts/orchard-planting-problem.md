@@ -147,6 +147,8 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 ![15.7](../images/trees/15.7.png)  
 以及[旋转对称解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82943&fromuid=20)  
 ![15.s1](../images/trees/15.s1.png)  
+[旋转飞镖解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82991&fromuid=20)
+![15.s2](../images/trees/15.s2.png)  
 数学星空后来给出了[更多15棵12行的解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82800&fromuid=20) 。  
 
 ### 16棵树
@@ -633,7 +635,8 @@ $\frac{VA}{AQ}=1-t, \frac{VF}{FU}=t$
 ![t21.7](../images/trees/21.7.png)
 以及[另外一组实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82941&fromuid=20)也挺漂亮
 ![t21.9](../images/trees/21.9.png)
-
+还有[旋转飞镖形状的图形](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82942&fromuid=20):
+![t21.10)(../images/trees/21.10.png)  
 
 [使用nauty库计算自同构群的代码](../attached/trees/equiv.txt)
 
