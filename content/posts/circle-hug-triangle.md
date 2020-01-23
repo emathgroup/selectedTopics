@@ -2,11 +2,12 @@
 
 title: "世界拥抱日"
 date: "2020-01-22"
-thumbnail: "../images/圆与三角形的重叠面积.jpg"
+thumbnail: "../images/圆与三角形的重叠面积.png"
 author: "mathe"
 tags: 
     - "圆"
     - "三角形" 
+    - "极值"
 ---
 
 1月21日是世界拥抱日，那么一个圆和三角形紧紧拥抱在一起会有什么结果呢？
@@ -34,7 +35,7 @@ Sample Output
 给定一个三角形的三边，和一个圆的半径。两个图形放在平面上，可以移动，请问两者如何拥抱才能有最大公共面积的接触！
 
 hujunhua为这个题目配上如下图片并且[从力学角度对题目进行分析](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1779&pid=42079&fromuid=20):
-![circle_and_triangle](http://yoyowinwin.com:8000/wp-content/uploads/2020/01/yongbaoshijie.png)
+![circle_and_triangle](../images/圆与三角形的重叠面积.png)
 
 当时KeyTo9_Fans并没有得到最优解的表达式，用的是[瞎子爬山的方法]((https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1779&pid=24331&fromuid=20))：  
 ![climb](../images/climb.PNG)  
