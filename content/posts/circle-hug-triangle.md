@@ -37,7 +37,7 @@ Sample Output
 hujunhua为这个题目配上如下图片并且[从力学角度对题目进行分析](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1779&pid=42079&fromuid=20):
 ![circle_and_triangle](../images/圆与三角形的重叠面积.png)
 
-当时KeyTo9_Fans并没有得到最优解的表达式，用的是[瞎子爬山的方法]((https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1779&pid=24331&fromuid=20))：  
+当时KeyTo9_Fans并没有得到最优解的表达式，用的是[瞎子爬山的方法](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1779&pid=24331&fromuid=20)：  
 ![climb](../images/climb.PNG)  
 在三角形内任找一点作为圆心，然后往重叠面积大的方向走。  
 只要每次步长减小得恰当，在几十步之内一定可以爬到山顶。
