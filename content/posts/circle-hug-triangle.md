@@ -48,3 +48,6 @@ hujunhua为这个题目配上如下图片并且[从力学角度对题目进行�
 
 [mathe](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1779&pid=21966&fromuid=20)指出取极值情况很简单，同三边相交的弦长要同对应边长度成正比，即$\frac a{\sqrt{r^2-x^2}}=\frac b{\sqrt{r^2-y^2}} =\frac c{\sqrt{r^2-z^2}}$.
 而原因在于如果记$f(x)=\arccos(x)-x\sqrt{1-x^2}$, 那么$f'(x)=-2\sqrt{1-x^2}$, wayne的结果表明我们需要在线性约束条件$ax+by+cz=2S$的条件下就$f(\frac xr)+f(\frac yr)+f(\frac zr)$的最小值。使用拉格朗日二乘法可以知道极值在$\frac{f'(\frac xr)}a=\frac{f'(\frac yr)}b=\frac{f'(\frac zr)}c$时取到。
+
+[倪举鹏](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1779&pid=51748&fromuid=20)于2014年1月指出上面讨论没有考虑到钝角三角形, 而这种情况的答案会更复杂。
+
