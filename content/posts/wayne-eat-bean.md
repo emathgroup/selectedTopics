@@ -179,16 +179,37 @@ KeyTo9\_Fans[对多种策略进行模拟比较](https://bbs.emath.ac.cn/forum.ph
 
 <Table>
 <tr><td>策略 </td><td>结果</td></tr>
-<tr><td>$g(x_1,x_2)=\frac{x_1+x_2}2$</td><td>$t=0.220408(1)$</td></tr>
-<tr><td>$Score(x)=\frac{|x-\frac12|+a}{|w-x|}$</td><td>$a=0.523(5),t=0.2194662(5)$</td></tr>
-<tr><td>$Score(x)=|w-x^{\prime}|+p|x-\frac12|$ </td><td>$p=0.311(5),t=0.2191733(5)$</td></tr>
-<tr><td>$g(x_1,x_2)=\frac{x_1+x_2+\frac p2}{2+p}$  </td><td>$p=0.478(5),t=0.2191031(5)$</td></tr>
-<tr><td>$g(x_1,x_2)=\frac{\max\{x_1,x_2\}}{1+|x_1-x_2|}$</td><td>$t=0.2190061(5)$</td></tr>
-<tr><td>$g(x_1,x_2)=\frac{x_1+x_2+\frac p2|x_1-x_2|}{2+p|x_1-x_2|}$</td><td>$p=1.753(5),t=0.2189915(5)$</td></tr>
-<tr><td>$g(x_1,x_2)=\frac{x_1+x_2+\frac p2|x_1-x_2|^q}{2+p|x_1-x_2|^q}$</td><td>$p=1.28(3),q=0.72(2),t=0.2189685(5)$</td></tr>
-<tr><td>传说中的最佳策略 </td><td> $t=0.21889630(1)$</td></tr>
-</table>
-
+<tr><td>
+$g(x_1,x_2)=\frac{x_1+x_2}2$
+</td><td>
+$t=0.220408(1)$
+</td></tr><tr><td>
+$Score(x)=\frac{|x-\frac12|+a}{|w-x|}$
+</td><td>
+$a=0.523(5),t=0.2194662(5)$
+</td></tr><tr><td>
+$Score(x)=|w-x^{\prime}|+p|x-\frac12|$
+</td><td>
+$p=0.311(5),t=0.2191733(5)$
+</td></tr><tr><td>
+$g(x_1,x_2)=\frac{x_1+x_2+\frac p2}{2+p}$
+</td><td>
+$p=0.478(5),t=0.2191031(5)$
+</td></tr><tr><td>
+$g(x_1,x_2)=\frac{\max\{x_1,x_2\}}{1+|x_1-x_2|}$
+</td><td>
+$t=0.2190061(5)$
+</td></tr><tr><td>
+$g(x_1,x_2)=\frac{x_1+x_2+\frac p2|x_1-x_2|}{2+p|x_1-x_2|}$
+</td><td>
+$p=1.753(5),t=0.2189915(5)$
+</td></tr><tr><td>
+$g(x_1,x_2)=\frac{x_1+x_2+\frac p2|x_1-x_2|^q}{2+p|x_1-x_2|^q}$
+</td><td>
+$p=1.28(3),q=0.72(2),t=0.2189685(5)$
+</td></tr><tr><td>传说中的最佳策略 </td><td>
+$t=0.21889630(1)$
+</td></tr></table>
 
 通过某种神奇的方法，  
 我终于得到了最佳策略下的平均吃豆时长，  
