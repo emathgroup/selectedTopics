@@ -1,0 +1,22 @@
+#include "stdafx.h"
+#include <conio.h>
+#include <stdlib.h>
+#include <time.h>
+typedef double F;
+int _tmain(int argc, _TCHAR* argv[])
+{
+        FILE *fp;
+        long i,j,n;
+        F w,t,s1,s2,k,x1,x2;
+        srand((unsigned)time(NULL));
+        fopen_s(&fp,"d:\\chidou.txt","w");fprintf(fp,"s={");
+        n=100000000L;
+        for(k=0.0;k<2.01;k+=0.1){
+        for(j=0;j<10L;j++){
+        w=0.5;t=0.0;s1=(F)rand()/RAND_MAX;
+        for(i=0;i<n;i++){s2=(F)rand()/RAND_MAX;
+                if(s1<s2){x1=s1;x1=s1;x2=s2;}else{x1=s2;x2=s1;}
+                if(w<(x1+x2+k/2.0)/(k+2.0)){t+=(w>x1)?w-x1:x1-w;w=x1;s1=x2;}else{t+=(w>x2)?w-x2:x2-w;w=x2;s1=x1;}}
+        printf("j=%3d; k=%f; t=%f\n",j,k,t/n);fprintf(fp,"%f,",t/n);}}fprintf(fp,"0};");
+        return 0;
+}

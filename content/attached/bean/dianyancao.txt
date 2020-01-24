@@ -1,0 +1,55 @@
+Clear["Global`*"];
+testcount = 10;
+mcount = 100;
+vlist = Table[0, {i, 1, mcount + 1}];
+
+For[testindex = 1, testindex <= testcount, testindex++,
+  Print[""];
+  For[p = 0, p <= 1, p += 1/mcount,
+   n = 10^5;
+   k = 2;
+   v = s/n;
+   
+   s = 0;
+   w = Random[];
+   x = Table[Random[], {i, 1, k}];
+   xforecast = 1/2;
+   v1 = 0;
+   v2 = 0;
+   leftx = 0;
+   rightx = 0;
+   
+   sumx = Sum[x[[i]], {i, 1, k}];
+   
+   For[i = 1, i <= n, i++,
+    rightx = Max[x];
+    leftx = Min[x];
+    x[[1]] = leftx;
+    x[[2]] = rightx;
+    
+    If[w > rightx,
+     s = s + Abs[w - rightx]; w = rightx; x[[2]] = Random[]; 
+     sumx = sumx + x[[2]];,
+     If[w < leftx,
+       s = s + Abs[w - leftx]; w = leftx; x[[1]] = Random[]; 
+       sumx = sumx + x[[1]];,
+       
+       v1 = Abs[w - rightx] + p*Abs[leftx - xforecast];
+       v2 = Abs[w - leftx] + p*Abs[rightx - xforecast];
+       If[v1 < v2,
+        s = s + Abs[w - rightx]; w = rightx; x[[2]] = Random[]; 
+        sumx = sumx + x[[2]],
+        s = s + Abs[w - leftx]; w = leftx; x[[1]] = Random[]; 
+        sumx = sumx + x[[1]]
+        ];
+       ];
+     ];
+    ];
+   Print[v];
+   vlist[[p*mcount + 1]] += v;
+   ];
+  ];
+ListPlot[{Table[{(p - 1)/mcount, vlist[[p]]/testcount}, {p, 1, 
+    mcount + 1}]}]
+minv = Ordering[Table[vlist[[p]]/testcount, {p, 1, mcount + 1}], 1]
+vlist[[minv]]/testcount

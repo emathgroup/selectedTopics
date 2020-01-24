@@ -1,0 +1,98 @@
+index2to1(a,b)=
+{
+    a*(a-1)/2+b+1
+}
+
+index2wn(n,a,b)=
+{
+    if(a<b, index2to1(a,b),
+       index2to1(n-a,n-b))
+}
+
+index1to2(n)=
+{
+    local(a,b);
+    a=floor((sqrt(8*n-7)+1)/2);
+    b=n-a*(a-1)/2-1;
+    [a,b]
+}
+
+tcount(n)=
+{
+    n*(n+1)/2
+}
+
+buildm(n,g)=
+{
+    local(t,M,i,b,s);
+    t=tcount(n);
+    M=matrix(t,t);
+    for(u=1,t,
+       i=index1to2(u);
+       b=floor(g[u]);
+       if(b<i[1],
+         for(v=0,b-1,M[u,index2to1(i[1],v)]=1.0/n);
+         M[u,index2to1(i[1],b)]=(g[u]-b)/n,
+         for(v=0,i[1]-1,M[u,index2to1(i[1],v)]=1.0/n);
+         for(v=i[1],b-1,M[u,index2to1(n-i[1],n-v-1)]=1.0/n);
+         M[u,index2to1(n-i[1],n-b-1)]=(g[u]-b)/n
+       );
+       if(b<i[2],
+         for(v=0,b-1,M[u,index2to1(i[2],v)]=1.0/n);
+         M[u,index2to1(i[2],b)]=(g[u]-b)/n,
+         for(v=0,i[2]-1,M[u,index2to1(i[2],v)]=1.0/n);
+         for(v=i[2],b-1,M[u,index2to1(n-i[2],n-v-1)]=1.0/n);
+         M[u,index2to1(n-i[2],n-b-1)]=(g[u]-b)/n
+       );
+    );
+    M
+}
+
+create_g(n)=
+{
+    local(g,t,i);
+    t=tcount(n);
+    g=vector(t);
+    for(u=1,t,
+       i=index1to2(u);
+       g[u]=(i[1]+i[2])/2.0
+    );
+    g
+}
+
+build_sm(n)=
+{
+    buildm(n,create_g(n))
+}
+
+normalize(v)=
+{
+    local(mv,l);
+    l=length(v);mv=0.0;
+    for(u=1,l, mv+=v[u]);
+    for(u=1,l, v[u]/=mv);
+    v
+}
+cost(a,b)=
+{
+   if(a>2*b, a-a^2/2+b^2-b, 2*a*b+a-a^2-b-b^2)
+}
+build_sv(n, i)=
+{
+    local(m,v);
+    m=buildm(n,create_g(n))^i;
+    v=vector(tcount(n),x,1);
+    normalize(v*m~)
+}
+
+average_weight(n,i)=
+{
+    local(v,t,s,c,w);
+    v=build_sv(n,i);
+    t=tcount(n);s=0.0;
+    for(u=1,t,
+       h=index1to2(u);
+       s+=v[u]*cost(h[1]/(n+0.0),h[2]/(n+0.0));
+    );
+    s
+}

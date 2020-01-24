@@ -1,0 +1,39 @@
+
+symbolp(n)=
+{
+    local(p,q,p1,p2,p3);
+    global(gw,gc,gt1,gt2);
+    p=1;
+    for(u=1,n,
+       q=intformal(p,gw); 
+       q=subst(q,gc,gt1);
+       q=subst(q,gw,gt2);
+       p1=subst(q,gt1,gc);
+       p1=subst(p1,gt2,(gc+gw)/2.0);
+       p2=subst(q,gt1,1.0-gw);
+       p3=subst(p2,gt2,1.0-gw);
+       p2=subst(p2,gt2,1-(gc+gw)/2.0);
+       p3=p3-p2;
+       p2=subst(q,gt1,gw);
+       p2=subst(p2,gt2,gw);
+       p=p1+p2+p3;
+    );
+    p
+}
+getdist(n)=
+{
+    local(p,d1,d2,d3,d4);
+    global(gw,gc);
+    p=symbolp(n);
+    d1=p*(-gc^2/2.0+gw^2+gc-gw);
+    d2=p*(-gc^2+2*gw*gc-gw^2+gc-gw);
+    d3=intformal(d1);
+    d4=intformal(d2);
+    d1=subst(d3,gw,gc/2.0);
+    d2=subst(d4,gw,gc);
+    d4=subst(d4,gw,gc/2.0);
+    d2=d2-d4;
+    d1=d1+d2;
+    d1=intformal(d1);
+    2.0*subst(d1,gc,1.0)
+}
