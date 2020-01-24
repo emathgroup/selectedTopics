@@ -84,7 +84,7 @@ mathe对Buffalo的结果[做进一步推导](https://bbs.emath.ac.cn/forum.php?m
 对于$b_{n+1}=b_n+3+\frac{3}{b_n}+\frac{1}{b_n^2}$,假设
 $b_n=3n+\ln(n)+a+\sum_{k=1}^{+\infty}\frac{P_k(\ln(n)+a)}{n^k}$
 
-我们先查看$\frac{P_k(\ln(n+1)+a)}{(n+1)^k}=\frac{P_k(\ln(n)+a+\ln(1+\frac{1}{n}))}{n^k*(1+\frac{1}{n})^k}$,
+我们先查看$\frac{P_k(\ln(n+1)+a)}{(n+1)^k}=\frac{P_k(\ln(n)+a+\ln(1+\frac{1}{n}))}{n^k\times (1+\frac{1}{n})^k}$,
 这个式子展开后是一个无穷级数，可以写成形如$\sum_{h=k}^{+\infty}\frac{Q_{k,h}(\ln(n)+a)}{n^h}$的级数，其中
 每个$Q_{k,h}(.)$都是次数不超过k的多项式,而且同$a$无关。  
 所以从形式上，这种形式的级数应该是可以用于这种递推式的，但是得出的结果不一定是收敛的，如同$\Gamma$函数的Stirling级数就是不收敛的，而只是一种渐近式。  
@@ -94,14 +94,14 @@ $b_n=\frac{3}{y}+X+\sum_{k=1}^{+\infty}P_k(X)y^k$
 然后代入原始递推式即可。  
 比如在Pari/Gp,我们可以输入
 ```bash
-(16:47) gp > 3/y+X+(b00+b01*X)*y+(b10+b11*X+b12*X^2)*y^2+O(y^3)
-%1 = 3*y^-1 + X + (b01*X + b00)*y + (b12*X^2 + b11*X + b10)*y^2 + O(y^3) //这个即$b_n$二阶近似
+(16:47) gp > 3/y+X+(b00+b01\times X)\times y+(b10+b11\times X+b12\times X^2)\times y^2+O(y^3)
+%1 = 3\times y^-1 + X + (b01\times X + b00)\times y + (b12\times X^2 + b11\times X + b10)\times y^2 + O(y^3) //这个即$b_n$二阶近似
 (16:49) gp > subst(%1,y, y/(1+y))
-%3 = 3*y^-1 + (X + 3) + (b01*X + b00)*y + (b12*X^2 + (-b01 + b11)*X + (-b00 + b10))*y^2 + O(y^3)
+%3 = 3\times y^-1 + (X + 3) + (b01\times X + b00)\times y + (b12\times X^2 + (-b01 + b11)\times X + (-b00 + b10))\times y^2 + O(y^3)
 (16:51) gp > subst(%3,X,X+log(1+y))
-%4 = 3*y^-1 + (X + 3) + (b01*X + (b00 + 1))*y + (b12*X^2 + (-b01 + b11)*X + (-b00 + (b01 + (b10 - 1/2))))*y^2 + O(y^3)//这个为$b_{n+1}$的二阶近似
+%4 = 3\times y^-1 + (X + 3) + (b01\times X + (b00 + 1))\times y + (b12\times X^2 + (-b01 + b11)\times X + (-b00 + (b01 + (b10 - 1/2))))\times y^2 + O(y^3)//这个为$b_{n+1}$的二阶近似
 (16:52) gp > %4-%1-3-3/%1-1/%1^2
-%6 = ((-b01 + 1/3)*X + (-b00 + (b01 - 11/18)))*y^2 + O(y^3)
+%6 = ((-b01 + 1/3)\times X + (-b00 + (b01 - 11/18)))\times y^2 + O(y^3)
 ```
 由此得出b01=1/3,b00=-5/18.  
 类似可以得出  

@@ -23,7 +23,7 @@ wayne的问题中也有对应的通解公式和计数公式，它们对优化算
 
 wayne选择特殊的N[对hujunhua的结论进行验证](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2281&pid=27608&fromuid=20):  
 ```bash
-比如当N=7*13*19*31*37*43
+比如当N=7\times 13\times 19\times 31\times 37\times 43
 其解有2^5=32组，如下：
 {a,b}:
 

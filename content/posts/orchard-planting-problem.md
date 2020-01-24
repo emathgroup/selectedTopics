@@ -124,7 +124,7 @@ A(0,1) B(1,0) C(1/4,-1/4) D(-1/2,-1/2) E[1 : -1 : 0] F(1/2,1/2) G(0,-1/2) H[0 : 
 14棵树问题的解（10行，包含无穷远直线）  
 ```bash
 ABDEAFGHBIJNCDIKCFLNDGMNEGJLEHKNFJKMHILM
-solve([-4/3+1*K_X,-8/3+1*L_X,+3+1*L_Y,+9/4+1*J_Y,+2+1*K_Y,+3/2+1*I_Y,+1+1*H_Y,-3+1*G_Y,+4+1*C_Y,+5+1*F_Y,-4/3+1*H_X,-8/3+1*C_X,-8/3+1*F_X,-4/3+1*E_X],[K_X,L_X,L_Y,J_Y,K_Y,I_Y,H_Y,G_Y,C_Y,F_Y,H_X,C_X,F_X,E_X]);
+solve([-4/3+1\times K_X,-8/3+1\times L_X,+3+1\times L_Y,+9/4+1\times J_Y,+2+1\times K_Y,+3/2+1\times I_Y,+1+1\times H_Y,-3+1\times G_Y,+4+1\times C_Y,+5+1\times F_Y,-4/3+1\times H_X,-8/3+1\times C_X,-8/3+1\times F_X,-4/3+1\times E_X],[K_X,L_X,L_Y,J_Y,K_Y,I_Y,H_Y,G_Y,C_Y,F_Y,H_X,C_X,F_X,E_X]);
 print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x=0 M_y=1 N=[0:1:0] ");
 ```
 [去除无穷远点](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82704&fromuid=20) 可以转化为:  
@@ -220,13 +220,13 @@ AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR
 ### [解1]
 ```bash
 print(ADGJBEIJCDHKAFIKCEGLBFHLCJMODINODLMPAHNPGKOPBGMQFJNQAEOQEHMRBKNRCFPRILQRABCSDEFSGHITJKLTMNST);
-solve([+1+3*T_Y+1*T_Y*T_Y,-3/5+1*R_Y-2/5*T_Y,-4/5+1*R_X-1/5*T_Y,-3+1*H_X-1*T_Y,-4+1*P_X-1*T_Y,+1+1*S_X,-2+1*Q_X-1*T_Y,+2+1*O_X+1*T_Y,-1+1*L_Y-1*T_Y,+1+1*P_Y,-3+1*M_Y-2*T_Y,+1+1*D_Y+1*T_Y,-2+1*S_Y-1*T_Y,+1*G_Y-1*T_Y,-1+1*Q_Y,+1+1*N_Y,-2+1*C_Y-1*T_Y,-2+1*B_Y-1*T_Y,-1+1*O_Y,+1+1*H_Y,+2+1*C_X+1*T_Y,-2+1*N_X-1*T_Y,-1+1*L_X,-1+1*T_X,+2+1*M_X+1*T_Y,-2+1*F_X-1*T_Y],[T_Y,R_Y,R_X,H_X,P_X,S_X,Q_X,O_X,L_Y,P_Y,M_Y,D_Y,S_Y,G_Y,Q_Y,N_Y,C_Y,B_Y,O_Y,H_Y,C_X,N_X,L_X,T_X,M_X,F_X]);
+solve([+1+3\times T_Y+1\times T_Y\times T_Y,-3/5+1\times R_Y-2/5\times T_Y,-4/5+1\times R_X-1/5\times T_Y,-3+1\times H_X-1\times T_Y,-4+1\times P_X-1\times T_Y,+1+1\times S_X,-2+1\times Q_X-1\times T_Y,+2+1\times O_X+1\times T_Y,-1+1\times L_Y-1\times T_Y,+1+1\times P_Y,-3+1\times M_Y-2\times T_Y,+1+1\times D_Y+1\times T_Y,-2+1\times S_Y-1\times T_Y,+1\times G_Y-1\times T_Y,-1+1\times Q_Y,+1+1\times N_Y,-2+1\times C_Y-1\times T_Y,-2+1\times B_Y-1\times T_Y,-1+1\times O_Y,+1+1\times H_Y,+2+1\times C_X+1\times T_Y,-2+1\times N_X-1\times T_Y,-1+1\times L_X,-1+1\times T_X,+2+1\times M_X+1\times T_Y,-2+1\times F_X-1\times T_Y],[T_Y,R_Y,R_X,H_X,P_X,S_X,Q_X,O_X,L_Y,P_Y,M_Y,D_Y,S_Y,G_Y,Q_Y,N_Y,C_Y,B_Y,O_Y,H_Y,C_X,N_X,L_X,T_X,M_X,F_X]);
 print("A=[1:0:0] B_x=0 D=[1:D_y:0] E_x=0 E_y=1 F_y=0 G=[1:G_y:0] I_x=0 I_y=0 J=[0:1:0] K_x=1 K_y=0 ");
 ```
 ### [解2]
 ```bash
 ACEFDFHJBCIJBEHKADIKBFGMEJLMBDLNCGNODEGPFKNPAJOPAGLQCKMQCHLRDMOREIQRAHNSFIOSBPQSGHITABRTCDST
-+4/3+1*Ey,-1/2+1*Tx,+3+1*Py,+2+1*Qy,-5/2+1*Qx,+1/2+1*Rx,-3+1*Px,+3/2+1*Lx,-3/2+1*Mx,-2+1*Ry,+1+1*Oy,-2+1*Ly,+2+1*My,-3+1*Nx,+1+1*Ny,-2+1*Hy,-1+1*Ox,-1+1*Sx,-3+1*Kx,+1+1*Ay,+2+1*Ky,-3/2+1*Gx,-3/2+1*Bx,+1+1*Gy,-1+1*Ty,-1+1*Sy
++4/3+1\times Ey,-1/2+1\times Tx,+3+1\times Py,+2+1\times Qy,-5/2+1\times Qx,+1/2+1\times Rx,-3+1\times Px,+3/2+1\times Lx,-3/2+1\times Mx,-2+1\times Ry,+1+1\times Oy,-2+1\times Ly,+2+1\times My,-3+1\times Nx,+1+1\times Ny,-2+1\times Hy,-1+1\times Ox,-1+1\times Sx,-3+1\times Kx,+1+1\times Ay,+2+1\times Ky,-3/2+1\times Gx,-3/2+1\times Bx,+1+1\times Gy,-1+1\times Ty,-1+1\times Sy
 Ey,Tx,Py,Qy,Qx,Rx,Px,Lx,Mx,Ry,Oy,Ly,My,Nx,Ny,Hy,Ox,Sx,Kx,Ay,Ky,Gx,Bx,Gy,Ty,Sy
 Ax=1,Az=0,By=0,Bz=1,Cx=1,Cy=0,Cz=0,Dx=0,Dz=1,Dy=1,Dz=1,Ex=1,Ez=0,Fx=0,Fy=1,Fz=0,Hx=0,Hz=1,Ix=1,Iz=1,Iy=0,Iz=1,Jx=0,Jz=1,Jy=0,Jz=1,
 ```
@@ -234,7 +234,7 @@ Ax=1,Az=0,By=0,Bz=1,Cx=1,Cy=0,Cz=0,Dx=0,Dz=1,Dy=1,Dz=1,Ex=1,Ez=0,Fx=0,Fy=1,Fz=0,
 ### [解3]
 ```bash
 print(BFHICDJKAEGLHJLMDGINAKMNFGKOCIMOEIKPBGMPBCLQFJNQADOQACHRBENRDLPRABJSEHOSCFPSDEFTGHQTIJRTKLST);
-solve([+1-2*T_X+1*P_Y*T_X-2*T_X*T_X,+1*P_Y-1*T_X-1*T_X*T_X,+1*P_Y*P_Y+1*T_X-3*P_Y*T_X,+1*N_X-1*P_Y+1*T_X,-1+1*P_X+1*P_Y-1*T_X,-1+1*S_X+1*T_X,-1+1*S_Y-1*T_X,+1*Q_Y+1*T_X,-2+1*A_Y+1*P_Y-1*T_X,+1+1*L_Y-1*P_Y+1*T_X,+3+1*F_Y-1*P_Y+2*T_X,-1+1*N_Y+1*P_Y,-1+1*K_X+1*P_Y,+1*D_X-1*P_Y,-1+1*G_Y+1*P_Y,-1+1*E_X+1*T_X,-1+1*O_X+1*T_X,-1+1*B_Y+1*P_Y-1*T_X,-1+1*R_X,-1+1*A_X,-1+1*D_Y+1*P_Y,+1*G_X-1*T_X,+1*Q_X-1*T_X,-1+1*R_Y,-1+1*T_Y,+1*K_Y-1*P_Y,+1*E_Y-1*P_Y],[P_Y,T_X,N_X,P_X,S_X,S_Y,Q_Y,A_Y,L_Y,F_Y,N_Y,K_X,D_X,G_Y,E_X,O_X,B_Y,R_X,A_X,D_Y,G_X,Q_X,R_Y,T_Y,K_Y,E_Y]);
+solve([+1-2\times T_X+1\times P_Y\times T_X-2\times T_X\times T_X,+1\times P_Y-1\times T_X-1\times T_X\times T_X,+1\times P_Y\times P_Y+1\times T_X-3\times P_Y\times T_X,+1\times N_X-1\times P_Y+1\times T_X,-1+1\times P_X+1\times P_Y-1\times T_X,-1+1\times S_X+1\times T_X,-1+1\times S_Y-1\times T_X,+1\times Q_Y+1\times T_X,-2+1\times A_Y+1\times P_Y-1\times T_X,+1+1\times L_Y-1\times P_Y+1\times T_X,+3+1\times F_Y-1\times P_Y+2\times T_X,-1+1\times N_Y+1\times P_Y,-1+1\times K_X+1\times P_Y,+1\times D_X-1\times P_Y,-1+1\times G_Y+1\times P_Y,-1+1\times E_X+1\times T_X,-1+1\times O_X+1\times T_X,-1+1\times B_Y+1\times P_Y-1\times T_X,-1+1\times R_X,-1+1\times A_X,-1+1\times D_Y+1\times P_Y,+1\times G_X-1\times T_X,+1\times Q_X-1\times T_X,-1+1\times R_Y,-1+1\times T_Y,+1\times K_Y-1\times P_Y,+1\times E_Y-1\times P_Y],[P_Y,T_X,N_X,P_X,S_X,S_Y,Q_Y,A_Y,L_Y,F_Y,N_Y,K_X,D_X,G_Y,E_X,O_X,B_Y,R_X,A_X,D_Y,G_X,Q_X,R_Y,T_Y,K_Y,E_Y]);
 print("B=[1:B_y:0] C_x=1 C_y=0 F=[1:F_y:0] H=[0:1:0] I=[1:0:0] J_x=0 J_y=1 L_x=0 M_x=0 M_y=0 O_y=0 ");
 
 ```
@@ -297,16 +297,16 @@ print("A=(1,A_y,0) B=(1,B_y,0) C_x=0 C_y=1 D_x=0 E_x=1 E_y=0 F_y=0 G=(0,1,0) H=(
 10棵树5行也只有一类，含两个自由参数  
 ```bash
 print(ABCDAEFGBEHICFHJDGIJ);
-solve([+1*D_Y-1*D_Y*I_X-1*J_Y-1*D_Y*J_Y,+1*G_Y+1*D_Y*I_X,-1+1*J_X+1*J_Y,+1+1*C_Y],[D_Y,G_Y,I_X,J_Y,J_X,C_Y]);
+solve([+1\times D_Y-1\times D_Y\times I_X-1\times J_Y-1\times D_Y\times J_Y,+1\times G_Y+1\times D_Y\times I_X,-1+1\times J_X+1\times J_Y,+1+1\times C_Y],[D_Y,G_Y,I_X,J_Y,J_X,C_Y]);
 print("A=(0,1,0) B=(1,0,0) C=(1,C_y,0) D=(1,D_y,0) E_x=0 E_y=0 F_x=0 F_y=1 G_x=0 H_x=1 H_y=0 I_y=0 ");
 ```
-从上面方程组我们可以手工解得C\_Y = -1, J\_X = 1 - J\_Y, G\_Y = -D\_Y\*I\_X, D\_Y = J\_Y / (1 - I\_X)
+从上面方程组我们可以手工解得C\_Y = -1, J\_X = 1 - J\_Y, G\_Y = -D\_Y\\times I\_X, D\_Y = J\_Y / (1 - I\_X)
 
 <a name=t11></a>
 11棵树6行也只有一类，含两个自由参数：
 ```bash
 print(ABCJADEKBFGKCHIKDFHJEGIJ);
-solve([+1-1*K_X+1*I_Y*K_X,+1*D_Y-1*E_Y-1*D_Y*K_X,+1*A_Y+1*D_Y-1*E_Y,+1+1*H_Y-1*I_Y,-1+1*I_X,-1+1*E_X],[D_Y,E_Y,I_Y,K_X,A_Y,H_Y,I_X,E_X]);
+solve([+1-1\times K_X+1\times I_Y\times K_X,+1\times D_Y-1\times E_Y-1\times D_Y\times K_X,+1\times A_Y+1\times D_Y-1\times E_Y,+1+1\times H_Y-1\times I_Y,-1+1\times I_X,-1+1\times E_X],[D_Y,E_Y,I_Y,K_X,A_Y,H_Y,I_X,E_X]);
 print("A_x=0 B_x=0 B_y=0 C_x=0 C_y=1 D=(1,D_y,0) F=(1,0,0) G_x=1 G_y=0 H=(1,H_y,0) J=(0,1,0) K_y=0 ");
 ```
 
@@ -314,61 +314,61 @@ print("A_x=0 B_x=0 B_y=0 C_x=0 C_y=1 D=(1,D_y,0) F=(1,0,0) G_x=1 G_y=0 H=(1,H_y,
 首先，我们原先求得在复数范围中得出两种点线关系不同的8行的情况，不含自由参数
 ```bash
 print(ABCDAEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL);
-solve([+1-1*L_X+1*L_X*L_X,-1+1*K_X+1*L_X,-1+1*J_Y+1*L_X,+1*G_Y-1*L_X,-1+1*C_Y+1*L_X,-1+1*J_X,-1+1*I_X,-1+1*L_Y,+1*D_Y+1*L_X,-1+1*I_Y],[L_X,K_X,J_Y,G_Y,C_Y,J_X,I_X,L_Y,D_Y,I_Y]);
+solve([+1-1\times L_X+1\times L_X\times L_X,-1+1\times K_X+1\times L_X,-1+1\times J_Y+1\times L_X,+1\times G_Y-1\times L_X,-1+1\times C_Y+1\times L_X,-1+1\times J_X,-1+1\times I_X,-1+1\times L_Y,+1\times D_Y+1\times L_X,-1+1\times I_Y],[L_X,K_X,J_Y,G_Y,C_Y,J_X,I_X,L_Y,D_Y,I_Y]);
 print("A=(0,1,0) B=(1,0,0) C=(1,C_y,0) D=(1,D_y,0) E_x=0 E_y=0 F_x=0 F_y=1 G_x=0 H_x=1 H_y=0 K_y=0 ");
 
 print(AEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL);
-solve([+1-1*L_Y+1*L_Y*L_Y,-1+1*C_Y,+1*C_X+1*L_Y,-1+1*K_Y+1*L_Y,-1+1*L_X+1*L_Y,-1+1*D_Y,+1+1*J_Y-1*L_Y,+1+1*I_Y,-1+1*G_X+1*L_Y,-1+1*D_X+1*L_Y],[L_Y,C_Y,C_X,K_Y,L_X,D_Y,J_Y,I_Y,G_X,D_X]);
+solve([+1-1\times L_Y+1\times L_Y\times L_Y,-1+1\times C_Y,+1\times C_X+1\times L_Y,-1+1\times K_Y+1\times L_Y,-1+1\times L_X+1\times L_Y,-1+1\times D_Y,+1+1\times J_Y-1\times L_Y,+1+1\times I_Y,-1+1\times G_X+1\times L_Y,-1+1\times D_X+1\times L_Y],[L_Y,C_Y,C_X,K_Y,L_X,D_Y,J_Y,I_Y,G_X,D_X]);
 print("A=(1,0,0) B_x=0 B_y=1 E_x=0 E_y=0 F_x=1 F_y=0 G_y=0 H=(0,1,0) I=(1,I_y,0) J=(1,J_y,0) K_x=0 ");
 ```
 <a name=t12.9></a>
 但是在2019年10月发现在[复数范围12棵树可以达到9行]，而这个解[以前被maxima错误过滤]了
 ```bash
-        Parameter [+1+1*t+1*t^2=0]
+        Parameter [+1+1\times t+1\times t^2=0]
         A[0 ,+1 , 0]
         B[+1 ,0 , 0]
-        C[+1 ,+1+1*t , 0]
-        D[+1 ,+1*t , 0]
+        C[+1 ,+1+1\times t , 0]
+        D[+1 ,+1\times t , 0]
         E[0 ,0 , +1]
         F[0 ,+1 , +1]
-        G[0 ,-1*t , +1]
+        G[0 ,-1\times t , +1]
         H[+1 ,0 , +1]
         I[+1 ,+1 , +1]
-        J[+1 ,+1+1*t , +1]
-        K[+1+1*t ,0 , +1]
-        L[-1*t ,+1 , +1]
+        J[+1 ,+1+1\times t , +1]
+        K[+1+1\times t ,0 , +1]
+        L[-1\times t ,+1 , +1]
 ABCDAEFGAHIJBEHKBFILCEJLCGIKDFJKDGHL
 ```
 <a name=t12.7></a>
 其次在实数或整数范围可以有两种不同点线关系达到7行，分别含有一个和两个自由参数:
 ```bash
 print(AHIJBCHKBDILCEJLDGJKEFIKFGHL);
-solve([+1*D_X-1*K_Y,-1+1*E_X+1*K_Y,+1+1*G_Y-1*K_Y,+1+1*J_Y,+1*F_Y-1*K_Y,+1*E_Y-1*K_Y,-1+1*F_X,-1+1*G_X],[D_X,E_X,G_Y,J_Y,F_Y,E_Y,F_X,G_X]);
+solve([+1\times D_X-1\times K_Y,-1+1\times E_X+1\times K_Y,+1+1\times G_Y-1\times K_Y,+1+1\times J_Y,+1\times F_Y-1\times K_Y,+1\times E_Y-1\times K_Y,-1+1\times F_X,-1+1\times G_X],[D_X,E_X,G_Y,J_Y,F_Y,E_Y,F_X,G_X]);
 print("A=(1,A_y,0) B_x=0 B_y=0 C_x=0 C_y=1 D_y=0 H=(0,1,0) I=(1,0,0) J=(1,J_y,0) K_x=0 L_x=1 L_y=0 ");
 print(ABIJACDKBEFLCGILDHJLEHIKFGJK);
-solve([+1*F_Y-1*K_Y+1*E_X*K_Y,-1+1*B_X+1*F_Y,+1*F_X+1*F_Y-1*K_Y,+1*G_X-1*K_Y,+1*H_Y+1*K_Y,+1+1*J_Y,+1*E_Y-1*F_Y,+1*B_Y-1*F_Y],[E_X,F_Y,K_Y,B_X,F_X,G_X,H_Y,J_Y,E_Y,B_Y]);
+solve([+1\times F_Y-1\times K_Y+1\times E_X\times K_Y,-1+1\times B_X+1\times F_Y,+1\times F_X+1\times F_Y-1\times K_Y,+1\times G_X-1\times K_Y,+1\times H_Y+1\times K_Y,+1+1\times J_Y,+1\times E_Y-1\times F_Y,+1\times B_Y-1\times F_Y],[E_X,F_Y,K_Y,B_X,F_X,G_X,H_Y,J_Y,E_Y,B_Y]);
 print("A_x=0 A_y=1 C_x=0 C_y=0 D=(0,1,0) G_y=0 H=(1,H_y,0) I_x=1 I_y=0 J=(1,J_y,0) K_x=0 L=(1,0,0) ");
 ```
 
 13棵树9行还留下不超过6种模式（还需要再验算一下是否每种都是合法的），其中第二种有整数解:
 ```bash
 print(ADEFAGHIBDGJBHKLCDKMCEILEHJMFGLMFIJK);
-solve([+1+1*M_Y+1/2*M_Y*M_Y,+2+1*L_Y+2*M_Y,+1+1*K_X,-1+1*L_X-1*M_Y,+1+1*B_X+1*M_Y,+2+1*C_Y+1*M_Y,-1+1*C_X-1*M_Y,-1+1*I_X-1*M_Y,+1*K_Y+1*M_Y,+1+1*H_Y,+1*I_Y+1*M_Y,+1*F_Y+1*M_Y],[M_Y,L_Y,K_X,L_X,B_X,C_Y,C_X,I_X,K_Y,H_Y,I_Y,F_Y]);
+solve([+1+1\times M_Y+1/2\times M_Y\times M_Y,+2+1\times L_Y+2\times M_Y,+1+1\times K_X,-1+1\times L_X-1\times M_Y,+1+1\times B_X+1\times M_Y,+2+1\times C_Y+1\times M_Y,-1+1\times C_X-1\times M_Y,-1+1\times I_X-1\times M_Y,+1\times K_Y+1\times M_Y,+1+1\times H_Y,+1\times I_Y+1\times M_Y,+1\times F_Y+1\times M_Y],[M_Y,L_Y,K_X,L_X,B_X,C_Y,C_X,I_X,K_Y,H_Y,I_Y,F_Y]);
 print("A_x=0 A_y=1 B_y=0 D_x=0 D_y=0 E=(0,1,0) F_x=0 G_x=1 G_y=0 H=(1,H_y,0) J=(1,0,0) M=(1,M_y,0) ");
 print(ABEFAGHMBIJMCEKMCGILDFLMDGJKEHJLFHIK);
-solve([+2+1*L_Y,+1+1*L_X,-4+1*C_Y,-3+1*G_Y,-2+1*K_Y,+4+1*D_Y,+1+1*J_Y,-1+1*K_X,-1+1*H_Y,-1+1*C_X,+1+1*D_X,+1+1*F_X],[L_Y,L_X,C_Y,G_Y,K_Y,D_Y,J_Y,K_X,H_Y,C_X,D_X,F_X]);
+solve([+2+1\times L_Y,+1+1\times L_X,-4+1\times C_Y,-3+1\times G_Y,-2+1\times K_Y,+4+1\times D_Y,+1+1\times J_Y,-1+1\times K_X,-1+1\times H_Y,-1+1\times C_X,+1+1\times D_X,+1+1\times F_X],[L_Y,L_X,C_Y,G_Y,K_Y,D_Y,J_Y,K_X,H_Y,C_X,D_X,F_X]);
 print("A=(1,0,0) B_x=0 B_y=0 E_x=1 E_y=0 F_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 I_y=1 J_x=0 M=(0,1,0) ");
 print(BCDEBFGHBIJKCFILCGJMDFKMDHJLEGKLEHIM);
-solve([+1-1*M_X+1*M_X*M_X,-1+1*L_X+1*M_X,-1+1*K_Y+1*M_X,+1*H_Y-1*M_X,-1+1*D_Y+1*M_X,-1+1*K_X,-1+1*J_X,-1+1*M_Y,+1*E_Y+1*M_X,-1+1*J_Y],[M_X,L_X,K_Y,H_Y,D_Y,K_X,J_X,M_Y,E_Y,J_Y]);
+solve([+1-1\times M_X+1\times M_X\times M_X,-1+1\times L_X+1\times M_X,-1+1\times K_Y+1\times M_X,+1\times H_Y-1\times M_X,-1+1\times D_Y+1\times M_X,-1+1\times K_X,-1+1\times J_X,-1+1\times M_Y,+1\times E_Y+1\times M_X,-1+1\times J_Y],[M_X,L_X,K_Y,H_Y,D_Y,K_X,J_X,M_Y,E_Y,J_Y]);
 print("B=(0,1,0) C=(1,0,0) D=(1,D_y,0) E=(1,E_y,0) F_x=0 F_y=0 G_x=0 G_y=1 H_x=0 I_x=1 I_y=0 L_y=0 ");
 print(AEFGAHIMBEHJBFKMCELMCGIKDGJMDHKLFIJL);
-solve([+1+1*L_Y-1*L_Y*L_Y,+1+1*D_Y-1*L_Y,-1+1*C_Y-1*L_Y,+2+1*H_Y-1*L_Y,+1+1*J_Y,-1+1*B_Y+1*L_Y,+1*L_X+1*L_Y,-1+1*J_X,+1*E_X+1*L_Y,+1*C_X+1*L_Y,-1+1*D_X,+1+1*I_Y],[L_Y,D_Y,C_Y,H_Y,J_Y,B_Y,L_X,J_X,E_X,C_X,D_X,I_Y]);
+solve([+1+1\times L_Y-1\times L_Y\times L_Y,+1+1\times D_Y-1\times L_Y,-1+1\times C_Y-1\times L_Y,+2+1\times H_Y-1\times L_Y,+1+1\times J_Y,-1+1\times B_Y+1\times L_Y,+1\times L_X+1\times L_Y,-1+1\times J_X,+1\times E_X+1\times L_Y,+1\times C_X+1\times L_Y,-1+1\times D_X,+1+1\times I_Y],[L_Y,D_Y,C_Y,H_Y,J_Y,B_Y,L_X,J_X,E_X,C_X,D_X,I_Y]);
 print("A=(1,0,0) B_x=0 E_y=0 F_x=0 F_y=0 G_x=1 G_y=0 H=(1,H_y,0) I=(1,I_y,0) K_x=0 K_y=1 M=(0,1,0) ");
 print(ABLMAFGHBIJKCFILCGJMDFKMDHJLEGKLEHIM);
-solve([+1+1*M_Y+1*M_Y*M_Y,+1+1*K_X+1*M_Y,+1/3+1*B_Y-1/3*M_Y,+1+1*D_X,+1*E_X+1*M_Y,+1*J_X-1*M_Y,-1+1*C_X-1*M_Y,+1*D_Y+1*M_Y,-1+1*E_Y,-1+1*K_Y,+1*J_Y+1*M_Y,+1*H_Y+1*M_Y],[M_Y,K_X,B_Y,D_X,E_X,J_X,C_X,D_Y,E_Y,K_Y,J_Y,H_Y]);
+solve([+1+1\times M_Y+1\times M_Y\times M_Y,+1+1\times K_X+1\times M_Y,+1/3+1\times B_Y-1/3\times M_Y,+1+1\times D_X,+1\times E_X+1\times M_Y,+1\times J_X-1\times M_Y,-1+1\times C_X-1\times M_Y,+1\times D_Y+1\times M_Y,-1+1\times E_Y,-1+1\times K_Y,+1\times J_Y+1\times M_Y,+1\times H_Y+1\times M_Y],[M_Y,K_X,B_Y,D_X,E_X,J_X,C_X,D_Y,E_Y,K_Y,J_Y,H_Y]);
 print("A=(0,1,0) B=(1,B_y,0) C_y=0 F_x=0 F_y=0 G_x=0 G_y=1 H_x=0 I_x=1 I_y=0 L=(1,0,0) M=(1,M_y,0) ");
 print(ABKLAGHMBIJMCDKMCGILDHJLEFLMEHIKFGJK);
-solve([+1-1*K_X*K_X,-1+1*F_Y+1*K_X,-1+1*D_Y+1*K_X,+1+1*E_Y-1*K_X,+1+1*C_Y-1*K_X,+1*I_Y-1*K_X,-1+1*E_X,-1+1*F_X,+1*G_Y+1*K_X,+1*C_X-1*K_X,+1+1*H_Y,+1*D_X-1*K_X],[K_X,F_Y,D_Y,E_Y,C_Y,I_Y,E_X,F_X,G_Y,C_X,H_Y,D_X]);
+solve([+1-1\times K_X\times K_X,-1+1\times F_Y+1\times K_X,-1+1\times D_Y+1\times K_X,+1+1\times E_Y-1\times K_X,+1+1\times C_Y-1\times K_X,+1\times I_Y-1\times K_X,-1+1\times E_X,-1+1\times F_X,+1\times G_Y+1\times K_X,+1\times C_X-1\times K_X,+1+1\times H_Y,+1\times D_X-1\times K_X],[K_X,F_Y,D_Y,E_Y,C_Y,I_Y,E_X,F_X,G_Y,C_X,H_Y,D_X]);
 print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x=1 L_y=0 M=(0,1,0) ");
 ```
 
@@ -383,7 +383,7 @@ print("A=(1,0,0) B_x=0 B_y=0 G=(1,G_y,0) H=(1,H_y,0) I_x=0 J_x=0 J_y=1 K_y=0 L_x
 2019年11月29日发现24棵33行的复数解:  
 ```bash
 print(ABGIAFHLBCHJCDIKDEJLEFGKAMOSBNPTCOQUDPRVEMQWFNRXAKRTBLMUCGNVDHOWEIPXFJQSGRSUHMTVINUWJOVXKPSWLQTXGJMPHKNQILORACWXAEUVBDSXBFVWCESTDFTU);
-solve([+1-3*X_Y+3*X_Y*X_Y,+2/7+1*Q_Y-12/7*X_Y,+1*J_X-2*X_Y,-8/7+1*Q_X+6/7*X_Y,-2/3+1*S_X,-1/2+1*R_Y-1/2*X_Y,-1+1*V_X+1*X_Y,+1*T_Y-3/2*X_Y,+1*D_X-1*X_Y,-3/2+1*N_X+3/2*X_Y,-1/2+1*P_X-1/2*X_Y,+1*U_Y-2*X_Y,+3+1*G_Y-3*X_Y,+1/2+1*K_Y-3/2*X_Y,-1+1*I_Y+3*X_Y,-1/2+1*T_X,-2/3+1*O_Y,+1+1*E_Y-3*X_Y,-2/3+1*O_X,+1*M_Y-2*X_Y,+1*P_Y-3/2*X_Y,-2/3+1*M_X,-1+1*W_X,-1+1*X_X,-1+1*U_X+1*X_Y,-1+1*E_X+1*X_Y,+1*D_Y-1*X_Y,+1*S_Y-1*X_Y,-1+1*W_Y,-1+1*V_Y,+1*N_Y-3/2*X_Y,+1*L_Y-2*X_Y,-1/2+1*R_X,-1/2+1*K_X],[X_Y,Q_Y,J_X,Q_X,S_X,R_Y,V_X,T_Y,D_X,N_X,P_X,U_Y,G_Y,K_Y,I_Y,T_X,O_Y,E_Y,O_X,M_Y,P_Y,M_X,W_X,X_X,U_X,E_X,D_Y,S_Y,W_Y,V_Y,N_Y,L_Y,R_X,K_X]);
+solve([+1-3\times X_Y+3\times X_Y\times X_Y,+2/7+1\times Q_Y-12/7\times X_Y,+1\times J_X-2\times X_Y,-8/7+1\times Q_X+6/7\times X_Y,-2/3+1\times S_X,-1/2+1\times R_Y-1/2\times X_Y,-1+1\times V_X+1\times X_Y,+1\times T_Y-3/2\times X_Y,+1\times D_X-1\times X_Y,-3/2+1\times N_X+3/2\times X_Y,-1/2+1\times P_X-1/2\times X_Y,+1\times U_Y-2\times X_Y,+3+1\times G_Y-3\times X_Y,+1/2+1\times K_Y-3/2\times X_Y,-1+1\times I_Y+3\times X_Y,-1/2+1\times T_X,-2/3+1\times O_Y,+1+1\times E_Y-3\times X_Y,-2/3+1\times O_X,+1\times M_Y-2\times X_Y,+1\times P_Y-3/2\times X_Y,-2/3+1\times M_X,-1+1\times W_X,-1+1\times X_X,-1+1\times U_X+1\times X_Y,-1+1\times E_X+1\times X_Y,+1\times D_Y-1\times X_Y,+1\times S_Y-1\times X_Y,-1+1\times W_Y,-1+1\times V_Y,+1\times N_Y-3/2\times X_Y,+1\times L_Y-2\times X_Y,-1/2+1\times R_X,-1/2+1\times K_X],[X_Y,Q_Y,J_X,Q_X,S_X,R_Y,V_X,T_Y,D_X,N_X,P_X,U_Y,G_Y,K_Y,I_Y,T_X,O_Y,E_Y,O_X,M_Y,P_Y,M_X,W_X,X_X,U_X,E_X,D_Y,S_Y,W_Y,V_Y,N_Y,L_Y,R_X,K_X]);
 print("A=(0,1,0) B=(1,0,0) C_x=1 C_y=0 F_x=0 F_y=1 G=(1,G_y,0) H_x=0 H_y=0 I=(1,I_y,0) J_y=0 L_x=0 ");
 ```
 
@@ -392,30 +392,30 @@ print("A=(0,1,0) B=(1,0,0) C_x=1 C_y=0 F_x=0 F_y=1 G=(1,G_y,0) H_x=0 H_y=0 I=(1,
 <a name=t26.35></a>
 26棵树35行的复数解:
 ```bash
-        Parameter [+1-1*t+2*t^2-2*t^3+1*t^4=0]                                                                                                   A[+1 ,0 , +1]
-        B[+1*t ,-1*t , +1]
-        C[-1*t^3 ,+1+1*t^2+1*t^3 , +1]
-        D[+1-1*t+1*t^2-1*t^3 ,+1+1*t^3 , +1]
-        E[+1 ,+1*t-1*t^2+1*t^3 , +1]
-        F[+1*t ,0 , +1]
-        G[-1*t^3 ,+1*t^3 , +1]
-        H[+1-1*t+1*t^2-1*t^3 ,+1*t^3 , +1]
-        I[+1 ,-1*t^2+1*t^3 , +1]
-        J[+1*t ,-1*t^2+1*t^3 , +1]
-        K[-1*t^3 ,+1+1*t^2 , +1]
-        L[+1-1*t+1*t^2-1*t^3 ,+1*t-1*t^2+1*t^3 , +1]
-        M[+1 ,-1+1*t-1*t^2+1*t^3 , 0]
+        Parameter [+1-1\times t+2\times t^2-2\times t^3+1\times t^4=0]                                                                                                   A[+1 ,0 , +1]
+        B[+1\times t ,-1\times t , +1]
+        C[-1\times t^3 ,+1+1\times t^2+1\times t^3 , +1]
+        D[+1-1\times t+1\times t^2-1\times t^3 ,+1+1\times t^3 , +1]
+        E[+1 ,+1\times t-1\times t^2+1\times t^3 , +1]
+        F[+1\times t ,0 , +1]
+        G[-1\times t^3 ,+1\times t^3 , +1]
+        H[+1-1\times t+1\times t^2-1\times t^3 ,+1\times t^3 , +1]
+        I[+1 ,-1\times t^2+1\times t^3 , +1]
+        J[+1\times t ,-1\times t^2+1\times t^3 , +1]
+        K[-1\times t^3 ,+1+1\times t^2 , +1]
+        L[+1-1\times t+1\times t^2-1\times t^3 ,+1\times t-1\times t^2+1\times t^3 , +1]
+        M[+1 ,-1+1\times t-1\times t^2+1\times t^3 , 0]
         N[0 ,+1 , +1]
-        O[+1*t^2-1*t^3 ,+1-1*t+1*t^2 , +1]
-        P[+1*t-1*t^2 ,+1*t^2 , +1]
-        Q[+1 ,-1+1*t-2*t^2+1*t^3 , 0]
-        R[0 ,+1-1*t+1*t^2 , +1]
-        S[+1*t^2-1*t^3 ,+1*t^3 , +1]
-        T[+1*t-1*t^2 ,+1*t-1*t^2+1*t^3 , +1]
+        O[+1\times t^2-1\times t^3 ,+1-1\times t+1\times t^2 , +1]
+        P[+1\times t-1\times t^2 ,+1\times t^2 , +1]
+        Q[+1 ,-1+1\times t-2\times t^2+1\times t^3 , 0]
+        R[0 ,+1-1\times t+1\times t^2 , +1]
+        S[+1\times t^2-1\times t^3 ,+1\times t^3 , +1]
+        T[+1\times t-1\times t^2 ,+1\times t-1\times t^2+1\times t^3 , +1]
         U[+1 ,0 , 0]
         V[0 ,0 , +1]
-        W[+1*t^2-1*t^3 ,-1*t^2+1*t^3 , +1]
-        X[+1*t-1*t^2 ,+1-1*t+1*t^2 , +1]
+        W[+1\times t^2-1\times t^3 ,-1\times t^2+1\times t^3 , +1]
+        X[+1\times t-1\times t^2 ,+1-1\times t+1\times t^2 , +1]
         Y[0 ,+1 , 0]
 AEIYBFJYCGKYDHLYMQUYNRVYOSWYPTXYABMOALNXBCNPCDOQDEPREFQSFGRTGHSUHITVIJUWJKVXKLMWAFUVAHPQBGVWBIQRCHWXCJRSDIMXDKSTEJMNELTUFKNOGLOPMPSVNQTWORUX
 ```
@@ -557,28 +557,28 @@ ABCDAGLQAKOUAFNTBFJSBKRTBGPUBHLVBEIMCGKNCHOTCELUCIQVDEGJDINSDLORDMQUEHKSFGHIFKPV
 2019年12月6日[发现22棵28行实数解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=3953&pid=82150&fromuid=20)  
 ![o22](../images/trees/o22.png)  
 ```bash
-        [+1*t^3+6*t^2+5*t+1]
+        [+1\times t^3+6\times t^2+5\times t+1]
         A[+1,+0,0];
-        B[+1,1*t-2*(1*t^2+6*t+3)+2,0];
+        B[+1,1\times t-2\times (1\times t^2+6\times t+3)+2,0];
         C[+1,+1,0];
-        D(-1*(1*t^2+6*t+3),-1*t+2*(1*t^2+6*t+3))
-        E(+1,-1*(1*t^2+6*t+3))
-        F(1*t-1*(1*t^2+6*t+3)+1,1*t+1)
-        G(-t,-2*t+1*(1*t^2+6*t+3)-1)
+        D(-1\times (1\times t^2+6\times t+3),-1\times t+2\times (1\times t^2+6\times t+3))
+        E(+1,-1\times (1\times t^2+6\times t+3))
+        F(1\times t-1\times (1\times t^2+6\times t+3)+1,1\times t+1)
+        G(-t,-2\times t+1\times (1\times t^2+6\times t+3)-1)
         H(-t,-t)
-        I(1*t-1*(1*t^2+6*t+3)+1,(1*t^2+6*t+3))
-        J(-1*(1*t^2+6*t+3)+1,-1*t+1*(1*t^2+6*t+3)-1)
+        I(1\times t-1\times (1\times t^2+6\times t+3)+1,(1\times t^2+6\times t+3))
+        J(-1\times (1\times t^2+6\times t+3)+1,-1\times t+1\times (1\times t^2+6\times t+3)-1)
         K(+0,+1)
         L(+1,+0)
-        M(-1*(1*t^2+6*t+3),-1*t+1*(1*t^2+6*t+3))
-        N(-1*(1*t^2+6*t+3)+1,-1*t+1*(1*t^2+6*t+3))
+        M(-1\times (1\times t^2+6\times t+3),-1\times t+1\times (1\times t^2+6\times t+3))
+        N(-1\times (1\times t^2+6\times t+3)+1,-1\times t+1\times (1\times t^2+6\times t+3))
         O(+0,+0)
-        P(-t,-1*t+1*(1*t^2+6*t+3))
-        Q(1*t-1*(1*t^2+6*t+3)+1,+0)
+        P(-t,-1\times t+1\times (1\times t^2+6\times t+3))
+        Q(1\times t-1\times (1\times t^2+6\times t+3)+1,+0)
         R(+1,+1)
-        S(-1*(1*t^2+6*t+3),-1*t+1*(1*t^2+6*t+3)-1)
-        T(-1*(1*t^2+6*t+3)+1,+1)
-        U(+0,-1*t+1*(1*t^2+6*t+3)-1)
+        S(-1\times (1\times t^2+6\times t+3),-1\times t+1\times (1\times t^2+6\times t+3)-1)
+        T(-1\times (1\times t^2+6\times t+3)+1,+1)
+        U(+0,-1\times t+1\times (1\times t^2+6\times t+3)-1)
         V[+0,+1,0];
 ABCVKOUVJNTVDMSVELRVGHPVFIQVALOQAMNPAJSUAKRTJKPQEHKNDIJOFHJLGIKMDETUEFMODGLNFGRSCHORCINSBHMUBILTBEQSBDPRCGQUCFPT
 ```
@@ -589,31 +589,31 @@ wayne对这个图[进行射影变换后我们发现图形很像正七边形](htt
 <a name=t25.35></a>
 2019年12月10日发现25棵35行复数解  
 ```bash
-        [+1*t^4+4*t^3+8*t^2+5*t+1]
-        A(-2*t^3 - 7*t^2 - 12*t - 3,t^3 + 4*t^2 + 7*t + 3)
-        B(-2*t^3 - 7*t^2 - 12*t - 4,t^2 + t + 1)
-        C(-t^3 - 4*t^2 - 8*t - 3,-t^3 - 4*t^2 - 6*t - 1)
-        D(-2*t^3 - 7*t^2 - 12*t - 4,-t)
+        [+1\times t^4+4\times t^3+8\times t^2+5\times t+1]
+        A(-2\times t^3 - 7\times t^2 - 12\times t - 3,t^3 + 4\times t^2 + 7\times t + 3)
+        B(-2\times t^3 - 7\times t^2 - 12\times t - 4,t^2 + t + 1)
+        C(-t^3 - 4\times t^2 - 8\times t - 3,-t^3 - 4\times t^2 - 6\times t - 1)
+        D(-2\times t^3 - 7\times t^2 - 12\times t - 4,-t)
         E(+1,+0)
-        F(+1, -t^3 - 4*t^2 - 7*t - 2)
-        G(-t^3 - 4*t^2 - 8*t - 3, -t^3 - 4*t^2 - 7*t - 2)
+        F(+1, -t^3 - 4\times t^2 - 7\times t - 2)
+        G(-t^3 - 4\times t^2 - 8\times t - 3, -t^3 - 4\times t^2 - 7\times t - 2)
         H(+1,t+1)
-        I(-2*t^3 - 7*t^2 - 12*t - 3,+0)
-        J(-t^3 - 4*t^2 - 8*t - 3,t+1)
-        K(-2*t^3 - 7*t^2 - 12*t - 3, -t^3 - 3*t^2 - 5*t - 1)
-        L(-2*t^3 - 7*t^2 - 12*t - 4, -t^3 - 3*t^2 - 5*t - 1)
+        I(-2\times t^3 - 7\times t^2 - 12\times t - 3,+0)
+        J(-t^3 - 4\times t^2 - 8\times t - 3,t+1)
+        K(-2\times t^3 - 7\times t^2 - 12\times t - 3, -t^3 - 3\times t^2 - 5\times t - 1)
+        L(-2\times t^3 - 7\times t^2 - 12\times t - 4, -t^3 - 3\times t^2 - 5\times t - 1)
         M[+1,+0,0];
-        N(-3*t^3 - 11*t^2 - 20*t - 7,+1)
-        O(-2*t^3-7*t^2-13*t-4,+1)
+        N(-3\times t^3 - 11\times t^2 - 20\times t - 7,+1)
+        O(-2\times t^3-7\times t^2-13\times t-4,+1)
         P(+0,+1)
-        Q[+1,t^3 + 3*t^2 + 6*t + 2,0];
+        Q[+1,t^3 + 3\times t^2 + 6\times t + 2,0];
         R[+1,t,0];
-        S(-2*t^3-7*t^2-13*t-4,1*t^3+3*t^2+5*t+2)
-        T(+0,-2*t^3-7*t^2-13*t-4)
+        S(-2\times t^3-7\times t^2-13\times t-4,1\times t^3+3\times t^2+5\times t+2)
+        T(+0,-2\times t^3-7\times t^2-13\times t-4)
         U(+0,+0)
-        V(-3*t^3 - 11*t^2 - 20*t - 7,t+1)
-        W(-2*t^3-7*t^2-13*t-4, -t^3 - 4*t^2 - 7*t - 2)
-        X(-3*t^3 - 11*t^2 - 20*t - 7, -t^3 - 3*t^2 - 5*t - 1)
+        V(-3\times t^3 - 11\times t^2 - 20\times t - 7,t+1)
+        W(-2\times t^3-7\times t^2-13\times t-4, -t^3 - 4\times t^2 - 7\times t - 2)
+        X(-3\times t^3 - 11\times t^2 - 20\times t - 7, -t^3 - 3\times t^2 - 5\times t - 1)
         Y[+0,+1,0];
 EFHYCGJYAIKYBDLYMQRYPTUYNVXYOSWYFGMWKLMXHJMVEIMUHKUWCLVWBCSTADUXEJRSFKQTEGQXDIRVILNTFIPSGLOUAEOTBKPVDJPWBJOXDGNSAHPRCFNRCHOQABNQMNOPRTWXQSUV
 ```

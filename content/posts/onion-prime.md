@@ -73,7 +73,7 @@ using namespace std;
 typedef CHugeInt integer;
 typedef list<integer> THE_LIST;
 THE_LIST list1,list2;
-THE_LIST *orig_list, *new_list, *tmp_list;
+THE_LIST \times orig_list, \times new_list, \times tmp_list;
 #define MAX_N  50
  
    int i,j;
@@ -86,12 +86,12 @@ THE_LIST *orig_list, *new_list, *tmp_list;
     printf("Total 3 for length 1\n");
     for(i=2;i<=MAX_N;i++){
         new_list->clear();
-        v*=10;
+        v\times =10;
         THE_LIST::iterator it;
         for(it=orig_list->begin();it!=orig_list->end();++it){
-            integer& u=*it;
+            integer& u=\times it;
             for(j=1;j<=9;j++){
-                integer cur(j*v+u);
+                integer cur(j\times v+u);
                 if(CHugeInt(cur).IsPrime()){
                     new_list->push_back(cur);
                     printf("%s\n",cur.GetStrA(FS_NORMAL));
