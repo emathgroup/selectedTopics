@@ -180,7 +180,7 @@ KeyTo9\_Fans[对多种策略进行模拟比较](https://bbs.emath.ac.cn/forum.ph
 |策略|结果|
 |----|----|
 |$g(x_1,x_2)=\frac{x_1+x_2}2$|$t=0.220408(1)$|
-|$Score(x)=\frac{\mid x-\frac12\mid+a}{\mid w-x\mid}|$a=0.523(5),t=0.2194662(5)$|
+|$Score(x)=\frac{\mid x-\frac12\mid+a}{\mid w-x\mid}$|$a=0.523(5),t=0.2194662(5)$|
 |$Score(x)=\mid w-x^{\prime}\mid +p\mid x-\frac12\mid $| $p=0.311(5),t=0.2191733(5)$|
 |$g(x_1,x_2)=\frac{x_1+x_2+\frac p2}{2+p}$|$p=0.478(5),t=0.2191031(5)$|
 |$g(x_1,x_2)=\frac{\max\{x_1,x_2\}}{1+\mid x_1-x_2\mid}$|$t=0.2190061(5)$|
