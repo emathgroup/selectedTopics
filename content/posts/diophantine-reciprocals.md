@@ -21,19 +21,18 @@ $\left. \frac{x+y}{(x,y)}\,\middle|\,(x,y) \right.$
 
 但要计算出$f(10^{12})$,还需要进一步的挖掘,优化.  
 Lwins_G给出进一步[公式推导过程](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5423&pid=52667&fromuid=20):  
-直接计算$ \sum_{n=1}^{\sqrt{L}} \sum_{\begin{subarray}{cc} m=1 \\ (n,m)=1 \end{subarray}}^{n-1} \left[ \frac{L}{n(n+m)} \right] $只需要$\mathcal{O}(L)$的时间，我认为这是可以承受的。不过我们也可试着优化一下：  
-$\begin{split}
-\sum_{n=1}^{\sqrt{L}} \sum_{\begin{subarray}{cc} m=1 \\ (n,m)=1 \end{subarray}}^{n-1} \left[ \frac{L}{n(n+m)} \right]
-&=\sum_{n=1}^{\sqrt{L}} \sum_{\begin{subarray}{cc} s=n+1 \\ (n,s)=1 \end{subarray}}^{2n-1} \left[ \frac{L}{ns} \right] \\
-&=\sum_{n=1}^{\sqrt{L}} \sum_{s=n+1}^{2n-1} \left[ \frac{L}{ns} \right] \left[ \frac{1}{(n,s)} \right] \\
-&=\sum_{n=1}^{\sqrt{L}} \sum_{s=n+1}^{2n-1} \left[ \frac{L}{ns} \right] \sum_{d | (n,s)} \mu(d) \\
-&=\sum_{n=1}^{\sqrt{L}} \sum_{d | n} \sum_{\begin{subarray}{cc} n < s \leq 2n-1 \\ d | s \end{subarray}} \left[ \frac{L}{ns} \right] \mu(d) \\
-&=\sum_{n=1}^{\sqrt{L}} \sum_{d | n} \mu(d) \sum_{\frac{n}{d} < s' \leq \frac{2n-1}{d}} \left[ \frac{L}{nds'} \right] \\
-&=\sum_{n=1}^{\sqrt{L}} \sum_{d | n} \mu(d) \left( \psi\left( \left[ \frac{L}{nd} \right],\frac{2n-1}{d}\right) - \psi\left(\left[ \frac{L}{nd} \right],\frac{n}{d}\right) \right)
-\end{split}
-$  
-计算$\displaystyle \psi(x,y) = \sum_{n=1}^{y} \left[ \frac{x}{n} \right]$显然是$\mathcal{O}(\sqrt{x})$的。
-于是使用该公式可以做到在$\mathcal{O}(L^{3/4})$的复杂度内计算。  
+直接计算$ \sum\limits_{n=1}^{\sqrt{L}} \sum\limits_{m=1,(n,m)=1}^{n-1} \left[ \frac{L}{n(n+m)} \right] $只需要$O(L)$的时间，我认为这是可以承受的。不过我们也可试着优化一下：  
+$$
+\sum_{n=1}^{\sqrt{L}} \sum_{ m=1,(n,m)=1 }^{n-1} [ \frac{L}{n(n+m)} ]
+=\sum_{n=1}^{\sqrt{L}} \sum_{s=n+1 , (n,s)=1 }^{2n-1} \left[ \frac{L}{ns} \right] 
+=\sum_{n=1}^{\sqrt{L}} \sum_{s=n+1}^{2n-1} \left[ \frac{L}{ns} \right] \left[ \frac{1}{(n,s)} \right] 
+=\sum_{n=1}^{\sqrt{L}} \sum_{s=n+1}^{2n-1} \left[ \frac{L}{ns} \right] \sum_{d | (n,s)} \mu(d) 
+=\sum_{n=1}^{\sqrt{L}} \sum_{d | n} \sum_{ n < s \leq 2n-1, d | s } \left[ \frac{L}{ns} \right] \mu(d) 
+=\sum_{n=1}^{\sqrt{L}} \sum_{d | n} \mu(d) \sum_{\frac{n}{d} < s^{\prime} \leq \frac{2n-1}{d}} \left[ \frac{L}{nds^{\prime}} \right] 
+=\sum_{n=1}^{\sqrt{L}} \sum_{d | n} \mu(d) \left( \psi\left( \left[ \frac{L}{nd} \right],\frac{2n-1}{d}\right) - \psi\left(\left[ \frac{L}{nd} \right],\frac{n}{d}\right) \right)
+$$
+计算$ \psi(x,y) = \sum_{n=1}^{y} \left[ \frac{x}{n} \right]$显然是$O(\sqrt{x})$的。
+于是使用该公式可以做到在$O(L^{3/4})$的复杂度内计算。  
 
 cn8888给出了这个丢番图方程的[几何意义](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5423&pid=52964&fromuid=20):
 ![Diophrecip](../images/Diophrecip.png)  
@@ -53,13 +52,13 @@ $\frac{n^2}{L-n}\leq s\lt n\lt t\leq L-n$
 $\frac1{n}=\frac1x+\frac1y\gt \frac1L+\frac1L=\frac2L \Rightarrow n\lt \frac{L}{2}$  
 所以  
 $f(L)$  
-$=\sum_{n=2}^{\lfloor \frac{L-1}{2} \rfloor} \sum_{\begin{subarray}{cc} s\geq\frac{n^2}{L-n} \\ s\,|\, n^2 \end{subarray}}^{n-1} 1$  
-$=\sum_{n=2}^{\lfloor \frac{L-1}{2} \rfloor} \sum_{\begin{subarray}{cc} t=n+1 \\ t\,|\, n^2 \end{subarray}}^{L-n} 1$  
-$=\sum_{n=2}^{\lfloor \frac{L-1}{2} \rfloor} \frac{(\sum_{\begin{subarray}{cc} u\geq\frac{n^2}{L-n} \\ u\,|\, n^2 \end{subarray}}^{L-n} 1)-1}2$  
+$=\sum_{n=2}^{\lfloor \frac{L-1}{2} \rfloor} \sum_{ s\geq\frac{n^2}{L-n} , s| n^2}^{n-1} 1$  
+$=\sum_{n=2}^{\lfloor \frac{L-1}{2} \rfloor} \sum_{ t=n+1, t|n^2 }^{L-n} 1$  
+$=\sum_{n=2}^{\lfloor \frac{L-1}{2} \rfloor} \frac{(\sum_{ u\geq\frac{n^2}{L-n} , u| n^2}^{L-n} 1)-1}2$  
 
 关键的是  
 给定 $n$，$L$，求满足  
-$t,|, n^2$，$n\lt t\leq L-n$  
+$t| n^2$，$n\lt t\leq L-n$  
 的$t$的数目  
 这一步的复杂度与$n^2$的质因数分解相同  
 
