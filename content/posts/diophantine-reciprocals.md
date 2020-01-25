@@ -16,12 +16,12 @@ wayne于2014年3月[转载projectEuler 454问题](https://bbs.emath.ac.cn/thread
 
 # 公式推导
 wayne指出：  
-$\left. \frac{x+y}{(x,y)}\,\middle|\,(x,y) \right.$  
+$\frac{x+y}{(x,y)}\middle|(x,y)$  
 不过,在此基础上,可以导出这种一般性的解表达:   $x=km(m+n) ,y=kn(m+n), (m,n)=1, m\lt n$, 即$L=kn(m+n)$  
 
 但要计算出$f(10^{12})$,还需要进一步的挖掘,优化.  
 Lwins_G给出进一步[公式推导过程](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5423&pid=52667&fromuid=20):  
-直接计算$ \sum\limits_{n=1}^{\sqrt{L}} \sum\limits_{m=1,(n,m)=1}^{n-1} \left[ \frac{L}{n(n+m)} \right] $只需要$O(L)$的时间，我认为这是可以承受的。不过我们也可试着优化一下：  
+直接计算$ \sum_{n=1}^{\sqrt{L}} \sum_{m=1,(n,m)=1}^{n-1} [\frac{L}{n(n+m)}] $只需要$O(L)$的时间，我认为这是可以承受的。不过我们也可试着优化一下：  
 $$
 \sum_{n=1}^{\sqrt{L}} \sum_{ m=1,(n,m)=1 }^{n-1} [ \frac{L}{n(n+m)} ]
 =\sum_{n=1}^{\sqrt{L}} \sum_{s=n+1 , (n,s)=1 }^{2n-1} \left[ \frac{L}{ns} \right] 
@@ -31,6 +31,7 @@ $$
 =\sum_{n=1}^{\sqrt{L}} \sum_{d | n} \mu(d) \sum_{\frac{n}{d} < s^{\prime} \leq \frac{2n-1}{d}} \left[ \frac{L}{nds^{\prime}} \right] 
 =\sum_{n=1}^{\sqrt{L}} \sum_{d | n} \mu(d) \left( \psi\left( \left[ \frac{L}{nd} \right],\frac{2n-1}{d}\right) - \psi\left(\left[ \frac{L}{nd} \right],\frac{n}{d}\right) \right)
 $$
+
 计算$ \psi(x,y) = \sum_{n=1}^{y} \left[ \frac{x}{n} \right]$显然是$O(\sqrt{x})$的。
 于是使用该公式可以做到在$O(L^{3/4})$的复杂度内计算。  
 
@@ -75,8 +76,8 @@ Sum[MoebiusMu[j](phi[Floor[L/(j i)],(2i-1)/j]-phi[Floor[L/(j i)],i/j]),{i,1,Sqrt
 ```
 但是他发现这份Mathematica代码计算$10^7$就要40秒
 
-Lwins_G测试后认为Mathematica计算$\psi(x,y)$时所消耗的时间是平凡的，为$O(y)$，这会导致复杂度退化为
-$ \sum_{n=1}^{\sqrt{L}} \sum_{d | n} O ( \frac{n}{d} ) = O(L) $
+Lwins_G测试后认为Mathematica计算$\psi(x,y)$时所消耗的时间是平凡的，为$O(y)$，这会导致复杂度退化为  
+$\sum_{n=1}^{\sqrt{L}}\sum_{d\middle n} O(\frac nd)=O(L)$  
 所以需要自己重新实现。
 
 282842712474直接[使用Lwins_G的公式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5423&pid=54248&fromuid=20)用phyton计算出$f(10^7)=30093331,\quad f(10^8)=349446716$，前者用时1.7秒，后者用时17秒。
