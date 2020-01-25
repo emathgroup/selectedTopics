@@ -51,7 +51,7 @@ ABACBAbaBABAbcabaCBcbCBCABAbaBCABC  34步.
 |13| 749|
 
 据说mathe随后[写了一个C++代码](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=563&pid=6698&fromuid=20)，检验了KeyTo9\_Fans的结果已经是最优的了, 只是可惜代码已经无法下载了。
-但是mathe表示由于空间复杂度的原因，我们还能在找出更多的最优结果了。  
+但是mathe表示由于空间复杂度的原因，我们很难再找出n更大的最优结果了。  
 
 # Fans进入数学研发论坛
 2009年11月，KeyTo9\_Fans步入数学研发论坛[发表他的意见](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=563&pid=22947&fromuid=20)：  
