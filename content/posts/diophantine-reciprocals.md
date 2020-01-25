@@ -48,7 +48,7 @@ $\frac1x+\frac1y=\frac1n$，$0\lt x\lt y\leq L$
 $\frac1{n+s}+\frac1{n+t}=\frac1{n} \iff n^2=st$  
 所以  
 $n^2=st\geq1\times 2=2 \Rightarrow n\geq 2$  
-$s=n^2/t\geq \frac{n^2}{L-n}$  
+$s=\frac{n^2}t\geq \frac{n^2}{L-n}$  
 $\frac{n^2}{L-n}\leq s\lt n\lt t\leq L-n$  
 $\frac1{n}=\frac1x+\frac1y\gt \frac1L+\frac1L=\frac2L \Rightarrow n\lt \frac{L}{2}$  
 所以  
