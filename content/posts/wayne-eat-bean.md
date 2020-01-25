@@ -78,8 +78,8 @@ $Go(x_w\to x_i)$表示$x_i$在$x_w$的哪边就去哪边。
 该策略吃豆子的平均速率是$(4.55648\pm0.00001)$个每秒，比“总是吃最近的豆子”的策略好。  
 （$3$楼“总是吃最近的豆子”的策略的速率只有$(4.53704\pm0.00002)$个每秒）
 wayne建议Score函数里面的参数$\frac12$可以替换成其它值再试验一下看看。  
-Fans经过试验，[得出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=4895&pid=47932&fromuid=20):  
-最佳权重$p=0.45\pm 0.02$，吃$1$个豆的期望时长是$0.219157\pm 0.000002$  
+Fans经过试验，[得出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=4895&pid=48148&fromuid=20):  
+最佳参数$a=0.523(5)$，吃豆的速率是$4.55651(1)$。
 
 # 不同权函数试验
 mathe[认为](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=4895&pid=47798&fromuid=20):  
@@ -189,10 +189,10 @@ KeyTo9\_Fans[对多种策略进行模拟比较](https://bbs.emath.ac.cn/forum.ph
 |传说中的最佳策略|$t=0.21889630(1)$|
 
 通过某种神奇的方法，  
-我终于得到了最佳策略下的平均吃豆时长，  
+Fans终于得到了最佳策略下的平均吃豆时长，  
 为$0.21889630(1)$，  
 但该策略具体是什么还不知道。  
-我将该结果列在了上表的最后一行，  
+Fans将该结果列在了上表的最后一行，  
 可以看到目前已知的最好的策略的平均吃豆时长已经与最佳策略的平均吃豆时长很接近了。  
 
 于是，楼主的第$1$问终于有一个近似的答案了：  
