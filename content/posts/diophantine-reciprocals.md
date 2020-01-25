@@ -83,5 +83,5 @@ $ \sum_{n=1}^{\sqrt{L}} \sum_{d | n} O ( \frac{n}{d} ) = O(L) $
 $f(10^9)=3979600400$，用时196.748994145秒... 按这个速度$10^{12}$预计需要3天时间才能计算出来。  
 [对应的python代码](../attached/diophrecip/python.txt)  
 然后[他继续实现](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5423&pid=54270&fromuid=20)$O(L^{\frac34})$复杂度的[代码](../attached/diophrecip/python2.txt), 测试运行$f(10^9)$提升到24秒。
-[最终他实现](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5423&pid=54281&fromuid=20)了$O(\sqrt(L))$复杂度的算法,[这份代码](../attached/diophrecip/ohalf.txt)用时101秒计算出$f(10^{12})=5435004633092$.
+[最终他实现](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5423&pid=54281&fromuid=20)了$O(\sqrt{L})$复杂度的算法,[这份代码](../attached/diophrecip/ohalf.txt)用时101秒计算出$f(10^{12})=5435004633092$.
 
