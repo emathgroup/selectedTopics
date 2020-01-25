@@ -1,0 +1,44 @@
+import time
+start=time.clock()
+import math
+l=10000000 #上限 
+s=0 #统计个数
+rl=int(math.sqrt(l))
+rrl=int(math.sqrt(int(math.sqrt(l))))
+
+#弄出个素数表来
+prime=[i for i in range(1,rl+1)]#定义整数表
+j=2
+while j<=rrl:
+  if prime[j-1] != 0:
+    m=int(rl/j)
+    for i in range(j,m+1):
+      prime[i*j-1]=0
+    j=j+1
+  else:
+    j=j+1
+prime.sort() #从小到大重新排列（让0位于前面）
+z=prime.count(0) #统计0的个数
+prime=prime[z+1:rl]
+#素数表生成完毕
+
+for m in range(1,int(rl/1.4)):
+  #找出与m互素的数，存在p里
+  p=[i for i in range(1,rl+1)]
+  m2=m
+  for i in prime:
+    if i>m:
+      break
+    if m%i==0:
+      m=m/i
+      for j in range(m2//i+1,int(rl/i)+1): #!!!
+        p[i*j-1]=0
+  p.sort() #从小到大重新排列（让0位于前面）
+  z=p.count(0) #统计0的个数
+  p=p[z+m2:rl]
+  #找出与m互数的完毕。
+  for n in p:
+    s=s+l//((n+m2)*n)
+print(s)
+end=time.clock()
+print(end-start)
