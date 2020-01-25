@@ -77,7 +77,9 @@ Sum[MoebiusMu[j](phi[Floor[L/(j i)],(2i-1)/j]-phi[Floor[L/(j i)],i/j]),{i,1,Sqrt
 但是他发现这份Mathematica代码计算$10^7$就要40秒
 
 Lwins_G测试后认为Mathematica计算$\psi(x,y)$时所消耗的时间是平凡的，为$O(y)$，这会导致复杂度退化为  
-$\sum_{n=1}^{\sqrt{L}}\sum_{d\mid n} O(\frac nd)=O(L)$  
+$$
+\sum\limits_{n=1}^{\sqrt{L}}\sum\limits_{d\mid n} O(\frac nd)=O(L)
+$$  
 所以需要自己重新实现。
 
 282842712474直接[使用Lwins_G的公式](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5423&pid=54248&fromuid=20)用phyton计算出$f(10^7)=30093331,\quad f(10^8)=349446716$，前者用时1.7秒，后者用时17秒。
