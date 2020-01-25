@@ -86,7 +86,18 @@ shshsh_0510为这个过程配了一个示意图:
 wayne在他的微信群里面发过另外一个类似的函数方程：  
 求所有运算$\diamond:R_{\gt 0}\to R_{\gt 0}$, 使得对于任意正实数a,b,c,有$a\diamond(b\diamond c)=(a\diamond b)c$, 且对于任意正实数$a\ge 1$,有$a\diamond a\ge 1$.  
 
-mathe分析结果是只有唯一情况就是$a\diamond b=ab$, 但是他很好奇如果最后的不等式条件被去除后结果会如何。分析结果表明，$a\diamond b=a f(b)$, 其中函数$f(x)=\exp(g(\ln(x)))$,其中$g(x)$和前面问题的$g(x)$完全相同，是R在Q中的任意线性函数
+mathe分析结果是只有唯一情况就是$a\diamond b=ab$, 但是他很好奇如果最后的不等式条件被去除后结果会如何。分析结果表明，$a\diamond b=a f(b)$, 其中函数$f(x)=\exp(g(\ln(x)))$,其中$g(x)$和前面问题的$g(x)$完全相同，是R在Q中的任意线性函数  
+他主要思路如下：  
+1. 证明左消去律: $a\diamond b=a\diamond c => b=c$  
+2. 右消去律:  $a\diamond c=b\diamond c => a=b$  
+3. 右单位元:  $a\diamond 1 = a$  
+4. 左乘性:  $b\diamond a = b(1\diamond a)$  
+5. 三元交换:  $a\diamond(b\diamond c)=c\diamond(b\diamond a)$  
+6. 倒数率： $1\diamond \frac 1 a =\frac1{1\diamond a}$  
+定义$f(x)=1\diamond x$后，可以得出  
+7. $f(xf(y))=yf(x)$  
+8. $f(f(y))=y$  
+9. $f(xz)=f(x)f(z)$  
 
 无心人于2008年6月提出[一个类似的问题](https://bbs.emath.ac.cn/thread-1160-1-1.html),  
 解函数方程： $f(x+2f(y))=f(x)+y+f(y)$  
