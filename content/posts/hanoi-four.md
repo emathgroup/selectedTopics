@@ -119,7 +119,7 @@ KeyTo9\_Fans继续努力[为更大的n搜索较优秀的结果](https://bbs.emat
 ```
 
 Fans还将移动模式制作成图片:  
-![hanoi4](../images/hanoi-4.png)  
+![hanoi4](../images/hanoi-4.PNG)  
 但n=0、n=1、n=3和n=6例外，需要特殊处理。  
 令f(0)=0，f(1)=3，f(3)=19，f(6)=88，  
 然后利用f(0)到f(n)的结果，枚举a,b,c,d,e的值，就可以求得f(n+1)。  
