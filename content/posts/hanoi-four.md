@@ -64,7 +64,7 @@ ABACBAbaBABAbcabaCBcbCBCABAbaBCABC  34步.
 对n=16做这种推进式的扩展，高峰时每个数组存储的状态数为一千多万（为了方便查找重复状态，当然是以状态的哈希值作为下标），共占用200M左右的内存，还不至于动用硬盘空间。  
 这种推进式的扩展没有保留扩展路径，所以只能得到最佳步数，不能得到方案。  
 所幸的是，n<=16的情况都通过手工操作找到了最佳步数对应的一种可行方案。  
-Fans还提供了对应的游戏以供下载，可以也不能下载了。  
+Fans还提供了[对应的游戏](../attached/h4.rar)以供下载.   
 
 # 极限拓展
 KeyTo9\_Fans继续努力[为更大的n搜索较优秀的结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=563&pid=23248&fromuid=20):  

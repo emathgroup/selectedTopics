@@ -10,49 +10,50 @@ date: 2019-10-19 23:51:34
 ---
 
 # 绪论
-在[均分田地问题]中，gxqcn提出了如下问题
+在[均分田地问题](https://bbs.emath.ac.cn/thread-2745-1-1.html)中，gxqcn提出了如下问题
 
 有一块田地需要分给n户家庭，要求各户分得面积都相等。田地内部不同家庭分得的区域将建田埂以分隔（原待分地已有田埂圈定）。现为实现耕地面积最大化，要求新建田埂总长度最小。请问如何规划？
 
-关于这个问题的三维问题，存在[Plateau's laws]。
+<!--more-->
 
-在这块田地是单位正方形，对于[n=3,4,5], KeyTo9_Fans分别给出了很不错的结果：
+关于这个问题的三维问题，存在[Plateau's laws](https://en.wikipedia.org/wiki/Plateau%27s_laws)。
 
-n=3时, 田埂总长度可以仅为$\frac23+\frac{\pi}6+\sqrt{3}=1.623278144157$ （我们可以搜索到[法语论坛相关讨论]得出了相同的结果）
+在这块田地是单位正方形，对于[n=3,4,5](https://bbs.emath.ac.cn/thread-2745-2-1.html), KeyTo9_Fans分别给出了很不错的结果：
+
+n=3时, 田埂总长度可以仅为$\frac23+\frac{\pi}6+\sqrt{3}=1.623278144157$ （我们可以搜索到[法语论坛相关讨论](https://www.maths-forum.com/enigmes/tiers-carre-t121803.html)得出了相同的结果）
 ![s3c](../images/twodbubble/s3c.jpg)
 
-n=4时,田埂总长度可以仅为$\sqrt{2}+\sqrt{1-\sqrt{3}+\frac{\pi}3}=1.975592884782$ (我们可以搜索到[意大利语相关讨论]得出了相同的结果)
+n=4时,田埂总长度可以仅为$\sqrt{2}+\sqrt{1-\sqrt{3}+\frac{\pi}3}=1.975592884782$ (我们可以搜索到[意大利语相关讨论](http://web.tiscalinet.it/paololicheri/figure/f006x.htm)得出了相同的结果)
 ![s4c](../images/twodbubble/s4c.jpg)
 
-n=5时, 田埂总长度可以为$2+((1+\sqrt{3})\pi-6) \sqrt{\frac{2}{15((2+\sqrt{3})\pi-3(1+\sqrt{3}))}}=2.502112930427$ (可以网络找到[Martin Gardner]包含相同的结果)
+n=5时, 田埂总长度可以为$2+((1+\sqrt{3})\pi-6) \sqrt{\frac{2}{15((2+\sqrt{3})\pi-3(1+\sqrt{3}))}}=2.502112930427$ (可以网络找到[Martin Gardner](http://plouffe.fr/simon/Phys%20et%20Math/Martin%20Gardner%20%2d%20Mathemagics%20%26%20Math%20Puzzles.pdf)包含相同的结果)
 ![s5c](../images/twodbubble/s5c.jpg)
 
 对于单位圆形田地，在n=3时，从圆心发出三条两两夹角互为120°的半径就可以等分面积，总长度为3。
 
-在n=4时，我们给出了田埂[总长为3.945702967267的方案]
+在n=4时，我们给出了田埂[总长为3.945702967267的方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=78875)
 ![c4](../images/twodbubble/c4.jpg)
 
-在n=5的圆形田地，我们找出了田埂[总长为4.833846643527的方案]
+在n=5的圆形田地，我们找出了田埂[总长为4.833846643527的方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16105&pid=78923)
 ![c5](../images/twodbubble/c5.jpg)
 
-在n=6的圆形田地，我们找出了田埂[总长为5.406796929952的对称方案]。
+
+在n=6的圆形田地，我们找出了田埂[总长为5.406796929952的对称方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80370)。
 ![c6](../images/twodbubble/c6.jpg)
 
-在n=7的圆形田地zgg\_\_和数学星空指出在田地正中心使用正六边形，每个顶点向圆周引垂线可得田埂[总长为6的方案]。
+在n=7的圆形田地zgg\_\_和数学星空指出在田地正中心使用正六边形，每个顶点向圆周引垂线可得田埂[总长为6的方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80353)。
 
 在帖子中，很早就有人发现每段田埂应该是直线段或者圆弧；在区域内部，三条田埂相交于一点时，交点处切向量两两夹角为120°；而且田埂和田地边界相遇时在相遇点的切线要和田地边界在相遇点的切线垂直。后文中，我们会直接用俩田埂的夹角为120°来表示俩田埂相遇于一个交点，而且在交点处的切向量夹角为120°；同样我们会直接用田埂和田地边界垂直代表田埂和田地边界相遇并且在相遇点两者切线相互垂直。
 
-KeyTo9\_Fans最早指出田埂[两两夹角为120°]。他的思路是如下图，在仅考虑三条田埂相交于点P的情况，分别在三条田埂上各自选择充分接近P点的A、B、C三点。为了达到田埂总长最小值，P点应该移动到三角形ABC的费马点才会让AP+BP+CP取到最小值，由此得出AP、BP、CP两两夹角应该为120°。但是这里稍微有点不严密，因为图中这种移动P到P’的方式会改变周围三个区域的面积，而我们的问题中要求所有区域的面积要求是相等的。
+KeyTo9\_Fans最早指出田埂[两两夹角为120°](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33267)。他的思路是如下图，在仅考虑三条田埂相交于点P的情况，分别在三条田埂上各自选择充分接近P点的A、B、C三点。为了达到田埂总长最小值，P点应该移动到三角形ABC的费马点才会让AP+BP+CP取到最小值，由此得出AP、BP、CP两两夹角应该为120°。但是这里稍微有点不严密，因为图中这种移动P到P’的方式会改变周围三个区域的面积，而我们的问题中要求所有区域的面积要求是相等的。
 ![fermat](../images/twodbubble/fermat.jpg)
 
-zgg\_\_最早指出，本问题[等价于二维肥皂泡稳态问题]，由此得出每段田埂都必须是圆弧或直线段，而且两两夹角为120°；hujunhua进一步指出利用肥皂泡模型可以说明和田地边界相遇的田埂必然垂直于田地边界；gxqcn紧接着指出在区域数目n充分大时，内部区域应该出现“蜂窝”状。  
-我们对上面情况[进行总结]，并且尝试用数学方法进行证明：
+zgg\_\_最早指出，本问题[等价于二维肥皂泡稳态问题](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33271)，由此得出每段田埂都必须是圆弧或直线段，而且两两夹角为120°；hujunhua进一步指出利用肥皂泡模型可以说明和田地边界相遇的田埂必然垂直于田地边界；gxqcn紧接着指出在区域数目n充分大时，内部区域应该出现“蜂窝”状。  
+我们对上面情况[进行总结](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33469)，并且尝试用数学方法进行证明：
 
-	i)田埂每一段必然是圆弧或直线段（可以看成圆弧的退化情况）。
-
-	ii)在内部，最多三个不同的田埂共点，这时田埂之间必然两两夹角相等
-	
-	iii)田埂和边界接触的地方必然同边界垂直
+i)田埂每一段必然是圆弧或直线段（可以看成圆弧的退化情况）。  
+ii)在内部，最多三个不同的田埂共点，这时田埂之间必然两两夹角相等  
+iii)田埂和边界接触的地方必然同边界垂直  
 
 其中性质i)可以直接用初等方法证明。我们可以利用一个大家所熟知的结论：面积一定的简单平面图形中，圆的周长最短。利用这个结论可以得出一侧为固定线段，另一侧为任意简单曲线围成的面积一定的图形中，在另一侧任意简单曲线为圆弧时，这条简单曲线长度达到最短。
 
@@ -64,31 +65,31 @@ zgg\_\_最早指出，本问题[等价于二维肥皂泡稳态问题]，由此�
 
 ![basic](../images/twodbubble/basic.jpg)
 
-使用[拉格朗日乘数法]，选择A、B、C三点固定不动，仅让P点保持运动并且让P点周围三个区域的面积保持不变，要求三条田埂长度之和最小，可以得出一些约束方程，
-最后可以把[极值约束条件化简]为
-$$
+使用[拉格朗日乘数法](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33469)，选择A、B、C三点固定不动，仅让P点保持运动并且让P点周围三个区域的面积保持不变，要求三条田埂长度之和最小，可以得出一些约束方程，
+最后可以把[极值约束条件化简](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33493)为
+$
 \begin{cases}
 F_1=\frac{\sin⁡(\theta_a)}{L_a} +\frac{\sin⁡(\theta_b)}{L_b} +\frac{\sin⁡(\theta_c)}{L_c} =0\\
  F_2=D_{a,x}+D_{b,x}+D_{c,x}=0\\
  F_3=D_{a,y}+D_{b,y}+D_{c,y}=0
 \end{cases}
-$$  (I)
+$  (I)
 
 其中
-$$
+$
 \begin{cases}
 D_{s,x}=\frac{x_s-x_p}{L_s}\cos⁡(\theta_s)+\frac{y_s-y_p}{L_s}\sin⁡(\theta_s )\\
 D_{s,y}=\frac{y_s-y_p}{L_s}\cos⁡(\theta_s)-\frac{x_s-x_p}{L_s}\sin⁡(\theta_s )\\
 L_s=\sqrt{(x_p-x_s )^2+(y_p-y_s )^2 }\\
 s\in \text{{a,b,c}}
 \end{cases}
-$$
+$
 
 上面约束条件(I)中第一条方程代表三段圆弧（或直线段）有向曲率之和为0。而后面两条方程代表三段圆弧在P点处单位切线向量之和为零向量，所以它们两两夹角都相等，均为120°（P点同时为三个单位切线向量末端构成三角形的外心和重心，所以这是一个正三角形）。
 
 对于边界为直线段构成的凸田地，可以想象如果某个田埂的一个端点落在田地边界上，那么将整个田地和所有田埂关于这个边界线做对称图形，然后把原图形和对称图形合并在一起并且将仅被这条分界直线段分隔的区域相互合并，于是变成一个关于更大的田地更多区域的固定面积最优化问题，结果同样需要满足类似的约束条件。于是我们可以看出在原问题中，这个田埂必须垂直于田地边界才符合要求。
 
-另外我们推导了[田地边界是圆弧构成的情况]，同样得出了和边界相遇的田埂必须垂直于圆弧田地边界的条件。
+另外我们推导了[田地边界是圆弧构成的情况](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33478)，同样得出了和边界相遇的田埂必须垂直于圆弧田地边界的条件。
 
 ![boundary](../images/twodbubble/boundary.jpg)
 如图，不妨设田地边界这一段圆弧为单位圆的圆弧，设田埂在边界上点为$U(\cos⁡(u),\sin⁡(u) )$，田埂另外一个端点为点$P(x_0,y_0 )$，圆弧和俩端点连线夹角为$\theta$。并且设P点极坐标为$(r_0,θ_0 )$, 得出的约束条件为
@@ -97,10 +98,10 @@ $\tan⁡(\theta)-\frac{r_0\sin⁡(u-\theta_0 )}{1-r_0\cos⁡(u-\theta_0 )}=0$
 
 这个条件正好就是要求田埂(UP) ̂垂直单位圆田地边界于U点。
 
-利用上面分析结论我们使用计算机将[正方形田地均分到最多14个区域]并且将[圆形田地均分到最多19个区域]. 
-但是很快我们发现英国数学家[Simon Cox]已经计算到42个区域以内的非常不错的结果。
+利用上面分析结论我们使用计算机将[正方形田地均分到最多14个区域](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80764&fromuid=20)并且将[圆形田地均分到最多19个区域](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80763&fromuid=20). 
+但是很快我们发现英国数学家[Simon Cox](http://users.aber.ac.uk/sxc/two_d_clusters.html)已经计算到42个区域以内的非常不错的结果。
 
-后来我们利用pari/gp计算出了圆形情况不超过43个区域下的[50位精度的高精度结果]。 点击链接可以下载[关键点的坐标和圆弧角度的高精度结果]。
+后来我们利用pari/gp计算出了圆形情况不超过43个区域下的[50位精度的高精度结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80871&fromuid=20)。 点击链接可以下载[关键点的坐标和圆弧角度的高精度结果](../thumbnails/allbest.tgz)。
 另外我们还继续计算得出将圆形划分44~52个区域时的不错结果，如下面是将圆形田地划分为44个区域的划分方案图：
 ![c44](../thumbnails/c44.png)
 
@@ -109,17 +110,17 @@ $\tan⁡(\theta)-\frac{r_0\sin⁡(u-\theta_0 )}{1-r_0\cos⁡(u-\theta_0 )}=0$
 
 ##定理1 给定边界为最多包含有限个不光滑点的简单曲线围成的区域，在其内部通过简单曲线分割成n个分别给定面积的小区域，那么在这些分割线长度之和达到极小值时，必然满足一下条件：
 
-	i)每段分割线必然是圆弧或直线段
-	
-	ii)如果两段曲率不同的分割线相遇于区域内部一点P，那么必然还有第三段分割线同样和这两段分割线相遇于P点
-	
-	iii)如果两条分割线相遇于一点P,那么它们的夹角不小于120°。特别的，如果P点在区域内部，那么必然是三条分割线在端点相遇于P点，而且两两夹角正好是120°；而且不会有四条或以上的分割线在区域内部相遇于一点。
-	
-	iv)如果一条分割线相遇区域边界于点P,那么分割线和边界在点P两个方向的切向量夹角都不小于90°。特别的，如果区域边界在P点光滑，那么分割线这时必然垂直区域边界于P点。
-	
-	v)如果有三条分割线相遇于区域内部一点P，那么这三条分割线的有向曲率和为0。
-	
-证明:
+i)每段分割线必然是圆弧或直线段
+
+ii)如果两段曲率不同的分割线相遇于区域内部一点P，那么必然还有第三段分割线同样和这两段分割线相遇于P点
+
+iii)如果两条分割线相遇于一点P,那么它们的夹角不小于120°。特别的，如果P点在区域内部，那么必然是三条分割线在端点相遇于P点，而且两两夹角正好是120°；而且不会有四条或以上的分割线在区域内部相遇于一点。
+
+iv)如果一条分割线相遇区域边界于点P,那么分割线和边界在点P两个方向的切向量夹角都不小于90°。特别的，如果区域边界在P点光滑，那么分割线这时必然垂直区域边界于P点。
+
+v)如果有三条分割线相遇于区域内部一点P，那么这三条分割线的有向曲率和为0。
+
+证明如下:
 
 其中性质i)在绪论中通过反证法已经给出了比较严密的初等证明。
 
@@ -146,7 +147,7 @@ $\frac{du(\psi)}{d\psi}=\frac14\csc^2(\psi)\sec^3⁡(\psi+\frac{\pi}6)(4(1-\frac
 
 对于性质iv)，同样假设现在有一条分割线AP和区域边界PC相遇于P点而且θ=∠CPA<90°，其中P点局部放大以后我们可以近似认为PC和PA都接近直线段。我们现在试着用垂直PC的一段圆弧(AD) ̂替换AP使得替换后保持两边小区域的面积不变。设∠ACP=ψ,我们得到条件$\frac{\sin⁡(\psi)}{\psi}=\frac{\sin⁡(\theta)}{\sin⁡(\theta+\psi)}$ ，而(AD) ̂/(AP) ̅ =(ψ sin⁡(θ))/sin⁡(ψ) =sin⁡(θ+ψ)≤1。其中去等号时要求sin⁡(ψ)/ψ=sin⁡(θ)=cos⁡(ψ)即tan⁡(ψ)=ψ只有角度为0时才可能。所以我们同样得出这时不是极小值情况。
 
-对于性质v)，对于三条分割线交于区域内部一点$P(x_p,y_p )$, 假设我们选择不调整点P和三条分割线另外一个端点$A(x_a,y_a ),B(x_b,y_b ),C(x_c,y_c )$的位置，但是允许调整三条分割线的曲率但是要求保持周边三个小区域的面积不变。直接采用链接[拉格朗日乘数法]中的方法，记$L_a$=(AP) ̅,$L_b$=(BP) ̅,$L_c$=(CP) ̅,
+对于性质v)，对于三条分割线交于区域内部一点$P(x_p,y_p )$, 假设我们选择不调整点P和三条分割线另外一个端点$A(x_a,y_a ),B(x_b,y_b ),C(x_c,y_c )$的位置，但是允许调整三条分割线的曲率但是要求保持周边三个小区域的面积不变。直接采用链接[拉格朗日乘数法]((https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33469))中的方法，记$L_a$=(AP) ̅,$L_b$=(BP) ̅,$L_c$=(CP) ̅,
 ![basic](../images/twodbubble/basic.jpg)
 最后可以得出取极小值时的必要条件是$\frac{\sin⁡(\theta_a)}{L_a} +\frac{\sin⁡(\theta_b)}{L_b} +\frac{\sin⁡(\theta_c)}{L_c} =0$,即三条分割线的有向曲率之和为0。
 
@@ -340,8 +341,8 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 另外，理论上划分过程允许出现一个只有一条内部边界的子区域（和另外一条外部边界围成）。但是直觉上这种区域很难成为最优解，所以我们的搜索代码直接放弃了这种情况。
 
 ##结果汇总  
-这种搜索方法在搜索的次数足够充足时已经可以有[极大的概率找到最优结果]，而对于n很小的几个数据我们提交到了OEIS
-[A307234] [A307235] [A307237] [A307238]
+这种搜索方法在搜索的次数足够充足时已经可以有[极大的概率找到最优结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80811&fromuid=20)，而对于n很小的几个数据我们提交到了OEIS
+[A307234](https://oeis.org/A307234) [A307235](https://oeis.org/A307235) [A307237](https://oeis.org/A307237) [A307238](https://oeis.org/A307238)
 更多结果比如圆形结果  
 ![c4](../images/twodbubble/c4.jpg) ![c5](../images/twodbubble/c5.jpg)  
 ![c6](../images/twodbubble/c6.jpg) ![c7](../images/twodbubble/c7.png)  
@@ -356,8 +357,8 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 ![s8](../images/twodbubble/s8.png) ![s9](../images/twodbubble/s9.png) ![s10](../images/twodbubble/b_s10.png) ![s11](../images/twodbubble/b_s11.png)  
 ![s12](../images/twodbubble/b_s12.png) ![s13](../images/twodbubble/b_s13.png) ![s14](../images/twodbubble/b_s14.png)  
 
-此后我们发现关于这个问题[Simon Cox]已经对于42个区域以内都给出了很不错的结果。
-参考他的结果我们进一步得出圆形43个区域以内划分[已知最优结果的高精度表示]
+此后我们发现关于这个问题[Simon Cox]((http://users.aber.ac.uk/sxc/two_d_clusters.html))已经对于42个区域以内都给出了很不错的结果。
+参考他的结果我们进一步得出圆形43个区域以内划分[已知最优结果的高精度表示](../thumbnails/allbest.tgz)
   3:3
   4:3.94570296726718571384289955211179918887483540107474
   5:4.83384664352739678365771592855759637171533663888553
@@ -399,7 +400,7 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 41:18.5938646562158577835524288084597187124762706151280
 42:18.8489703098223545147309884016725110683781594277071
 43:19.0920949918223182048671666134662299991492610140510
-并且经过长时间计算得出[44~52个区域的划分图]，可以看出对于这些结果蜂窝现象已经很明显了。
+并且经过长时间计算得出[44~52个区域的划分图](../thumbnails/best44to52.tgz)，可以看出对于这些结果蜂窝现象已经很明显了。
 ![c44](../thumbnails/c44.png)
 ![c45](../images/twodbubble/c45.png)
 ![c46](../images/twodbubble/c46.png)
@@ -410,30 +411,3 @@ $\begin{cases}x_p=x_p-\lambda\frac{\partial L_c}{\partial x_p}\\y_p=y_p-\lambda\
 ![c51](../images/twodbubble/c51.png)
 ![c52](../images/twodbubble/c52.png)
 
-[均分田地问题]: https://bbs.emath.ac.cn/thread-2745-1-1.html
-[Plateau's laws]: https://en.wikipedia.org/wiki/Plateau%27s_laws
-[n=3,4,5]: https://bbs.emath.ac.cn/thread-2745-2-1.html
-[法语论坛相关讨论]: https://www.maths-forum.com/enigmes/tiers-carre-t121803.html
-[意大利语相关讨论]: http://web.tiscalinet.it/paololicheri/figure/f006x.htm
-[Martin Gardner]: http://plouffe.fr/simon/Phys%20et%20Math/Martin%20Gardner%20%2d%20Mathemagics%20%26%20Math%20Puzzles.pdf
-[总长为3.945702967267的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=78875
-[总长为4.833846643527的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16105&pid=78923
-[总长为5.406796929952的对称方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80370
-[总长为6的方案]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80353
-[两两夹角为120°]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33267
-[等价于二维肥皂泡稳态问题]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33271
-[进行总结]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33469
-[拉格朗日乘数法]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33469
-[极值约束条件化简]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33493
-[田地边界是圆弧构成的情况]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=33478
-[正方形田地均分到最多14个区域]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80764&fromuid=20
-[圆形田地均分到最多19个区域]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80763&fromuid=20
-[Simon Cox]: http://users.aber.ac.uk/sxc/two_d_clusters.html
-[50位精度的高精度结果]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80871&fromuid=20
-[极大的概率找到最优结果]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80811&fromuid=20
-[A307234]: https://oeis.org/A307234
-[A307235]: https://oeis.org/A307235
-[A307237]: https://oeis.org/A307237
-[A307238]: https://oeis.org/A307238
-[已知最优结果的高精度表示]: ../thumbnails/allbest.tgz
-[44~52个区域的划分图]: ../thumbnails/best44to52.tgz
