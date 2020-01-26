@@ -79,8 +79,8 @@ X = 154 S = 8899988895999696889
 178    00000000008889998799995887887889  
 180    00000000009899698989999989958489  
 181    00000000017989999975899879969889  
-[184](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=642&pid=7976&fromuid=20)    057997787999988988979689
-187    059668999996988999989969
+[184](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=642&pid=7976&fromuid=20)    057997787999988988979689  
+187    059668999996988999989969  
 而gxqcn也同样[继续修改他的代码](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=642&pid=7951&fromuid=20)来搜索更大范围的解,  
 他把[结果推进到](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=642&pid=8036&fromuid=20)  
 03:10:10.325        X = 187                S = 59668999996988999989969  
