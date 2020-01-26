@@ -1,0 +1,96 @@
+
+#include <stdlib.h>
+#include <stdio.h>
+
+
+#define TEN_POW2    100UL
+#define TEN_POW4    10000UL
+
+int main( void )
+{
+    unsigned long table[ TEN_POW4 ];
+    unsigned long mark[ 9*32 + 1 ];
+    unsigned long value[ 8 ], delta[ 8 ];
+    unsigned long * p = table;
+
+    unsigned long i, j, k, m, s;
+    long t;
+    unsigned long i2, i3, i4, s2, s3;
+
+    for ( i4 = 0; i4 < 10; ++i4 )
+    {
+        for ( i3 = 0; i3 < 10; ++i3 )
+        {
+            s3 = i4 + i3;
+            for ( i2 = 0; i2 < 10; ++i2 )
+            {
+                s2 = s3 + i2;
+                for ( i = 0; i < 10; ++i )
+                {
+                    *p++ = s2 + i;
+                }
+            }
+        }
+    }
+
+    for (i=0; i < 8; i ++)
+    {
+       value[i] = 0;
+       delta[i] = 0;
+    }
+
+    for (i = 0; i < 9*32 + 1; i ++)
+      mark[i] = 0;
+
+    value[ 0 ] = 0;
+    delta[ 0 ] = 1;
+    m = 1;
+    for ( ; ; )
+    {
+        s = 0;
+        for ( i = 0; i < m; ++i )
+        {
+            value[ i ] += delta[ i ];
+            if ( value[ i ] >= TEN_POW4 )
+            {
+                value[ i ] -= TEN_POW4;
+                ++value[ i + 1 ];
+            }
+
+            s += table[ value[ i ] ];
+        }
+        
+        if (value[m]) 
+        {
+          m++;
+          s++;
+        }
+
+        if ( 0 == mark[ s ])
+        {
+        mark[s] = 1;
+        printf("%d    ", s);
+        for (t=7;t>=0;t--)
+          printf("%04d", value[t]);
+        printf("\n");
+        }
+
+        if (m >= 9)
+           break;
+
+        delta[ 0 ] += 2;
+
+        i = 0;
+        while ( delta[ i ] >= TEN_POW4 )
+        {
+            delta[ i ] -= TEN_POW4;
+            ++delta[ ++i ];
+        }
+    }
+
+    s = 0;
+    i = 0;
+    printf( "\n" );
+
+    return 0;
+}

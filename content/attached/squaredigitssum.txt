@@ -1,0 +1,149 @@
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "../../../HugeCalc_API/CppAPI/Include/HugeCalc.h"    // 公共接口
+
+#pragma message( "automatic link to ../../../HugeCalc_API/CppAPI/Lib/HugeCalc.lib" )
+#pragma comment( lib, "../../../HugeCalc_API/CppAPI/Lib/HugeCalc.lib" )
+
+#if 1
+#   define SQRT_DIGIT   8UL
+#   define SQRT_MAX     100000000UL
+#else
+#   define SQRT_DIGIT   9UL
+#   define SQRT_MAX     1000000000UL
+#endif
+
+#define TEN_POW9        1000000000UL
+
+// 返回余数；u32Num 作为输入的被除数，同时作为输出的商
+__declspec(naked)
+CONST UINT32 DivMod10( UINT32& u32Num )
+{
+    __asm
+    {
+        mov     ecx, dword ptr[esp + 0x04];
+
+        mov     edx, dword ptr[ecx];
+        mov     eax, 0xCCCCCCCD;        // [ 2^35 / 10 + 0.5 ]
+        push    edx;
+
+        mul     edx;
+        shr     edx, 3;
+        mov     dword ptr[ecx], edx;
+
+        imul    edx, 10;
+
+        pop     eax;
+        sub     eax, edx;
+
+        ret;
+    }
+}
+
+
+UINT32 SumOfDigits( UINT32 v )
+{
+    UINT32 sum = 0;
+
+    while( 0 != v )
+    {
+        sum += DivMod10( v );
+    }
+
+    return sum;
+}
+
+
+int main( void )
+{
+    UINT32 i, s, delta, v;
+    UINT32 high, high_delta;
+
+    UINT32 mark[ 164 ] = { 0 };
+    UINT32 cycleDelta[ 4 ] = { 1, 3, 3, 2  };    // 0, 1, 4, 7
+
+    HugeCalc::EnableTimer();
+    HugeCalc::ResetTimer();
+
+    v = 1;
+    delta = 1;
+    for ( i=1; i<0xFFFF; ++i )
+    {
+        s = SumOfDigits( v );
+        if ( 0 == mark[ s ] )
+        {
+            mark[ s ] = i;
+        }
+        delta += 2;
+        v += delta;
+    }
+
+    high = v / TEN_POW9;
+    v -= high * TEN_POW9;
+
+    high_delta = delta / TEN_POW9;
+    delta -= high_delta * TEN_POW9;
+
+    for ( ; i<=SQRT_MAX; ++i )
+    {
+        s = SumOfDigits( v ) + SumOfDigits( high );
+        if ( 0 == mark[ s ] )
+        {
+            mark[ s ] = i;
+        }
+
+        delta += 2;
+        if ( delta >= TEN_POW9 )
+        {
+            delta -= TEN_POW9;
+            ++high_delta;
+        }
+
+        v += delta;
+        if ( v >= TEN_POW9 )
+        {
+            v -= TEN_POW9;
+            high += high_delta + 1;
+        }
+        else
+        {
+            high += high_delta;
+        }
+    }
+
+    HugeCalc::EnableTimer( FALSE );
+
+
+    s = 0;
+    i = 0;
+    while ( s != 9*SQRT_DIGIT*2 )
+    {
+        s += cycleDelta[ i ];
+        if ( 4 == ++i )
+        {
+            i = 0;
+        }
+
+        if ( 0 != mark[ s ] )
+        {
+            if ( mark[ s ] <= 0xFFFF )
+            {
+                printf( "X = %u\tS = %u\n", s, mark[ s ] * mark[ s ] );
+            }
+            else
+            {
+                printf( "X = %u\tS = %I64u\n", s, UInt32x32To64( mark[ s ], mark[ s ] ));
+            }
+        }
+        else
+        {
+            printf( "X = %u\n", s );
+        }
+    }
+
+    printf( HugeCalc::GetTimerStr( FT_HHMMSS_ms ) );
+    printf( "\n" );
+
+    return 0;
+}

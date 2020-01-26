@@ -1,0 +1,281 @@
+#include < stdlib.h >
+#include < stdio.h >
+
+#include "../../../HugeCalc_API/CppAPI/Include/HugeCalc.h"    // 公共接口
+
+#pragma message( "automatic link to ../../../HugeCalc_API/CppAPI/Lib/HugeCalc.lib" )
+#pragma comment( lib, "../../../HugeCalc_API/CppAPI/Lib/HugeCalc.lib" )
+
+
+#define TEN_POW2    100UL
+#define TEN_POW4    10000UL
+
+#define LIMBS       5
+
+UINT32 m, s;
+
+#ifdef __INTEL_COMPILER
+#   undef  LIMBS
+#   define LIMBS    8
+    __declspec(align(16)) 
+#endif
+UINT32 pool[ TEN_POW4 + LIMBS * 39 ];
+
+#define table(x)    pool[x]
+#define value(x)    pool[(x) + TEN_POW4]
+#define delta(x)    pool[(x) + TEN_POW4 + LIMBS]
+#define index(x)    pool[(x) + TEN_POW4 + LIMBS * 2]
+#define exist(x)    pool[(x) + TEN_POW4 + LIMBS * 3]
+
+void init( void )
+{
+    UINT32 i1, i2, i3, i4;
+    UINT32 * p = &table(0) - 1;
+
+    memset( pool, 0, sizeof( pool ));
+
+    for ( i1 = 0; i1 < 10; ++i1 )
+    {
+        for ( i2 = 0; i2 < 10; ++i2 )
+        {
+            for ( i3 = 0; i3 < 10; ++i3 )
+            {
+                for ( i4 = 0; i4 < 10; ++i4 )
+                {
+                    *(++p) = i1 + i2 + i3 + i4;
+                }
+            }
+        }
+    }
+}
+
+
+#define add_value(x)        value(x) += delta(x)
+#define mod_value(x)        if ( value(x) >= TEN_POW4 ){ value(x) -= TEN_POW4; ++value(x+1); }
+#define lookup(x)           table( value(x) )
+
+void sumOfDigits( void )
+{
+    s = 0;
+    for ( UINT32 i = 0; i <= m; ++i )
+    {
+        add_value(i);
+        mod_value(i);   /* 当 i==m 时不会进入 if，因此时平方根<100^(m+1) */
+
+        s += lookup(i);
+    }
+}
+
+void sumOfDigits_1( void )
+{
+    add_value(0);
+
+    s = lookup(0);
+}
+
+void sumOfDigits_2( void )
+{
+    add_value(0);
+    add_value(1);
+
+    mod_value(0);
+
+    s = lookup(0) + lookup(1);
+}
+
+void sumOfDigits_3( void )
+{
+    add_value(0);
+    add_value(1);
+    add_value(2);
+
+    mod_value(0);
+    mod_value(1);
+
+    s = lookup(0) + lookup(1) + lookup(2);
+}
+
+void sumOfDigits_4( void )
+{
+    add_value(0);
+    add_value(1);
+    add_value(2);
+    add_value(3);
+
+    mod_value(0);
+    mod_value(1);
+    mod_value(2);
+
+    s = lookup(0) + lookup(1) + lookup(2) + lookup(3);
+}
+
+void sumOfDigits_5( void )
+{
+    add_value(0);
+    add_value(1);
+    add_value(2);
+    add_value(3);
+    add_value(4);
+
+    mod_value(0);
+    mod_value(1);
+    mod_value(2);
+    mod_value(3);
+
+    s = lookup(0) + lookup(1) + lookup(2) + lookup(3) \
+        + lookup(4);
+}
+
+void sumOfDigits_6( void )
+{
+    add_value(0);
+    add_value(1);
+    add_value(2);
+    add_value(3);
+    add_value(4);
+    add_value(5);
+
+    mod_value(0);
+    mod_value(1);
+    mod_value(2);
+    mod_value(3);
+    mod_value(4);
+
+    s = lookup(0) + lookup(1) + lookup(2) + lookup(3) \
+        + lookup(4) + lookup(5);
+}
+
+void sumOfDigits_7( void )
+{
+    add_value(0);
+    add_value(1);
+    add_value(2);
+    add_value(3);
+    add_value(4);
+    add_value(5);
+    add_value(6);
+
+    mod_value(0);
+    mod_value(1);
+    mod_value(2);
+    mod_value(3);
+    mod_value(4);
+    mod_value(5);
+
+    s = lookup(0) + lookup(1) + lookup(2) + lookup(3) \
+        + lookup(4) + lookup(5) + lookup(6);
+}
+
+void sumOfDigits_8( void )
+{
+    add_value(0);
+    add_value(1);
+    add_value(2);
+    add_value(3);
+    add_value(4);
+    add_value(5);
+    add_value(6);
+    add_value(7);
+
+    mod_value(0);
+    mod_value(1);
+    mod_value(2);
+    mod_value(3);
+    mod_value(4);
+    mod_value(5);
+    mod_value(6);
+
+    s = lookup(0) + lookup(1) + lookup(2) + lookup(3) \
+        + lookup(4) + lookup(5) + lookup(6) + lookup(7);
+}
+
+typedef void ( *lpfnSumOfDigits )( void );
+
+lpfnSumOfDigits lpfn[ ] = { sumOfDigits, sumOfDigits_1, sumOfDigits_2, sumOfDigits_3, \
+    sumOfDigits_4, sumOfDigits_5, sumOfDigits_6, sumOfDigits_7, sumOfDigits_8 };
+
+int main( void )
+{
+    UINT32 i;
+    lpfnSumOfDigits SumOfDigits = lpfn[ 1 ];
+
+    HugeCalc::EnableTimer();
+    HugeCalc::ResetTimer();
+
+    init();
+
+    index(0) = 1;
+    delta(0) = -1;
+    m = 0;
+    for ( ; ; )
+    {
+        delta(0) += 2;
+        if ( delta(0) > TEN_POW4 )
+        {
+            delta(0) = 1;
+
+            i = 0;
+            while ( TEN_POW4 == ++delta(++i) )
+            {
+                delta(i) = 0;
+            }
+        }
+
+        SumOfDigits();
+
+        if ( 0 == exist(s) )
+        {
+            exist(s) = 1;
+
+            printf( HugeCalc::GetTimerStr( FT_HHMMSS_ms ));
+            printf( "\tX = %u\t\tS = %u", s, value( i = m ) );
+            while ( 0 != i )
+            {
+                printf( "%04u", value(--i) );
+            }
+            printf( "\n" );
+        }
+
+
+        i = -1;
+        while ( TEN_POW2 == ++index(++i) )
+        {
+            index(i) = 0;
+        }
+
+        if ( m < i )
+        {
+            m = i;
+
+            printf( "\n****** %s: Searched all perfect squares less then 10^%u ******\n\n", HugeCalc::GetTimerStr( FT_DOT06SECs ), 4*m );
+
+            if ( LIMBS == i )
+            {
+                break;
+            }
+
+#if ( LIMBS > 8  )
+            if ( m + 1 >= sizeof( lpfn ) / sizeof( lpfn[0] ))
+            {
+                SumOfDigits = lpfn[ 0 ];
+            }
+            else
+#endif
+            {
+
+                SumOfDigits = lpfn[ m + 1 ];
+            }
+        }
+        else if ( i == m && 10 == index(m) )
+        {
+            printf( "\n****** %s: Searched all perfect squares less then 10^%u ******\n\n", HugeCalc::GetTimerStr( FT_DOT06SECs ), 4*m + 2 );
+        }
+    }
+
+
+    printf( "\nComputation took %s\n\n", HugeCalc::GetTimerStr( FT_DOT06SEC_s ) );
+
+    system( "pause" );
+
+    return 0;
+}
