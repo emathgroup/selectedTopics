@@ -51,9 +51,9 @@ p_(n+1)、p_(n+2)、......
 在N\*N的范围内，素数p造成的空洞不多于$\frac Np \times \frac Np$个，所占比例不多于$\frac 1{p^2}$。  
 我们假设剩下的素数造成的空洞与之前的素数完全不重叠。
 所以P(N)大于
-$P(T) - \frac3M - \frac1{{p^{\primes}}_1^2} - \frac1{{p^{\primes}}_2^2} - \frac1{{p^{\primes}}_3^2} - \dots$  
+$P(T) - \frac3M - \frac1{{p^{\prime}}_1^2} - \frac1{{p^{\prime}}_2^2} - \frac1{{p^{\prime}}_3^2} - \dots$  
 其中 $p'_1$表示$p_{n+1}$，$p'_2$表示$p_{n+2}$，……，依次类推。  
-记 $S = \frac1{{p^{\primes}}_1^2} + \frac1{{p^{\primes}}_2^2} + \frac1{{p^{\primes}}_3^2} + \dots$  
+记 $S = \frac1{{p^{\prime}}_1^2} + \frac1{{p^{\prime}}_2^2} + \frac1{{p^{\prime}}_3^2} + \dots$  
 则$P(N)\gt P(T) - \frac3 M - S$  
 综上：
 $P(T) - \frac 3M - S \lt P(N) \lt P(T) + \frac 1M$  
