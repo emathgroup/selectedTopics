@@ -1,0 +1,134 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define max 16
+
+int calc[max * max];
+int maxlevel;
+int operator[4] = {-1, -2, -3, -4}; // + - * /
+int mask[max + 1];
+int n;
+int le; //剩余数字  
+int position;
+int counter;
+
+void init(void)
+{
+  int i;
+  for (i = 1; i <= max; i ++)
+    mask[i] = 0;
+  position = 0;
+  counter = 0;
+}
+
+//返回0代表表达式合法，－1代表除法不能除尽，－2代表除以0，－3代表结果为负
+int check(void)
+{
+  int i;
+  int op;
+  int leftNum, rightNum;
+  long long Result;
+  leftNum = 0;
+  rightNum = 0;
+//检测得到的数字序列是否合法表达式，如果是，则计算出结果
+  for (i = position - 1; i >= 0; i --)
+  {
+ if (calc[i] < 0)
+    switch (calc[i]) 
+    {
+      case -1:// +
+        break;
+      case -2:// -
+        break;
+      case -3:// *
+        break;
+      case -4:// /
+        break;
+    }
+  }
+ 
+}
+
+void print(void)
+{
+  int i;
+  for (i = 0; i <= position - 1; i ++)
+  {
+    if (calc[i] < 0)
+    {
+            switch (calc[i])
+        {
+          case -1: printf("+ "); break;
+          case -2: printf("- "); break;
+          case -3: printf("* "); break;
+          case -4: printf("/ "); break;
+        }
+    }
+    else
+      printf("%d ", calc[i]);
+  }
+  printf("\n");
+  counter ++;
+}
+
+int top(int level)
+{
+   int i, j;
+   if (level < n - 1)
+     for (i = 0; i < 4; i ++)
+      {
+       calc[position++] = operator[i]; 
+       left(level);
+       position --;
+      }
+}
+
+//左的长度要不大于右
+int left(int level)
+{
+  int i;
+  for (i = 1; i <= n; i ++)
+    if (mask[i] == 0)
+      {
+       calc[position++] = i;
+       mask[i] = 1;
+       le --;
+       right(level);
+       le ++;
+       mask[i] = 0;
+       position --;
+      }        
+  top(level + 1);
+}
+
+int right(int level)
+{
+  int i;
+  if (le == 1)
+  {
+    for (i = 1; i <= n; i ++)
+      if (mask[i] == 0)
+        {
+         calc[position++] = i;
+         mask[i] = 1;
+//         check();
+         print();
+         position --;
+         mask[i] = 0;
+        }
+  }
+  else        
+    top(level + 1);
+}
+
+int main(void)
+{
+  printf("Input n value:");
+  scanf("%d", &n);
+  printf("\n\n");
+  init();
+  le = n;
+  top(0);
+  printf("Total: %d\n", counter);
+  return 0;
+}

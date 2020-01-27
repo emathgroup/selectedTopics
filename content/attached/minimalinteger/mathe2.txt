@@ -1,0 +1,811 @@
+
+// unreach.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+
+#include <algorithm>
+#include <iostream>
+#include <vector>
+#include <time.h>
+#include <string>
+#include <set>
+#include <stdio.h>
+
+#ifdef _WIN32
+typedef __int64 longlong;
+#else
+typedef long long longlong;
+#endif
+using namespace std;
+
+#ifdef _DEBUG
+#include <assert.h>
+#define ASSERT(x) assert(x)
+#else
+#define ASSERT(x)
+#endif
+#define MAX_NUM 11
+//#define ALL_VALUES
+#define SMALL_SEARCH
+#define SEARCH_VALUE 11
+
+//enlarge CACHE_LIMIT so that some expression will be saved in memory. This
+//will speed the program,
+//but then we could not print the correct expression by expression() function.
+//CACHE_LIMIT should be no more than 8. I found that the speed will drop when
+//CACHE_LIMIT is too large
+#define CACHE_LIMIT 8
+#define MAX_BUF_SIZE 1088640000
+vector<bool> visited(MAX_BUF_SIZE,false);
+int cur_scan=1;
+
+#if CACHE_LIMIT==0
+//#define DISPLAY_NEW_VISIT
+//We could not define macro DISPLAY_NEW_VISIT when CACHE_LIMIT is non-zero, since we could not dump out expression when only result of sub-tree is cached (and sub-tree not available)
+//define CACHE_LIMIT to 0 and define DISPLAY_NEW_VISIT could dump out all the first expression to reach any integer number
+#endif
+
+#ifdef SMALL_SEARCH
+typedef int number;
+#define INTEGER(x) ((x)>=0?(x):-(x))
+#define IS_INTEGER(x) true
+#define IS_VALID(x)   true
+#else
+#define INTEGER(x) (x).get_integer()
+#define IS_INTEGER(x) (x).is_integer()
+#define IS_VALID(x)   (x).is_valid()
+class number{
+    int up;
+    int down;
+public:
+    number(const number& n):up(n.up),down(n.down){}
+    number(int n=0):up(n),down(1){}
+    number& operator+=(const number& n);
+    number& operator-=(const number& n);
+    number& operator*=(const number& n);
+    number& operator/=(const number& n);
+    bool is_zero()const{return down!=0&&up==0;}
+    bool is_valid()const{return down!=0;}
+    bool is_one()const{return down!=0&&up==down;}
+    bool operator==(const number& n)const{return
+        is_valid()&&n.is_valid()&&n.down*up==n.up*down;}
+    bool operator<(const number& n)const;
+    bool operator>(const number& n)const{return n<*this;}
+    bool operator<=(const number& n)const{return !(*this>n);}
+    bool operator!=(const number& n)const{return !(n==*this);}
+    bool operator>=(const number& n)const{return !(*this<n);}
+    number operator+(const number& n)const{number m(*this);return m+=n;}
+    number operator-(const number& n)const{number m(*this);return m-=n;}
+    number operator*(const number& n)const{number m(*this);return m*=n;}
+    number operator/(const number& n)const{number m(*this);return m/=n;}
+    bool is_integer()const{return down!=0&&up%down==0;}
+    int get_integer()const{if(is_integer())return up/down;else return -1;}
+    number& operator=(int n){up=n;down=1;return *this;}
+    int get_up()const{return up;}
+    int get_down()const{return down;}
+};
+
+number& number::operator +=(const number& n)
+{
+    up=up*n.down+down*n.up;
+    down*=n.down;
+    return *this;
+}
+
+number& number::operator -=(const number& n)
+{
+    up=up*n.down-down*n.up;
+    if(up<0)up=-up;
+    down*=n.down;
+    return *this;
+}
+
+number& number::operator *=(const number& n)
+{
+    up*=n.up;
+    down*=n.down;
+    return *this;
+}
+
+number& number::operator /=(const number& n)
+{
+    down*=n.up;
+    up*=n.down;
+    return *this;
+}
+
+bool number::operator <(const number &n)const
+{
+    return up*n.down<n.up*down;
+}
+#endif
+/*iterator to enumerate the partition of n different objects into m groups,where m is a varialbe so that the iterator will enumerate all m in range [2,n]
+ * and sub-iterator split_iterator spliter is used to enumerator numbers of objects in each groups
+ */
+class select_iterator{
+    int n;//total n element;
+    int m;//max group id; That's group 1<<8,2<<8,...,m<<8; m should be no less than 2.
+        //The select_iterator is used to split n elements into groups.
+    int select_array[MAX_NUM];///tells which group each number is located (It is select_array[x]>>8) and the order of the number inside the group (select_array[x]&255)
+    int sub_size[MAX_NUM]; ///sub_size[x] provides the number of elements of all groups whose group id no more than x
+    class split_iterator{///iterator to partition 'size' same objects into several groups (so only number of objects in each group is considered)
+        int split_array[MAX_NUM];///number of objects in each group
+        int last_index;///number of group - '1'
+    public:
+        split_iterator(int size)
+        {
+            ASSERT(size<=MAX_NUM);
+            if(size==1)
+            {
+                last_index=0;
+                split_array[0]=1;
+            }
+            else
+            {///Usually, we need partition data into at least two groups.
+                last_index=1;
+                split_array[0]=size-1;
+                split_array[1]=1;
+            }
+        }
+        bool inc()///Move to the next partition 
+        {
+            int i;
+            ASSERT(last_index<MAX_NUM);
+            for(i=last_index;i>=0;--i)
+            {
+                if(split_array[i]>=2)
+                    break;
+            }
+            if(i==-1)
+            {
+                int size=0;
+                for(i=0;i<=last_index;++i)
+                    size+=split_array[i];
+                if(size==1)
+                {
+                    last_index=0;
+                    split_array[0]=1;
+                }
+                else
+                {
+                    last_index=1;
+                    split_array[0]=size-1;
+                    split_array[1]=1;
+                }
+                return false;//end of search.
+            }
+            else
+            {
+                int total;
+                int last;
+                last=--split_array[i];
+                total=last_index-i+1;
+                while(total>=last){
+                    split_array[++i]=last;
+                    total-=last;
+                }
+                if(total>0){
+                    split_array[++i]=total;
+                }
+                last_index=i;
+            }
+            return true;
+        }
+        friend class select_iterator;
+    }spliter;
+    void init_from_spliter();
+public:
+    select_iterator(int size);
+    bool inc();
+    int get_sub_group_count()const{return spliter.last_index+1;}
+    int get_sub_size(int group_id)const{return sub_size[group_id/256-1];}
+    int get_group_id(int num)const{return select_array[num];}
+    int get_main_id(int group_id)const{return group_id/256-1;}
+    int get_sub_id(int group_id)const{return group_id%256;}
+    int split_size(int i)const{return spliter.split_array[i];}
+    int size()const{return n;}
+#ifdef _DEBUG
+    void print()const;
+#endif
+};
+
+select_iterator::select_iterator(int size):spliter(size)
+{
+    init_from_spliter();
+}
+
+void select_iterator::init_from_spliter()
+{
+    int i,prev,sg,t;
+    n=0,m=0;
+    prev=-1;
+    for(i=0;i<=spliter.last_index;++i)
+    {
+        if(spliter.split_array[i]!=prev)
+        {
+            sub_size[m]=spliter.split_array[i];
+            m++;
+            sg=0;
+        }
+        else
+            sg++;
+        for(t=0;t<spliter.split_array[i];t++)
+        {
+            select_array[n++]=m*256+sg;
+        }
+        prev=spliter.split_array[i];
+    }
+}
+
+bool select_iterator::inc()
+{
+    int i;
+    int buf[MAX_NUM];
+    bool result;
+    do
+    {
+        result = next_permutation(select_array,select_array+n);///permutate all numbers until 
+        if(!result)
+            break;
+        memset(buf,-1,sizeof(buf));
+        for(i=0;i<n;++i){//fill result into buf
+            int t=get_main_id(select_array[i]);
+            int q=get_sub_id(select_array[i]);
+            if(buf[t]<0)
+                buf[t]=q;
+            else
+                if(buf[t]>q)//invalid, all numbers in same subgroup should be ordered. Maybe we could optimize the code further
+                    break;
+        }
+        if(i==n)
+            break;
+    }while(true);
+    if(!result){///We need increase spliter when all permutation of data are searched
+        if(!spliter.inc())
+        {//set end.
+            init_from_spliter();
+            return false;
+        }
+        else
+        {
+            init_from_spliter();
+        }
+    }
+    return true;
+#if 0
+    for(i=n-1;i>0;--i)
+    {
+        if(select_array[i]>select_array[i-1])
+        {
+            if((select_array[i]/256)==(select_array[i-1]/256))
+            {//if in the same group.
+                int j;
+                // if(sub_size[select_array[i]/256-1]==1)
+                // continue;
+                for(j=i-2;j>=0;--j)
+                {
+                    if(select_array[j]==select_array[i-1])
+                        break;
+                }
+                if(j>=0)//if found one.
+                    break;
+            }
+            else
+                break;
+        }
+    }
+    if(i==0)//not found
+    {
+        if(!spliter.inc())
+        {//set end.
+            init_from_spliter();
+            return false;
+        }
+        else
+        {
+            init_from_spliter();
+        }
+    }
+    else
+    {
+        int tmp=select_array[i];
+        select_array[i]=select_array[i-1];
+        select_array[i-1]=tmp;
+        if(i<n-2)
+        {
+            sort(select_array+i+1,select_array+n);
+        }
+    }
+    return true;
+#endif
+    return result;
+}
+
+
+/*Expressions are represented by the tree iterator here.
+ *There're two different kinds of trees according to the topmost level operator.
+ *  the field get_prod is used to indicate whether the topmost level operators're mulitplication/division or add/sub.
+ *  For example, expression 4*(-3)/(1+2*5) is an expression whose topmost level operators are {*,/}
+ *   and it has three children, the first is 4, the second is (-3) and the third is expression 1+2*5
+ *    and similarly the topmost level operators of 1+2*5 is {+}. It has two children, the first is 1 and the second 2*5, etc
+ *  In each "tree_iterator" (a node of the tree), a spliter field is used to determine how much children nodes there're 
+ *    and how much operands there're in the (sub-)expression and how much topmost operators there're. And how those operands are partitioned to children.
+ *  For example, if the expression is 4*(-3)/(1+2*5), there're totoal 5 operands {-3,1,2,4,5} and 2 topmost operators so that operands are partition into 3 group.
+ *   The first child contains {4}, the second contans {-3}, the third contains {1,2,5}
+ * Please pay attention that change ordering of children does not change the value as soon as we change the correspondent bits in pattern.
+ * So the spliter will make sure that all groups are ordered according to number of elements to avoid those unnecessary recomputation
+ * And the pattern will be increased by 2 instead of 1 when get_prod==0. It means that no '-' will be added to the first child.
+ *    so that for operands set {a,b} with get_prod==0, we will only enumerate expression a+b and a-b. (b-a will not be enumerated)
+ * And for the final result, as soon as we could reach the result -x<0, it means we could also reach x by exchange ordering of some operands.
+ */
+class tree_iterator{
+    select_iterator spliter; 
+    tree_iterator *next_sibling; ///pointer to the next sibling (the node whose has same parent node with this_node), NULL if it is the last child of the parent
+    tree_iterator *first_child;  ///pointer to the first child of the node, NULL if it is leaf. So we could use first_child->next_sibling to get the second child node
+    tree_iterator *current_child_iterator;///A temporary pointer used when visiting the tree. (Maybe we should not define it here)
+    int get_prod;   ///when get_prod!=0, all topmost operators are either * or /; otherwise all topmost operators are either + or -.
+    number valued;  ///field used to save the value of the expression.
+    int data[MAX_NUM]; ///field to save all operands used by all leaf nodes. so data[]={2,-3,1,2,5} for expression 2*(-3)/(1+2*5)
+    int pattern;      ///Used to determine whether an operator is * or / when get_prod!=0 and wheter an operator is + or - when get_prod==0.
+                        ///pattern will be treated as a bit vector. 1 for * or + and 0 for / or -.  refer to function set_values();
+    void build_tree();   ///Function to build the tree for an expression
+    void clear_child();  ///Function to remove all children(to clear the node)
+    void set_values();  ///set the value of the expression according to the value of children
+    int cached;
+    int finished_cached;
+    vector<number> caches;
+    int start_cache_id;
+    int cur_cache_id;
+    string prod_expression()const;  ///get the expression in string format when get_prod!=0
+    string sum_expression()const;   ///get the expression in string format when get_prod==0
+    bool no_cache_inc();   ///enumerate next expression
+    void no_cache_build_tree(); ///entry function to build the tree for first expression
+    void create_cache_file();
+    void read_cache_file(int offset);
+public:
+    bool inc();
+    tree_iterator(int n,int d[],int prod);
+    int size()const{return spliter.get_sub_group_count();}
+    ~tree_iterator(){clear_child();}
+    const number& get_value()const{return valued;}
+    string get_pattern()const;
+    bool debug_sum(){return true;}
+    bool debug_prod(){return false;}
+    string expression()const{if(get_prod)return prod_expression();else return
+        sum_expression();}
+};
+
+#define BUFFER_LEN 1024
+number buffer[BUFFER_LEN];
+string tree_iterator::prod_expression()const
+{
+    if(first_child==NULL)
+    {
+        char buf[10];
+        sprintf(buf,"%d",INTEGER(valued));
+        return string(buf);
+    }
+    else
+    {
+        int i;
+        string s;
+        bool first=true;
+        tree_iterator *child=first_child;
+        for(i=0;i<spliter.get_sub_group_count();++i)
+        {
+            if(pattern&(1<<i)){
+                if(!first)
+                    s+='*';
+                first=false;
+                s+=child->sum_expression();
+            }
+            child=child->next_sibling;
+        }
+        child=first_child;
+        for(i=0;i<spliter.get_sub_group_count();++i)
+        {
+            if(!(pattern&(1<<i))){
+                s+='/';
+                s+=child->sum_expression();
+            }
+            child=child->next_sibling;
+        }
+        return s;
+    }
+}
+
+string tree_iterator::get_pattern()const
+{
+    if(first_child==NULL)
+    {
+        char buf[10];
+        sprintf(buf,"%d",INTEGER(valued));
+        return string(buf);
+    }
+    else
+    {
+        int i;
+        string s;
+        tree_iterator *child=first_child;
+        s+='[';
+        for(i=0;i<spliter.get_sub_group_count();++i)
+        {
+            s+=child->get_pattern();
+            child=child->next_sibling;
+        }
+        s+=']';
+        return s;
+    }
+}
+
+string tree_iterator::sum_expression()const
+{
+    if(first_child==NULL)
+    {
+        char buf[10];
+        sprintf(buf,"%d",INTEGER(valued));
+        return string(buf);
+    }
+    else
+    {
+        int i;
+        string s;
+        bool first=true;
+        tree_iterator *child=first_child;
+        s+='(';
+        for(i=0;i<spliter.get_sub_group_count();++i)
+        {
+            if(pattern&(1<<i)){
+                if(!first)
+                    s+='+';
+                first=false;
+                s+=child->prod_expression();
+            }
+            child=child->next_sibling;
+        }
+        child=first_child;
+        for(i=0;i<spliter.get_sub_group_count();++i)
+        {
+            if(!(pattern&(1<<i))){
+                s+='-';
+                s+=child->prod_expression();
+            }
+            child=child->next_sibling;
+        }
+        s+=')';
+        return s;
+    }
+}
+
+bool tree_iterator::no_cache_inc()
+{
+    if(get_prod)
+        pattern++;
+    else
+        pattern+=2;
+#ifndef SMALL_SEARCH
+    if(pattern<(1<<size()))
+    {
+        set_values();
+    }
+    else
+#else
+        if(!get_prod&&(pattern<(1<<size()))){
+        set_values();
+        }
+        else
+#endif
+    {
+        while(current_child_iterator&&!current_child_iterator->inc())
+            current_child_iterator=current_child_iterator->next_sibling;
+        if(current_child_iterator)
+        {
+            current_child_iterator=first_child;
+            pattern=1;
+            set_values();
+        }
+        else
+        {
+            if(spliter.inc())
+            {
+                no_cache_build_tree();
+            }
+            else
+            {
+                no_cache_build_tree();
+                return false;
+            }
+        }
+    }
+    return true;
+}
+
+bool tree_iterator::inc()
+{
+    if(finished_cached)
+    {
+        ++cur_cache_id;
+        if(cur_cache_id>=caches.size())
+        {
+            if(caches.size()==BUFFER_LEN){
+                read_cache_file(start_cache_id+BUFFER_LEN);
+                if(start_cache_id<0)
+                    return false;
+            }else{
+                return false;
+            }
+        }else{
+            valued=caches[cur_cache_id];
+        }
+        return true;
+    }
+    else
+    {
+        return no_cache_inc();
+    }
+}
+
+void tree_iterator::clear_child()
+{
+    tree_iterator *child=first_child;
+    while(child!=NULL)
+    {
+        first_child=child->next_sibling;
+        delete child;
+        child=first_child;
+    }
+    first_child=NULL;
+}
+
+tree_iterator::tree_iterator(int n,int d[MAX_NUM],int prod):spliter(n)
+{
+    next_sibling=NULL;
+    first_child=NULL;
+    get_prod=prod;
+    cached=(n<=CACHE_LIMIT)&&(n>=3);
+    finished_cached=0;
+    current_child_iterator=NULL;
+    memcpy(data,d,sizeof(data));
+    build_tree();
+}
+
+void tree_iterator::set_values()
+{
+    int i;
+    if(get_prod)
+        valued=1;
+    else
+        valued=0;
+    tree_iterator *child=first_child;
+    for(i=0;i<spliter.get_sub_group_count();++i)
+    {
+        if(pattern&(1<<i))
+        {
+            if(get_prod)
+                valued*=child->valued;
+            else
+                valued+=child->valued;
+        }
+        else
+        {
+            if(get_prod)
+#ifdef SMALL_SEARCH
+                                valued*=child->valued;
+#else
+                valued/=child->valued;
+#endif
+            else
+                valued-=child->valued;
+        }
+#ifdef ALL_VALUES
+                if(IS_INTEGER(valued)){
+                        int x=INTEGER(valued);
+                        if(x<MAX_BUF_SIZE){
+                                visited[x]=true;
+                if(x==cur_scan)
+                {
+                    while(cur_scan<MAX_BUF_SIZE&&visited[cur_scan])
+                        cur_scan++;
+                    cerr<<"Searching for "<<cur_scan<<" now"<<endl;
+                }
+                        }
+                }
+#endif
+        child=child->next_sibling;
+    }
+    if(get_prod&&valued==number(0)||!IS_VALID(valued))
+    {
+        pattern=((1<<size())-1);
+    }
+}
+
+void tree_iterator::no_cache_build_tree()
+{
+    int i;
+    int catche[MAX_NUM];
+    int prev=-1;
+    int m=0,sg,j,t;
+    clear_child();
+    if(size()==1)
+    {
+        valued=data[0];
+        pattern=1;
+        return;
+    }
+    for(i=0;i<spliter.get_sub_group_count();++i)
+    {
+        if(spliter.split_size(i)!=prev)
+        {
+            m++;
+            sg=0;
+        }
+        else
+            sg++;
+        t=m*256+sg;
+        int k;
+        for(k=0,j=0;j<spliter.size();++j)
+        {
+            if(spliter.get_group_id(j)==t){
+                catche[k++]=data[j];
+            }
+        }
+        tree_iterator *child=new tree_iterator(k,catche,!get_prod);
+        child->next_sibling=first_child;
+        first_child=child;
+        current_child_iterator=child;
+        prev=spliter.split_size(i);
+    }
+    pattern=1;
+    set_values();
+}
+
+void tree_iterator::read_cache_file(int offset)
+{
+    char fName[40];
+    int mask=0;
+    int i,j;
+    for(i=0;i<spliter.size();i++){
+        mask|=1<<(data[i]-1);
+    }
+    sprintf(fName,"data\\%c%d",get_prod?'m':'a',mask);
+    FILE *fHandle = fopen(fName,"rb");
+    if(fHandle==NULL){
+        fprintf(stderr,"Cannot open cache file %s\n",fName);
+        exit(-1);
+    }
+    fseek(fHandle,offset*sizeof(number),SEEK_SET);
+    start_cache_id=offset;
+    int read_size=fread(buffer,sizeof(number),BUFFER_LEN,fHandle);
+    if(read_size>0){
+        caches.clear();
+        for(i=0;i<read_size;i++){
+            caches.push_back(buffer[i]);
+        }
+        start_cache_id=offset;
+        cur_cache_id=0;
+        valued=buffer[0];
+    }else{
+        start_cache_id=cur_cache_id=-1;
+    }
+    fclose(fHandle);
+}
+
+void tree_iterator::create_cache_file()
+{
+    char fName[40];
+    int mask=0;
+    int i,j;
+    for(i=0;i<spliter.size();i++){
+        mask|=1<<(data[i]-1);
+    }
+    sprintf(fName,"data\\%c%d",get_prod?'m':'a',mask);
+    FILE *fHandle = fopen(fName,"rb");
+    if(fHandle!=NULL){
+        fclose(fHandle);
+        return;
+    }
+    set<number> ncaches;
+    do
+    {
+        if(IS_VALID(valued))
+            ncaches.insert(valued);
+    }while(no_cache_inc());
+    int size=ncaches.size();
+    if(size==0)return;
+    fHandle=fopen(fName,"wb");
+    if(fHandle==NULL){
+        fprintf(stderr,"Cannot create file %s\n",fName);
+        exit(-1);
+    }
+    set<number>::iterator it;
+    i=0,j=0;
+    for(it=ncaches.begin();it!=ncaches.end();++it){
+        buffer[j]=*it;
+        i++,j++;
+        if(j==BUFFER_LEN){
+            j=0;
+            fwrite(buffer,sizeof(number)*BUFFER_LEN,1,fHandle);
+        }
+    }
+    if(j!=0){
+        fwrite(buffer,sizeof(number)*j,1,fHandle);
+    }
+    fclose(fHandle);
+}
+
+void tree_iterator::build_tree()
+{
+    if(!cached){
+        no_cache_build_tree();
+    }else{
+        no_cache_build_tree();
+        if(size()>1){
+            create_cache_file();
+            finished_cached=1;
+            read_cache_file(0);
+        }
+    }
+}
+
+int main()
+{
+    int a[11]={1,2,3,4,5,6,7,8,9,10,11};
+    longlong count=0;
+    time_t starttime=time(NULL);
+    {
+        tree_iterator it(SEARCH_VALUE,a,1);
+        do
+        {
+            if(IS_INTEGER(it.get_value())){
+                int value=INTEGER(it.get_value());
+                if(value<0)value=-value;
+#ifdef DISPLAY_NEW_VISIT
+                if(value<MAX_BUF_SIZE&&!visited[value]){
+                    cout<<value<<'='<<it.expression()<<endl;
+                }
+#endif
+                visited[value]=true;
+                if(value==cur_scan)
+                {
+                    while(cur_scan<MAX_BUF_SIZE&&visited[cur_scan])
+                        cur_scan++;
+                    cerr<<"Searching for "<<cur_scan<<" now"<<endl;
+                    cerr<<'\t'<<"Time cost "<<time(NULL)-starttime;
+                    cerr<<','<<"searched expressions:"<<count+1<<endl;
+                }
+            }
+            count++;
+        }while(it.inc());
+    }
+    {
+        tree_iterator it(SEARCH_VALUE,a,0);
+        do
+        {
+            if(IS_INTEGER(it.get_value())){
+                int value=INTEGER(it.get_value());
+                if(value<0)
+                    value=-value;
+#ifdef DISPLAY_NEW_VISIT
+                if(value<MAX_BUF_SIZE&&!visited[value]){
+                    cerr<<value<<'='<<it.expression()<<endl;
+                }
+#endif
+                visited[value]=true;
+                if(value==cur_scan)
+                {
+                    while(cur_scan<MAX_BUF_SIZE&&visited[cur_scan])
+                        cur_scan++;
+                    cerr<<"Searching for "<<cur_scan<<" now"<<endl;
+                    cerr<<'\t'<<"Time cost "<<time(NULL)-starttime;
+                    cerr<<','<<"searched expressions:"<<count<<endl;
+                }
+            }
+            count++;
+        }while(it.inc());
+    }
+    cerr<<"Total expressions searched:"<<count<<endl;
+    cerr<<"Total time cost "<<time(NULL)-starttime<<endl;
+    cout<<"The first integer not reached is "<<cur_scan<<endl;
+    return 0;
+}

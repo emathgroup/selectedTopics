@@ -1,0 +1,245 @@
+program minn;
+
+{$APPTYPE CONSOLE}
+
+uses
+  SysUtils, StrUtils, windows;
+
+var
+  EndNum: integer = 0;
+  AddNum: integer = -1;
+  SubNum: integer = -2;
+  MulNum: integer = -3;
+
+type
+  sExpr = record
+    mask: integer;
+    result: integer; //可能为负数，只能计算到12
+    Expr: array[0..23] of integer;  
+  end;
+
+var
+  num: integer; //输入数字
+  appPath: string;
+  numStr: array[0..15] of string[2];
+  mask: array[0..15] of integer;
+
+procedure Init;
+var
+  i: integer;
+begin
+  numStr[0] := '00';
+  numStr[1] := '01';
+  numStr[2] := '02';
+  numStr[3] := '03';
+  numStr[4] := '04';
+  numStr[5] := '05';
+  numStr[6] := '06';
+  numStr[7] := '07';
+  numStr[8] := '08';
+  numStr[9] := '09';
+  numStr[10] := '10';
+  numStr[11] := '11';
+  numStr[12] := '12';
+  numStr[13] := '13';
+  numStr[14] := '14';
+  numStr[15] := '15';
+  mask[0] := 1;
+  for I := 1 to 15 do
+    mask[i] := mask[i-1] shl 1;  
+end;
+
+//两个都是单数字
+procedure processTwoStep;
+var
+  sFile: File of sExpr;
+  i, j, fs: integer;
+  sSFile, prefix: string;
+  sSExpr: sExpr;
+begin
+  prefix := appPath + numStr[num];
+  sSFile := prefix + '02.dat';
+  AssignFile(sFile, sSFile);
+  Reset(sFile);
+  fs := FileSize(sFile);
+  Seek(sFile, fs);
+  for i := 1 to num - 1 do
+    for j := i + 1 to num do
+      begin
+        sSExpr.mask := mask[i] or mask[j];
+        sSExpr.result := i + j;
+        ssExpr.Expr[0] := AddNum;
+        sSExpr.Expr[1] := i;
+        sSExpr.Expr[2] := j;
+        ssExpr.Expr[3] := EndNum;
+        Write(sFile, sSExpr);
+
+        sSExpr.Expr[0] := SubNum;
+        sSExpr.result := i - j;
+        Write(sFile, sSExpr);
+
+        sSExpr.Expr[0] := MulNum;
+        sSExpr.result := i * j;
+        Write(sFile, sSExpr);
+
+        sSExpr.result := j - i;
+        sSExpr.Expr[0] := SubNum;
+        sSExpr.Expr[1] := j;
+        sSExpr.Expr[2] := i;
+        sSExpr.Expr[3] := EndNum;
+        Write(sFile, sSExpr);
+      end;
+
+  Close(sFile);
+end;
+
+//有一个是单数字
+procedure processSingleStep(m: integer);
+var
+  mFile, sFile: File of sExpr;
+  n, i, fs: integer;
+  sMFile, sSFile, prefix: string;
+  sMExpr, sSExpr: sExpr;
+begin
+  prefix := appPath + numStr[num];
+  sMFile := prefix + numStr[m] + '.dat';
+  sSFile := prefix + numStr[m + 1] + '.dat';
+  AssignFile(mFile, sMFile);
+  AssignFile(sFile, sSFile);
+  Reset(sFile);
+  fs := FileSize(sFile);
+  Seek(sFile, fs);
+  for n := 1 to num do
+  begin
+    reset(mFile);
+    while not eof(mFile) do
+    begin
+      Read(mFile, sMExpr);
+      if (mask[n] and sMExpr.mask = 0) then
+      begin
+        sSExpr.mask := mask[n] or sMExpr.mask;
+        sSExpr.result := n + sMExpr.result;
+        sSExpr.Expr[1] := n;
+        for I := 0 to 2 * m - 2 do
+          sSExpr.Expr[2 + i] := sMExpr.Expr[i];
+        sSExpr.Expr[0] := AddNum;
+        sSExpr.Expr[1 + 2 * m] := EndNum;
+        Write(sFile, sSExpr);
+
+        sSExpr.Expr[0] := SubNum;
+        sSExpr.result := n - sMExpr.result;
+        Write(sFile, sSExpr);
+
+        sSExpr.Expr[0] := MulNum;
+        sSExpr.result := n * sMExpr.result;
+        Write(sFile, sSExpr);
+
+        sSExpr.result := sMExpr.result - n;
+        for I := 1 to 2 * m - 1 do
+          sSExpr.Expr[i] := sMExpr.Expr[i - 1];
+        sSExpr.Expr[2 * m] := n;
+        sSExpr.Expr[0] := SubNum;
+        Write(sFile, sSExpr);
+      end;
+    end;
+  end;
+
+  Close(mFile);
+  Close(sFile);
+end;
+
+//两个都是序列表达式
+procedure processDoubleStep(n, m: integer);
+var
+  nFile, mFile, sFile: File of sExpr;
+  fs, i: integer;
+  sNFile, sMFile, sSFile, prefix: string;
+  sNExpr, sMExpr, sSExpr: sExpr;
+begin
+  prefix := appPath + numStr[num];
+  sNFile := prefix + numStr[n] + '.dat';
+  sMFile := prefix + numStr[m] + '.dat';
+  sSFile := prefix + numStr[n + m] + '.dat';
+  AssignFile(nFile, sNFile);
+  AssignFile(mFile, sMFile);
+  reset(nFile);
+  AssignFile(sFile, sSFile);
+  reset(sFile);
+  fs := FileSize(sFile);
+  Seek(sFile, fs);
+  while not eof(nFile) do
+  begin
+    Read(nFile, sNExpr);
+    reset(mFile);
+    while not eof(mFile) do
+    begin
+      Read(mFile, sMExpr);
+      if (sNExpr.mask and smExpr.mask = 0) then
+      begin
+        sSExpr.mask := sNExpr.mask or sMExpr.mask;
+        sSExpr.result := sNExpr.result + sMExpr.result;
+        for I := 1 to 2 * n - 1 do
+          sSExpr.Expr[i] := sNExpr.Expr[i - 1];
+        for I := 0 to 2 * m - 2 do
+          sSExpr.Expr[2 * n + i] := sMExpr.Expr[i];
+        sSExpr.Expr[0] := AddNum;
+        sSExpr.Expr[2 * n + 2 * m - 1] := EndNum;
+        Write(sFile, sSExpr);
+
+        sSExpr.Expr[0] := SubNum;
+        sSExpr.result := sNExpr.result - sMExpr.result;
+        Write(sFile, sSExpr);
+
+        sSExpr.Expr[0] := MulNum;
+        sSExpr.result := sNExpr.result * sMExpr.result;
+        Write(sFile, sSExpr);
+
+        sSExpr.result := sMExpr.result - sNExpr.result;
+        for I := 1 to 2 * m - 1 do
+          sSExpr.Expr[i] := sMExpr.Expr[i - 1];
+        for I := 0 to 2 * n - 2 do
+          sSExpr.Expr[2 * m + i] := sNExpr.Expr[i];
+        sSExpr.Expr[0] := SubNum;
+        Write(sFile, sSExpr);
+      end;
+    end;
+  end;
+
+  Close(nFile);
+  Close(mFile);
+  Close(sFile);
+end;
+
+procedure processStep(l: integer);
+var
+  i: integer;
+  sFile: File of sExpr;
+  sSFile, prefix: string;
+begin
+  prefix := appPath + numStr[num];
+  sSFile := prefix + numStr[l] + '.dat';
+  AssignFile(sFile, sSFile);
+  rewrite(sFile);
+  Close(sFile);
+
+  if (l = 2) then
+    processTwoStep;
+  if (l >= 3) then
+    processSingleStep(l - 1);
+  if (l >= 4) then
+    for i := 2 to l div 2 do
+      processDoubleStep(i, l - i);
+end;
+
+var
+  i: integer;
+begin
+  { TODO -oUser -cConsole Main : Insert code here }
+  appPath := ExtractFilePath(paramStr(0));
+  writeln('请输入需要求出数据的num值: ');
+  readln(num);
+  Init;
+  for i := 2 to num do
+    processStep(i);  
+end.
+
