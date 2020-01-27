@@ -63,7 +63,7 @@ X = 148 S = 989879999979599689
 X = 151 S = 6979497898999879969  
 X = 153 S = 5899989587897999889  
 X = 154 S = 8899988895999696889  
-无心人对gxqcn的代码[继续修改]((../attached/squaredigitssum3.txt))并且长时间运算，[得出更多结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=642&pid=7949&fromuid=20):  
+无心人对gxqcn的代码[继续修改](../attached/squaredigitssum3.txt))并且长时间运算，[得出更多结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=642&pid=7949&fromuid=20):  
 153    00000000000005899989587897999889  
 151    00000000000006979497898999879969  
 154    00000000000008899988895999696889  
