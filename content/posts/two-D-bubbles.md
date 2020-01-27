@@ -104,7 +104,7 @@ $\tan⁡(\theta)-\frac{r_0\sin⁡(u-\theta_0 )}{1-r_0\cos⁡(u-\theta_0 )}=0$
 后来我们利用pari/gp计算出了圆形情况不超过43个区域下的[50位精度的高精度结果](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=2745&pid=80871&fromuid=20)。 点击链接可以下载[关键点的坐标和圆弧角度的高精度结果](../thumbnails/allbest.tgz)。
 另外我们还继续计算得出将圆形划分44~52个区域时的不错结果，如下面是将圆形田地划分为44个区域的划分方案图：
 ![c44](../thumbnails/c44.png)
-
+<a name=chapterone></a>
 # 第一部分 理论分析
 现在我们可以把这个问题重新描绘为：
 
