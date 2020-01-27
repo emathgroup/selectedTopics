@@ -38,12 +38,12 @@ $\frac{p1^2-1}{p1^2}\frac{p2^2-1}{p2^2}\dots\frac{p_n^2-1}{p_n^2}$
 虽然至少完整地跑完了M个周期，但第(M+1)个周期并不完整。  
 （实际上可能不止M个完整的周期，但讨论的是上界，就放缩到$\frac M{M+1}$好了）  
 由于讨论的是上界，所以不完整的部分认为全满，一个空洞也没有。  
-![squ](../images/coprimecloth/cpsqu.PNG)  
+![squ](../images/coprimecloth/cosqu.PNG)  
 所以$P(N)\le \frac{P(T)M^2+2M+1}{(M+1)^2} \le \frac{P(T)M^2+3M}{M^2+2M}=\frac{P(T)M+3}{M+2}<P(T)+\frac1M$.  
 所以随着N的增大，这个上界单调递减。  
 另一方面，P(N)有一个准确的下界：  
 不完整的部分被清得一个不剩。
-![sqv](../images/coprimecloth/cpsqv.PNG)  
+![sqv](../images/coprimecloth/cosqv.PNG)  
 所以$P(N)\gt P(T)\frac{M^2}{(M+1)^2} - \dots \gt P(T)\frac{M^2}{(M^2+3M)} - \dots =\frac{P(T)M}{M+3}-\dots \gt P(T)-\frac3M-\dots$  
 除此之外，还要考虑剩下的素数  
 p_(n+1)、p_(n+2)、......  
