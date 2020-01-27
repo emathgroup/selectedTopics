@@ -1,0 +1,73 @@
+#include <stdio.h>
+#include <iostream>
+
+using namespace std;
+
+const int MaxN = 1 << 25;
+
+int n, i, j, k, x, y;
+int out[60]; // 记录输出方案，其中out[x]==1表示方案中元素x属于少的那部分
+unsigned long long sum, ans, ans_x, ans_y; // ans记录少的那半的总和，ans_x记录右半边元素的和，ans_y记录左半边元素的和
+unsigned long long a[60]; // 记录输入的50个元素
+unsigned long long list1[MaxN], list2[MaxN], L[MaxN >> 1]; // 含义如上所述
+
+void make(int st, int ed) // 构造2^25的有序数列
+{
+    int i, j, k, x, y;
+    
+    list1[0] = 0;
+    for (i=st; i<ed; i++)
+    {
+        for (j=0; j<(1<<(i-st)); j++) L[j] = list1[j] + a[i];
+        x = y = (1 << (i - st)) - 1;
+        for (k=(1<<(i-st+1))-1; k>=0; k--)
+        {
+            if (x>=0 && (y<0 || list1[x]>L[y])) { list1[k] = list1[x]; x --; }
+            else { list1[k] = L[y]; y --; }
+        }    
+    }    
+}    
+
+bool check(int st, int ed, unsigned long long S, int mask) // 检查相应的方案mask是否可以得到和S
+{
+    int i;
+    
+    for (i=st; i<ed; i++) if (mask & (1 << (i - st))) S -= a[i];
+    if (!S)
+    {
+        for (i=st; i<ed; i++) if (mask & (1 << (i - st))) out[i] = 1;
+        return 1;
+    } else return 0;
+}    
+
+int main()
+{
+    freopen("1.in", "r", stdin);
+    scanf("%d", &n);
+    for (i=0; i<n; i++) // 输入
+    {
+        cin >> a[i];
+        sum += a[i];
+    }    
+    
+    make(0, n / 2); // 构造前半
+    for (i=0; i<(1<<(n/2)); i++) list2[i] = list1[i]; // 存入list2中
+    make(n / 2, n); // 构造后半，此时前半在list2，后半在list1
+    y = (1 << (n / 2)) - 1; // list2中的指针
+    for (x=0; x<(1<<(n/2)); x++) // list1中的指针
+    {
+        while (y && list1[x]+list2[y]>sum/2) y --; // 找到最大的满足条件的y
+        if (list1[x]+list2[y]>ans && list1[x]+list2[y]<=sum/2) // 若满足条件且大于当前解则更新
+        {
+            ans = list1[x] + list2[y];
+            ans_x = list1[x];
+            ans_y = list2[y];
+        }    
+    }    
+    freopen("1.out", "w", stdout); // 输出
+    for (i=0; i<(1<<(n/2)); i++) if (check(0, n / 2, ans_y, i)) break;
+    for (i=0; i<(1<<(n/2)); i++) if (check(n / 2, n, ans_x, i)) break;
+    for (i=0; i<n; i++) if (out[i]) printf("%d ", i + 1); printf("\n");
+    for (i=0; i<n; i++) if (!out[i]) printf("%d ", i + 1); printf("\n");
+    cout << ans << " " << sum - ans - ans << endl;
+}
