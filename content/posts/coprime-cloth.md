@@ -30,7 +30,7 @@ KeyTo9\_Fans[提供了他的思路](https://bbs.emath.ac.cn/forum.php?mod=redire
 P(N)有一个准确的上界：  
 我们只取$p_1,p_2,\dots,p_n$。  
 其中，$(p_1p_2\dots p_n)^2\lt N$  
-记$M=\sqrt(N)$，取下整。  
+记$M=\sqrt{N}$，取下整。  
 记$T=p_1p_2\dots p_n$  
 那么k关于素数$p_1$、$p_2$、... 、$p_n$的余数在k=1到k=N之内至少完成了M个周期的变化。  
 在一个周期T里面，P(T)严格等于  
