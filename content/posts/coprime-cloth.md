@@ -56,7 +56,7 @@ $P(T) - \frac3M - \frac1{p'_1^2} - \frac1{p'_2^2} - \frac1{p'_3^2} - \dots$
 记 $S = \frac1{p'_1^2} + \frac1{p'_2^2} + \frac1{p'_3^2} + \dots$  
 则$P(N)\gt P(T) - \frac3 M - S$  
 综上：
-$P(T) - \frac 3M - S \lt P(N) \lt P(T) + \frac 1M$
+$P(T) - \frac 3M - S \lt P(N) \lt P(T) + \frac 1M$  
 由极限的夹逼性，P(N)的极限与P(T)的极限相同, 由此在根据前面一些结论可以得出结果。  
 
 后来KeyTo9\_Fans发现数学吧cqhm关于这个问题给了个[很漂亮而且非常简单的证明](http://tieba.baidu.com/f?kz=192294075):  
