@@ -3,6 +3,10 @@ title: 无心人的三层派
 categories: 数学
 thumbnail: "../thumbnails/geekclock.jpg"
 date: 2020-01-28
+tags:
+  - "圆周率"
+  - "数学"
+
 ---
 2008年3月[无心人提出挑战](https://bbs.emath.ac.cn/thread-248-1-1.html):  
 使用三个$\pi$，不得有其他数字,  

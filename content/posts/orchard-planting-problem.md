@@ -179,7 +179,7 @@ print("A_x=1 A_y=0 B=[1:0:0] D_x=0 D_y=0 E_y=0 G_x=0 I=[1:I_y:0] J=[1:J_y:0] M_x
 ![t18](../images/trees/t18.jpg)  
 [18棵树]问题的最优解,以及[另外一种对称图](https://bbs.emath.ac.cn//forum.php?mod=redirect&goto=findpost&ptid=2015&pid=24619&fromuid=20) :  
 AEHIABGKCEGLCDKMBDFNBCHOEFJOADLOBJLPAFMPCINPDGIQHJMQEKNQFGHRIJKRLMNROPQR  
-![t18r18.4](../images/trees/t18r18.4.GIF)  
+![t18r18.4](../images/trees/t18r18.4.gif)  
 ![s18](../images/trees/s18.png)  
 还可以映射为分别包含[两个](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82757&fromuid=20) 和[三个](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82760&fromuid=20) 无穷远点的对称图:  
 ![s18.3](../images/trees/s18.3.png)  

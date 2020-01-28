@@ -2,6 +2,9 @@
 title: liangbch的地砖
 categories: 几何
 thumbnail: "../thumbnails/8-8-4.png"
+tags:
+  - "覆盖"
+  - "铺地砖"
 
 date: 2020-01-28
 ---
@@ -15,15 +18,15 @@ date: 2020-01-28
 <!--more-->
 
 采用正三角形的铺法:  
-![triangles](../images/lbrick/triangles.GIF)  
+![triangles](../images/lbrick/triangles.gif)  
 采用正四边形的铺法:  
-![squares](../images/lbrick/squares.GIF)  
+![squares](../images/lbrick/squares.gif)  
 采用正六边形的铺法:  
-![hexigons](../images/lbrick/hexigons.GIF)  
+![hexigons](../images/lbrick/hexigons.gif)  
 采用正八边形和正方形的铺法:  
-![8-8-4](../images/lbrick/8-8-4.GIF)  
+![8-8-4](../images/lbrick/8-8-4.gif)  
 采用正五边形和正十形的铺法（错误的铺法）:  
-![5-5-10](../images/lbrick/5-5-10.GIF)  
+![5-5-10](../images/lbrick/5-5-10.gif)  
 
 # 更多讨论
 [liangbch提出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=635&pid=7742&fromuid=20)：  
@@ -54,9 +57,9 @@ date: 2020-01-28
 也许这仅是满足要求的必要条件之一.  
 liangbch为gxqcn的方案配了对应的图
 4+6+12:  
-![4-6-12](../images/lbrick/4-6-12.GIF)  
+![4-6-12](../images/lbrick/4-6-12.gif)  
 3+12+12:  
-![12-12-3](../images/lbrick/12-12-3.GIF)  
+![12-12-3](../images/lbrick/12-12-3.gif)  
 然后他编程[找出更多的候选方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=635&pid=7758&fromuid=20):  
 通过编程计算，多个多边形拼起来，其内角和等于360°的组合有：  
 ```bash
@@ -104,13 +107,13 @@ liangbch为gxqcn的方案配了对应的图
 如：（3，3，4，12），（3，4，3，12），（3，4，12，3）。  
 并且给出了更多的图案:  
 3-3-3-3-6：  
-![3-3-3-3-6](../images/lbrick/3-3-3-3-6.GIF)  
+![3-3-3-3-6](../images/lbrick/3-3-3-3-6.gif)  
 3-4-6-4:
-![3-4-6-4](../images/lbrick/3-4-6-4.GIF)  
+![3-4-6-4](../images/lbrick/3-4-6-4.gif)  
 3-6-3-6:  
-![3-6-3-6](../images/lbrick/3-6-3-6.GIF)  
+![3-6-3-6](../images/lbrick/3-6-3-6.gif)  
 3-3-6-6试图按（3，3，6，6）的顺序铺地板，结果导致了一些顶点（红圈标出）不再是(3,6,3,6)的顺序，是一种不符合条件的排法:  
-![3-3-6-6](../images/lbrick/3-3-6-6.GIF)  
+![3-3-6-6](../images/lbrick/3-3-6-6.gif)  
 三个角共点的有：  
 3+12+12  
 4+6+12  

@@ -119,7 +119,7 @@ v2 = Abs[w - leftx] + p * Abs[rightx - xforecast];
 rightx位于w右边，leftx位于w左边，xforecast=1/2
 根据v1和v2的大小关系，确定吃右边的豆子还是左边的豆子
 已经对应的[Mathematica代码](../attached/bean/dianyancao.txt)和结果图:
-![吃豆子Plot](../images/bean/吃豆子Plot.GIF)  
+![吃豆子Plot](../images/bean/吃豆子Plot.gif)  
 
 # 更多豆子的思考
 [无心人提议](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=4895&pid=47878&fromuid=20):  
