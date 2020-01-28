@@ -3,8 +3,6 @@ title: liangbch的地砖
 categories: 几何
 thumbnail: "../images/lbrick/8-8-4.GIF"
 
-tags:
-  - 几何平铺
 date: 2020-01-28
 ---
 
