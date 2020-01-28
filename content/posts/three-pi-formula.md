@@ -8,7 +8,6 @@ tags:
   - 圆周率
 date: 2020-01-28
 ---
-
 2008年3月[无心人提出挑战](https://bbs.emath.ac.cn/thread-248-1-1.html):  
 使用三个$\pi$，不得有其他数字,  
 加减乘除运算，乘方运算，平方根运算，取整运算,  
@@ -43,13 +42,13 @@ $22 = [ \pi ^ { \frac{\pi} {\sqrt{\sqrt{\sqrt{\pi}}} }} ]$
 $23 = [ \pi \times \pi ^ {\sqrt{\pi}} ]$  
 $24 = [ ((\sqrt{\pi} ^ \pi ) ^ {\sqrt{\pi}} ]$  
 $25 = [ ( \pi + \pi ) ^ {\sqrt{\pi}} ]$  
-$26 = [ \pi ^ { \sqrt{\pi} + \sqrt{\sqrt{\sqrt{\sqrt{\pi}}}} } ]$  
+$26 = \left[ \pi ^ { \sqrt{\pi} + \sqrt{\sqrt{\sqrt{\sqrt{\pi}}}} }\right]$  
 $27 = [ \pi ] \times [ \pi ] \times [ \pi ]$  
 $28 = [ [ \pi ]  \times [ \pi ] \times  \pi ] = [ [ \pi \times \pi ] \times \pi ]$  
 $29 = [ [ \pi ] \times ( \pi \times \pi ) ]$  
 $30 =$  
 $31 = [ \pi \times \pi \times \pi ]$  
-$32 = [ ( \frac{\pi }{ (\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{ \pi}}}}} ) ^ {\pi}} ]$  
+$32 = \left[ \frac{\pi }{ \left(\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{ \pi}}}}}\right)^{\pi}}\right]$  
 $33 = [ \pi ^{\pi} - \pi ]$  
 $34 = [ \pi ^{\pi} - \sqrt{\pi} ]$  
 $35 = [ \pi ^{\pi} ] - [ \sqrt{\pi} ]$  
@@ -58,23 +57,23 @@ $37 = [ \pi ^{\pi} ] + [ \sqrt{\pi} ]$
 $38 = [ \pi ^{\pi} + \sqrt{\pi} ]$  
 $39 = [ \pi ^{\pi} + \pi ]$  
 $40 = $  
-$41 = [ \pi ^ { \pi \times \sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\pi}}}}} } ]$  
+$41 = \left[ \pi ^ { \pi \times \sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\pi}}}}} }\right]$  
 $42 = [ \pi ^{\pi} \times \sqrt{\sqrt{\sqrt{\pi}}} ]$  
-$43 = [ [ \pi ] ^ { [ \pi ] \times \sqrt{\sqrt{\sqrt{[\pi]}}} } ]$  
+$43 = \left[ [ \pi ] ^ { [ \pi ] \times \sqrt{\sqrt{\sqrt{[\pi]}}} } \right]$  
 $44 = [ [ \pi ] ^ { [ \pi ] \times \sqrt{\sqrt{\sqrt{\pi}}} } ]$  
-$45 = [ ( pi \times \sqrt{\sqrt{\sqrt{\sqrt{\pi}}}} ) ^{\pi} ]$  
-$46 = [ \sqrt([ \pi ]) ^ {[ [ \pi ] ^ {\sqrt{\pi}} ]} ]$  
+$45 = \left[ (\pi \times \sqrt{\sqrt{\sqrt{\sqrt{\pi}}}} ) ^{\pi}\right]$  
+$46 = [ \sqrt{[ \pi ]} ^ {[ [ \pi ] ^ {\sqrt{\pi}} ]} ]$  
 $47 = [ \sqrt{\pi} \times [ \pi ] ^ {[ \pi ]}  ]$  
 $48 = [\sqrt{\sqrt{\pi}} \times \pi ^{\pi} ]$  
-$49 = [ [ \pi ] ^ { [ \pi ] ^ {\sqrt{\sqrt{\sqrt{\pi}}}} } ]$  
-$50 = [ \pi ^ { \pi ^ {\sqrt{\sqrt{\sqrt{\sqrt{\pi}}}} }}) ]$  
+$49 = \left[ [ \pi ] ^ { [ \pi ] ^ {\sqrt{\sqrt{\sqrt{\pi}}}} } \right]$  
+$50 = \left[ \pi ^ { \pi ^ {\sqrt{\sqrt{\sqrt{\sqrt{\pi}}}} }}\right]$  
 $51 = $  
 $52 = $  
 $53 = [ ( \sqrt{\pi} + \sqrt{\pi} ) ^{\pi} ]$  
 $54 =$  
-$55 = [ \sqrt{\pi} ^ { [ \pi ] ^ \sqrt{\pi} } ]$  
+$55 = [\sqrt{\pi}^{[\pi]^{\sqrt{\pi}}}]$  
 $56 =$  
-$57 = [ \pi ^ { \sqrt{\pi} + \sqrt{\pi} } ]$  
+$57 = [ \pi ^{\sqrt{\pi} + \sqrt{\pi} }]$  
 
 [northwolves补充了](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=248&pid=1909&fromuid=20)  
 $40=[\pi\sqrt{\sqrt{\sqrt{\sqrt{\sqrt{\pi}^{\pi}}}}}]$  
@@ -245,7 +244,7 @@ Pi表示
 [gxqcn表示](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=248&pid=2096&fromuid=20)，如果还允许对数、阶乘、取负运算，三个$\pi$可以表示任意正整数：  
 　　$n = -\log_{[\sqrt{[\pi]!}]}{\log_{\pi}{\sqrt{\sqrt{...\sqrt{\pi}}}}}$（n 重根号）  
 因为，$[\\sqrt{[\pi]!}] = [\sqrt{3!}] = [\sqrt6] = 2$  
-$\log_{\pi}{\sqrt{\sqrt{...sqrt{\pi}}}}$（n 重根号）  
+$\log_{\pi}{\sqrt{\sqrt{\dots\sqrt{\pi}}}}$（n 重根号）  
 $\quad = \log_{\pi}{\pi^{2^{-n}}} = 2^{-n}$  
 
 gxqcn还给出了一个用[3个9表示所有数字的钟](https://bbs.emath.ac.cn/thread-324-1-1.html).  
