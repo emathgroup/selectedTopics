@@ -1,7 +1,7 @@
 ---
 title: liangbch的地砖
 categories: 几何
-thumbnail: "../images/lbrick/8-8-4.GIF"
+thumbnail: "../thumbnails/8-8-4.png"
 
 date: 2020-01-28
 ---
