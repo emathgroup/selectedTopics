@@ -3,8 +3,6 @@ title: 均分平方根
 categories: 算法
 thumbnail: "../thumbnails/sqrt.jpg"
 
-tags:
-  - 平方根
 date: 2020-01-27
 ---
 
