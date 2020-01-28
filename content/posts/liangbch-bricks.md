@@ -27,7 +27,7 @@ date: 2020-01-28
 ![8-8-4](../images/lbrick/8-8-4.gif)  
 采用正五边形和正十形的铺法（错误的铺法）:  
 ![5-5-10](../images/lbrick/5-5-10.gif)  
-
+ 
 # 更多讨论
 [liangbch提出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=635&pid=7742&fromuid=20)：  
 满足铺地板的一个必要条件是每个顶点的各个多边形的内角和是360°。下面列出法符合这个条件的一些铺法：  
