@@ -1,11 +1,7 @@
 ---
 title: 无心人的三层派
 categories: 数学
-keywords: '派'
 thumbnail: "../thumbnails/geekclock.jpg"
-
-tags:
-  - 圆周率
 date: 2020-01-28
 ---
 2008年3月[无心人提出挑战](https://bbs.emath.ac.cn/thread-248-1-1.html):  
