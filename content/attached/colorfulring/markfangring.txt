@@ -1,0 +1,66 @@
+import time
+import matplotlib.pyplot as plt
+import numpy as np
+import time
+time_start=time.time()#计算时间开始
+
+counter=0;
+def draw_nklc(nk,n):
+    plt.close()
+    fig = plt.figure()
+    ax1=fig.add_subplot(111)
+    ang = np.arange(0,2*np.pi,2*np.pi/7)
+    plc= [(12*np.cos(theta),16*np.sin(theta)) for theta in ang]
+    for i in range(7):
+        bll=plt.Circle(plc[i],3,color = nk[i])
+        ax1.add_patch(bll)
+    plt.xlim((-30,30))
+    plt.ylim((-30,30))
+    plt.savefig('三色珠'+str(n)+'.png')
+
+bc_st=('red','green','blue')                #总共三种颜色
+nk_lc=[(x1,x2,x3,x4,x5,x6,x7)\
+       for x1 in bc_st\
+       for x2 in bc_st\
+       for x3 in bc_st\
+       for x4 in bc_st\
+       for x5 in bc_st\
+       for x6 in bc_st\
+       for x7 in bc_st]                     #列出所有可能的序列，共计2184种序列
+
+
+ns = list()                                 #建立新的序列集合
+
+for item in nk_lc:                          #将原序列集合的元素添加至新序列集合
+    fg = 1
+    a = [item[i:]+item[:i]\
+         for i in range(len(item))]         #添加前检查元素是否已在新序列中
+    for it in a:                            #检查时先将序列循环旋转一遍
+        if it in ns:
+            fg = 0
+            break
+    if fg == 1:
+        c = tuple([x for x in\
+                   reversed(item)])         #然后将元素倒序再次循环旋转一遍依次检查
+        b = [c[i:]+c[:i]\
+             for i in range(len(c))]
+        for it in b:
+            if tuple(it) in ns:
+                fg = 0
+                break
+    if fg ==1:
+        ns.append(item)
+        counter += 1 # 计算个数.
+
+        
+
+#for i in range(len(ns)):
+    #draw_nklc(ns[i],i)
+
+print('-'*60)
+
+print('珠宝商一共有%d种独一无二的彩珠手链出售。'%(counter))
+print('-'*60)
+time_end=time.time()#计算时间结束
+print('python3.6程序运行',time_end-time_start,'秒。')
+print('-'*60)
