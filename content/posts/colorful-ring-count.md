@@ -64,7 +64,7 @@ hujunhua[指出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&pt
 其中，TSC999首先自己给出了一个计算结果的表格:  
 
 <table width=50%>
-<tr><td> </td><td colspan=12> m种颜色</td></tr>
+<tr><td colspan=2 rowspan=2> </td><td colspan=12> m种颜色</td></tr>
 <tr><td> 1 </td><td> 2 </td><td> 3 </td><td> 4 </td><td> 5 </td><td> 6 </td><td> 7 </td><td> 8 </td><td> 9 </td><td> 10 </td><td> 11 </td><td> 12 </td></tr>
 <tr><td rowspan=11>
  n
@@ -128,4 +128,3 @@ $$
 
 [hujunhua 猜测](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9161&pid=63963&fromuid=20)对于$n$是一个奇素数$p$的情况，有$S(m,p)=\frac{m(m^{\frac{p-1}2}+p-1)(m^{\frac{p-1}2}+1)}{2p}$.  
 并且得出$S(m,2p)=\frac{m\left(m^{2p-1}+p\cdot m^p+(p+1)m^{p-1}+(p-1)(m+1)\right)}{4p}$.  
-
