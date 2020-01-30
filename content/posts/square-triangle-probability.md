@@ -50,9 +50,8 @@ hujunhua给出了对应的[二维情况的图解](https://bbs.emath.ac.cn/forum.
 ![twodcircle](../images/triangleprob/twodcircle.png)  
 随机取三点，再考虑其对径点，取点或其对径点的概率是相同的，共有8个三角形，只有图中的2个才是锐角三角形，其它6个都是钝角三角形。  
 并且[进一步给出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5241&pid=51770&fromuid=20):  
-如左下图，当$0\lt \alpha\lt \pi$时（黑标记角）, 点B位于OA弧的对顶角弧上时才是锐角三角形，这时$-\pi\lt\beta\lt\alpha-\pi$，对应右下图右下角的灰色三角区。在其它位置都是钝角三角形，对应于右下图中的深绿色区。  
-当$\pi\lt\alpha\lt0$时（红标记角）, 点B同样位于OA弧的对顶角弧上时才是锐角三角形，这时$\pi+\alpha\lt\beta\lt\pi$，对应于右下图左上角的灰色三角区。在其它位置都是钝角三角形，对应于右下图中的浅绿色区。  
-[attachimg]5116[/attachimg][attachimg]5117[/attachimg]
+如下图1，当$0\lt \alpha\lt \pi$时（黑标记角）, 点B位于OA弧的对顶角弧上时才是锐角三角形，这时$-\pi\lt\beta\lt\alpha-\pi$，对应下图2右下角的灰色三角区。在其它位置都是钝角三角形，对应于下图2中的深绿色区。  
+当$\pi\lt\alpha\lt0$时（红标记角）, 点B同样位于OA弧的对顶角弧上时才是锐角三角形，这时$\pi+\alpha\lt\beta\lt\pi$，对应于下图2左上角的灰色三角区。在其它位置都是钝角三角形，对应于下图2中的浅绿色区。  
 ![钝角](../images/triangleprob/钝角.png)![钝角区](../images/triangleprob/钝角区.png)  
 kastin基于三个点的不同分布概率，使用积分模型也给出了[很多不同的结论](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5241&pid=51786&fromuid=20)。  
 mathe给出了一种[通过积分计算的方案](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5241&pid=51847&fromuid=20):  
@@ -84,7 +83,7 @@ sheng_jianguo进一步[将问题推广到高维](https://bbs.emath.ac.cn/forum.p
 举例：
 当$r=1$时，即2维空间中，$n$个双点（0维球面）最多可以把圆（1维球面）分为$F(n,1)=2\binom{n}{1}=2n$，故$r=1$时, $p=\frac{2n}{2^n}$。
 当$r=2$时，即3维空间中，$n$个圆（1维球面）最多可以把球面（2维球面）分为$F(n,2)=2\binom{n}{0}+2\binom{n}{2}=n^2-n+2$部分，故$r=2$时，$p=\frac{n^2-n+2}{2^n}$。
-当$r=3$时，即4维空间中，$n$个2维球面最多可以把3维球面分为$F(n,3)=2\binom{n}{1}+2\binom{n}{3}=(n^3-3n^2+8n)/3(n>2时)$部分，故$r=3$时，$p=\frac{n^3-3n^2+8n}{3\cdot{2^n}}$，当$n\gt 2$时，$p=1$，当$n\lt 3$时。
+当$r=3$时，即4维空间中，$n$个2维球面最多可以把3维球面分为$F(n,3)=2\binom{n}{1}+2\binom{n}{3}=\frac{n^3-3n^2+8n}3(n>2时)$部分，故$r=3$时，$p=\frac{n^3-3n^2+8n}{3\cdot{2^n}}$，当$n\gt 2$时，$p=1$，当$n\lt 3$时。
 ## 正方形情况
 那么在[单位正方形内](https://bbs.emath.ac.cn/thread-5236-1-1.html),随机取三点,构成三角形是钝角三角形的概率为多少?  
 [wayne](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5236&pid=51662&fromuid=20)发现[百度贴吧里面](http://tieba.baidu.com/p/1451727017)已经有人通过复杂的符号计算得出了结果$\frac{97}{150}+\frac{\pi}{40}\approx0.72520648300641149763$并且这个结果和他的数值模拟结果非常匹配。  
