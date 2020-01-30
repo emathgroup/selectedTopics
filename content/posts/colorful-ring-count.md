@@ -62,10 +62,11 @@ dlpg070改进chyanog的代码[将数据结果和图片放在一起](https://bbs.
 ## 彩色手串
 hujunhua[指出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=16961&pid=81479&fromuid=20)7色手链问题是我们已经讨论过的[彩珠手串的配色计数](https://bbs.emath.ac.cn/thread-9161-1-1.html)的特例。  
 其中，TSC999首先自己给出了一个计算结果的表格:  
-<table=50%>
-<tr><td=2,2,8> </td><td=12,1> m种颜色</td></tr>
+
+<table width=50%>
+<tr><td> </td><td colspan=12> m种颜色</td></tr>
 <tr><td> 1 </td><td> 2 </td><td> 3 </td><td> 4 </td><td> 5 </td><td> 6 </td><td> 7 </td><td> 8 </td><td> 9 </td><td> 10 </td><td> 11 </td><td> 12 </td></tr>
-<tr><td=1,11>
+<tr><td rowspan=11>
  n
 颗
 珠
@@ -81,6 +82,7 @@ hujunhua[指出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&pt
 <tr><td>11</td><td>1 </td><td>126 </td><td>8418 </td><td> 192700</td><td>2227275 </td><td>16514106 </td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 <tr><td>12 </td><td>1 </td><td>224 </td><td>22913 </td><td> 704370</td><td>10196680 </td><td> 90782986</td><td> </td><td> </td><td> </td><td> </td><td> </td><td> </td></tr>
 </table>
+
 并且根据上面表格外推出n小于等于6时通项公式：  
 $S(m,2)=\frac{m(m+1)}2$  
 $S(m,3)=\frac{m(m^2+3m+2)}6=\frac{m(m+1)(m+2)}6$  
