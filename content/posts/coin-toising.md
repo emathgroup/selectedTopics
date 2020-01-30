@@ -182,3 +182,8 @@ $p(n)=1-\frac{\lfloor\frac{r-1}{(t+1)r-2t}r^{n+1}\rceil}{2^n}; r\gt 1;  r^{t+1}-
 [数值计算给出了精度更高的结果]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=667&pid=8268&fromuid=20
 [那个问题中5#]: https://bbs.emath.ac.cn/viewthread.php?tid=331&page=1&fromuid=20#pid2858
 [上面猜测正确性的分析]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=667&pid=8349&fromuid=20
+
+## 其它应用
+广义Fibonacci数列还会以其它一些形式出现，比如倪举鹏提出过的[寿命10年的兔子问题](https://bbs.emath.ac.cn/thread-15715-1-11.html):  
+第一年有1对兔子，以后每一年活着的兔子都能繁殖出一倍兔子来（活着的兔子乘以2）。兔子寿命都是10年。第n年有多少对兔子.  
+实际上计算的[就是9阶广义Fibonacci数列](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15715&pid=77439&fromuid=20)。  
