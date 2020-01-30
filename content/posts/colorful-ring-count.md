@@ -98,12 +98,12 @@ kastin[给出分析](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpos
 下面内容引自 常新德 永城职业学院《有重复元素的圆排列和环排列的计数问题》:  
 记 $k\,(k\geqslant 1)$ 重集 $S=\{n_1\*e_1,n_2\*e_2,\cdots,n_k\*e_k\}$，其中 $e_i,\,n_i\;(i=1,2,\dots,k)$分别为元素以及相应的重复数，且集合的势 $|S|=n_1+n_2+\cdots+n_k=n$. 那么该集合所有元素的  
 1）圆排列数为$$ Q(S)=\frac{1}{n}\sum_{d|(n_1,\cdots,n_k)}\varphi(d)\frac{(\frac{n}{d})!}{\Pi_{i=1}^k(\frac{n_i}{d})!}$$其中 $\varphi(x)$ 为数论中的欧拉函数，$(n_1,\cdots,n_k)$ 表示 $n_1,n_2,\cdots,n_k$ 的最大公约数。  
-2）环排列数为$$R(S)=\frac{Q(S)+M(S)}{2}$$其中，$\D M(S)=\frac{\left(\sum_{i=1}^k [\frac{n_i}2]\right)!}{\Pi_{i=1}^k [\frac{n_i}2]!}$ 为对称圆排列数，$[x]$ 为高斯函数（表示 $x$ 的整数部分）。  
+2）环排列数为$R(S)=\frac{Q(S)+M(S)}{2}$其中，$M(S)=\frac{\left(\sum_{i=1}^k [\frac{n_i}2]\right)!}{\Pi_{i=1}^k [\frac{n_i}2]!}$ 为对称圆排列数，$[x]$ 为高斯函数（表示 $x$ 的整数部分）。  
 注意：环排列和圆排列，概念有细微区别。环排列考虑旋转不变且翻转不变，而圆排列考虑的是旋转不变。  
-现在，假定有$c$种$k$重集，那么楼主的手串总数就是$\D S(m,n)=\sum^m_{k=1}\sum^c_{i=1}C^k_mR(S_i)$问题分三步进行：  
+现在，假定有$c$种$k$重集，那么楼主的手串总数就是$S(m,n)=\sum^m_{k=1}\sum^c_{i=1}C^k_mR(S_i)$问题分三步进行：  
 1. 求线性不定方程 $x_1+x_2+\cdots+x_m=n$ 的非负整数解（共 $C_{n+m-1}^{m-1}$ 组解）。  
 2. 对任一组解$(n_1,n_2,\cdots,n_m)$, 计算相应的重集 $S_i=\{n_1\*e_1,n_2\*e_2,\cdots,n_m\*e_m\}$的环排列数$R(S_i)$。  
-3. 将这些环排列数相加，$\D S(m,n)=\sum^c_{i=1}R(S_i)$。（这与上面的汇总公式不同，是因为这里第1步中允许$x_i$取0，$c=C_{n+m-1}^{m-1}$）  
+3. 将这些环排列数相加，$S(m,n)=\sum^c_{i=1}R(S_i)$。（这与上面的汇总公式不同，是因为这里第1步中允许$x_i$取0，$c=C_{n+m-1}^{m-1}$）  
 TSC999又根据论文内容给出对应的红黄各四穿成八珠手串的漂亮图片：  
 ![四红四黄](../images/colorfulring/四红四黄.png)  
 hujunhua[指出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9161&pid=63961&fromuid=20)：  
@@ -119,12 +119,9 @@ S(m,9)=[A060561](http://oeis.org/A060561)
 S(m,10)=[A060562](http://oeis.org/A060562)  
 
 kastin[接着用](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9161&pid=63962&fromuid=20)伯恩赛德引理（Burnside's lemma，波利亚计数定理就是用它推导得来的）就能得到如下结论：
-对于 `m` 个颜色可重复地选取 `n` 个排成一圈，圆排列数为$$N(m,n)=\frac{1}{n}\sum_{i=1}^n m^{(n,i)}$$环排列数为
-$$
-M(m,n)=N(m,n)/2+\begin{cases}\D\frac{m^{k+1}}{2},&n=2k+1\\
-\D\frac{(m+1)m^k}{4},&n=2k
-\end{cases}
-$$  
+对于 $m$ 个颜色可重复地选取 $n$ 个排成一圈，圆排列数为$N(m,n)=\frac{1}{n}\sum_{i=1}^n m^{(n,i)}$环排列数为
+$M(m,n)=\frac{N(m,n)}2+\begin{cases}\frac{m^{k+1}}{2},&n=2k+1 \\ \frac{(m+1)m^k}{4},&n=2k \end{cases}$  
 
-[hujunhua 猜测](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9161&pid=63963&fromuid=20)对于$n$是一个奇素数$p$的情况，有$S(m,p)=\frac{m(m^{\frac{p-1}2}+p-1)(m^{\frac{p-1}2}+1)}{2p}$.  
+[hujunhua 猜测](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9161&pid=63963&fromuid=20)对于$n$是一个奇素数$p$的情况，有$S(m,p)=\frac{m(m^{\frac{p-1}2}+p-1)(m^{\frac{p-1}2}+1)}{2p}$ .  
 并且得出$S(m,2p)=\frac{m\left(m^{2p-1}+p\cdot m^p+(p+1)m^{p-1}+(p-1)(m+1)\right)}{4p}$.  
+
