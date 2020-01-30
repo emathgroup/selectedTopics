@@ -41,12 +41,12 @@ $((x+1)^4-x^4)^13 ((x+1)^2 -x^2)$中$x^{20}$的系数 223786474655744 除以 $C_
 ## 圆周问题
 [圆周上随机选择三点构成钝角三角形的概率](https://bbs.emath.ac.cn/thread-5241-1-1.html)是多少呢？
 Lwins\_G认为还可以推广到“在超球面$S_n$上任意取$k$个点，求这$k$个点可以被全部分配在半个超球面上的概率”。  
-sheng_jianguo给出[如下的解答](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5241&pid=51706&fromuid=20):  
+sheng\_jianguo给出[如下的解答](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5241&pid=51706&fromuid=20):  
 因为是均匀分布，所以取到每个点的概率密度与取到其对径点的概率密度是一样的。每个点都有一个对径点，这样便有$k$对点。在每对点中各取一点，共有$2^k$中取法，每种取法的概率密度是相同的。现在只要计算这$2^k$种取法中，有多少种取法(记为$F(k)$)是落在同一半球上的，则所求概率为$\frac{F(k)}{2^k}$。  
 上面有个假设，即认为$F(k)$的值只与$k$有关，而跟$k$个点的具体位置无关。这个是可以证明的（忽略两点重合，三点共大圆的零概率情况）。而且，还可以证明，$F(k)$等于球面上$k$个大圆（任意两个大圆不重合，任意三个大圆不共点）把球面分割成小片的片数。这个数目等于$k^2-k+2$。  
 于是三维球面情况所求概率等于 $\frac{k^2-k+2}{2^k}$。  
 hujunhua给出了对应的[二维情况的图解](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5241&pid=51754&fromuid=20)：  
-在一个圆周上随机取3点，构成钝角三角形的概率为3/4. 计算方法可以不用积分，使用sheng_jianguo的方案即可:  
+在一个圆周上随机取3点，构成钝角三角形的概率为3/4. 计算方法可以不用积分，使用sheng\_jianguo的方案即可:  
 ![twodcircle](../images/triangleprob/twodcircle.png)  
 随机取三点，再考虑其对径点，取点或其对径点的概率是相同的，共有8个三角形，只有图中的2个才是锐角三角形，其它6个都是钝角三角形。  
 并且[进一步给出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5241&pid=51770&fromuid=20):  
@@ -73,7 +73,7 @@ $F_4(t)=\int_{s=0}^t(2t-s)\times 6sds=4t^3$.
 ![n点偏于半圆周](../images/triangleprob/n点偏于半圆周.png)  
 如图，红色虚线半圆（为了清晰，将它缩到了圆内，实际上应该与圆重合的）包含了一个半偏样本｛1,2,3,4,..., n｝,当半圆的直径端P,P'在相对弧段1n', 1'n上滑动时，半圆弧所包含的点仍然是{1,2,3,4, n}. 所以相对弧段1n'&1’n 就对应于一对相对的半偏样本｛1,2,3,4,...,n｝&｛1',2,',3,',4',...,n'｝.   
 
-sheng_jianguo进一步[将问题推广到高维](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5241&pid=52003&fromuid=20)：  
+sheng\_jianguo进一步[将问题推广到高维](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=5241&pid=52003&fromuid=20)：  
 若在$r+1$维空间中，$n$个$r-1$维超球面最多可以把$r$维超球面切割成$F(n,r)$部分，则
 当$r$为奇数时$F(n,r)= 2\binom{n}{1}+2\binom{n}{3}+\dots+2\binom{n}{r}$
 当$r$为偶数时$F(n,r)= 2\binom{n}{0}+2\binom{n}{2}+\dots+2\binom{n}{r}$
@@ -94,6 +94,6 @@ Lwins\_G[给出](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&pt
 故而，这归结为计算  
 $ 3 \int_0^1 \int_0^1 \int_0^1 \int_0^1 \int_0^1 \int_0^1 f((x_2 - x_1)(x_3 - x_1) + (y_2 - y_1)(y_3 - y_1)) dx_1 dy_1 dx_2 dy_2 dx_3 dy_3 . $  
 其中$f(x)$当$x \lt 0$时取$1$，否则取$0$。  
-![T5236_1](../images/triangleprob/T5236_1.jpg)  
+![T5236\_1](../images/triangleprob/T5236_1.jpg)  
 从而验证了百度贴吧中结果的正确性。
 
