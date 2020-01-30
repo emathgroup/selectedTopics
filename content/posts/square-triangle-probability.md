@@ -2,7 +2,7 @@
 
 title: "钝角三角形的概率"
 date: "2020-01-30"
-thumbnail: "../thumbnails/钝角三角形.jpg"
+thumbnail: "../images/triangleprob/twodcircle.png"
 author: "mathe"
 tags: 
     - "概率"
