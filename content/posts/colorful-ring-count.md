@@ -119,7 +119,7 @@ S(m,9)=[A060561](http://oeis.org/A060561)
 S(m,10)=[A060562](http://oeis.org/A060562)  
 
 kastin[接着用](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9161&pid=63962&fromuid=20)伯恩赛德引理（Burnside's lemma，波利亚计数定理就是用它推导得来的）就能得到如下结论：
-对于 $m$ 个颜色可重复地选取 $n$ 个排成一圈，圆排列数为$N(m,n)=\frac{1}{n}\sum_{i=1}^n m^{(n,i)}$环排列数为
+对于 $m$ 个颜色可重复地选取 $n$ 个排成一圈，圆排列数为$N(m,n)=\frac{1}{n}\sum_{i=1}^n m^{(n,i)}$环排列数为  
 $M(m,n)=\frac{N(m,n)}2+\begin{cases}\frac{m^{k+1}}{2},&n=2k+1 \\ \frac{(m+1)m^k}{4},&n=2k \end{cases}$  
 
 [hujunhua 猜测](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=9161&pid=63963&fromuid=20)对于$n$是一个奇素数$p$的情况，有$S(m,p)=\frac{m(m^{\frac{p-1}2}+p-1)(m^{\frac{p-1}2}+1)}{2p}$ .  
