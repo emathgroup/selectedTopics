@@ -2,7 +2,7 @@
 
 title: "最团结的圆"
 date: "2020-02-01"
-thumbnail: "../images/圆与三角形的重叠面积.png"
+thumbnail: "../images/tightcircles/tc2.jpg"
 author: "mathe"
 tags: 
     - "圆"
