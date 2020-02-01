@@ -87,7 +87,7 @@ dlpg070认为极值点应该[还是四个而不是两个](https://bbs.emath.ac.c
 用几何画板做了个特殊情况的$P\to Q$轨迹，结果证明不是线性的对合变换，因为直线被变换为奇怪的曲线了：  
 ![tc_cfb](../images/tightcircles/tc_cfb.png)  
 [lsr314发现](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15716&pid=77432&fromuid=20)原三角形外接圆，$P_0$关于三边对称点外接圆和$P_1$关于三边对称点外接圆三圆共弦：  
-![tc_coedge](../images/tightcircles/tc_coedge.jpg)  
+![tc_coedge](../images/tightcircles/tc_coedge.jpeg)  
 
 然后[mathe发现](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=15716&pid=77447&fromuid=20)， 选择P为平面上一点，其关于三边对称点$P_1,P_2,P_3$，过$P_1,P_2,P_3$三点的圆为圆R,那么P->圆心R会将三角形内部的点一一映射三角形内部的点，
 而且会把直线映射为经过三角形顶点的双曲线。  
@@ -146,8 +146,8 @@ hujunhua[尝试另外一种扩展](https://bbs.emath.ac.cn/forum.php?mod=redirec
 为了无穷迭代不发散到无穷远或退化到点P，我们将投影曲线以P为中心作一个位似变换，使所得像曲线的周长或面积保持不变，始终等于C的周长或面积。  
 那么无穷迭代会收敛到一个与C全等的曲线吗？  
 lsr314指出，作图验证这时对椭圆就不成立了：  
-![tc_convex](../images/tightcircles/tc_convex.png)  
+![tc_convex](../images/tightcircles/tc_convex.jpeg)  
 而更换P点位置（图中的D）在外面的时候，轨迹有点像大白：  
-![tc_white](../images/tightcircles/tc_white.png)  
+![tc_white](../images/tightcircles/tc_white.jpeg)  
 wayne也来凑热闹，给出了另外一种漂亮的图片:  
 ![tc_loc](../images/tightcircles/tc_loc.png)  
