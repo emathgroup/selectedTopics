@@ -1,0 +1,65 @@
+innerprod(a,b)=
+{
+   local(s);
+   s=0;
+   for(u=1,length(a),
+       s+=a[u]*b[u]
+   );
+   s
+}
+
+perpvec(a,b)=
+{
+    local(u);
+    u=innerprod(b,b)-innerprod(a,b);
+    u/=innerprod(a-b,a-b);
+    u*a+(1-u)*b
+}
+
+perprotate(m)=
+{
+    local(n,r);
+    n=length(m[,1]);
+    r=matrix(n,length(m[1,]));
+    for(u=1,n-1,
+        r[u,]=perpvec(m[u,],m[u+1,])
+    );
+    r[n,]=perpvec(m[n,],m[1,]);
+    r
+}
+
+granm(n,m)=
+{
+    local(r);
+    r=matrix(n,m);
+    for(u=1,n,
+        for(v=1,m,
+             r[u,v]=2*random(1.0)-1.0;
+        )
+   );
+   r
+}
+
+plen(m)=
+{
+    local(n,r);
+    n=length(m[,1]);
+    r=vector(n);
+    for(u=1,n,
+         r[u]=sqrt(innerprod(m[u,],m[u,]))
+    );
+    r
+}
+
+pangle(m)=
+{
+    local(n,r,x);
+    n=length(m[,1]);
+    r=vector(n);
+    x=plen(m);
+    for(u=1,n-1,
+         r[u]=innerprod(m[u,],m[u+1,])/(x[u]*x[u+1])
+    );
+    r[n]=innerprod(m[n,],m[1,])/(x[n]*x[1]);
+    r
+}
