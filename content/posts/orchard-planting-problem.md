@@ -122,7 +122,7 @@ A(0,1) B(1,0) C(1/4,-1/4) D(-1/2,-1/2) E[1 : -1 : 0] F(1/2,1/2) G(0,-1/2) H[0 : 
 ```
 经过射影变换可以[转化为只含一个无穷远点的对称图形](https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=703&pid=82702&fromuid=20) :  
 ![s13](../images/trees/s13.png)  
-还可以有没有无穷远点的
+还可以有没有无穷远点的  
 ![n13](../images/trees/t13.png)  
 
 ### 14棵树
