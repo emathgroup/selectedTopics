@@ -378,6 +378,8 @@ G HI EF AB DEI CFI ADH BCH ACE BDF CDG AFHI BEHI CEGH DFGH AEGI BFGI
 <a name=data></a>
 点击下载[进化版本代码]和[最终数据]
 
+最新版本更新在: [https://blog.emath.ac.cn/two-poisoned-wine/](https://blog.emath.ac.cn/two-poisoned-wine/)
+
 [一瓶有剧毒]: https://blog.csdn.net/github_38885296/article/details/78003388
 [两桶毒酒问题]: https://bbs.emath.ac.cn/thread-1511-1-1.html
 [理论下界]: https://bbs.emath.ac.cn/forum.php?mod=redirect&goto=findpost&ptid=1511&pid=19404&fromuid=20
