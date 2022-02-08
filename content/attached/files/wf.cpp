@@ -131,8 +131,8 @@ input_result:
 		}
 		map<int, Wordle *>::iterator it = curw->choose.find(v);
 		if(it == curw->choose.end()){
-			fprintf(stderr, "Internal error\n");
-			return -1;
+			printf("Make sure your input is correct, reinput your result or type quit to leave\n");
+			goto input_result;
 		}
 		curw = it->second;
 	}
