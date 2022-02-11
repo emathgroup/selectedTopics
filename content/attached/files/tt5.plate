@@ -24,24 +24,24 @@ ussmm:
 musmm:
 	2{paste }
 uusmm:
-	baste
+	caste
 	mmmmm:
-		2baste }
+		2caste }
 	ummmm:
-		caste
+		haste
 		mmmmm:
-			3caste }
+			3haste }
 		ummmm:
-			haste
+			baste
 			mmmmm:
-				4haste }
+				4baste }
 			ummmm:
 				6{taste waste }
 	umsmm:
 		3{saute }
 	umumm:
 		3{haute }
-	usumm:
+	ssumm:
 		3{acute }
 umumm:
 	3{elite flute }
@@ -58,11 +58,11 @@ uuumm:
 	ussmm:
 		3{quote }
 	uusmm:
-		quite
+		suite
 		mmmmm:
-			3quite }
+			3suite }
 		ummmm:
-			4{suite }
+			4{quite }
 		usmmm:
 			4{unite }
 		umumm:
@@ -114,11 +114,11 @@ ususm:
 	susum:
 		4{stole style }
 suusm:
-	tripe
+	trope
 	mmmmm:
-		2tripe }
+		2trope }
 	mmumm:
-		3{trope }
+		3{tripe }
 	muusm:
 		3{tepee }
 uuusm:
@@ -158,11 +158,11 @@ uuusm:
 	ssuum:
 		3{etude }
 	muuum:
-		twice
+		twine
 		mmmmm:
-			3twice }
+			3twine }
 		mmmum:
-			4{twine }
+			4{twice }
 		musum:
 			4{tithe }
 		muuum:
@@ -172,23 +172,23 @@ uuusm:
 mmmum:
 	3{place plane }
 ummum:
-	flare
+	glare
 	mmmmm:
-		2flare }
+		2glare }
 	ummmm:
-		4{blare glare }
+		4{blare flare }
 	mmmum:
-		4{flake flame }
+		4{glade glaze }
 	ummum:
-		blade
+		blame
 		mmmmm:
-			3blade }
+			3blame }
 		ummmm:
-			4{glade }
+			4{flame }
 		mmmum:
-			5{blame blaze }
+			5{blade blaze }
 		ummum:
-			5{glaze slave }
+			5{flake slave }
 usmum:
 	scale
 	mmmmm:
@@ -240,36 +240,36 @@ uumum:
 	smmum:
 		4{brace grace }
 	ummum:
-		drake
+		grade
 		mmmmm:
-			3drake }
-		ummmm:
-			4{brake }
-		smmum:
-			4{grade }
+			3grade }
+		ummsm:
+			4{drake }
+		mmmum:
+			4{graze }
 		ummum:
-			erase
+			brake
 			mmmmm:
-				4erase }
+				4brake }
 			ummum:
-				6{frame graze }
+				6{erase frame }
 	ssmum:
 		3{scare }
 	usmum:
-		share
+		snare
 		mmmmm:
-			3share }
+			3snare }
 		mummm:
-			4{snare }
+			4{share }
 		uummm:
 			4{aware }
 	mumum:
-		cease
+		chase
 		mmmmm:
-			3cease }
+			3chase }
 		mummm:
-			4{chase }
-		mumum:
+			4{cease }
+		mmmum:
 			4{chafe }
 	uumum:
 		snake
@@ -286,12 +286,12 @@ uumum:
 		sumum:
 			5{abase usage }
 		uumum:
-			adage
+			image
 			mmmmm:
-				4adage }
+				4image }
 			uummm:
-				5{image }
-			mumum:
+				5{adage }
+			ummum:
 				5{amaze }
 umsum:
 	alike
@@ -440,12 +440,12 @@ umuum:
 	mmmum:
 		4{clone clove }
 	ummum:
-		bloke
+		globe
 		mmmmm:
-			3bloke }
-		smmum:
-			4{globe }
-		ummum:
+			3globe }
+		ummsm:
+			4{bloke }
+		mmmum:
 			4{glove }
 	umsum:
 		3{olive }
@@ -470,11 +470,11 @@ usuum:
 	umsmm:
 		3{liege }
 	uusmm:
-		ledge
+		lodge
 		mmmmm:
-			3ledge }
+			3lodge }
 		mummm:
-			4{lodge }
+			4{ledge }
 		muumm:
 			4{lunge }
 	usssm:
@@ -486,12 +486,12 @@ usuum:
 	mumum:
 		3{belle }
 	uumum:
-		delve
+		solve
 		mmmmm:
-			3delve }
+			3solve }
 		uummm:
-			4{solve }
-		ummum:
+			4{delve }
+		uumum:
 			4{melee }
 	mmsum:
 		3{bible }
@@ -630,25 +630,25 @@ uuuum:
 	uussm:
 		4{noise ounce }
 	ususm:
-		genre
+		rinse
 		mmmmm:
-			3genre }
-		uumsm:
-			4{rinse }
-		umssm:
-			4{nerve }
-		uussm:
+			3rinse }
+		susmm:
 			4{nurse }
+		sumum:
+			4{genre }
+		susum:
+			4{nerve }
 	muusm:
 		4{dense dunce }
 	suusm:
-		nudge
+		snide
 		mmmmm:
-			3nudge }
-		ssmum:
+			3snide }
+		umusm:
 			4{undue }
-		susum:
-			4{snide }
+		ususm:
+			4{nudge }
 	uuusm:
 		since
 		mmmmm:
@@ -760,14 +760,14 @@ uuuum:
 	smuum:
 		4{bride crude }
 	umuum:
-		creme
+		crime
 		mmmmm:
-			3creme }
-		mmumm:
-			4{crime }
-		umumm:
+			3crime }
+		ummmm:
 			4{grime }
-		umuum:
+		mmumm:
+			4{creme }
+		ummum:
 			4{bribe }
 	msuum:
 		3{dirge }
@@ -896,11 +896,11 @@ uuums:
 ssmss:
 	2{leapt }
 usmss:
-	leant
+	least
 	mmmmm:
-		2leant }
+		2least }
 	mmmum:
-		3{least }
+		3{leant }
 	smmum:
 		3{dealt }
 	ssmum:
@@ -930,11 +930,11 @@ uumss:
 mmsss:
 	2{pleat }
 umsss:
-	bleat
+	cleat
 	mmmmm:
-		2bleat }
+		2cleat }
 	ummmm:
-		3{cleat }
+		3{bleat }
 	ummsm:
 		3{alert }
 	umsss:
@@ -942,11 +942,11 @@ umsss:
 mssss:
 	2{petal }
 ussss:
-	fetal
+	metal
 	mmmmm:
-		2fetal }
+		2metal }
 	ummmm:
-		3{metal }
+		3{fetal }
 	ussmm:
 		3{steal }
 	ussms:
@@ -974,16 +974,16 @@ uusss:
 	usmss:
 		3{extra }
 	ussss:
-		great
+		tread
 		mmmmm:
-			3great }
-		ummmm:
+			3tread }
+		mmmmu:
 			4{treat }
-		usmsm:
+		smmmu:
+			4{great }
+		ssmsu:
 			4{avert }
-		ummms:
-			4{tread }
-		ussss:
+		msssu:
 			4{terra }
 	ummmu:
 		4{eaten matey }
@@ -1028,31 +1028,37 @@ umuss:
 ssuss:
 	2{spelt }
 ususs:
-	steel
+	motel
 	mmmmm:
-		2steel }
-	ussmm:
+		2motel }
+	ummmm:
+		3{hotel }
+	uummm:
 		3{betel }
-	usumm:
-		hotel
-		mmmmm:
-			3hotel }
-		ummmm:
-			4{motel }
-		umsmm:
-			4{towel }
-	ussum:
+	umsmm:
+		3{towel }
+	uusmm:
+		3{steel }
+	usmsm:
 		3{extol }
-	ssums:
-		3{islet }
-	usums:
-		4{filet inlet }
-	msmus:
+	uusms:
+		islet
+		mmmmm:
+			3islet }
+		mummm:
+			4{inlet }
+		summm:
+			4{filet }
+	susss:
 		3{smelt }
-	usmus:
-		4{dwelt knelt }
-	ussus:
-		3{exult }
+	uusss:
+		knelt
+		mmmmm:
+			3knelt }
+		uummm:
+			4{dwelt }
+		uusmm:
+			4{exult }
 suuss:
 	swept
 	mmmmm:
@@ -1076,126 +1082,98 @@ suuss:
 	uusss:
 		3{tepid }
 uuuss:
-	erect
+	reset
 	mmmmm:
-		2erect }
-	mummm:
-		3{eject }
+		2reset }
+	ummmm:
+		3{beset }
+	uummm:
+		4{onset unset }
+	ussmm:
+		4{sheet sweet }
+	smumm:
+		3{beret }
+	umumm:
+		4{beget tenet }
+	ssumm:
+		4{egret greet }
+	usumm:
+		3{tweet }
 	muumm:
-		4{edict evict }
-	ummsm:
-		3{crest }
-	uumsm:
-		4{chest scent }
-	ssusm:
-		3{recut }
-	suusm:
+		3{rivet }
+	uuumm:
 		comet
 		mmmmm:
 			3comet }
+		uummm:
+			4{unmet }
 		mmumm:
 			4{covet }
 		ssumm:
 			4{octet }
-	smmum:
-		3{greet }
-	ummum:
-		3{wrest }
-	msmum:
-		3{exert }
-	usmum:
-		4{inert overt }
-	mumum:
-		3{event }
-	sumum:
-		sheet
-		mmmmm:
-			3sheet }
-		mummm:
-			4{sweet }
-		uummm:
-			4{tweet }
-	uumum:
+		uuumm:
+			5{duvet quiet }
+	ssusm:
+		4{erect exert }
+	ususm:
+		4{eject event }
+	umsum:
+		3{heist }
+	sssum:
+		4{crest wrest }
+	ussum:
 		guest
 		mmmmm:
 			3guest }
 		ummmm:
 			4{quest }
-		uumum:
-			4{theft }
-	mssum:
-		3{egret }
-	sssum:
-		4{beret reset }
-	susum:
-		beget
+		uummm:
+			4{chest }
+		uusmm:
+			4{exist }
+		uumsm:
+			4{scent }
+	mmuum:
+		rebut
 		mmmmm:
-			3beget }
+			3rebut }
 		mmumm:
-			4{beset }
-		umumm:
-			4{tenet }
-	ssuum:
-		merit
+			4{recut }
+		mmuum:
+			5{refit remit }
+	smuum:
+		3{merit }
+	umuum:
+		debit
 		mmmmm:
-			3merit }
-		smsmm:
-			4{remit }
+			3debit }
 		umsmm:
-			4{refit }
-		usssm:
-			4{rivet }
-		umsum:
-			4{rebut }
-	muuum:
-		4{eight exist }
-	suuum:
-		duvet
-		mmmmm:
-			3duvet }
-		umumm:
-			4{quiet }
-		usumm:
-			5{unmet unset }
-		uuumm:
-			4{onset }
-		msusm:
+			4{befit }
+		mmmum:
 			4{debut }
-		muusm:
-			4{debit }
-		uuusm:
-			5{befit heist }
-	ssums:
-		3{retch }
-	suums:
-		3{fetch }
-	muuss:
-		3{ethic }
-	ummus:
-		3{trend }
-	ssmus:
-		3{steer }
-	usmus:
-		4{stern their }
-	sumus:
-		4{steed tweed }
-	uumus:
-		3{stein }
-	mssus:
-		enter
+	ssuum:
+		4{inert overt }
+	usuum:
+		edict
 		mmmmm:
-			3enter }
+			3edict }
 		mummm:
-			4{ester }
-		musmm:
-			4{ether }
-	sssus:
+			4{evict }
+		musum:
+			4{eight }
+		suuum:
+			4{theft }
+	sssms:
+		4{ester steer }
+	ussms:
+		3{steed }
+	smums:
 		4{deter meter }
-	smuus:
-		4{tried truer }
-	msuus:
-		3{entry }
-	ssuus:
+	ssums:
+		4{enter ether }
+	usums:
+		3{tweed }
+	suums:
 		outer
 		mmmmm:
 			3outer }
@@ -1209,23 +1187,43 @@ uuuss:
 			4{inter }
 		umsmm:
 			4{tuber }
+		ussmm:
+			4{truer }
 		musmm:
 			4{other }
 		susmm:
 			4{tower }
 		uusmm:
 			5{tiger timer }
-		sussm:
-			4{tenor }
 		uusms:
-			4{threw }
-		sumss:
-			5{metro retro }
-		uumss:
+			5{threw tried }
+	uuums:
+		often
+		mmmmm:
+			3often }
+		susmm:
+			4{token }
+		summu:
+			4{totem }
+		ussmu:
+			4{thief }
+	umsus:
+		3{fetus }
+	sssus:
+		3{stern }
+	ussus:
+		4{ethos stein }
+	mmuus:
+		retro
+		mmmmm:
+			3retro }
+		mmmmu:
 			4{retry }
-	muuus:
-		3{ethos }
-	suuus:
+		mmmuu:
+			4{retch }
+	smuus:
+		4{metro tenor }
+	umuus:
 		fetid
 		mmmmm:
 			3fetid }
@@ -1233,16 +1231,18 @@ uuuss:
 			4{detox }
 		umsus:
 			4{teddy }
-		ssssu:
-			4{thief }
 		mmmuu:
-			4{fetus }
-		ssmuu:
-			4{often }
-		usmuu:
-			4{totem }
-		ussuu:
-			4{token }
+			4{fetch }
+	ssuus:
+		their
+		mmmmm:
+			3their }
+		mumus:
+			4{trend }
+		susus:
+			4{entry }
+	usuus:
+		3{ethic }
 msmus:
 	2{pearl }
 usmus:
@@ -1254,11 +1254,11 @@ usmus:
 	smmum:
 		3{mealy }
 	mmmuu:
-		leach
+		leash
 		mmmmm:
-			3leach }
+			3leash }
 		mmmum:
-			4{leash }
+			4{leach }
 		mmmuu:
 			4{learn }
 	smmuu:
@@ -1328,11 +1328,11 @@ ussus:
 	smuss:
 		3{early }
 	ssuss:
-		relax
+		relay
 		mmmmm:
-			3relax }
+			3relay }
 		mmmmu:
-			4{relay }
+			4{relax }
 		mmsmu:
 			4{renal }
 		smsmu:
@@ -1404,121 +1404,141 @@ susus:
 	usssu:
 		3{speak }
 uusus:
-	rehab
+	swear
 	mmmmm:
-		2rehab }
-	umumm:
-		3{kebab }
-	mmums:
-		3{rebar }
-	smums:
-		3{debar }
-	umums:
-		3{began }
-	ssums:
-		4{bread break }
-	smuss:
-		3{zebra }
-	ssuss:
-		4{amber baker }
-	ususs:
-		3{abbey }
-	sssmu:
-		3{shear }
-	ussmu:
-		3{ahead }
-	smumu:
-		3{cedar }
-	umumu:
-		decay
+		2swear }
+	mummm:
+		4{shear smear }
+	uusmm:
+		cedar
 		mmmmm:
-			3decay }
-		smumu:
-			4{sedan }
-		umumu:
-			4{vegan }
-	ssumu:
-		creak
+			3cedar }
+		umsmm:
+			4{debar }
+		umumm:
+			4{rebar }
+	usssm:
+		wafer
 		mmmmm:
-			3creak }
-		ummmm:
-			5{freak wreak }
-		mmmmu:
-			4{cream }
-		ummmu:
-			5{dread dream }
-		usmmu:
-			5{smear swear }
-	usumu:
-		knead
-		mmmmm:
-			3knead }
-		smmmu:
-			4{sneak }
-		usmmu:
-			4{ocean }
-		uusmu:
-			4{essay }
-	usmsu:
-		3{ashen }
-	ssssu:
-		3{harem }
-	usssu:
-		4{haven hyena }
-	umusu:
-		4{mecca media }
-	msusu:
-		racer
-		mmmmm:
-			3racer }
+			3wafer }
 		mmumm:
-			4{rarer }
-		mmumu:
-			5{ramen raven }
-	ssusu:
+			5{wager waver }
+	mussm:
+		4{safer saner }
+	uussm:
 		gamer
 		mmmmm:
 			3gamer }
 		umsmm:
 			4{maker }
+		ussmm:
+			4{amber }
 		mmumm:
 			5{gayer gazer }
 		smumm:
-			5{eager wager }
+			4{eager }
 		umumm:
-			safer
+			racer
 			mmmmm:
-				4safer }
-			ummmm:
-				5{wafer }
+				4racer }
 			mmumm:
-				5{saner }
+				5{rarer }
 			umumm:
-				5{waver }
+				5{baker }
 		ssumm:
 			4{anger }
 		usumm:
 			4{aider }
-		ususs:
-			4{arena }
-	ususu:
-		amend
+	usmms:
+		3{wreak }
+	uumms:
+		bread
 		mmmmm:
-			3amend }
-		ssmsu:
+			3bread }
+		ummmm:
+			4{dread }
+		ummms:
+			4{dream }
+		mmmmu:
+			4{break }
+		ummmu:
+			cream
+			mmmmm:
+				4cream }
+			mmmmu:
+				5{creak }
+			ummmu:
+				5{freak }
+	uusms:
+		3{rehab }
+	uumss:
+		3{arena }
+	uusss:
+		ramen
+		mmmmm:
+			3ramen }
+		mmumm:
+			4{raven }
+		smsmu:
+			4{harem }
+		ssusu:
+			4{zebra }
+	mummu:
+		3{sneak }
+	uummu:
+		ocean
+		mmmmm:
+			3ocean }
+		uumms:
+			4{knead }
+		uummu:
+			4{ahead }
+	musmu:
+		3{sedan }
+	susmu:
+		3{essay }
+	uusmu:
+		began
+		mmmmm:
+			3began }
+		ummmm:
+			4{vegan }
+		smumu:
+			4{kebab }
+		umumu:
+			4{decay }
+	uumsu:
+		hyena
+		mmmmm:
+			3hyena }
+		uumsm:
 			4{enema }
-		mussu:
-			4{annex }
-		sussu:
-			5{oaken waxen }
-		smmuu:
+		uumum:
 			4{omega }
-		sssuu:
+		uumms:
+			4{amend }
+	ssssu:
+		3{askew }
+	usssu:
+		3{waxen }
+	sussu:
+		3{ashen }
+	uussu:
+		cagey
+		mmmmm:
+			3cagey }
+		usumm:
+			4{abbey }
+		mmumu:
 			4{cameo }
-		musuu:
-			4{askew }
-		susuu:
-			4{cagey }
+		umumu:
+			5{haven oaken }
+		usumu:
+			4{annex }
+		ssusu:
+			4{mecca }
+		ususu:
+			4{media }
 mmuus:
 	3{plied plier }
 smuus:
@@ -1566,22 +1586,22 @@ umuus:
 msuus:
 	3{peril pixel }
 ssuus:
-	expel
+	repel
 	mmmmm:
-		2expel }
-	summm:
-		3{repel }
+		2repel }
+	usmmm:
+		3{expel }
 	uummm:
 		3{impel }
 	uusmm:
 		3{spiel }
-	susum:
+	ussum:
 		3{spell }
-	summs:
+	smmms:
 		3{leper }
-	sumus:
+	mmmus:
 		3{reply }
-	susus:
+	ussus:
 		3{whelp }
 usuus:
 	hello
@@ -1590,11 +1610,11 @@ usuus:
 	ummmm:
 		3{cello }
 	ummus:
-		felon
+		melon
 		mmmmm:
-			3felon }
+			3melon }
 		ummmm:
-			4{melon }
+			4{felon }
 		ummmu:
 			4{below }
 	usmus:
@@ -1650,21 +1670,21 @@ usuus:
 	mmmuu:
 		3{helix }
 	smmuu:
-		belch
+		welsh
 		mmmmm:
-			3belch }
-		ummmm:
+			3welsh }
+		mmmum:
 			4{welch }
 		ummum:
-			4{welsh }
+			4{belch }
 	ummuu:
 		3{relic }
 	usmuu:
-		filer
+		idler
 		mmmmm:
-			3filer }
-		usmmm:
-			4{idler }
+			3idler }
+		summm:
+			4{filer }
 		uummm:
 			4{ruler }
 	smsuu:
@@ -1732,41 +1752,51 @@ muuus:
 	muusu:
 		3{penny }
 suuus:
-	speed
+	ripen
 	mmmmm:
-		2speed }
-	mmumm:
-		3{spied }
-	mmmum:
+		2ripen }
+	uusss:
 		3{spend }
-	usums:
-		3{dopey }
-	msmmu:
-		4{sheep sweep }
-	usmmu:
-		3{creep }
-	umumu:
-		3{upper }
-	msumu:
-		3{super }
-	usumu:
-		ripen
+	mmmmu:
+		3{riper }
+	smmmu:
+		3{viper }
+	summu:
+		super
 		mmmmm:
-			3ripen }
-		mmmmu:
-			4{riper }
-		smmmu:
-			4{viper }
-		summu:
+			3super }
+		usmmm:
+			4{upper }
+		uummm:
 			4{hyper }
-		umsmu:
-			4{bicep }
-	mmmuu:
-		4{speck sperm }
-	umsuu:
-		4{epoch epoxy }
-	ussuu:
+	uummu:
+		3{dopey }
+	umsmu:
+		3{bicep }
+	ussmu:
+		3{spied }
+	susmu:
+		3{creep }
+	uusmu:
+		sheep
+		mmmmm:
+			3sheep }
+		mummm:
+			4{sweep }
+		mumms:
+			4{speed }
+	usssu:
 		3{equip }
+	sussu:
+		3{sperm }
+	uussu:
+		epoch
+		mmmmm:
+			3epoch }
+		smumu:
+			4{speck }
+		mmmuu:
+			4{epoxy }
 uuuus:
 	drier
 	mmmmm:
@@ -1828,13 +1858,13 @@ uuuus:
 	muumm:
 		3{defer }
 	suumm:
-		odder
+		under
 		mmmmm:
-			3odder }
-		ummmm:
+			3under }
+		mummm:
 			4{udder }
 		uummm:
-			4{under }
+			4{odder }
 	uuumm:
 		newer
 		mmmmm:
@@ -1858,11 +1888,11 @@ uuuus:
 		ssumm:
 			4{sneer }
 		usumm:
-			cheer
+			sheer
 			mmmmm:
-				4cheer }
+				4sheer }
 			ummmm:
-				5{sheer }
+				5{cheer }
 			uummm:
 				5{queer }
 			uusmm:
@@ -1928,13 +1958,13 @@ uuuus:
 	musmu:
 		3{dicey }
 	susmu:
-		index
+		video
 		mmmmm:
-			3index }
-		ssmmu:
+			3video }
+		ummmu:
 			4{widen }
-		summu:
-			4{video }
+		usmmu:
+			4{index }
 	uusmu:
 		given
 		mmmmm:
@@ -1944,13 +1974,13 @@ uuuus:
 		umums:
 			4{sinew }
 	smumu:
-		breed
+		creed
 		mmmmm:
-			3breed }
+			3creed }
 		ummmm:
-			creed
+			breed
 			mmmmm:
-				4creed }
+				4breed }
 			ummmm:
 				6{freed greed }
 	umumu:
@@ -2032,36 +2062,36 @@ uuuus:
 		sumus:
 			4{weigh }
 	usssu:
-		fiery
+		resin
 		mmmmm:
-			3fiery }
-		ssssu:
+			3resin }
+		smsmu:
 			4{serif }
-		usssu:
-			4{resin }
+		ssusu:
+			4{fiery }
 	mussu:
 		3{denim }
 	sussu:
 		4{fiend medic }
 	uussu:
-		begin
+		sheik
 		mmmmm:
-			3begin }
-		ususs:
+			3sheik }
+		uusmu:
+			4{begin }
+		uussu:
 			4{ennui }
-		usumu:
-			4{sheik }
 	mmusu:
 		3{dress }
 	smusu:
 		3{credo }
 	umusu:
-		cress
+		fresh
 		mmmmm:
-			3cress }
+			3fresh }
 		ummmu:
-			4{fresh }
-		smmuu:
+			4{cress }
+		ummuu:
 			4{wreck }
 	msusu:
 		4{decry derby }
@@ -2150,13 +2180,13 @@ uusmu:
 	mmmmm:
 		2ratty }
 	ummmm:
-		batty
+		catty
 		mmmmm:
-			3batty }
+			3catty }
 		ummmm:
-			catty
+			batty
 			mmmmm:
-				4catty }
+				4batty }
 			ummmm:
 				6{fatty tatty }
 	umsmm:
@@ -2172,36 +2202,36 @@ uusmu:
 	ssumu:
 		3{aorta }
 	usumu:
-		junta
+		quota
 		mmmmm:
-			3junta }
+			3quota }
 		umumm:
-			4{quota }
+			4{junta }
 		uuumm:
 			4{vista }
 umumu:
-	cloth
+	sloth
 	mmmmm:
-		2cloth }
+		2sloth }
 	ummmm:
-		3{sloth }
+		3{cloth }
 	umumu:
 		3{blitz }
 usumu:
-	filth
+	lusty
 	mmmmm:
-		2filth }
-	susmu:
-		3{lofty }
-	uusmu:
-		3{lusty }
-muumu:
-	photo
-	mmmmm:
-		2photo }
+		2lusty }
 	muumm:
-		3{pinto }
-	musmu:
+		3{lofty }
+	suumu:
+		3{filth }
+muumu:
+	pinto
+	mmmmm:
+		2pinto }
+	muumm:
+		3{photo }
+	muums:
 		3{pouty }
 	muumu:
 		3{putty }
@@ -2252,11 +2282,11 @@ uuumu:
 	uusmu:
 		4{fritz rusty }
 	umumu:
-		booty
+		sooty
 		mmmmm:
-			3booty }
+			3sooty }
 		ummmm:
-			4{sooty }
+			4{booty }
 		umsmu:
 			4{motto }
 	ssumu:
@@ -2298,15 +2328,15 @@ usmsu:
 	usmsu:
 		4{trail trawl }
 sumsu:
-	apart
+	tramp
 	mmmmm:
-		2apart }
-	msmum:
-		3{adapt }
-	usmss:
-		3{tramp }
-	usmus:
+		2tramp }
+	summm:
 		3{stamp }
+	ssmus:
+		3{apart }
+	sumus:
+		3{adapt }
 uumsu:
 	chart
 	mmmmm:
@@ -2396,28 +2426,34 @@ umssu:
 ssssu:
 	3{aptly splat }
 usssu:
-	tonal
+	total
 	mmmmm:
-		2tonal }
-	susmm:
-		3{natal }
-	mmumm:
-		3{total }
-	ssumm:
+		2total }
+	usmmm:
 		3{octal }
-	muumm:
-		tidal
+	uummm:
+		natal
 		mmmmm:
-			3tidal }
-		msumm:
-			4{trial }
+			3natal }
+		ummmm:
+			4{fatal }
+		uummm:
+			4{vital }
+	mmumm:
+		3{tonal }
+	muumm:
+		trial
+		mmmmm:
+			3trial }
+		musmm:
+			4{tidal }
 		muumm:
 			4{tubal }
-	suumm:
-		4{fatal vital }
 	ssusm:
 		3{atoll }
-	mssss:
+	uumss:
+		3{latch }
+	msuss:
 		3{talon }
 	muuss:
 		3{tally }
@@ -2429,8 +2465,6 @@ usssu:
 			4{vault }
 		usmmm:
 			4{adult }
-		umuss:
-			4{latch }
 mussu:
 	paint
 	mmmmm:
@@ -2440,43 +2474,49 @@ mussu:
 	mmuus:
 		4{patch patsy }
 sussu:
-	caput
+	tapir
 	mmmmm:
-		2caput }
-	ussum:
-		3{adopt }
-	ummus:
-		3{tapir }
-	usmus:
-		3{topaz }
-	ussus:
+		2tapir }
+	sssus:
 		3{strap }
+	smmuu:
+		3{caput }
+	msmuu:
+		3{topaz }
+	sssuu:
+		3{adopt }
 uussu:
-	tangy
+	tango
 	mmmmm:
-		2tangy }
-	mmsum:
-		3{tawny }
+		2tango }
 	mmuum:
-		tabby
-		mmmmm:
-			3tabby }
-		mmuum:
-			tacky
-			mmmmm:
-				4tacky }
-			mmuum:
-				6{taffy tardy }
-	msuum:
-		3{today }
-	ssuum:
-		4{artsy stray }
-	smuus:
-		4{satyr yacht }
-	mmmmu:
-		3{tango }
-	msmmu:
+		3{taboo }
+	smuum:
+		3{ratio }
+	msmms:
 		3{tonga }
+	smsus:
+		3{baton }
+	mmuus:
+		3{tarot }
+	msuus:
+		3{today }
+	ssuus:
+		abort
+		mmmmm:
+			3abort }
+		mmmum:
+			4{about }
+		mumum:
+			4{afoot }
+		mmsum:
+			4{abbot }
+		musum:
+			4{ascot }
+		musss:
+			4{actor }
+	mmmmu:
+		3{tangy }
 	smssu:
 		3{gaunt }
 	ssssu:
@@ -2484,7 +2524,13 @@ uussu:
 	smusu:
 		3{gamut }
 	mmsuu:
-		4{taint taunt }
+		taint
+		mmmmm:
+			3taint }
+		mmumm:
+			4{taunt }
+		mmumu:
+			4{tawny }
 	smsuu:
 		daunt
 		mmmmm:
@@ -2498,17 +2544,21 @@ uussu:
 		umumm:
 			5{faint saint }
 		umuss:
-			5{baton satin }
+			4{satin }
 	mssuu:
 		3{titan }
 	sssuu:
 		3{antic }
 	mmuuu:
-		taboo
+		tardy
 		mmmmm:
-			3taboo }
-		mmumu:
-			4{tarot }
+			3tardy }
+		mmuum:
+			tabby
+			mmmmm:
+				4tabby }
+			mmuum:
+				6{tacky taffy }
 		mmuuu:
 			4{tacit }
 	smuuu:
@@ -2517,10 +2567,10 @@ uussu:
 			3habit }
 		umusm:
 			4{waist }
+		smuum:
+			4{yacht }
 		umuum:
 			4{carat }
-		umums:
-			4{ratio }
 		smsus:
 			4{batch }
 		mmuus:
@@ -2532,33 +2582,23 @@ uussu:
 			ummmm:
 				6{match watch }
 		umuus:
-			4{datum }
+			5{datum satyr }
 	msuuu:
 		4{tibia triad }
 	ssuuu:
-		about
+		admit
 		mmmmm:
-			3about }
-		muusm:
+			3admit }
+		msumm:
 			4{audit }
-		suusm:
+		suuum:
 			4{squat }
-		mmmum:
-			4{abort }
-		mumum:
-			4{afoot }
-		mmsum:
-			4{abbot }
-		musum:
-			4{ascot }
-		muuum:
-			4{admit }
-		musus:
-			4{actor }
-		muuus:
+		muums:
 			4{attic }
+		muuus:
+			4{artsy }
 		suuus:
-			4{straw }
+			5{straw stray }
 umusu:
 	flint
 	mmmmm:
@@ -2794,16 +2834,16 @@ uuusu:
 	umums:
 		3{trunk }
 	uuums:
-		thing
+		tying
 		mmmmm:
-			3thing }
+			3tying }
 		mummm:
-			4{tying }
+			4{thing }
 		summm:
 			4{sting }
 		suumm:
 			4{stung }
-		mmmmu:
+		mummu:
 			4{think }
 		summu:
 			4{stink }
@@ -2814,12 +2854,12 @@ uuusu:
 	ussss:
 		3{intro }
 	uusss:
-		notch
+		tonic
 		mmmmm:
-			3notch }
-		smssu:
-			4{tonic }
-		smsuu:
+			3tonic }
+		smsus:
+			4{notch }
+		mmsmu:
 			4{toxin }
 	uuuss:
 		3{tunic }
@@ -2830,11 +2870,11 @@ uuusu:
 		mmmmu:
 			5{storm story }
 	uumus:
-		stock
+		stoic
 		mmmmm:
-			3stock }
-		mmmsu:
-			4{stoic }
+			3stoic }
+		mmmus:
+			4{stock }
 		mmmuu:
 			4{stood }
 	ussus:
@@ -2930,15 +2970,15 @@ ummuu:
 	mmmum:
 		4{flack flank }
 	ummum:
-		black
+		clank
 		mmmmm:
-			3black }
+			3clank }
 		ummmm:
-			4{clack }
-		ummsm:
-			4{clank }
-		mmmum:
 			4{blank }
+		mmmum:
+			4{clack }
+		smmum:
+			4{black }
 	mmmus:
 		3{flaky }
 	mmmmu:
@@ -3000,13 +3040,13 @@ usmuu:
 	sumus:
 		4{scald scaly }
 	uumus:
-		koala
+		loamy
 		mmmmm:
-			3koala }
-		uummu:
+			3loamy }
+		sumsu:
 			4{qualm }
-		ummsu:
-			4{loamy }
+		smmuu:
+			4{koala }
 mumuu:
 	piano
 	mmmmm:
@@ -3110,11 +3150,11 @@ uumuu:
 	uumsu:
 		4{snaky swami }
 	mmmuu:
-		crack
+		crank
 		mmmmm:
-			3crack }
+			3crank }
 		mmmum:
-			4{crank }
+			4{crack }
 		mmmuu:
 			4{crazy }
 	smmuu:
@@ -3174,27 +3214,27 @@ uumuu:
 smsuu:
 	2{alpha }
 umsuu:
-	allow
+	alloy
 	mmmmm:
-		2allow }
+		2alloy }
+	mmmum:
+		3{allay }
 	mmmmu:
-		3{alloy }
+		3{allow }
 	mmumu:
 		3{aloof }
 	mmusu:
 		4{along aloud }
 	smusu:
 		4{cloak flora }
-	mmmuu:
-		3{allay }
 	mmuuu:
-		album
+		align
 		mmmmm:
-			3album }
-		mmsuu:
+			3align }
+		mmmuu:
 			4{alibi }
 		mmuuu:
-			4{align }
+			4{album }
 	smuuu:
 		3{iliac }
 mssuu:
@@ -3218,22 +3258,52 @@ sssuu:
 	sussu:
 		3{ralph }
 ussuu:
-	moral
+	solar
 	mmmmm:
-		2moral }
+		2solar }
 	ummmm:
-		3{coral }
-	mummm:
-		3{mural }
-	uummm:
-		4{rural viral }
-	umsmm:
-		3{royal }
+		3{molar }
 	uusmm:
-		3{rival }
-	mmumm:
-		3{modal }
-	umumm:
+		3{lunar }
+	usmsm:
+		3{valor }
+	usssm:
+		3{labor }
+	umsms:
+		coral
+		mmmmm:
+			3coral }
+		ummmm:
+			4{moral }
+		umsmm:
+			4{royal }
+	uusms:
+		rival
+		mmmmm:
+			3rival }
+		smsmm:
+			4{viral }
+		muumm:
+			4{rural }
+		suumm:
+			4{mural }
+	uumss:
+		3{rally }
+	ussss:
+		3{carol }
+	uusss:
+		3{larva }
+	mummu:
+		3{salad }
+	uummu:
+		inlay
+		mmmmm:
+			3inlay }
+		uumms:
+			4{bylaw }
+		summu:
+			4{lilac }
+	umsmu:
 		local
 		mmmmm:
 			3local }
@@ -3242,107 +3312,81 @@ ussuu:
 		mmumm:
 			4{loyal }
 		umumm:
-			4{zonal }
-	usumm:
-		4{offal shoal }
-	uuumm:
-		banal
+			5{modal zonal }
+	mssmu:
+		3{shoal }
+	ussmu:
+		3{offal }
+	susmu:
+		nasal
 		mmmmm:
-			3banal }
+			3nasal }
 		ummmm:
-			4{canal }
+			4{basal }
+		uusmm:
+			4{usual }
+	uusmu:
+		canal
+		mmmmm:
+			3canal }
+		ummmm:
+			4{banal }
 		uummm:
 			4{final }
 		umsmm:
-			5{nasal naval }
+			4{naval }
 		mmumm:
-			4{basal }
-		smumm:
 			4{cabal }
 		usumm:
 			4{axial }
-		uuumm:
-			4{usual }
-	usmsm:
-		3{carol }
-	ususm:
-		3{afoul }
-	uuusm:
-		anvil
+	msmsu:
+		4{salon salvo }
+	usmsu:
+		3{aglow }
+	mumsu:
+		4{sally salsa }
+	uumsu:
+		valid
 		mmmmm:
-			3anvil }
-		summm:
-			4{cavil }
-		suumm:
-			4{basil }
-		mmuum:
-			4{annul }
-		muuum:
-			4{awful }
-	mmsms:
-		3{molar }
-	umsms:
-		3{solar }
-	uusms:
-		3{lunar }
-	uuums:
-		inlay
-		mmmmm:
-			3inlay }
-		uumms:
-			4{bylaw }
-		summu:
-			4{lilac }
-		uummu:
-			4{salad }
-	uumss:
-		3{larva }
-	ussss:
-		4{labor valor }
-	uusss:
-		3{rally }
-	umuss:
-		3{voila }
-	ususs:
-		salon
-		mmmmm:
-			3salon }
-		usmmu:
-			4{aglow }
-		mmmsu:
-			4{salvo }
-		smssu:
-			4{lasso }
-		usssu:
-			4{viola }
-	muuss:
-		4{madly manly }
-	suuss:
-		3{balmy }
-	uuuss:
-		dally
-		mmmmm:
-			3dally }
-		ummmm:
-			4{sally }
-		mmumm:
-			4{daily }
-		smumm:
-			5{badly sadly }
-		umumm:
-			5{gaily gayly }
-		umsum:
-			4{lanky }
-		usmmu:
+			3valid }
+		ummus:
+			4{dally }
+		msmsu:
 			4{villa }
+		ummuu:
+			4{balmy }
+	umssu:
+		3{voila }
+	ssssu:
+		3{lasso }
+	usssu:
+		4{afoul viola }
+	mussu:
+		3{sadly }
+	sussu:
+		3{basil }
+	uussu:
+		daily
+		mmmmm:
+			3daily }
+		ummmm:
+			4{gaily }
+		smumm:
+			5{badly madly }
+		umumm:
+			5{gayly manly }
+		umusm:
+			4{lanky }
 		umumu:
 			4{caulk }
-		smmuu:
-			4{valid }
-		ummuu:
-			4{salsa }
-		umsuu:
+		umssu:
+			4{cavil }
+		usssu:
+			4{anvil }
+		umusu:
 			4{laugh }
+		ususu:
+			5{annul awful }
 musuu:
 	pansy
 	mmmmm:
@@ -3460,24 +3504,24 @@ uusuu:
 	mmuus:
 		3{mason }
 	umuus:
-		bayou
+		savoy
 		mmmmm:
-			3bayou }
-		umsmu:
-			4{savoy }
+			3savoy }
+		umums:
+			4{bayou }
 		umumu:
 			4{wagon }
 	ssuus:
-		dogma
+		nomad
 		mmmmm:
-			3dogma }
-		ussss:
-			4{among }
-		smuss:
-			4{nomad }
-		umuss:
+			3nomad }
+		umsss:
+			4{dogma }
+		smmmu:
 			4{woman }
-		ususs:
+		ssssu:
+			4{among }
+		usssu:
 			4{axiom }
 	usuus:
 		agony
@@ -3636,13 +3680,13 @@ uusuu:
 		mmuuu:
 			5{sassy savvy }
 		smuuu:
-			basis
+			daisy
 			mmmmm:
-				4basis }
-			ummus:
+				4daisy }
+			umumm:
 				5{gassy }
 			umssu:
-				5{daisy }
+				5{basis }
 		umuuu:
 			bawdy
 			mmmmm:
@@ -3656,15 +3700,15 @@ uusuu:
 			umuum:
 				5{jazzy }
 	ssuuu:
-		admin
+		sigma
 		mmmmm:
-			3admin }
-		sumum:
-			4{human }
-		mussu:
+			3sigma }
+		ssuss:
 			4{amiss }
-		sussu:
-			4{sigma }
+		ususs:
+			4{admin }
+		uuuss:
+			4{human }
 	usuuu:
 		avian
 		mmmmm:
@@ -3682,11 +3726,11 @@ uusuu:
 		muuuu:
 			4{abyss }
 mmuuu:
-	pluck
+	plunk
 	mmmmm:
-		2pluck }
+		2plunk }
 	mmmum:
-		3{plunk }
+		3{pluck }
 	mmmuu:
 		plumb
 		mmmmm:
@@ -3696,17 +3740,17 @@ mmuuu:
 		mmmuu:
 			4{plush }
 smuuu:
-	clump
+	slurp
 	mmmmm:
-		2clump }
-	ummmm:
+		2slurp }
+	mmmum:
 		3{slump }
-	umumm:
-		3{blimp }
 	ummum:
-		3{slurp }
-	umuum:
+		3{clump }
+	mmuum:
 		3{sloop }
+	umuum:
+		3{blimp }
 	umuus:
 		3{glyph }
 umuuu:
@@ -3726,15 +3770,15 @@ umuuu:
 	mmuum:
 		4{flick flock }
 	umuum:
-		click
+		clock
 		mmmmm:
-			3click }
+			3clock }
 		ummmm:
-			4{slick }
-		mmumm:
-			4{clock }
-		umumm:
 			4{block }
+		mmumm:
+			4{click }
+		umumm:
+			4{slick }
 	mmmmu:
 		3{flung }
 	ummmu:
@@ -3742,11 +3786,11 @@ umuuu:
 	mmumu:
 		3{fling }
 	umumu:
-		cling
+		sling
 		mmmmm:
-			3cling }
+			3sling }
 		ummmm:
-			4{sling }
+			4{cling }
 		ummmu:
 			4{blind }
 		umumu:
@@ -3764,23 +3808,23 @@ umuuu:
 	smmuu:
 		3{bluff }
 	ummuu:
-		blurb
+		blush
 		mmmmm:
-			3blurb }
-		mmmuu:
-			4{blush }
-		ummuu:
+			3blush }
+		ummmm:
 			4{slush }
+		mmmuu:
+			4{blurb }
 	mmsuu:
 		3{flour }
 	umsuu:
 		3{cloud }
 	mmuuu:
-		flood
+		floor
 		mmmmm:
-			3flood }
+			3floor }
 		mmmmu:
-			4{floor }
+			4{flood }
 		mmmuu:
 			4{floss }
 	smuuu:
@@ -3806,15 +3850,15 @@ umuuu:
 		umuuu:
 			4{blood }
 msuuu:
-	polyp
+	prowl
 	mmmmm:
-		2polyp }
-	mumss:
-		3{pulpy }
-	musus:
+		2prowl }
+	muuum:
 		3{pupil }
-	mssuu:
-		3{prowl }
+	musus:
+		3{polyp }
+	muuus:
+		3{pulpy }
 ssuuu:
 	imply
 	mmmmm:
@@ -3864,17 +3908,17 @@ usuuu:
 	usums:
 		4{droll oddly }
 	uuums:
-		dilly
+		drill
 		mmmmm:
-			3dilly }
-		mmumm:
-			4{dimly }
-		muumm:
-			4{dryly }
-		sssms:
+			3drill }
+		susmm:
 			4{idyll }
-		mssmu:
-			4{drill }
+		musms:
+			4{dilly }
+		musmu:
+			4{dimly }
+		mmumu:
+			4{dryly }
 	umuss:
 		3{moldy }
 	ususs:
@@ -3884,33 +3928,33 @@ usuuu:
 	musmu:
 		3{curly }
 	uusmu:
-		bully
+		surly
 		mmmmm:
-			3bully }
+			3surly }
 		ummmm:
-			fully
-			mmmmm:
-				4fully }
-			ummmm:
-				6{gully sully }
-		mmumm:
 			4{burly }
+		mmumm:
+			4{sully }
 		umumm:
-			4{surly }
-		umsmu:
+			bully
+			mmmmm:
+				4bully }
+			ummmm:
+				6{fully gully }
+		umumu:
 			4{quill }
 	mmumu:
 		3{coyly }
 	umumu:
-		folly
+		holly
 		mmmmm:
-			3folly }
+			3holly }
 		ummmm:
-			golly
+			folly
 			mmmmm:
-				4golly }
+				4folly }
 			ummmm:
-				6{holly jolly }
+				6{golly jolly }
 		umsmm:
 			4{lowly }
 		umumm:
@@ -3974,11 +4018,11 @@ usuuu:
 	smusu:
 		3{logic }
 	umusu:
-		lobby
+		lorry
 		mmmmm:
-			3lobby }
+			3lorry }
 		mmuum:
-			4{lorry }
+			4{lobby }
 		mmuuu:
 			4{login }
 		smuuu:
@@ -3986,18 +4030,18 @@ usuuu:
 	ssusu:
 		3{scowl }
 	ususu:
-		igloo
+		lingo
 		mmmmm:
-			3igloo }
-		sssum:
-			4{lingo }
-		susum:
+			3lingo }
+		ssusm:
+			4{igloo }
+		mmuum:
 			4{limbo }
-		uummu:
-			4{nylon }
-		usssu:
+		suuss:
 			4{growl }
-		sussu:
+		susus:
+			4{nylon }
+		ssuus:
 			4{broil }
 	muusu:
 		3{civil }
@@ -4022,52 +4066,58 @@ usuuu:
 		ussuu:
 			4{whirl }
 muuuu:
-	phony
+	pouch
 	mmmmm:
-		2phony }
-	muusm:
-		3{pinky }
-	mumum:
-		3{proxy }
-	musum:
-		3{poppy }
-	msuum:
+		2pouch }
+	musmm:
+		3{punch }
+	mmumm:
+		4{pooch porch }
+	muumm:
+		3{pinch }
+	musus:
 		3{pushy }
-	muuum:
-		piggy
+	msuus:
+		3{phony }
+	muumu:
+		3{prick }
+	mussu:
+		3{pubic }
+	muusu:
+		3{picky }
+	mmmuu:
+		3{pound }
+	mssuu:
+		3{proud }
+	musuu:
+		pudgy
 		mmmmm:
-			3piggy }
-		muumm:
-			4{pudgy }
-		mumum:
-			4{pygmy }
+			3pudgy }
 		mmuum:
-			4{picky }
+			5{puffy puppy }
+	mmuuu:
+		3{poppy }
+	msuuu:
+		prior
+		mmmmm:
+			3prior }
+		mmumu:
+			4{proof }
+		mmmsu:
+			4{primo }
+		mmusu:
+			5{prong proxy }
+	muuuu:
+		pinky
+		mmmmm:
+			3pinky }
+		mmuum:
+			4{piggy }
 		msuum:
 			4{privy }
 		muuum:
-			5{puffy puppy }
-	mummu:
-		3{prong }
-	musmu:
-		3{pound }
-	msusu:
-		4{pinch punch }
-	msmuu:
-		3{pooch }
-	mumuu:
-		4{proof proud }
-	mssuu:
-		4{porch pouch }
-	musuu:
-		4{primo prior }
-	muuuu:
-		prick
-		mmmmm:
-			3prick }
-		mussu:
-			4{pubic }
-		mmmuu:
+			4{pygmy }
+		msuuu:
 			4{prism }
 suuuu:
 	crisp
@@ -4264,14 +4314,14 @@ uuuuu:
 		usmsu:
 			4{sworn }
 		ummuu:
-			brook
+			groom
 			mmmmm:
-				4brook }
-			mmmmu:
+				4groom }
+			ummmm:
 				5{broom }
 			ummmu:
-				5{groom }
-			ummuu:
+				5{brook }
+			mmmuu:
 				5{gross }
 		usmuu:
 			4{roomy }
@@ -4322,11 +4372,11 @@ uuuuu:
 		ussus:
 			4{hurry }
 	muuus:
-		curry
+		curvy
 		mmmmm:
-			3curry }
+			3curvy }
 		mmmum:
-			4{curvy }
+			4{curry }
 		mssuu:
 			4{crumb }
 	suuus:
@@ -4366,14 +4416,14 @@ uuuuu:
 	suumu:
 		4{mimic music }
 	uuumu:
-		minim
+		undid
 		mmmmm:
-			3minim }
-		uusmu:
-			4{undid }
-		umumu:
+			3undid }
+		uuumm:
 			4{vivid }
-		uuumu:
+		usumu:
+			4{minim }
+		suumu:
 			4{squib }
 	uumsu:
 		3{kiosk }
@@ -4492,12 +4542,12 @@ uuuuu:
 		mmmuu:
 			4{shook }
 	sumuu:
-		knock
+		smock
 		mmmmm:
-			3knock }
+			3smock }
 		uummm:
-			4{smock }
-		uumsu:
+			4{knock }
+		mumsu:
 			4{scoff }
 	uumuu:
 		woody
@@ -4508,11 +4558,11 @@ uuuuu:
 		mmmum:
 			4{woozy }
 		ummum:
-			booby
+			boozy
 			mmmmm:
-				4booby }
+				4boozy }
 			mmmum:
-				5{boozy }
+				5{booby }
 			ummum:
 				5{goofy }
 		sumum:
@@ -4524,27 +4574,27 @@ uuuuu:
 		sumuu:
 			4{known }
 	mssuu:
-		conch
+		cough
 		mmmmm:
-			3conch }
-		mmumm:
+			3cough }
+		mmmum:
 			4{couch }
 		mmuum:
-			4{cough }
+			4{conch }
 	sssuu:
 		3{vouch }
 	ussuu:
-		bough
+		hound
 		mmmmm:
-			3bough }
-		ummmm:
+			3hound }
+		smmus:
 			4{dough }
-		ummus:
-			4{hound }
-		smuus:
-			4{hobby }
-		umuus:
+		mmuus:
 			4{howdy }
+		smmuu:
+			4{bough }
+		mmuuu:
+			4{hobby }
 	musuu:
 		4{comfy condo }
 	susuu:
@@ -4574,21 +4624,21 @@ uuuuu:
 		mmuuu:
 			5{bobby bound }
 		umuuu:
-			dowdy
+			wound
 			mmmmm:
-				4dowdy }
-			mmusm:
-				5{dodgy }
-			mmmum:
-				5{downy }
-			umuum:
-				5{foggy }
-			umuus:
-				5{young }
-			smsuu:
-				5{wound }
-			smuuu:
+				4wound }
+			ummmm:
 				5{found }
+			smums:
+				5{downy }
+			smuus:
+				5{dowdy }
+			umuus:
+				5{dodgy }
+			ummmu:
+				5{young }
+			umuuu:
+				5{foggy }
 	mmuuu:
 		4{chuck chunk }
 	smuuu:
@@ -4616,49 +4666,53 @@ uuuuu:
 		umssu:
 			4{humus }
 	suuuu:
-		mucky
+		snuck
 		mmmmm:
-			3mucky }
-		usssu:
-			4{snuck }
-		mmmuu:
+			3snuck }
+		uusss:
+			4{mucky }
+		sussu:
 			4{mucus }
 	uuuuu:
-		funky
+		swung
 		mmmmm:
-			3funky }
-		umumm:
-			5{dusky musky }
-		mmmum:
-			4{funny }
-		ummum:
-			5{bunny sunny }
-		mmuum:
-			5{fussy fuzzy }
-		umuum:
-			muddy
-			mmmmm:
-				4muddy }
-			ummmm:
-				5{buddy }
-			smsum:
-				5{dummy }
-			mmuum:
-				5{mummy }
-			smuum:
-				5{gummy }
-			umuum:
-				5{buggy }
-		usssu:
+			3swung }
+		uusus:
+			5{buggy gummy }
+		mummu:
 			4{skunk }
-		sssuu:
+		musmu:
+			4{sunny }
+		uusmu:
+			5{bunny funny }
+		mumsu:
 			4{snuff }
-		ussuu:
-			4{swung }
-Average cost 3.56501
+		uussu:
+			4{funky }
+		susuu:
+			dusky
+			mmmmm:
+				4dusky }
+			ummmm:
+				5{musky }
+			ummum:
+				5{fussy }
+		uusuu:
+			dummy
+			mmmmm:
+				4dummy }
+			ummmm:
+				5{mummy }
+			smsum:
+				5{muddy }
+			smuum:
+				5{buddy }
+			umuum:
+				5{fuzzy }
+Average cost 3.56328
 1 words need try 1 times
 130 words need try 2 times
-970 words need try 3 times
-1008 words need try 4 times
+974 words need try 3 times
+1004 words need try 4 times
 186 words need try 5 times
 20 words need try 6 times
