@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		char *skiptab=line;
 		while(*skiptab=='\t')skiptab++;
 		int tabcount=skiptab-line;
-		if(tabcount==0&&isspace(skiptab[5])){//first line
+		if(tabcount==0&&isspace(skiptab[5])&&islower(skiptab[0])){//first line
 			if(WStack[0]!=NULL||curtab!=-1){
 				fprintf(stderr, "Invalid line encountered\n");
 				return -1;
