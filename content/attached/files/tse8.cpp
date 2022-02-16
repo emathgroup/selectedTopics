@@ -403,7 +403,7 @@ int getBestR(const set<itype>& allwords, const set<itype>& allchoice, BestR br[]
 	int ttcount;
 	int tsum;
 	int cstat[20];
-	void dump_result(const set<itype>& allwords, const set<itype>& allchoice, int c, itype s, int tab)
+	void dump_result(const set<itype>& allwords, const set<itype>& allchoice, itype s, int tab)
 	{
 		showtab(tab);
 		cout<<choicelist[s]<<'\n';
@@ -441,7 +441,7 @@ int getBestR(const set<itype>& allwords, const set<itype>& allchoice, BestR br[]
 				//			int cc=getBestTry(*pit->second,*parts.parts2[pit->first],result,ttotal);
 				int cc=getBestTry(*pit->second,allchoice,result,ttotal);
 				//			dump_result(*pit->second,*parts.parts2[pit->first], cc, result, tab+1);
-				dump_result(*pit->second,allchoice, cc, result, tab+1);
+				dump_result(*pit->second,allchoice, result, tab+1);
 			}
 		}
 		removescore(s);
@@ -492,8 +492,25 @@ int getBestR(const set<itype>& allwords, const set<itype>& allchoice, BestR br[]
 		set<itype> allwords, allindexes;
 		for(i=0;i<wordslist.size();++i)allwords.insert(i);
 		for(i=0;i<CCOUNT;i++)allindexes.insert(i);
-		itype result;
-		int the_total;
-		(void)getBestTry(allwords, allindexes, result, the_total, true);
+		if(argc>1){
+			for(i=0;i<CCOUNT;++i){
+				if(choicelist[i]==argv[1])break;
+			}
+			if(i==CCOUNT){
+				fprintf(stderr, "Invalid input string %s\n",argv[1]);
+				return -1;
+			}
+			dump_result(allwords, allindexes,  i, 0);
+			cout <<"Total count "<<tsum<<'\n';
+			for(i=0;i<20;i++){
+				if(cstat[i]>0){
+					cout << cstat[i] <<" words tries "<<i<<" times\n";
+				}
+			}
+		}else{
+		    itype result;
+		    int the_total;
+		    (void)getBestTry(allwords, allindexes, result, the_total, true);
+		}
 		return 0;
 	}
