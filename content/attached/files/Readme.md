@@ -1,4 +1,4 @@
-Computing searching result for ![Wordle](https://www.nytimes.com/games/wordle/index.html)
+Computing searching result for [Wordle](https://www.nytimes.com/games/wordle/index.html)
 There're two different play modes for Wordle: Hard or Normal mode.
 Any revealed hints must be used in subsequent guesses in hard Mode.
 The target words must be in file w5.txt and player could use any words in file w5.txt or ta.txt when playing the game.
