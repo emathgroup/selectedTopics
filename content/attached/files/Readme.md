@@ -41,3 +41,4 @@ Hard Mode
 |tse4.80.salet|8125|3.50972|6|
 
 
+bt.cpp is added to construct a game with chinese 4 characters idiom. A small database sid.sort is used which could be replaced by a larger one, sd.out
