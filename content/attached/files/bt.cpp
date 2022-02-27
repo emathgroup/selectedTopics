@@ -80,10 +80,24 @@ void dump_result()
 	if(lastrow<2*RANGE)lastrow++;
 	if(firstcol>0)firstcol--;
 	if(lastcol<2*RANGE)lastcol++;
+	vector<int> vd;
+	for(i=firstrow;i<lastrow+1;i++)for(j=firstcol;j<lastcol+1;j++){
+		if(useinfo[i][j]>=0){
+			vd.push_back(i*(2*RANGE+1)+j);
+		}
+	}
+	int rshow=rand()%vd.size();
+
+	int targetj=vd[rshow]%(2*RANGE+1);
+	int targeti=vd[rshow]/(2*RANGE+1);
 	for(i=firstrow;i<lastrow+1;i++){
 		for(j=firstcol;j<lastcol+1;j++){
 			if(useinfo[i][j]>=0){
-				printf(" *");
+				if(i==targeti&&j==targetj){
+					printf("%s",cis[useinfo[i][j]].s.c_str());
+				}else{
+					printf(" *");
+				}
 			}else{
 				printf("  ");
 			}
@@ -91,15 +105,15 @@ void dump_result()
 		printf("\n");
 	}
 	printf("\n");
-	vector<int> vd;
+	vd.clear();
 	for(i=firstrow;i<lastrow+1;i++)for(j=firstcol;j<lastcol+1;j++){
-		if(useinfo[i][j]>=0){
+		if(useinfo[i][j]>=0&&(i!=targeti||j!=targetj)){
 			vd.push_back(useinfo[i][j]);
 		}
 	}
-	shuffle(vd.begin(), vd.end(),random_device());
+	sort(vd.begin(),vd.end());
 	for(i=0;i<vd.size();++i){
-		printf("%s",cis[vd[i]].s.c_str());
+			printf("%s",cis[vd[i]].s.c_str());
 	}
 	printf("\n\n");
 
@@ -256,7 +270,12 @@ int tryfillfrom()
 int main(int argc, const char *argv[])
 {
 	int seed;
-	FILE *f=fopen(SRC,"r");
+	FILE *f=NULL;
+	f=fopen(argv[1],"r");
+	if(f==NULL){
+		fprintf(stderr, "Fail to open input idiom files %s\n", argv[1]);
+		return -1;
+	}
 	while(fgets(buf,BUFLEN,f)!=NULL){
 		int i=0,ccount=0;
 		Idiom idm;
@@ -280,8 +299,8 @@ int main(int argc, const char *argv[])
 		}
 	}
 	fclose(f);
-	if(argc>1){
-		seed=atoi(argv[1]);
+	if(argc>2){
+		seed=atoi(argv[2]);
 	}else{
 		seed=time(NULL);
 	}
