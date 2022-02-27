@@ -41,4 +41,72 @@ Hard Mode
 |tse4.80.salet|8125|3.50972|6|
 
 
-bt.cpp is added to construct a game with chinese 4 characters idiom. A small database sid.sort is used which could be replaced by a larger one, sd.out
+bt.cpp is added to construct a game with chinese 4 characters idiom. A small database sid.sort is used which could be replaced by larger ones, suchas sid2.sort or sd.out
+
+example:
+````
+$./bt sd.out 1
+seed is 1
+
+   * * * *
+       *
+       *
+     * * * *
+       *
+   *   *
+   * * * *
+   *   *
+   *   *
+       *   *
+       *   *
+       *   *
+       * * * *
+         *
+       * * * *
+        身   *
+         *   *
+         *   *
+         *   *
+         *   *
+         *   *
+         *   *
+         *   *
+         *   *
+         *   *
+         *   *
+         *   *
+         *
+
+
+俗容不不不风山人忍财国富落无名相肠脑面光玉出抽茅水发为真金金花致流败可改肥劳馀乎在苦满庐科胆铁闷初积咀咀嚼堆遁臬第焕隳耐
+
+
+  落花流水
+      风
+      馀
+    遁俗无闷
+      不
+  相  可
+  忍苦耐劳
+  为  人
+  国  咀
+      嚼  堆
+      铁  金
+      咀  积
+      金科玉臬
+        第
+      初出茅庐
+        身  山
+        败  真
+        名  面
+        隳  不
+        胆  改
+        抽  容
+        肠  光
+        肥  焕
+        脑  发
+        满  财
+        不  致
+        在  富
+        乎
+````
