@@ -177,5 +177,5 @@ file 岚.* provides excel version of the game.
 
 files enumps*, mr*, nexterm.cpp, tracenext.cpp try to provides [6x6 squares so that product of rows/columns/diagonals are all same](https://www.zhihu.com/question/532559174).
 
-files vd5.zip provides result of [transform digits of integers to powers](https://www.zhihu.com/question/533455093), such as 234=>4^3^2=262144, and 262144=>4^4^1^2^6^2=256 and so on.
+files vd5.zip provides result of [transform digits of integers to powers](https://www.zhihu.com/question/533455093), such as 234=>4^3^2=262144, and 262144=>4^4^1^2^6^2=256 and so on. vd10.out vd10e.out only provides result of decimal system.
   The result of base below 12 are all provided.
