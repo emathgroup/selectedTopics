@@ -7,7 +7,7 @@
 #include <algorithm>
 using namespace std;
 #ifndef TP
-#define TP 200
+#define TP 1000
 #endif
 
 struct POW{
@@ -27,18 +27,18 @@ vector<POW> cf;
 int twocount;
 int fivecount;
 vector<int> stacks;
-#define PCOUNT 400
+#define PCOUNT 2000
 #if PCOUNT<2*TP
 #error PCOUNT is too small
 #endif
-#define PBOUND 3000
+#define PBOUND 100000
 char pmask[PBOUND];
 double maxv=-1;
 int plist[PCOUNT]={2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101};
 double logp[PCOUNT];
 void initlogp()
 {
-	int i,pc,j;
+	long i,pc,j;
 	pc=0;
 	for(i=2;i<PBOUND;i++)pmask[i]=1;
 	for(i=2;i<PBOUND;i++){
@@ -46,7 +46,7 @@ void initlogp()
 			if(pc<PCOUNT){
 				plist[pc++]=i;
 			}
-			for(j=i*i;j<PCOUNT;j+=i)pmask[j]=0;
+			for(j=i*i;j<PBOUND;j+=i)pmask[j]=0;
 		}
 	}
 	if(pc<PCOUNT){
@@ -122,13 +122,18 @@ void search(int index)
 		checkresult();
 		return;
 	}
-	for(i=0;i<=index;++i){
+	for(i=index;i>=0;--i){
 		POW& p = cf[i];
 		if(twocount+p.o2<=TP&&fivecount+p.o5<=TP){
 			if(cf[i].o2>=1){//try change p^{2x-1} => p^{x-1} *lastP, and we know that total number of primes is no more than 2*TP
 				if((cf[i].value.get_d()/2)*logp[stacks.size()]>logp[2*TP-1])
 					continue;
 			}
+			if(cf[i].o5>=1){
+				if((cf[i].value.get_d()/5)*logp[stacks.size()]>logp[2*TP-1])
+					continue;
+			}
+#if 0
 			if(maxv>0){//found any solution now
 				int j;
 				double tv=0;
@@ -137,6 +142,7 @@ void search(int index)
 				}
 				if(tv>=maxv*1.001)continue;//alreadly too large
 			}
+#endif
 			stacks.push_back(i);
 			twocount+=p.o2;
 			fivecount+=p.o5;
