@@ -1,18 +1,31 @@
 pup(k)={
-    if(k>=688383,
+    local(r);
+    r=if(k>=688383,
          k*(log(k)+log(log(k))-1+(log(log(k))-2)/log(k)),
          k*log(k*log(k))
-    )
+    );
+    if(k>=88789&&pilb(r)>k,
+        r=solve(x=k,r,pilb(x)-k)
+    );
+    r
 }
 
 plb(k)={
-    k*(log(k)+log(log(k))-1+(log(log(k))-2.1)/log(k))
+    local(r);
+    r=k*(log(k)+log(log(k))-1+(log(log(k))-2.1)/log(k));
+    if(piup(r)<k,
+        r=solve(x=r,2*r, piup(x)-k)
+    );
+    r
 }
 
 piup(x)={
    x/log(x)*(1+1/log(x)+2/log(x)^2+7.59/log(x)^3)
 }
 
+pilb(x)={
+    x/log(x)*(1+1/log(x)+2/log(x)^2)
+}
 findl(TP)={
      local(logp2TP, p2TP, C, F, T);
      local(ph,lb,ub,ub2,lb2, pls, plogs, m2,m5,p2o,p5o, j1, j2,s1,s2, v, pres,s,sc,u2,u5,ec,es1,es2, pst,ped);
