@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta charset="utf-8"/>
+<script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
+
+</head>
+<body>
+<div id="ggbApplet"></div>
+
+<script>
+var parameters = {
+"id": "ggbApplet",
+"width":1536,
+"height":621,
+"showMenuBar":true,
+"showAlgebraInput":true,
+"showToolBar":true,
+"customToolBar":"0 73 62 | 1 501 67 , 5 19 , 72 75 76 | 2 15 45 , 18 65 , 7 37 | 4 3 8 9 , 13 44 , 58 , 47 | 16 51 64 , 70 | 10 34 53 11 , 24  20 22 , 21 23 | 55 56 57 , 12 | 36 46 , 38 49  50 , 71  14  68 | 30 29 54 32 31 33 | 25 17 26 60 52 61 | 40 41 42 , 27 28 35 , 6",
+"showToolBarHelp":true,
+"showResetIcon":false,
+"enableLabelDrags":false,
+"enableShiftDragZoom":true,
+"enableRightClick":false,
+"errorDialogsActive":false,
+"useBrowserForJS":false,
+"allowStyleBar":false,
+"preventFocus":false,
+"showZoomButtons":true,
+"capturingThreshold":3,
+// add code here to run when the applet starts
+"appletOnLoad":function(api){ 
+api.evalCommand("o=-0.6");
+api.evalCommand("d=0.7");
+api.evalCommand("n=x(Roots(x^2*o-x^2+x*o^2-x*o+1, -100,100))");
+api.evalCommand("m=-(n^2*o-n^2+2*n*o^2-2*n*o+o^3-o^2+1)");
+api.evalCommand("l=(m+n*o-n+o^2-o+1)/(2-o)");
+api.evalCommand("k=l*n-n+1");
+api.evalCommand("c=x(Roots(2*x^3+x^2*l^2-5*x^2*l+x^2*m*o-x^2+2*x*d^2-2*x*k-2*x*l^2+8*x*l-2*x*m*o-2*x*m+d^2*l^2-d^2*l+d^2*m*o-d^2+k+l^2-3*l+m*o+m, -100,100))");
+api.evalCommand("b=-(-2*c^2*n+c*k+c*l+3*c*n-c*o^2+c*o-3*c-2*d^2*n-n+1)/(2*d*o)");
+api.evalCommand("-(-k-l-n+o^2-o+1)/(2*o)");
+api.evalCommand("AA=((-k*d*c*a^2 + ((k*b + n*d)*c^2 + k*d*c + (-k*d^2*b + n*d^3))*a + (-n*b*c^3 - n*d*c^2 + (k*d*b^2 - n*d^2*b)*c + (k*d^2*b - n*d^3)))/((d*c^2 + d^3)*a + (-b*c^3 + (k*b - n*d)*c^2 - d^2*b*c + (k*d^2*b - n*d^3))),(k*d^2*a^2 + (-2*k*d*b*c - k*d^2)*a + (k*b^2*c^2 + k*d*b*c))/((d*c^2 + d^3)*a + (-b*c^3 + (k*b - n*d)*c^2 - d^2*b*c + (k*d^2*b - n*d^3))))");
+api.evalCommand("BB=((-d*c*a^2 + (b*c^2 + d*c - d^2*b)*a + (d*b^2*c + d^2*b))/((d*c^2 + d^3)*a + (-b*c^3 + b*c^2 - d^2*b*c + d^2*b)), (d^2*a^2 + (-2*d*b*c - d^2)*a + (b^2*c^2 + d*b*c))/((d*c^2 + d^3)*a + (-b*c^3 + b*c^2 - d^2*b*c + d^2*b)))");
+api.evalCommand("CC=((-l*d*c*a^2 + ((l*b + (n + k)*d)*c^2 + l*d*c + (-l*d^2*b + (n + k)*d^3))*a + ((-n - k)*b*c^3 + (-n - k)*d*c^2 + (l*d*b^2 + (-n - k)*d^2*b)*c + (l*d^2*b + (-n - k)*d^3)))/((d*c^2 + d^3)*a + (-b*c^3 + (l*b + (-n - k)*d)*c^2 - d^2*b*c + (l*d^2*b + (-n - k)*d^3))), (l*d^2*a^2 + (-2*l*d*b*c - l*d^2)*a + (l*b^2*c^2 + l*d*b*c))/((d*c^2 + d^3)*a + (-b*c^3 + (l*b + (-n - k)*d)*c^2 - d^2*b*c + (l*d^2*b + (-n - k)*d^3))))");
+api.evalCommand("DD=(d*c/(-b*c^2 - d^2*b)*a^2 + ((b*c^2 + d*c - d^2*b)/(b*c^2 + d^2*b))*a + ((-d*b*c - d^2)/(-c^2 - d^2)), -d^2/(-b*c^2 - d^2*b)*a^2 + ((-2*d*b*c - d^2)/(b*c^2 + d^2*b))*a + ((-b*c^2 - d*c)/(-c^2 - d^2)))");
+api.evalCommand("EE=((-o*d*c*a^2 + ((o*b + (n + 1)*d)*c^2 + o*d*c + (-o*d^2*b + (n + 1)*d^3))*a + ((-n - 1)*b*c^3 + (-n - 1)*d*c^2 + (o*d*b^2 + (-n - 1)*d^2*b)*c + (o*d^2*b + (-n - 1)*d^3)))/((d*c^2 + d^3)*a + (-b*c^3 + (o*b + (-n - 1)*d)*c^2 - d^2*b*c + (o*d^2*b + (-n - 1)*d^3))), (o*d^2*a^2 + (-2*o*d*b*c - o*d^2)*a + (o*b^2*c^2 + o*d*b*c))/((d*c^2 + d^3)*a + (-b*c^3 + (o*b + (-n - 1)*d)*c^2 - d^2*b*c + (o*d^2*b + (-n - 1)*d^3))))");
+api.evalCommand("FF=(1,0)");
+api.evalCommand("GG=(-a + (-1/-d*b*c + 1), 0)");
+api.evalCommand("HH=((-k*d*c*a^2 + ((k*b + (-k + 1)*d)*c^2 + k*d*c + (-k*d^2*b + (-k + 1)*d^3))*a + ((k - 1)*b*c^3 + (k - 1)*d*c^2 + (k*d*b^2 + (k - 1)*d^2*b)*c + (k*d^2*b + (k - 1)*d^3)))/((d*c^2 + d^3)*a + (-b*c^3 + (k*b + (k - 1)*d)*c^2 - d^2*b*c + (k*d^2*b + (k - 1)*d^3))), (k*d^2*a^2 + (-2*k*d*b*c - k*d^2)*a + (k*b^2*c^2 + k*d*b*c))/((d*c^2 + d^3)*a + (-b*c^3 + (k*b + (k - 1)*d)*c^2 - d^2*b*c + (k*d^2*b + (k - 1)*d^3))))");
+api.evalCommand("II=((-d*c*a^2 + ((b + (n + 1)*d)*c^2 + d*c + (-d^2*b + (n + 1)*d^3))*a + ((-n - 1)*b*c^3 + (-n - 1)*d*c^2 + (d*b^2 + (-n - 1)*d^2*b)*c + (d^2*b + (-n - 1)*d^3)))/((d*c^2 + d^3)*a + (-b*c^3 + (b + (-n - 1)*d)*c^2 - d^2*b*c + (d^2*b + (-n - 1)*d^3))), (d^2*a^2 + (-2*d*b*c - d^2)*a + (b^2*c^2 + d*b*c))/((d*c^2 + d^3)*a + (-b*c^3 + (b + (-n - 1)*d)*c^2 - d^2*b*c + (d^2*b + (-n - 1)*d^3))))");
+api.evalCommand("JJ=((-l*d*c*a^2 + ((l*b + d)*c^2 + l*d*c + (-l*d^2*b + d^3))*a + (-b*c^3 - d*c^2 + (l*d*b^2 - d^2*b)*c + (l*d^2*b - d^3)))/((d*c^2 + d^3)*a + (-b*c^3 + (l*b - d)*c^2 - d^2*b*c + (l*d^2*b - d^3))), (l*d^2*a^2 + (-2*l*d*b*c - l*d^2)*a + (l*b^2*c^2 + l*d*b*c))/((d*c^2 + d^3)*a + (-b*c^3 + (l*b - d)*c^2 - d^2*b*c + (l*d^2*b - d^3))))");
+api.evalCommand("KK=(m*d*c/((-m*b + d)*c^2 + (-m*d^2*b + d^3))*a^2 + (((m*b + d)*c^2 + m*d*c + (-m*d^2*b + d^3))/((m*b - d)*c^2 + (m*d^2*b - d^3)))*a + ((b*c^3 + d*c^2 + (-m*d*b^2 + d^2*b)*c + (-m*d^2*b + d^3))/((-m*b + d)*c^2 + (-m*d^2*b + d^3))), -m*d^2/((-m*b + d)*c^2 + (-m*d^2*b + d^3))*a^2 + ((-2*m*d*b*c - m*d^2)/((m*b - d)*c^2 + (m*d^2*b - d^3)))*a + ((-m*b^2*c^2 - m*d*b*c)/((-m*b + d)*c^2 + (-m*d^2*b + d^3))))");
+api.evalCommand("LL=((-o*d*c*a^2 + ((o*b + n*d)*c^2 + o*d*c + (-o*d^2*b + n*d^3))*a + (-n*b*c^3 - n*d*c^2 + (o*d*b^2 - n*d^2*b)*c + (o*d^2*b - n*d^3)))/((d*c^2 + d^3)*a + (-b*c^3 + (o*b - n*d)*c^2 - d^2*b*c + (o*d^2*b - n*d^3))), (o*d^2*a^2 + (-2*o*d*b*c - o*d^2)*a + (o*b^2*c^2 + o*d*b*c))/((d*c^2 + d^3)*a + (-b*c^3 + (o*b - n*d)*c^2 - d^2*b*c + (o*d^2*b - n*d^3))))");
+api.evalCommand("MM=(0,0)");
+api.evalCommand("SetVisibleInView(AA,1,false)");
+api.evalCommand("SetVisibleInView(BB,1,false)");
+api.evalCommand("SetVisibleInView(CC,1,false)");
+api.evalCommand("SetVisibleInView(DD,1,false)");
+api.evalCommand("SetVisibleInView(EE,1,false)");
+api.evalCommand("SetVisibleInView(FF,1,false)");
+api.evalCommand("SetVisibleInView(GG,1,false)");
+api.evalCommand("SetVisibleInView(HH,1,false)");
+api.evalCommand("SetVisibleInView(II,1,false)");
+api.evalCommand("SetVisibleInView(JJ,1,false)");
+api.evalCommand("SetVisibleInView(KK,1,false)");
+api.evalCommand("SetVisibleInView(LL,1,false)");
+api.evalCommand("SetVisibleInView(MM,1,false)");
+api.evalCommand("tx(x1,y1,x2,y2)=(x1-x2)/((x1-x2)^2+(y1-y2)^2)");
+api.evalCommand("ty(x1,y1,x2,y2)=tx(y1,x1,y2,x2)");
+api.evalCommand("NN=(0.6,2)");
+api.evalCommand("N=(0,0)");
+api.evalCommand("SetPointSize(N,2)");
+api.evalCommand("ShowLabel(N,true)");
+api.evalCommand("A=(tx(x(AA),y(AA),x(NN),y(NN)), ty(x(AA),y(AA),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(A,2)");
+api.evalCommand("ShowLabel(A,true)");
+api.evalCommand("B=(tx(x(BB),y(BB),x(NN),y(NN)), ty(x(BB),y(BB),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(B,2)");
+api.evalCommand("ShowLabel(B,true)");
+api.evalCommand("C=(tx(x(CC),y(CC),x(NN),y(NN)), ty(x(CC),y(CC),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(C,2)");
+api.evalCommand("ShowLabel(C,true)");
+api.evalCommand("D=(tx(x(DD),y(DD),x(NN),y(NN)), ty(x(DD),y(DD),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(D,2)");
+api.evalCommand("ShowLabel(D,true)");
+api.evalCommand("E=(tx(x(EE),y(EE),x(NN),y(NN)), ty(x(EE),y(EE),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(E,2)");
+api.evalCommand("ShowLabel(E,true)");
+api.evalCommand("F=(tx(x(FF),y(FF),x(NN),y(NN)), ty(x(FF),y(FF),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(F,2)");
+api.evalCommand("ShowLabel(F,true)");
+api.evalCommand("G=(tx(x(GG),y(GG),x(NN),y(NN)), ty(x(GG),y(GG),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(G,2)");
+api.evalCommand("ShowLabel(G,true)");
+api.evalCommand("H=(tx(x(HH),y(HH),x(NN),y(NN)), ty(x(HH),y(HH),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(H,2)");
+api.evalCommand("ShowLabel(H,true)");
+api.evalCommand("I=(tx(x(II),y(II),x(NN),y(NN)), ty(x(II),y(II),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(I,2)");
+api.evalCommand("ShowLabel(I,true)");
+api.evalCommand("J=(tx(x(JJ),y(JJ),x(NN),y(NN)), ty(x(JJ),y(JJ),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(J,2)");
+api.evalCommand("ShowLabel(J,true)");
+api.evalCommand("K=(tx(x(KK),y(KK),x(NN),y(NN)), ty(x(KK),y(KK),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(K,2)");
+api.evalCommand("ShowLabel(K,true)");
+api.evalCommand("L=(tx(x(LL),y(LL),x(NN),y(NN)), ty(x(LL),y(LL),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(L,2)");
+api.evalCommand("ShowLabel(L,true)");
+api.evalCommand("M=(tx(x(MM),y(MM),x(NN),y(NN)), ty(x(MM),y(MM),x(NN),y(NN)))");
+api.evalCommand("SetPointSize(M,2)");
+api.evalCommand("ShowLabel(M,true)");
+api.evalCommand("cc0=Circle(A,B,E)");
+api.evalCommand("SetColor(cc0,Red)");
+api.evalCommand("SetLineThickness(cc0,1)");
+api.evalCommand("ShowLabel(cc0,false)");
+api.evalCommand("cc1=Circle(A,B,H)");
+api.evalCommand("SetLineThickness(cc1,1)");
+api.evalCommand("ShowLabel(cc1,false)");
+api.evalCommand("cc2=Circle(A,B,J)");
+api.evalCommand("SetLineThickness(cc2,1)");
+api.evalCommand("ShowLabel(cc2,false)");
+api.evalCommand("cc3=Circle(A,B,K)");
+api.evalCommand("SetLineThickness(cc3,1)");
+api.evalCommand("ShowLabel(cc3,false)");
+api.evalCommand("cc4=Circle(A,C,D)");
+api.evalCommand("SetColor(cc4,Red)");
+api.evalCommand("SetLineThickness(cc4,1)");
+api.evalCommand("ShowLabel(cc4,false)");
+api.evalCommand("cc5=Circle(A,C,E)");
+api.evalCommand("SetColor(cc5,Red)");
+api.evalCommand("SetLineThickness(cc5,1)");
+api.evalCommand("ShowLabel(cc5,false)");
+api.evalCommand("cc6=Circle(A,C,H)");
+api.evalCommand("SetLineThickness(cc6,1)");
+api.evalCommand("ShowLabel(cc6,false)");
+api.evalCommand("cc7=Circle(A,C,K)");
+api.evalCommand("SetLineThickness(cc7,1)");
+api.evalCommand("ShowLabel(cc7,false)");
+api.evalCommand("cc8=Circle(A,C,L)");
+api.evalCommand("SetLineThickness(cc8,1)");
+api.evalCommand("ShowLabel(cc8,false)");
+api.evalCommand("cc9=Circle(A,D,H)");
+api.evalCommand("SetLineThickness(cc9,1)");
+api.evalCommand("ShowLabel(cc9,false)");
+api.evalCommand("cc10=Circle(A,D,I)");
+api.evalCommand("SetLineThickness(cc10,1)");
+api.evalCommand("ShowLabel(cc10,false)");
+api.evalCommand("cc11=Circle(A,D,L)");
+api.evalCommand("SetLineThickness(cc11,1)");
+api.evalCommand("ShowLabel(cc11,false)");
+api.evalCommand("cc12=Circle(A,E,H)");
+api.evalCommand("SetLineThickness(cc12,1)");
+api.evalCommand("ShowLabel(cc12,false)");
+api.evalCommand("cc13=Circle(A,E,I)");
+api.evalCommand("SetLineThickness(cc13,1)");
+api.evalCommand("ShowLabel(cc13,false)");
+api.evalCommand("cc14=Circle(A,E,M)");
+api.evalCommand("SetLineThickness(cc14,1)");
+api.evalCommand("ShowLabel(cc14,false)");
+api.evalCommand("cc15=Circle(A,F,H)");
+api.evalCommand("SetLineThickness(cc15,1)");
+api.evalCommand("ShowLabel(cc15,false)");
+api.evalCommand("cc16=Circle(A,F,I)");
+api.evalCommand("SetLineThickness(cc16,1)");
+api.evalCommand("ShowLabel(cc16,false)");
+api.evalCommand("cc17=Circle(A,F,J)");
+api.evalCommand("SetLineThickness(cc17,1)");
+api.evalCommand("ShowLabel(cc17,false)");
+api.evalCommand("cc18=Circle(A,G,H)");
+api.evalCommand("SetLineThickness(cc18,1)");
+api.evalCommand("ShowLabel(cc18,false)");
+api.evalCommand("cc19=Circle(A,G,I)");
+api.evalCommand("SetLineThickness(cc19,1)");
+api.evalCommand("ShowLabel(cc19,false)");
+api.evalCommand("cc20=Circle(A,G,J)");
+api.evalCommand("SetLineThickness(cc20,1)");
+api.evalCommand("ShowLabel(cc20,false)");
+api.evalCommand("cc21=Circle(B,C,D)");
+api.evalCommand("SetColor(cc21,Red)");
+api.evalCommand("SetLineThickness(cc21,1)");
+api.evalCommand("ShowLabel(cc21,false)");
+api.evalCommand("cc22=Circle(B,C,H)");
+api.evalCommand("SetLineThickness(cc22,1)");
+api.evalCommand("ShowLabel(cc22,false)");
+api.evalCommand("cc23=Circle(B,C,I)");
+api.evalCommand("SetLineThickness(cc23,1)");
+api.evalCommand("ShowLabel(cc23,false)");
+api.evalCommand("cc24=Circle(B,C,L)");
+api.evalCommand("SetLineThickness(cc24,1)");
+api.evalCommand("ShowLabel(cc24,false)");
+api.evalCommand("cc25=Circle(B,D,H)");
+api.evalCommand("SetLineThickness(cc25,1)");
+api.evalCommand("ShowLabel(cc25,false)");
+api.evalCommand("cc26=Circle(B,D,I)");
+api.evalCommand("SetLineThickness(cc26,1)");
+api.evalCommand("ShowLabel(cc26,false)");
+api.evalCommand("cc27=Circle(B,D,M)");
+api.evalCommand("SetLineThickness(cc27,1)");
+api.evalCommand("ShowLabel(cc27,false)");
+api.evalCommand("cc28=Circle(B,E,H)");
+api.evalCommand("SetLineThickness(cc28,1)");
+api.evalCommand("ShowLabel(cc28,false)");
+api.evalCommand("cc29=Circle(B,E,I)");
+api.evalCommand("SetLineThickness(cc29,1)");
+api.evalCommand("ShowLabel(cc29,false)");
+api.evalCommand("cc30=Circle(B,E,J)");
+api.evalCommand("SetLineThickness(cc30,1)");
+api.evalCommand("ShowLabel(cc30,false)");
+api.evalCommand("cc31=Circle(B,F,H)");
+api.evalCommand("SetLineThickness(cc31,1)");
+api.evalCommand("ShowLabel(cc31,false)");
+api.evalCommand("cc32=Circle(B,F,I)");
+api.evalCommand("SetLineThickness(cc32,1)");
+api.evalCommand("ShowLabel(cc32,false)");
+api.evalCommand("cc33=Circle(B,F,J)");
+api.evalCommand("SetLineThickness(cc33,1)");
+api.evalCommand("ShowLabel(cc33,false)");
+api.evalCommand("cc34=Circle(B,G,I)");
+api.evalCommand("SetLineThickness(cc34,1)");
+api.evalCommand("ShowLabel(cc34,false)");
+api.evalCommand("cc35=Circle(B,G,J)");
+api.evalCommand("SetLineThickness(cc35,1)");
+api.evalCommand("ShowLabel(cc35,false)");
+api.evalCommand("cc36=Circle(B,G,K)");
+api.evalCommand("SetLineThickness(cc36,1)");
+api.evalCommand("ShowLabel(cc36,false)");
+api.evalCommand("cc37=Circle(C,D,H)");
+api.evalCommand("SetLineThickness(cc37,1)");
+api.evalCommand("ShowLabel(cc37,false)");
+api.evalCommand("cc38=Circle(C,D,I)");
+api.evalCommand("SetLineThickness(cc38,1)");
+api.evalCommand("ShowLabel(cc38,false)");
+api.evalCommand("cc39=Circle(C,D,J)");
+api.evalCommand("SetLineThickness(cc39,1)");
+api.evalCommand("ShowLabel(cc39,false)");
+api.evalCommand("cc40=Circle(C,E,H)");
+api.evalCommand("SetLineThickness(cc40,1)");
+api.evalCommand("ShowLabel(cc40,false)");
+api.evalCommand("cc41=Circle(C,E,I)");
+api.evalCommand("SetLineThickness(cc41,1)");
+api.evalCommand("ShowLabel(cc41,false)");
+api.evalCommand("cc42=Circle(C,E,J)");
+api.evalCommand("SetLineThickness(cc42,1)");
+api.evalCommand("ShowLabel(cc42,false)");
+api.evalCommand("cc43=Circle(C,F,I)");
+api.evalCommand("SetLineThickness(cc43,1)");
+api.evalCommand("ShowLabel(cc43,false)");
+api.evalCommand("cc44=Circle(C,F,J)");
+api.evalCommand("SetLineThickness(cc44,1)");
+api.evalCommand("ShowLabel(cc44,false)");
+api.evalCommand("cc45=Circle(C,F,K)");
+api.evalCommand("SetLineThickness(cc45,1)");
+api.evalCommand("ShowLabel(cc45,false)");
+api.evalCommand("cc46=Circle(C,G,H)");
+api.evalCommand("SetLineThickness(cc46,1)");
+api.evalCommand("ShowLabel(cc46,false)");
+api.evalCommand("cc47=Circle(C,G,J)");
+api.evalCommand("SetLineThickness(cc47,1)");
+api.evalCommand("ShowLabel(cc47,false)");
+api.evalCommand("cc48=Circle(C,G,K)");
+api.evalCommand("SetLineThickness(cc48,1)");
+api.evalCommand("ShowLabel(cc48,false)");
+api.evalCommand("cc49=Circle(D,E,F)");
+api.evalCommand("SetColor(cc49,Red)");
+api.evalCommand("SetLineThickness(cc49,1)");
+api.evalCommand("ShowLabel(cc49,false)");
+api.evalCommand("cc50=Circle(D,E,I)");
+api.evalCommand("SetLineThickness(cc50,1)");
+api.evalCommand("ShowLabel(cc50,false)");
+api.evalCommand("cc51=Circle(D,E,J)");
+api.evalCommand("SetLineThickness(cc51,1)");
+api.evalCommand("ShowLabel(cc51,false)");
+api.evalCommand("cc52=Circle(D,E,K)");
+api.evalCommand("SetLineThickness(cc52,1)");
+api.evalCommand("ShowLabel(cc52,false)");
+api.evalCommand("cc53=Circle(D,F,H)");
+api.evalCommand("SetLineThickness(cc53,1)");
+api.evalCommand("ShowLabel(cc53,false)");
+api.evalCommand("cc54=Circle(D,F,J)");
+api.evalCommand("SetLineThickness(cc54,1)");
+api.evalCommand("ShowLabel(cc54,false)");
+api.evalCommand("cc55=Circle(D,F,K)");
+api.evalCommand("SetLineThickness(cc55,1)");
+api.evalCommand("ShowLabel(cc55,false)");
+api.evalCommand("cc56=Circle(D,G,H)");
+api.evalCommand("SetLineThickness(cc56,1)");
+api.evalCommand("ShowLabel(cc56,false)");
+api.evalCommand("cc57=Circle(D,G,K)");
+api.evalCommand("SetLineThickness(cc57,1)");
+api.evalCommand("ShowLabel(cc57,false)");
+api.evalCommand("cc58=Circle(D,G,L)");
+api.evalCommand("SetLineThickness(cc58,1)");
+api.evalCommand("ShowLabel(cc58,false)");
+api.evalCommand("cc59=Circle(E,F,H)");
+api.evalCommand("SetLineThickness(cc59,1)");
+api.evalCommand("ShowLabel(cc59,false)");
+api.evalCommand("cc60=Circle(E,F,K)");
+api.evalCommand("SetLineThickness(cc60,1)");
+api.evalCommand("ShowLabel(cc60,false)");
+api.evalCommand("cc61=Circle(E,F,L)");
+api.evalCommand("SetLineThickness(cc61,1)");
+api.evalCommand("ShowLabel(cc61,false)");
+api.evalCommand("cc62=Circle(E,G,H)");
+api.evalCommand("SetLineThickness(cc62,1)");
+api.evalCommand("ShowLabel(cc62,false)");
+api.evalCommand("cc63=Circle(E,G,I)");
+api.evalCommand("SetLineThickness(cc63,1)");
+api.evalCommand("ShowLabel(cc63,false)");
+api.evalCommand("cc64=Circle(E,G,L)");
+api.evalCommand("SetLineThickness(cc64,1)");
+api.evalCommand("ShowLabel(cc64,false)");
+api.evalCommand("cc65=Circle(F,G,H)");
+api.evalCommand("SetLineThickness(cc65,1)");
+api.evalCommand("ShowLabel(cc65,false)");
+api.evalCommand("cc66=Circle(F,G,I)");
+api.evalCommand("SetLineThickness(cc66,1)");
+api.evalCommand("ShowLabel(cc66,false)");
+api.evalCommand("cc67=Circle(F,G,M)");
+api.evalCommand("SetLineThickness(cc67,1)");
+api.evalCommand("ShowLabel(cc67,false)");
+api.evalCommand("cc68=Circle(H,I,L)");
+api.evalCommand("SetColor(cc68,Red)");
+api.evalCommand("SetLineThickness(cc68,1)");
+api.evalCommand("ShowLabel(cc68,false)");
+api.evalCommand("cc69=Circle(H,J,K)");
+api.evalCommand("SetColor(cc69,Red)");
+api.evalCommand("SetLineThickness(cc69,1)");
+api.evalCommand("ShowLabel(cc69,false)");
+api.evalCommand("cc70=Circle(H,J,L)");
+api.evalCommand("SetColor(cc70,Red)");
+api.evalCommand("SetLineThickness(cc70,1)");
+api.evalCommand("ShowLabel(cc70,false)");
+api.evalCommand("cc71=Circle(I,J,K)");
+api.evalCommand("SetColor(cc71,Red)");
+api.evalCommand("SetLineThickness(cc71,1)");
+api.evalCommand("ShowLabel(cc71,false)");
+api.evalCommand("cc72=Circle(K,L,M)");
+api.evalCommand("SetColor(cc72,Red)");
+api.evalCommand("SetLineThickness(cc72,1)");
+api.evalCommand("ShowLabel(cc72,false)");
+api.evalCommand("ShowGrid(false)");
+api.evalCommand("ShowAxes(false)");
+},
+"showFullscreenButton":true,
+"scale":1,
+"disableAutoScale":false,
+"allowUpscale":false,
+"clickToLoad":false,
+"appName":"classic",
+"buttonRounding":0.7,
+"buttonShadows":false,
+"language":"en"
+// use this instead of ggbBase64 to load a material from geogebra.org
+// "material_id":"RHYH3UQ8",
+// use this instead of ggbBase64 to load a .ggb file
+// "filename":"myfile.ggb",
+};
+// is3D=is 3D applet using 3D view, AV=Algebra View, SV=Spreadsheet View, CV=CAS View, EV2=Graphics View 2, CP=Construction Protocol, PC=Probability Calculator DA=Data Analysis, FI=Function Inspector, macro=Macros
+var views = {'is3D': 0,'AV': 1,'SV': 0,'CV': 0,'EV2': 0,'CP': 0,'PC': 0,'DA': 0,'FI': 0,'macro': 0};
+var applet = new GGBApplet(parameters, '5.0', views);
+window.onload = function() {applet.inject('ggbApplet')};
+applet.setPreviewImage('data:image/gif;base64,R0lGODlhAQABAAAAADs=','https://www.geogebra.org/images/GeoGebra_loading.png','https://www.geogebra.org/images/applet_play.png');
+</script>
+</body>
+</html>
