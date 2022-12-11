@@ -1,0 +1,144 @@
+                     SINGULAR                                 /  Development
+ A Computer Algebra System for Polynomial Computations       /   version 4.2.1
+                                                           0<
+ by: W. Decker, G.-M. Greuel, G. Pfister, H. Schoenemann     \   May 2021
+FB Mathematik der Universitaet, D-67653 Kaiserslautern        \
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/solve.lib (4.1.2.0,Feb_2019)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/ring.lib (4.1.2.0,Feb_2019)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/primdec.lib (4.2.1.1,Jul_2021)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/absfact.lib (4.1.2.0,Feb_2019)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/matrix.lib (4.1.2.0,Feb_2019)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/nctools.lib (4.1.2.0,Feb_2019)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/random.lib (4.1.2.0,Feb_2019)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/polylib.lib (4.2.0.0,Dec_2020)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/elim.lib (4.1.2.0,Feb_2019)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/general.lib (4.1.2.0,Feb_2019)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/inout.lib (4.1.2.0,Feb_2019)
+// ** loaded /home/zdu/singular/bin/../share/singular/LIB/triang.lib (4.1.2.0,Feb_2019)
+end of inonecv
+3
+64
+2
+32
+si2[1]=no+o2-k-l-n+1
+si2[2]=lo+k-l+m-o
+si2[3]=ko-o2-k+l
+si2[4]=2ao+o2-k-l-n-o+1
+si2[5]=mn-o
+si2[6]=ln-k-n+1
+si2[7]=kn+o2-l-n+1
+si2[8]=km+k-l
+si2[9]=2am-m-o
+si2[10]=kl+l2+mo+k-3l+m
+si2[11]=4al+2an-n2-2a-2k-2l-2n+3
+si2[12]=k2-l2-mo-o2-4k+4l-m+o
+si2[13]=4ak+2an-n2+2o2-2a-2k-2l-2n+3
+si2[14]=4ac-2cn-2a-2c+n+1
+si2[15]=mo2-lm+o2+k-l+m-o
+si2[16]=2bco+do2-4bc-dk-dl-dn-do+2b+d
+si2[17]=2an2-n3-n2-2a+n+1
+si2[18]=2c2n+2d2n-2bdo+co2-ck-cl-3cn-co+3c+n-1
+si2[19]=2bcn+dn2-2do2+2bc-2bk+2dk+2dl-2bn+2dn-3d
+si2[20]=l2m+m2o+2l2-3lm+m2+mo-2l+m
+si2[21]=2bdm-2c2-2d2+2ck+2cl+cm-co-k-l+o
+si2[22]=2bcm+4bc+2bk+2dk-2bl+2dl-dm+2dn-2bo+do-2b-2d
+si2[23]=bl2+bmo+2bc+2bk+2dk-3bl+bm+dn-bo-b-d
+si2[24]=2c2k+2bdk+2d2k-2bdl-co2-4ck+2co+2k-o
+si2[25]=2bck+2bcl+do2-8bc-2bk-2dk-2dl-2dn+2bo-2do+4b+2d
+si2[26]=8ad2-4d2n-4d2+2a-n-1
+si2[27]=2c3+4bcd+2cd2+4bdk+4d2k-2c2l-4bdl+2d2l-c2m-d2m+2d2n+c2o-2bdo+d2o-co2-2bd-2d2-3ck+cl+co+2k-o
+si2[28]=2c2o2+2bdo2+2d2o2-co3+2bdk-2c2l-2bdl-2d2l-2bdo-co2+2c2+2d2-2ck+2cl-cm-co+o2+k-l
+si2[29]=4bd2n-2cdn2-4b2do+4cdo2-do3-4bc2-4cdk-4bcl-4cdl-4cdn+dn2-3do2+20bc+6cd+6dk+6dl-dm+6dn-4bo+3do-8b-7d
+si2[30]=c2l2+d2l2+c2mo+d2mo-4bcd-4bdk-4d2k-3c2l+4bdl-3d2l-2cl2+c2m+d2m-2d2n-c2o+2bdo-d2o-2cmo+co2-c2+2bd+d2+ck+7cl+l2-2cm-co+mo-k-3l+m+o
+si2[31]=4b2dk+4bd2k-4bc2l-4b2dl-2cdo2+do3+16bc2+4cdk+4bcl+4cdl+4cdn+4cdo+3do2-32bc-4cd-7dk-7dl+dm-7dn+4bo-6do+12b+7d
+si2[32]=4b2do2+4bd2o2-2cdo3+do4-4bd2k-4bd2l-4b2do+do3+4bc2+4bd2+2cdk+4bcl+2cdl-2cdm+2cdn+dmo+4bo2+5do2-24bc-2cd-8dk-4bl-8dl+2dm-8dn+4bo-6do+12b+8d
+[1,2,5,7]
+[1,2,8,9]
+{1,2,10}
+[1,2,11,13]
+[1,3,4,7]
+[1,3,5,6]
+[1,3,8,10]
+{1,3,11}
+[1,3,12,13]
+[1,4,8,11]
+[1,4,9,10]
+{1,4,12}
+[1,5,8,12]
+[1,5,9,11]
+{1,5,13}
+[1,6,8,13]
+[1,6,9,12]
+[1,6,10,11]
+{1,7,8}
+[1,7,9,13]
+[1,7,10,12]
+[2,3,4,6]
+[2,3,8,11]
+[2,3,9,10]
+{2,3,12}
+[2,4,8,12]
+[2,4,9,11]
+{2,4,13}
+[2,5,8,13]
+[2,5,9,12]
+[2,5,10,11]
+{2,6,8}
+[2,6,9,13]
+[2,6,10,12]
+{2,7,9}
+[2,7,10,13]
+[2,7,11,12]
+[3,4,8,13]
+[3,4,9,12]
+[3,4,10,11]
+{3,5,8}
+[3,5,9,13]
+[3,5,10,12]
+{3,6,9}
+[3,6,10,13]
+[3,6,11,12]
+[3,7,8,9]
+{3,7,10}
+[3,7,11,13]
+[4,5,6,7]
+{4,5,9}
+[4,5,10,13]
+[4,5,11,12]
+[4,6,8,9]
+{4,6,10}
+[4,6,11,13]
+[4,7,8,10]
+{4,7,11}
+[4,7,12,13]
+[5,6,8,10]
+{5,6,11}
+[5,6,12,13]
+[5,7,8,11]
+[5,7,9,10]
+{5,7,12}
+[6,7,8,12]
+[6,7,9,11]
+{6,7,13}
+{8,9,12}
+{8,10,11}
+[8,10,12,13]
+[9,10,11,13]
+{11,12,13}
+2
+si2[1]=n2o-n2+no2-no+1
+si2[2]=m+n2o-n2+2no2-2no+o3-o2+1
+si2[3]=lo-2l+m+no-n+o2-o+1
+si2[4]=ln+lo-l+m-n-o+1
+si2[5]=k-ln+n-1
+si2[6]=2c3+c2l2-5c2l+c2mo-c2+2cd2-2ck-2cl2+8cl-2cmo-2cm+d2l2-d2l+d2mo-d2+k+l2-3l+mo+m
+si2[7]=2bdo-2c2n+ck+cl+3cn-co2+co-3c-2d2n-n+1
+si2[8]=2bdn2-2bdno2+2bdno-2bd-2c2n3+ckn2+cln2+3cn3-cn2o2+cn2o-3cn2-2d2n3-n3+n2
+si2[9]=4bdl-2bdm-2bdno+2bdn-2bdo2+2bdo-2bd-2c2ln+ckl+cl2+3cln-clo2+clo-3cl-2d2ln-ln+l
+si2[10]=2bc+2bk+bl2-3bl+bmo+bm-bo-b+2dk+dn-d
+si2[11]=2ao-k-l-n+o2-o+1
+si2[12]=2an2-2a-n3-n2+n+1
+si2[13]=4al+2an-2a-2k-2l-n2-2n+3
+si2[14]=8ad2+2a-4d2n-4d2-n-1
+si2[15]=4ac-2a-2cn-2c+n+1
+Auf Wiedersehen.
