@@ -30,7 +30,7 @@
     "gatsby-remark-relative-images": "^0.2.2",
     "gatsby-source-filesystem": "^2.1.5",
     "gatsby-source-mongodb": "^2.1.11",
-    "gatsby-transformer-remark": "^2.6.30",
+    "gatsby-transformer-remark": "^5.25.1",
     "gatsby-transformer-sharp": "^2.2.4",
     "katex": "^0.11.1",
     "node-sass": "^4.12.0",
