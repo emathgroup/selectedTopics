@@ -698,7 +698,7 @@ const int MAX_NON_ZEROS = MAX_EDGE_NUM*MAX_NODE_NUM;
 
 int lb[]={11,15,18,22,27};
 int maxd[]={16,18,19,21,26};
-int showd[]={14,15,17,19,23};
+int showd[]={14,14,16,18,22};
 
 int lower_bound(int n){
     return lb[n-INIT_NODES];
