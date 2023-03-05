@@ -2015,7 +2015,7 @@ void process_one_line(char *input, int curnodes)
     tsearch(curnodes);
     fclose(tmpfile2[dep]);
     tmpfile2[dep]=NULL;
-    sprintf(fname,"sort -u tmpfilef%d | /home/zdu/csolve | /home/zdu/solve8.s > tmpfileg%d",dep, dep);
+    sprintf(fname,"sort -u tmpfilef%d | /home/zdu/csolve | /home/zdu/solve8s > tmpfileg%d",dep, dep);
     system(fname);
     sprintf(fname,"sed -r \'/^.{,%d}$/d\' tmpfileg%d >> out%d", 4*showd[curnodes+1-INIT_NODES]-2, dep, curnodes+1);
     system(fname);
