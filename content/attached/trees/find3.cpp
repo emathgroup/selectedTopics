@@ -700,7 +700,7 @@ const int MAX_NON_ZEROS = MAX_EDGE_NUM*MAX_NODE_NUM;
 #define MAXLINE_COUNT MAX_EDGE_NUM
 #define MAX_DEPTH 6
 
-int lb[]={11,15,18,22,27};
+int lb[]={11,15,19,22,24};
 int maxd[]={16,18,19,21,26};
 int showd[]={14,14,16,18,22};
 
