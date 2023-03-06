@@ -2019,9 +2019,11 @@ void process_one_line(char *input, int curnodes)
     tsearch(curnodes);
     fclose(tmpfile2[dep]);
     tmpfile2[dep]=NULL;
-    sprintf(fname,"sort -u tmpfilef%d | " FOLDER "/csolve | " FOLDER "solve8s > tmpfileg%d",dep, dep);
+    sprintf(fname,"sort -u tmpfilef%d | ./csolve | ./solve8s > tmpfileg%d",dep, dep);
+    // fprintf(stderr,"%s\n",fname);
     system(fname);
     sprintf(fname,"sed -r \'/^.{,%d}$/d\' tmpfileg%d >> out%d", 4*showd[curnodes+1-INIT_NODES]-2, dep, curnodes+1);
+    // fprintf(stderr,"%s\n",fname);
     system(fname);
     if(dep>=TARGET_NODES-1)return;
     dep++;
