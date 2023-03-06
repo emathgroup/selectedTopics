@@ -5,8 +5,7 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
-// #include "newdef.cpp"
-#include <gmp.h>
+#include "newdef.cpp"
 #include <vector>
 using namespace std;
 #define ASSERT(x)
