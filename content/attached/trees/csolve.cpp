@@ -574,10 +574,10 @@ bool testEq(char line_buf[MAX_EDGES][NODES_PER_EDGE],const char nodesToEdges[MAX
 	fprintf(stderr,"cnode 3: %c (0,1)\n",n4+'A');
 #endif
 	cNodeUsed=4;
-	cnodes[0]=constCoord::constCoord(0,0);
-	cnodes[1]=constCoord::constCoord(1,0);
-	cnodes[2]=constCoord::constCoord(1,1);
-	cnodes[3]=constCoord::constCoord(0,1);
+	cnodes[0]=constCoord(0,0);
+	cnodes[1]=constCoord(1,0);
+	cnodes[2]=constCoord(1,1);
+	cnodes[3]=constCoord(0,1);
 	do{
 		if(cNodeUsed>prevCNodeUsed||cEdgeUsed>prevCEdgeUsed){
 			if(cNodeUsed>prevCNodeUsed){
@@ -650,14 +650,14 @@ bool testEq(char line_buf[MAX_EDGES][NODES_PER_EDGE],const char nodesToEdges[MAX
 #ifdef TRACE
 				fprintf(stderr, "Init TEdge %d ",ec); c1.trace();k1.trace();fprintf(stderr,"\n");
 #endif
-				setTEdge(ec, tCoord::tCoord(c1,k1));
+				setTEdge(ec, tCoord(c1,k1));
 			}else{
 				constCoord c1(0,c.getZ(),-c.getY());
 				constCoord k1(1,0,0);
 #ifdef TRACE
                                 fprintf(stderr, "Init TEdge %d ",ec); c1.trace();k1.trace();fprintf(stderr,"\n");
 #endif
-				setTEdge(ec, tCoord::tCoord(c1,k1));
+				setTEdge(ec, tCoord(c1,k1));
 			}
 
 		}
