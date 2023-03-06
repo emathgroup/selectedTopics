@@ -2025,7 +2025,7 @@ void process_one_line(char *input, int curnodes)
     sprintf(fname,"sed -r \'/^.{,%d}$/d\' tmpfileg%d >> out%d", 4*showd[curnodes+1-INIT_NODES]-2, dep, curnodes+1);
     // fprintf(stderr,"%s\n",fname);
     system(fname);
-    if(dep>=TARGET_NODES-1)return;
+    if(curnodes>=TARGET_NODES-1)return;
     dep++;
     sprintf(fname,"tmpfileg%d",dep-1);
     tmpfile2[dep-1] = fopen(fname,"r");
