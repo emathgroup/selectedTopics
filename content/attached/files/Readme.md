@@ -181,3 +181,6 @@ files vd5.zip provides result of [transform digits of integers to powers](https:
   The result of base below 12 are all provided.
 
 cr2.cpp cr3.cpp: question https://www.zhihu.com/question/546784437 to find maximal number of black cells on m*n board where each black cell must have at least one neighbor white cell.
+
+path4.cpp for A071983
+sumi*.cpp for Sporadic solutions such as A053974
