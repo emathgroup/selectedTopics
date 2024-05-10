@@ -187,3 +187,5 @@ path4.cpp for A071983.  path4.2.cpp for A071984.
 sumi*.cpp for Sporadic solutions such as A053974
 
 gmpsrch.cpp for [是否不存在 2022397710683865089 的倍数，在 256 进制下每一位都小于 26](https://www.zhihu.com/question/654842645)
+
+sdv3.cpp for A067957
