@@ -188,4 +188,6 @@ sumi*.cpp for Sporadic solutions such as A053974
 
 gmpsrch.cpp for [是否不存在 2022397710683865089 的倍数，在 256 进制下每一位都小于 26](https://www.zhihu.com/question/654842645)
 
+gc2.cpp for A354457 and change initial value from 1..2N to 2..(2N+1) for A354697
+
 sdv3.cpp for A067957
